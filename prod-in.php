@@ -1,12 +1,29 @@
+<?php
+
+include 'database/connection.php';
+
+if (isset($_GET["name"])) {
+    # code...
+}
+
+
+$sorgu = $vt->prepare("SELECT * FROM cblog  WHERE ");
+$sorgu->execute();
+$blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
+
+
+
+
+?>
 <!doctype html>
 <html lang="en">
 
 <?php include 'php/head.php' ?>
 
 <body>
-<?php include 'php/header.php' ?>
+    <?php include 'php/header.php' ?>
 
-    
+
 
     <main>
         <div class="banner">
@@ -25,8 +42,7 @@
                             <div class="datasheets d-md-flex col-xl-8" data-aos="fade-up">
                                 <a href="assets/materials/sample.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Sample.pdf">Datasheet <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
 
-                                <a href="assets/materials/sample.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Sample.pdf">User Manual <img class="ms-1" width="12px"
-                    src="assets/materials/pdf.svg"></span></a>
+                                <a href="assets/materials/sample.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Sample.pdf">User Manual <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
                             </div>
                         </div>
                     </div>
@@ -76,7 +92,7 @@
                         <div class="bg-white">
                             <p id="limiter" class="p-5">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris odio sem, finibus non urna at, laoreet venenatis orci. Curabitur eu dignissim ipsum. Cras posuere congue lorem vel pretium. Quisque augue justo, dictum eu neque a, ornare scelerisque ante.
-                                Nunc vitae justo nec neque rutrum rutrum. Suspendisse tincidunt pulvinar augue, vel rhoncus nibh feugiat in. Nunc pretium a ex sit amet vehicula. Suspendisse sit amet pulvinar leo.<br/><br/>
+                                Nunc vitae justo nec neque rutrum rutrum. Suspendisse tincidunt pulvinar augue, vel rhoncus nibh feugiat in. Nunc pretium a ex sit amet vehicula. Suspendisse sit amet pulvinar leo.<br /><br />
                             </p>
                         </div>
                     </div>
@@ -87,8 +103,8 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Platform
-                    </button>
+                                            Platform
+                                        </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
                                         <div class="accordion-body d-flex justify-content-between">
@@ -115,8 +131,8 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Storage
-                    </button>
+                                            Storage
+                                        </button>
                                     </h2>
                                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
                                         <div class="accordion-body d-flex justify-content-between">
@@ -133,8 +149,8 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      I/O
-                    </button>
+                                            I/O
+                                        </button>
                                     </h2>
                                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
                                         <div class="accordion-body d-flex justify-content-between">
@@ -161,8 +177,8 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      Power and Mechanical
-                    </button>
+                                            Power and Mechanical
+                                        </button>
                                     </h2>
                                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
                                         <div class="accordion-body d-flex justify-content-between">
@@ -187,8 +203,8 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                      OS and Certifications
-                    </button>
+                                            OS and Certifications
+                                        </button>
                                     </h2>
                                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive">
                                         <div class="accordion-body d-flex justify-content-between">
@@ -205,8 +221,8 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                      Physical and Environmental
-                    </button>
+                                            Physical and Environmental
+                                        </button>
                                     </h2>
                                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix">
                                         <div class="accordion-body d-flex justify-content-between">
@@ -254,9 +270,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
 
@@ -270,9 +286,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
 
@@ -286,9 +302,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
 
@@ -302,9 +318,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
                 </div>

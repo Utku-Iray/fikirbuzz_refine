@@ -1,44 +1,51 @@
+<?php
+
+include 'database/connection.php';
+
+
+$sorgu = $vt->prepare("SELECT * FROM cblog  WHERE (sort <> -1) AND (page_description <> 'test') GROUP BY iname");
+$sorgu->execute();
+$blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
+
+
+
+
+?>
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <title>Refine</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport"
-      content="width=device-width, shrink-to-fit=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <meta name="author" content="arg0dev">
-    <meta name="theme-color" content="#06388a">
-    <meta name="copyright" content="arg0dev">
-    <meta http-equiv="content-language" content="en">
-    <link href='./assets/materials/og/fav64.ico' rel='icon' type='image/x-icon' />
-  
-    <!-- arg0 OpenGraph tags -->
-    <meta content='website' property='og:type' />
-    <meta content='Refine Inc. | Your Title Here' property='og:title' />
-    <meta content='Refine Inc. | Your Title Here' property='og:site_name' />
-    <meta content='Refine Inc. | Your Description Here' property='og:description' />
-    <meta content='https://refine-tr.com' property='og:url' />
-    <meta content='https://refine-tr.com/assets/materials/og/og_image.jpg' property='og:image' />
-    <link href='./assets/materials/og/app180.png' rel='apple-touch-icon' sizes='180x180' />
-    <link href='./assets/materials/og/app192.png' rel='icon' sizes='192x192' type='image/png' />
-    <link href='./assets/materials/og/app32.png' rel='icon' sizes='32x32' type='image/png' />
-  
-    <!-- Bootstrap CSS v5.0.2 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/scss/topbox.css" type="text/css">
-    <link rel="stylesheet" href="assets/scss/aos.css" type="text/css">
-    <link rel="stylesheet" href="assets/scss/main.css" type="text/css">
-  
-  </head>
-  
+<head>
+  <title>Refine</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="author" content="arg0dev">
+  <meta name="theme-color" content="#06388a">
+  <meta name="copyright" content="arg0dev">
+  <meta http-equiv="content-language" content="en">
+  <link href='./assets/materials/og/fav64.ico' rel='icon' type='image/x-icon' />
+
+  <!-- arg0 OpenGraph tags -->
+  <meta content='website' property='og:type' />
+  <meta content='Refine Inc. | Your Title Here' property='og:title' />
+  <meta content='Refine Inc. | Your Title Here' property='og:site_name' />
+  <meta content='Refine Inc. | Your Description Here' property='og:description' />
+  <meta content='https://refine-tr.com' property='og:url' />
+  <meta content='https://refine-tr.com/assets/materials/og/og_image.jpg' property='og:image' />
+  <link href='./assets/materials/og/app180.png' rel='apple-touch-icon' sizes='180x180' />
+  <link href='./assets/materials/og/app192.png' rel='icon' sizes='192x192' type='image/png' />
+  <link href='./assets/materials/og/app32.png' rel='icon' sizes='32x32' type='image/png' />
+
+  <!-- Bootstrap CSS v5.0.2 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/scss/topbox.css" type="text/css">
+  <link rel="stylesheet" href="assets/scss/aos.css" type="text/css">
+  <link rel="stylesheet" href="assets/scss/main.css" type="text/css">
+
+</head>
+
 <body>
 
   <header>
@@ -87,7 +94,7 @@
                             <hr />
                           </a>
                         </li>
-            
+
                         <li class="pid-1">
                           <div class="outbox">
                             <a href="#">
@@ -103,7 +110,7 @@
                             <hr />
                           </a>
                         </li>
-            
+
                         <li class="pid-1">
                           <div class="outbox">
                             <a href="#">
@@ -119,23 +126,7 @@
                             <hr />
                           </a>
                         </li>
-            
-                        <li class="pid-1">
-                          <div class="outbox">
-                            <a href="#">
-                              <div class="prod-tag">NCA-0123</div>
-                            </a>
-                            <img src="assets/materials/network-device.png">
-                          </div>
-                          <div class="description">
-                            <h1>DESKTOP NETWORK APPLIANCES</h1>
-                          </div>
-                          <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
-                        </li>   
-                        
+
                         <li class="pid-1">
                           <div class="outbox">
                             <a href="#">
@@ -151,7 +142,7 @@
                             <hr />
                           </a>
                         </li>
-            
+
                         <li class="pid-1">
                           <div class="outbox">
                             <a href="#">
@@ -167,7 +158,7 @@
                             <hr />
                           </a>
                         </li>
-            
+
                         <li class="pid-1">
                           <div class="outbox">
                             <a href="#">
@@ -183,7 +174,7 @@
                             <hr />
                           </a>
                         </li>
-            
+
                         <li class="pid-1">
                           <div class="outbox">
                             <a href="#">
@@ -198,7 +189,23 @@
                             MORE
                             <hr />
                           </a>
-                        </li>   
+                        </li>
+
+                        <li class="pid-1">
+                          <div class="outbox">
+                            <a href="#">
+                              <div class="prod-tag">NCA-0123</div>
+                            </a>
+                            <img src="assets/materials/network-device.png">
+                          </div>
+                          <div class="description">
+                            <h1>DESKTOP NETWORK APPLIANCES</h1>
+                          </div>
+                          <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                            MORE
+                            <hr />
+                          </a>
+                        </li>
 
                         <li class="pid-2">
                           <div class="outbox">
@@ -214,7 +221,7 @@
                             MORE
                             <hr />
                           </a>
-                        </li>  
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -235,8 +242,7 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item hiddenSearch">
               <div class="dropdown mini-searchbox">
-                <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink"
-                  aria-expanded="false" src="assets/materials/search-icon.svg">
+                <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" aria-expanded="false" src="assets/materials/search-icon.svg">
 
                 <ul class="dropdown-menu search-box d-flex" aria-labelledby="dropdownMenuLink">
                   <form class="form mx-auto">
@@ -250,8 +256,7 @@
             </li>
             <li class="nav-item ms-2">
               <div class="dropdown lang-list">
-                <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink"
-                  data-bs-toggle="dropdown" aria-expanded="false" src="assets/materials/lang.svg">
+                <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" src="assets/materials/lang.svg">
 
                 <ul class="dropdown-menu lang-menu d-flex" aria-labelledby="dropdownMenuLink">
                   <li><a class="dropdown-item" href="#"><img src="assets/materials/tr.svg" width="24px"></a></li>
@@ -261,8 +266,7 @@
               </div>
             </li>
             <li class="nav-item ms-2">
-              <a href="assets/materials/sample.pdf" class="btn-green lightbox" aria-haspopup="dialog"
-                title="Sample.pdf">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
+              <a href="assets/materials/sample.pdf" class="btn-green lightbox" aria-haspopup="dialog" title="Sample.pdf">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
             </li>
             <li class="nav-item ms-2">
               <a class="btn-white login">Reseller Login</a>
@@ -283,8 +287,7 @@
         <a href="single-page.html">PCB Design & Manufacturing</a>
         <a href="blog-page.html">Blog</a>
         <a href="contact.html">Contact Us</a>
-        <a href="assets//materials/sample.pdf" aria-haspopup="dialog"
-        title="Sample.pdf" class="btn-green lightbox">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
+        <a href="assets//materials/sample.pdf" aria-haspopup="dialog" title="Sample.pdf" class="btn-green lightbox">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
         <a href="#" class="btn-white login">Reseller Login</a>
         <div class="langArea d-flex">
           <a href="#" class="me-4"><img src="assets/materials/tr.svg" width="24px"></a>
@@ -339,10 +342,10 @@
                     faucibus, suscipit ac mi.</p>
                 </div>
                 <div class="details d-flex">
-                    <div class="post-tag">SECURITY</div>
-                    <div class="date">
-                      <img src="assets/materials/calendar.svg"><span>22.03.22</span>
-                    </div>
+                  <div class="post-tag">SECURITY</div>
+                  <div class="date">
+                    <img src="assets/materials/calendar.svg"><span>22.03.22</span>
+                  </div>
                 </div>
                 <a href="single-blog.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
                   ARTICLE
@@ -350,7 +353,7 @@
                 </a>
               </div>
             </div>
-  
+
             <div class="col-xl-6 inp mb-4 mb-xl-0">
               <div class="full-box">
                 <div class="outbox">
@@ -364,10 +367,10 @@
                     faucibus, suscipit ac mi.</p>
                 </div>
                 <div class="details d-flex">
-                    <div class="post-tag">SECURITY</div>
-                    <div class="date">
-                      <img src="assets/materials/calendar.svg"><span>22.03.22</span>
-                    </div>
+                  <div class="post-tag">SECURITY</div>
+                  <div class="date">
+                    <img src="assets/materials/calendar.svg"><span>22.03.22</span>
+                  </div>
                 </div>
                 <a href="single-blog.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
                   ARTICLE
@@ -382,21 +385,21 @@
               <h1>WHERE IS 5G TECHNOLOGY USED?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur
                 aucibus, suscipit ac mi.</p>
-                <a href="single-blog.html">READ ARTICLE</a>
+              <a href="single-blog.html">READ ARTICLE</a>
             </div>
             <div class="incontent mb-4">
               <h1>WHERE IS 5G TECHNOLOGY USED?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur
                 aucibus, suscipit ac mi.</p>
-                <a href="single-blog.html">READ ARTICLE</a>
+              <a href="single-blog.html">READ ARTICLE</a>
             </div>
             <div class="incontent mb-4">
               <h1>WHERE IS 5G TECHNOLOGY USED?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur
                 aucibus, suscipit ac mi.</p>
-                <a href="single-blog.html">READ ARTICLE</a>
+              <a href="single-blog.html">READ ARTICLE</a>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -410,31 +413,31 @@
               <h1>WHERE IS 5G TECHNOLOGY USED?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur
                 aucibus, suscipit ac mi.</p>
-                <a href="single-blog.html">READ ARTICLE</a>
+              <a href="single-blog.html">READ ARTICLE</a>
             </div>
             <div class="incontent mb-5">
               <h1>WHERE IS 5G TECHNOLOGY USED?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur
                 aucibus, suscipit ac mi.</p>
-                <a href="single-blog.html">READ ARTICLE</a>
+              <a href="single-blog.html">READ ARTICLE</a>
             </div>
           </div>
 
           <div class="col-xl-6 ms-auto">
             <div class="outbox">
-                <img src="assets/materials/world.png">
-                <div class="description row align-items-xl-between align-content-xl-between h">
-                  <div class="date d-xl-block d-none">
-                    <a><span>22.03.22</span><img src="assets/materials/calendar.svg"></a>
-                  </div>
-                  <div class="title">
-                    <div class="post-tag-w">SECURITY</div>
-                    <a href="single-blog.html">
-                      <h1>Where is 5g <br/>
-                        technology used?</h1>
-                    </a>
-                  </div>
+              <img src="assets/materials/world.png">
+              <div class="description row align-items-xl-between align-content-xl-between h">
+                <div class="date d-xl-block d-none">
+                  <a><span>22.03.22</span><img src="assets/materials/calendar.svg"></a>
                 </div>
+                <div class="title">
+                  <div class="post-tag-w">SECURITY</div>
+                  <a href="single-blog.html">
+                    <h1>Where is 5g <br />
+                      technology used?</h1>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -448,159 +451,37 @@
             <h1>All Posts <img class="ms-2" src="assets/materials/smb.svg"></h1>
           </div>
           <div class="boxed-content mx-auto mx-xl-0 p-0 row col-xl-12">
-  
-            <div class="col-xl-4 inp mb-5">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/blog-box-cover.png">
-                </div>
-                <div class="description">
-                  <h1>Where is 5g technology used?</h1>
-                  <p>Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Fusce
-                    est sapien, accumsan non efficitur
-                    faucibus, suscipit ac mi.</p>
-                </div>
-                <div class="details d-flex">
-                    <div class="post-tag">SECURITY</div>
-                    <div class="date">
-                      <img src="assets/materials/calendar.svg"><span>22.03.22</span>
-                    </div>
-                </div>
-                <a href="single-blog.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                  ARTICLE
-                  <hr />
-                </a>
-              </div>
-            </div>
-  
-            <div class="col-xl-4 inp mb-5">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/blog-box-cover.png">
-                </div>
-                <div class="description">
-                  <h1>Where is 5g technology used?</h1>
-                  <p>Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Fusce
-                    est sapien, accumsan non efficitur
-                    faucibus, suscipit ac mi.</p>
-                </div>
-                <div class="details d-flex">
-                    <div class="post-tag">SECURITY</div>
-                    <div class="date">
-                      <img src="assets/materials/calendar.svg"><span>22.03.22</span>
-                    </div>
-                </div>
-                <a href="single-blog.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                  ARTICLE
-                  <hr />
-                </a>
-              </div>
-            </div>
 
-  
-            <div class="col-xl-4 inp mb-5">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/blog-box-cover.png">
-                </div>
-                <div class="description">
-                  <h1>Where is 5g technology used?</h1>
-                  <p>Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Fusce
-                    est sapien, accumsan non efficitur
-                    faucibus, suscipit ac mi.</p>
-                </div>
-                <div class="details d-flex">
-                    <div class="post-tag">SECURITY</div>
-                    <div class="date">
-                      <img src="assets/materials/calendar.svg"><span>22.03.22</span>
-                    </div>
-                </div>
-                <a href="single-blog.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                  ARTICLE
-                  <hr />
-                </a>
-              </div>
-            </div>
+            <?php
+            foreach ($blogList as $singleBlog) { ?>
+              <div class="col-xl-4 inp mb-5">
+                <div class="full-box">
+                  <div class="outbox">
+                    <img src="https://projects.fikirbuzzprojects.com/refine/img/i/<?= $singleBlog->igorsel  ?>">
+                  </div>
+                  <div class="description" style="height:160px">
+                    <h1><?= $singleBlog->iname  ?></h1>
+                    <p>
+                      <?= $singleBlog->ikisa_icerik  ?>
+                    </p>
 
-            <div class="col-xl-4 inp mb-5">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/blog-box-cover.png">
-                </div>
-                <div class="description">
-                  <h1>Where is 5g technology used?</h1>
-                  <p>Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Fusce
-                    est sapien, accumsan non efficitur
-                    faucibus, suscipit ac mi.</p>
-                </div>
-                <div class="details d-flex">
-                    <div class="post-tag">SECURITY</div>
+                  </div>
+                  <div class="details d-flex">
+                    <div class="post-tag">BLOG</div>
                     <div class="date">
-                      <img src="assets/materials/calendar.svg"><span>22.03.22</span>
+                      <img src="assets/materials/calendar.svg"><span><?= $singleBlog->cdate  ?></span>
                     </div>
+                  </div>
+                  <a href="single-blog?name=<?= $singleBlog->page_url  ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
+                    ARTICLE
+                    <hr />
+                  </a>
                 </div>
-                <a href="single-blog.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                  ARTICLE
-                  <hr />
-                </a>
               </div>
-            </div>
+            <?php } ?>
 
-            <div class="col-xl-4 inp mb-5">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/blog-box-cover.png">
-                </div>
-                <div class="description">
-                  <h1>Where is 5g technology used?</h1>
-                  <p>Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Fusce
-                    est sapien, accumsan non efficitur
-                    faucibus, suscipit ac mi.</p>
-                </div>
-                <div class="details d-flex">
-                    <div class="post-tag">SECURITY</div>
-                    <div class="date">
-                      <img src="assets/materials/calendar.svg"><span>22.03.22</span>
-                    </div>
-                </div>
-                <a href="single-blog.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                  ARTICLE
-                  <hr />
-                </a>
-              </div>
-            </div>
 
-            <div class="col-xl-4 inp mb-5">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/blog-box-cover.png">
-                </div>
-                <div class="description">
-                  <h1>Where is 5g technology used?</h1>
-                  <p>Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Fusce
-                    est sapien, accumsan non efficitur
-                    faucibus, suscipit ac mi.</p>
-                </div>
-                <div class="details d-flex">
-                    <div class="post-tag">SECURITY</div>
-                    <div class="date">
-                      <img src="assets/materials/calendar.svg"><span>22.03.22</span>
-                    </div>
-                </div>
-                <a href="single-blog.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                  ARTICLE
-                  <hr />
-                </a>
-              </div>
-            </div>
-
-            <button class="load-more__btn mt-5 mb-5">SEE MORE<br/><img src="assets/materials/downron.svg"></button>
+            <button class="load-more__btn mt-5 mb-5">SEE MORE<br /><img src="assets/materials/downron.svg"></button>
           </div>
         </div>
       </div>
@@ -623,11 +504,9 @@
     <!-- Mobile Fast Contact Nav -->
     <div class="mini-nav d-flex justify-content-center d-xl-none">
       <div class="position-relative d-flex">
-        <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg"
-            width="20px" class="me-2">Call Us</a>
+        <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg" width="20px" class="me-2">Call Us</a>
         <div class="seperator mx-auto"></div>
-        <a href="#" class="btn-white text-center mx-auto"><img src="assets/materials/handshake.svg" width="26px"
-            class="me-2">Be Reseller</a>
+        <a href="#" class="btn-white text-center mx-auto"><img src="assets/materials/handshake.svg" width="26px" class="me-2">Be Reseller</a>
       </div>
     </div>
     <!-- Mobile Fast Contact Nav -->
@@ -660,34 +539,35 @@
         <div class="col-xl-7 p-0">
           <div class="outflow-half text-center d-flex align-content-center align-items-center justify-content-center">
             <div class="rightSide">
-               <h1 class="mb-5 pb-xl-5">Reseller Login</h1>
-            <form class="form mt-5" action="account.html">
-              <div class="form-group">
-                <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
-              </div>
-              <div class="form-group mt-3">
-                <input type="password" placeholder="Password"><img src="assets/materials/env-pw.svg">
-              </div>
-              <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
-                <button type="submit" class="text-start ps-3">LOGIN</button><div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
-              </div>
-              <div class="form-group mt-3 mx-auto d-flex justify-content-center">
-                <a href="#">Register Now</a>
-              </div>
-            </form>
+              <h1 class="mb-5 pb-xl-5">Reseller Login</h1>
+              <form class="form mt-5" action="account.html">
+                <div class="form-group">
+                  <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
+                </div>
+                <div class="form-group mt-3">
+                  <input type="password" placeholder="Password"><img src="assets/materials/env-pw.svg">
+                </div>
+                <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
+                  <button type="submit" class="text-start ps-3">LOGIN</button>
+                  <div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
+                </div>
+                <div class="form-group mt-3 mx-auto d-flex justify-content-center">
+                  <a href="#">Register Now</a>
+                </div>
+              </form>
             </div>
-           
+
           </div>
-         
+
         </div>
       </div>
     </div>
     <!-- Login Area -->
 
     <!--Push Button-->
-        <a target="blank_" href="https://api.whatsapp.com/send?phone=+905000000000&text=Merhabalar, Refine Inc. ayrıcalıklarından yararlanmak istiyorum." class="pusher d-xl-flex d-none">
-          <img src="assets/materials/chat.svg">
-        </a>
+    <a target="blank_" href="https://api.whatsapp.com/send?phone=+905000000000&text=Merhabalar, Refine Inc. ayrıcalıklarından yararlanmak istiyorum." class="pusher d-xl-flex d-none">
+      <img src="assets/materials/chat.svg">
+    </a>
     <!--Push Button-->
   </main>
 
@@ -776,14 +656,10 @@
               <p>Warehouse II: No. 121 Tai Tao Tsuen Hung Shui Kiu Yuen Long, Hong Kong</p>
             </a>
             <div class="numberArea d-flex mt-5">
-              <a href="tel:+90 850 433 87 60"
-                class="d-flex justify-content-center justify-content-xl-start me-3 mb-2"><img
-                  src="assets/materials/phone.svg" width="24px">
+              <a href="tel:+90 850 433 87 60" class="d-flex justify-content-center justify-content-xl-start me-3 mb-2"><img src="assets/materials/phone.svg" width="24px">
                 <p>+90 850 433 87 60</p>
               </a>
-              <a href="mailto:info@refine-tr.com"
-                class="d-flex justify-content-center justify-content-xl-start me-2 mb-2"><img
-                  src="assets/materials/mail.svg" width="24px">
+              <a href="mailto:info@refine-tr.com" class="d-flex justify-content-center justify-content-xl-start me-2 mb-2"><img src="assets/materials/mail.svg" width="24px">
                 <p>info@refine-tr.com</p>
               </a>
             </div>
@@ -838,16 +714,10 @@
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-    integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="assets/js/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="assets/js/aos.js"></script>
   <script src="assets/js/topbox.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

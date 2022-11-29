@@ -1,3 +1,4 @@
+<?php include 'database/connection.php'; ?>
 <!doctype html>
 <html lang="en">
 
@@ -25,10 +26,8 @@
 
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/scss/topbox.css" type="text/css">
     <link rel="stylesheet" href="assets/scss/aos.css" type="text/css">
     <link rel="stylesheet" href="assets/scss/main.css" type="text/css">
@@ -39,12 +38,12 @@
 
     <header>
         <button class="navbar-toggler menu-reverse" type="button">
-      <div class="menu-icon" onclick="menuTrigger(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
-    </button>
+            <div class="menu-icon" onclick="menuTrigger(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </button>
         <nav class="navbar navbar-expand-xl navbar-light custom-bg fixed-top bg-scroll">
             <div class="container-fluid col-11">
                 <a class="navbar-brand" href="index.html"><img src="assets/materials/logo.svg"></a>
@@ -79,9 +78,9 @@
                                                         <h1>DESKTOP NETWORK APPLIANCES</h1>
                                                     </div>
                                                     <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
+                                                        MORE
+                                                        <hr />
+                                                    </a>
                                                 </li>
 
                                                 <li class="pid-1">
@@ -95,9 +94,9 @@
                                                         <h1>DESKTOP NETWORK APPLIANCES</h1>
                                                     </div>
                                                     <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
+                                                        MORE
+                                                        <hr />
+                                                    </a>
                                                 </li>
 
                                                 <li class="pid-1">
@@ -111,9 +110,9 @@
                                                         <h1>DESKTOP NETWORK APPLIANCES</h1>
                                                     </div>
                                                     <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
+                                                        MORE
+                                                        <hr />
+                                                    </a>
                                                 </li>
 
                                                 <li class="pid-1">
@@ -127,9 +126,9 @@
                                                         <h1>DESKTOP NETWORK APPLIANCES</h1>
                                                     </div>
                                                     <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
+                                                        MORE
+                                                        <hr />
+                                                    </a>
                                                 </li>
 
                                                 <li class="pid-1">
@@ -143,9 +142,9 @@
                                                         <h1>DESKTOP NETWORK APPLIANCES</h1>
                                                     </div>
                                                     <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
+                                                        MORE
+                                                        <hr />
+                                                    </a>
                                                 </li>
 
                                                 <li class="pid-1">
@@ -159,9 +158,9 @@
                                                         <h1>DESKTOP NETWORK APPLIANCES</h1>
                                                     </div>
                                                     <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
+                                                        MORE
+                                                        <hr />
+                                                    </a>
                                                 </li>
 
                                                 <li class="pid-1">
@@ -175,9 +174,9 @@
                                                         <h1>DESKTOP NETWORK APPLIANCES</h1>
                                                     </div>
                                                     <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
+                                                        MORE
+                                                        <hr />
+                                                    </a>
                                                 </li>
 
                                                 <li class="pid-1">
@@ -191,9 +190,9 @@
                                                         <h1>DESKTOP NETWORK APPLIANCES</h1>
                                                     </div>
                                                     <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
+                                                        MORE
+                                                        <hr />
+                                                    </a>
                                                 </li>
 
                                                 <li class="pid-2">
@@ -207,9 +206,9 @@
                                                         <h1>DESKTOP NETWORK APPLIANCES PID-2</h1>
                                                     </div>
                                                     <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
+                                                        MORE
+                                                        <hr />
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -335,9 +334,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
 
@@ -353,9 +352,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
 
@@ -371,9 +370,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
 
@@ -389,9 +388,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
 
@@ -407,9 +406,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
 
@@ -425,9 +424,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
 
@@ -443,9 +442,9 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
 
@@ -461,12 +460,12 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                             </div>
                             <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
+                                MORE
+                                <hr />
+                            </a>
                         </div>
                     </div>
-                    <button class="load-more__btn mt-5 mb-5">SEE MORE<br/><img src="assets/materials/downron.svg"></button>
+                    <button class="load-more__btn mt-5 mb-5">SEE MORE<br /><img src="assets/materials/downron.svg"></button>
                 </div>
             </div>
         </div>
@@ -490,7 +489,7 @@
                                             <h1>NCI-200</h1>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                                             <div class="btn-line">See Details
-                                                <hr/>
+                                                <hr />
                                             </div>
                                         </div>
                                     </div>
@@ -507,7 +506,7 @@
                                             <h1>NCI-200</h1>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac fsdfsdfsdffffdsfsdfdsfdsfsdfds.</p>
                                             <div class="btn-line">See Details
-                                                <hr/>
+                                                <hr />
                                             </div>
                                         </div>
                                     </div>
@@ -524,7 +523,7 @@
                                             <h1>NCI-200</h1>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                                             <div class="btn-line">See Details
-                                                <hr/>
+                                                <hr />
                                             </div>
                                         </div>
                                     </div>
@@ -541,7 +540,7 @@
                                             <h1>NCI-200</h1>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
                                             <div class="btn-line">See Details
-                                                <hr/>
+                                                <hr />
                                             </div>
                                         </div>
                                     </div>
@@ -770,8 +769,8 @@
         </div>
 
         <video playsinline autoplay muted loop poster="assets/materials/footer-bg.png" class="d-xl-block d-none">
-      <source src="assets/materials/footer-bg.webm" type="video/mp4">
-    </video>
+            <source src="assets/materials/footer-bg.webm" type="video/mp4">
+        </video>
     </footer>
 
 
