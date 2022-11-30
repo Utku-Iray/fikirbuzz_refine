@@ -1,295 +1,24 @@
-<?php include 'database/connection.php'; ?>
+<?php include 'database/connection.php';
+
+if (isset($_GET["name"])) {
+  $name = $_GET["name"];
+
+  $sorgu = $vt->prepare("SELECT * FROM cblog WHERE page_url LIKE '%$name%'  AND (sort <> -1) AND (page_description <> 'test')");
+  $sorgu->execute();
+  $blog = $sorgu->fetchAll(PDO::FETCH_OBJ);
+}
+?>
 
 <!doctype html>
 <html lang="en">
 
-<head>
-  <title>Refine</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-  <meta name="author" content="arg0dev">
-  <meta name="theme-color" content="#06388a">
-  <meta name="copyright" content="arg0dev">
-  <meta http-equiv="content-language" content="en">
-  <link href='./assets/materials/og/fav64.ico' rel='icon' type='image/x-icon' />
-
-  <!-- arg0 OpenGraph tags -->
-  <meta content='website' property='og:type' />
-  <meta content='Refine Inc. | Your Title Here' property='og:title' />
-  <meta content='Refine Inc. | Your Title Here' property='og:site_name' />
-  <meta content='Refine Inc. | Your Description Here' property='og:description' />
-  <meta content='https://refine-tr.com' property='og:url' />
-  <meta content='https://refine-tr.com/assets/materials/og/og_image.jpg' property='og:image' />
-  <link href='./assets/materials/og/app180.png' rel='apple-touch-icon' sizes='180x180' />
-  <link href='./assets/materials/og/app192.png' rel='icon' sizes='192x192' type='image/png' />
-  <link href='./assets/materials/og/app32.png' rel='icon' sizes='32x32' type='image/png' />
-
-  <!-- Bootstrap CSS v5.0.2 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/scss/topbox.css" type="text/css">
-  <link rel="stylesheet" href="assets/scss/aos.css" type="text/css">
-  <link rel="stylesheet" href="assets/scss/main.css" type="text/css">
-
-</head>
+<?php include 'php/head.php' ?>
 
 
 <body>
 
-  <header>
-    <button class="navbar-toggler menu-reverse" type="button">
-      <div class="menu-icon" onclick="menuTrigger(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
-    </button>
-    <nav class="navbar navbar-expand-xl navbar-light custom-bg fixed-top bg-scroll">
-      <div class="container-fluid col-11">
-        <a class="navbar-brand" href="index.html"><img src="assets/materials/logo.svg"></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="about-us.html">About Us</a>
-            </li>
-            <li class="nav-item dropdown has-megamenu">
-              <a class="nav-link dropdown-toggle" href="prod-list.html">Products</a>
-              <div class="dropdown-menu megamenu pt-5" role="menu">
-                <div class="container-fluid col-xl-11">
-                  <div class="row">
-                    <ul class="col-xl-3 selection prodMegaFilter">
-                      <li data-filter="pid-1" class="pid-1 onTrigger adaptive active">Network Appliances</li>
-                      <li data-filter="pid-2" class="pid-2 adaptive">Telecom Datacenter Appliances</li>
-                      <li data-filter="pid-3" class="pid-3 adaptive">Industrial Communication Platforms</li>
-                      <li data-filter="pid-4" class="pid-4 adaptive">Vehicle Computers</li>
-                      <li data-filter="pid-5" class="pid-5 adaptive">Embedded Box PCs</li>
-                      <li data-filter="pid-6" class="pid-6 adaptive">Extension Modules</li>
-                    </ul>
-                    <div class="col-xl-9">
-                      <ul class="prodMegaSlider clearfix">
-                        <li class="pid-1">
-                          <div class="outbox">
-                            <a href="#">
-                              <div class="prod-tag">NCA-0123</div>
-                            </a>
-                            <img src="assets/materials/network-device.png">
-                          </div>
-                          <div class="description">
-                            <h1>DESKTOP NETWORK APPLIANCES</h1>
-                          </div>
-                          <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
-                        </li>
+  <?php include 'php/header.php' ?>
 
-                        <li class="pid-1">
-                          <div class="outbox">
-                            <a href="#">
-                              <div class="prod-tag">NCA-0123</div>
-                            </a>
-                            <img src="assets/materials/network-device.png">
-                          </div>
-                          <div class="description">
-                            <h1>DESKTOP NETWORK APPLIANCES</h1>
-                          </div>
-                          <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
-                        </li>
-
-                        <li class="pid-1">
-                          <div class="outbox">
-                            <a href="#">
-                              <div class="prod-tag">NCA-0123</div>
-                            </a>
-                            <img src="assets/materials/network-device.png">
-                          </div>
-                          <div class="description">
-                            <h1>DESKTOP NETWORK APPLIANCES</h1>
-                          </div>
-                          <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
-                        </li>
-
-                        <li class="pid-1">
-                          <div class="outbox">
-                            <a href="#">
-                              <div class="prod-tag">NCA-0123</div>
-                            </a>
-                            <img src="assets/materials/network-device.png">
-                          </div>
-                          <div class="description">
-                            <h1>DESKTOP NETWORK APPLIANCES</h1>
-                          </div>
-                          <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
-                        </li>
-
-                        <li class="pid-1">
-                          <div class="outbox">
-                            <a href="#">
-                              <div class="prod-tag">NCA-0123</div>
-                            </a>
-                            <img src="assets/materials/network-device.png">
-                          </div>
-                          <div class="description">
-                            <h1>DESKTOP NETWORK APPLIANCES</h1>
-                          </div>
-                          <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
-                        </li>
-
-                        <li class="pid-1">
-                          <div class="outbox">
-                            <a href="#">
-                              <div class="prod-tag">NCA-0123</div>
-                            </a>
-                            <img src="assets/materials/network-device.png">
-                          </div>
-                          <div class="description">
-                            <h1>DESKTOP NETWORK APPLIANCES</h1>
-                          </div>
-                          <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
-                        </li>
-
-                        <li class="pid-1">
-                          <div class="outbox">
-                            <a href="#">
-                              <div class="prod-tag">NCA-0123</div>
-                            </a>
-                            <img src="assets/materials/network-device.png">
-                          </div>
-                          <div class="description">
-                            <h1>DESKTOP NETWORK APPLIANCES</h1>
-                          </div>
-                          <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
-                        </li>
-
-                        <li class="pid-1">
-                          <div class="outbox">
-                            <a href="#">
-                              <div class="prod-tag">NCA-0123</div>
-                            </a>
-                            <img src="assets/materials/network-device.png">
-                          </div>
-                          <div class="description">
-                            <h1>DESKTOP NETWORK APPLIANCES</h1>
-                          </div>
-                          <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
-                        </li>
-
-                        <li class="pid-2">
-                          <div class="outbox">
-                            <a href="#">
-                              <div class="prod-tag">NCA-0123</div>
-                            </a>
-                            <img src="assets/materials/network-device.png">
-                          </div>
-                          <div class="description">
-                            <h1>DESKTOP NETWORK APPLIANCES PID-2</h1>
-                          </div>
-                          <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                            MORE
-                            <hr />
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- dropdown-mega-menu.// -->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="single-page.html">PCB Design & Manufacturing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="blog-page.html">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact Us</a>
-            </li>
-          </ul>
-
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item hiddenSearch">
-              <div class="dropdown mini-searchbox">
-                <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" aria-expanded="false" src="assets/materials/search-icon.svg">
-
-                <ul class="dropdown-menu search-box d-flex" aria-labelledby="dropdownMenuLink">
-                  <form class="form mx-auto">
-                    <div class="form-group">
-                      <input type="text" placeholder="Type Something">
-                      <button type="submit"><img src="assets/materials/send-icon.svg" alt=""></button>
-                    </div>
-                  </form>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item ms-2">
-              <div class="dropdown lang-list">
-                <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" src="assets/materials/lang.svg">
-
-                <ul class="dropdown-menu lang-menu d-flex" aria-labelledby="dropdownMenuLink">
-                  <li><a class="dropdown-item" href="#"><img src="assets/materials/tr.svg" width="24px"></a></li>
-                  <li><a class="dropdown-item" href="#"><img src="assets/materials/en.svg" width="24px"></a></li>
-                  <li><a class="dropdown-item" href="#"><img src="assets/materials/ar.svg" width="24px"></a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item ms-2">
-              <a href="assets/materials/sample.pdf" class="btn-green lightbox" aria-haspopup="dialog" title="Sample.pdf">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
-            </li>
-            <li class="nav-item ms-2">
-              <a class="btn-white login">Reseller Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- MOBILE NAV -->
-
-
-    <div id="sideNav" class="sidenav-m">
-      <div class="menu-items">
-        <img src="assets/materials/logo.svg" class="img-fluid mb-5">
-        <a href="about-us.html">About Us</a>
-        <a href="prod-list.html">Products</a>
-        <a href="single-page.html">PCB Design & Manufacturing</a>
-        <a href="blog-page.html">Blog</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="assets//materials/sample.pdf" aria-haspopup="dialog" title="Sample.pdf" class="btn-green lightbox">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
-        <a href="#" class="btn-white login">Reseller Login</a>
-        <div class="langArea d-flex">
-          <a href="#" class="me-4"><img src="assets/materials/tr.svg" width="24px"></a>
-          <a href="#" class="me-4"><img src="assets/materials/en.svg" width="24px"></a>
-          <a href="#" class="me-4"><img src="assets/materials/ar.svg" width="24px"></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- MOBILE NAV -->
-
-  </header>
 
   <main>
     <div class="banner dark">
@@ -300,13 +29,11 @@
         <div class="row align-content-center align-items-center">
           <div class="col-xl-7">
             <div class="breadcrumb" data-aos="fade-in">
-              <a href="#">Home</a><a href="#">Blog</a>
+              <a href="index.php">Home</a><a href="blog-page.php">Blog</a><a><?= $blog[0]->iname ?></a>
             </div>
             <div class="title" data-aos="fade-right">
-              <h1>What is Cloud Computing?</h1>
-              <p>Cloud computing with its simplest definition; provides support to store, present and perform all
-                technology-based data faster. It can be defined as the delivery of computing services over the Internet
-                (“cloud”), including servers, storage, databases, networking, software, analytics and intelligence. </p>
+              <h1><?= $blog[0]->iname ?></h1>
+              <p><?= $blog[0]->ikisa_icerik ?></p>
             </div>
           </div>
         </div>
@@ -315,65 +42,18 @@
     <div class="index-sec-1 pb-0">
       <div class="container-fluid col-xl-9">
         <div class="textArea row pb-5">
-          <h1 class="mb-5">Which Companies Use Cloud Computing?</h1>
+          <h1 class="mb-5"><?= $blog[0]->iname ?></h1>
           <div class="col-xl-1 d-xl-block d-none">
             <hr>
           </div>
           <div class="col-xl-11 ms-auto pb-3">
-            <p>
-              Organizations of all types, sizes, and industries use the cloud in a wide variety of areas, including data
-              backup, email, virtual desktops, software development, testing, big data analytics, and customer-facing
-              web applications. Financial services companies use cloud computing systems to support real-time fraud
-              detection and prevention. Video game developers use the cloud to deliver online games to millions of
-              players around the world.
-            </p><br />
-
-            <h2>What are the Benefits of Cloud Computing?</h2><br />
-
-            <p>
-              Cloud computing is very advantageous for businesses. Among these reasons:<br /><br />
-
-              <b>Cost</b><br />
-              Cloud computing eliminates the capital cost of purchasing hardware and software, and setting up and
-              operating data centers on-site.
-              <br /><br />
-              <b>Speed</b><br />
-              Most cloud computing services are self-service and on-demand; therefore, even large amounts of computing
-              resources can typically be provisioned in just minutes, giving businesses a lot of flexibility and
-              reducing the pressure on capacity planning.
-              <br /><br />
-              <b>Global scale</b><br />
-              The benefits of cloud computing services include the ability to scale flexibly. In the cloud, this means
-              providing the right amount of IT resources (for example, more or less compute power, storage, bandwidth)
-              just when they are needed and in the right geographic location.
-              <br /><br />
-              <b>Reliability</b><br />
-              Cloud computing data can be mirrored across multiple backup sites in the cloud provider’s network, making
-              data backup, disaster recovery, and business continuity easier and cheaper.
-              <br /><br />
-              <b>Security</b><br />
-              Many cloud providers offer a broad set of policies, technologies, and controls that strengthen your
-              overall security posture and help protect your data, applications, and infrastructure from potential
-              threats.
-              <br /><br />
-
-            </p><br />
-
-            <h2>Supply chain and logistics</h2><br />
-
-            <p>
-              Our experienced team can offer the easiest logistics and shipping solutions tailored to the demands of our
-              clients in Europe, Middle East and Central Asia.<br /><br />
-
-              Our company handles numerous shipments originating from Shenzhen, Taiwan and Hong Kong. Providing cheap
-              and reliable shipping solutions.
-            </p>
+            <?= $blog[0]->iicerik ?>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="index-sec-2 pb-0 featured-device bg-white">
+    <!-- <div class="index-sec-2 pb-0 featured-device bg-white">
       <div class="container-fluid">
         <div class="row pb-5">
           <div class="col-xl-4 deviceArea p-0">
@@ -749,7 +429,7 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="index-sec-3">
       <div class="container-fluid col-xl-10">

@@ -2,17 +2,23 @@
 
 include 'database/connection.php';
 
-if (isset($_GET["name"])) {
-    # code...
+$lorem = 'Lorem ipsum';
+
+if (isset($_GET["product"])) {
+    $product = $_GET["product"];
+
+    $sorgu = $vt->prepare("SELECT * FROM curunler WHERE page_url = '$product' AND igenel_bakis NOT LIKE '%$lorem%'  AND sort <> -1 AND page_description <> 'test' AND user <> 'root' AND language = '0' GROUP BY page_url");
+    $sorgu->execute();
+    $productItem = $sorgu->fetchAll(PDO::FETCH_OBJ);
+
+    $prodCategory = $productItem[0]->ikategori;
+
+    $sorgu = $vt->prepare("SELECT * FROM curunler WHERE ikategori = '$prodCategory' AND igenel_bakis NOT LIKE '%$lorem%'  AND sort <> -1 AND page_description <> 'test' AND user <> 'root' AND language = '0' GROUP BY page_url");
+    $sorgu->execute();
+    $relatedProductList = $sorgu->fetchAll(PDO::FETCH_OBJ);
+} else {
+    //* kategoriye geri atıcak 
 }
-
-
-$sorgu = $vt->prepare("SELECT * FROM cblog  WHERE ");
-$sorgu->execute();
-$blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
-
-
-
 
 ?>
 <!doctype html>
@@ -34,20 +40,20 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                 <div class="row align-content-center align-items-center">
                     <div class="col-xl-7">
                         <div class="breadcrumb" data-aos="fade-in">
-                            <a href="#">Products</a><a href="#">Network Appliances</a>
+                            <a>Products</a><a href="#">Network Appliances</a><a><?= $productItem[0]->iname ?></a>
                         </div>
                         <div class="title">
-                            <h1 data-aos="fade-right">NCI-200</h1>
-                            <p data-aos="fade-right">Fanless x86 Desktop Network Appliance with Wide Operating Temperature</p>
-                            <div class="datasheets d-md-flex col-xl-8" data-aos="fade-up">
+                            <h1 data-aos="fade-right"><?= $productItem[0]->iname ?></h1>
+                            <p data-aos="fade-right"><?= $productItem[0]->ikisa_aciklama ?></p>
+                            <!-- <div class="datasheets d-md-flex col-xl-8" data-aos="fade-up">
                                 <a href="assets/materials/sample.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Sample.pdf">Datasheet <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
 
                                 <a href="assets/materials/sample.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Sample.pdf">User Manual <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-xl-4 ms-xl-auto mx-auto text-center mt-5 mt-xl-auto">
-                        <img src="assets/materials/nci-200.png" class="img-fluid">
+                        <img src="https://projects.fikirbuzzprojects.com/refine/img/i/products/<?= $productItem[0]->iresim ?>" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -57,49 +63,20 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                 <div class="textArea row pb-5">
                     <div class="mb-5 col-xl-6 kf">
                         <h1><img src="assets/materials/kf-ico.svg" class="me-4">Key Features</h1>
-                        <ul class="mt-5">
-                            <li>
-                                Intel® Atom™ processor C2308/C2508 (Codenamed “Rangeley”)
-                            </li>
-                            <li>
-                                Onboard 4 x GbE RJ45, 2 x GbE SFP (SKU A)
-                            </li>
-                            <li>
-                                Support Intel QuickAssist crypto acceleration
-                            </li>
-                            <li>
-                                Wide operating temperature -20~55ºC
-                            </li>
-                            <li>
-                                Support 2 pairs of Gen.3 LAN bypass
-                            </li>
-                            <li>
-                                1.5KV magnetic isolation protection
-                            </li>
-                            <li>
-                                4KV ESD protection
-                            </li>
-                            <li>
-                                1 x DB-9 for serial management, 1 x optional DB-9 serial port
-                            </li>
-                            <li>
-                                2 x internal PCIe x1 slots for expansion
-                            </li>
-                        </ul>
+                        <?= $productItem[0]->iana_ozellikler ?></p>
                     </div>
                     <div class="mb-5 col-xl-5 ms-auto ov">
                         <h1>Overview</h1>
                         <div class="bg-white">
                             <p id="limiter" class="p-5">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris odio sem, finibus non urna at, laoreet venenatis orci. Curabitur eu dignissim ipsum. Cras posuere congue lorem vel pretium. Quisque augue justo, dictum eu neque a, ornare scelerisque ante.
-                                Nunc vitae justo nec neque rutrum rutrum. Suspendisse tincidunt pulvinar augue, vel rhoncus nibh feugiat in. Nunc pretium a ex sit amet vehicula. Suspendisse sit amet pulvinar leo.<br /><br />
-                            </p>
+                                <?= $productItem[0]->igenel_bakis ?></p>
                         </div>
                     </div>
 
                     <div class="featured-device bg-transparent">
                         <div class="col-xl-12 my-auto mx-auto pt-5 pb-5">
                             <div class="accordion" id="accordionExample">
+
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingOne">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -117,12 +94,42 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                                                 <h5>Memory Socket</h5>
                                             </div>
                                             <div class="col-xl-8 ms-auto text-end">
-                                                <h5>SEC 2</h5>
-                                                <h5>SoC</h5>
-                                                <h5>AMI SPI Flash BIOS</h5>
-                                                <h5>Single Channel DDR3 1333 MHz, 1.5 V, ECC</h5>
-                                                <h5>8 GB</h5>
-                                                <h5>1 x 204-pin SODIMM</h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->icpu != "") echo $productItem[0]->icpu;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->ichipset != "") echo $productItem[0]->ichipset;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->ibios != "") echo $productItem[0]->ibios;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->imemory_technology != "") echo $productItem[0]->imemory_technology;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->imemory_capacity != "") echo $productItem[0]->imemory_capacity;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->imemory_socket != "") echo $productItem[0]->imemory_socket;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -140,7 +147,12 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                                                 <h5>SATA Storage</h5>
                                             </div>
                                             <div class="col-xl-8 ms-auto text-end">
-                                                <h5>1x 2.5” Bay - SSD Only (Optional)</h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->isata_storage != "") echo $productItem[0]->isata_storage;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -163,12 +175,40 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                                                 <h5>TPM</h5>
                                             </div>
                                             <div class="col-xl-8 ms-auto text-end">
-                                                <h5>6x GbE RJ45 Intel® i211 (By SKU)</h5>
-                                                <h5>2x Pairs of Gen 3 (By SKU)</h5>
-                                                <h5>1 x RJ45</h5>
-                                                <h5>HDMI port x 1</h5>
-                                                <h5>2 x Type A</h5>
-                                                <h5>Yes</h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->imax_lan != "") echo $productItem[0]->imax_lan;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->ibypass != "") echo $productItem[0]->ibypass;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->iconsole != "") echo $productItem[0]->iconsole;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->idisplay_output != "") echo $productItem[0]->idisplay_output;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->iusb_3_0 != "") echo $productItem[0]->iusb_3_0;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5> <?php
+                                                        if ($productItem[0]->itpm != "") echo $productItem[0]->itpm;
+                                                        else echo '-';
+                                                        ?></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -190,11 +230,36 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                                                 <h5>System cooling</h5>
                                             </div>
                                             <div class="col-xl-8 ms-auto text-end">
-                                                <h5>1 x DC Jack</h5>
-                                                <h5>12V 3A 36W Power Adapter</h5>
-                                                <h5>1x Mini-PCIe (with PCIe/USB Signal)</h5>
-                                                <h5>1 * Reset Button</h5>
-                                                <h5>Fanless, 1x Cooling Fan (By Configuration)</h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->ipower_input != "") echo $productItem[0]->ipower_input;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->itype_watt != "") echo $productItem[0]->itype_watt;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->iexpansion != "") echo $productItem[0]->iexpansion;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->ireset != "") echo $productItem[0]->ireset;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->isystem_cooling != "") echo $productItem[0]->isystem_cooling;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -212,7 +277,12 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                                                 <h5>Certifications</h5>
                                             </div>
                                             <div class="col-xl-8 ms-auto text-end">
-                                                <h5>RoHS</h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->icertifications != "") echo $productItem[0]->icertifications;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -236,13 +306,47 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                                                 <h5>Internal RTC</h5>
                                             </div>
                                             <div class="col-xl-8 ms-auto text-end">
-                                                <h5>-20°C to 70°C</h5>
-                                                <h5>0°C to 40°C</h5>
-                                                <h5>5% to 95% (non-condensing)</h5>
-                                                <h5>230 mm x 44 mm x 170 mm (9.06" x 1.73" x 6.69")</h5>
-                                                <h5>1.2 kg (2.64 lbs)</h5>
-                                                <h5>Yes</h5>
-                                                <h5>Yes</h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->istorage_temperature != "") echo $productItem[0]->istorage_temperature;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->ioperating_temperature != "") echo $productItem[0]->ioperating_temperature;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->ioperating_humidity != "") echo $productItem[0]->ioperating_humidity;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->idimensions_w_x_h_x_d_ != "") echo $productItem[0]->idimensions_w_x_h_x_d_;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->iweight != "") echo $productItem[0]->iweight;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->iwatchdog != "") echo $productItem[0]->iwatchdog;
+                                                    else echo '-';
+                                                    ?></h5>
+                                                <h5>
+                                                    <?php
+                                                    if ($productItem[0]->iinternal_rtc != "") echo $productItem[0]->iinternal_rtc;
+                                                    else echo '-';
+                                                    ?>
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -260,69 +364,25 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                     <div class="col-xl-12 ms-auto text-end title">
                         <h1>Related Products <img class="ms-2" src="assets/materials/smb.svg"></h1>
                     </div>
-                    <div class="col-xl-3 col-lg-4 mt-5 inp">
-                        <div class="full-box">
-                            <div class="outbox">
-                                <img src="assets/materials/network-device.png">
+                    <?php
+                    foreach ($relatedProductList as $relatedProd) { ?>
+                        <div class="col-xl-3 col-lg-4 mt-5 inp">
+                            <div class="full-box">
+                                <div class="outbox">
+                                    <img src="assets/materials/network-device.png">
+                                </div>
+                                <div class="description">
+                                    <h1><?= $relatedProd->iname ?></h1>
+                                    <p><?= $relatedProd->ikisa_aciklama ?></p>
+                                </div>
+                                <a href="prod-in.php?product=<?= $relatedProd->page_url ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                                    MORE
+                                    <hr />
+                                </a>
                             </div>
-                            <div class="description">
-                                <h1>NCA-0123</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
                         </div>
-                    </div>
+                    <?php } ?>
 
-                    <div class="col-xl-3 col-lg-4 mt-5 inp">
-                        <div class="full-box">
-                            <div class="outbox">
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>NCA-0123</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-4 mt-5 inp">
-                        <div class="full-box">
-                            <div class="outbox">
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>NCA-0123</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-lg-4 mt-5 inp">
-                        <div class="full-box">
-                            <div class="outbox">
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>NCA-0123</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
