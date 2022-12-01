@@ -16,8 +16,6 @@ if (isset($_GET["product"])) {
     $sorgu = $vt->prepare("SELECT * FROM curunler WHERE ikategori = '$prodCategory' AND igenel_bakis NOT LIKE '%$lorem%'  AND sort <> -1 AND page_description <> 'test' AND user <> 'root' AND language = '0' GROUP BY page_url");
     $sorgu->execute();
     $relatedProductList = $sorgu->fetchAll(PDO::FETCH_OBJ);
-} else {
-    //* kategoriye geri atıcak 
 }
 
 ?>
