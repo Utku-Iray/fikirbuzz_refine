@@ -1,4 +1,10 @@
-<?php include 'database/connection.php'; ?>
+<?php include 'database/connection.php';
+
+$sorgu = $vt->prepare("SELECT * FROM cblog  WHERE (sort <> -1) AND (page_description <> 'test') AND (user <> 'root') GROUP BY page_url");
+$sorgu->execute();
+$blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -81,7 +87,7 @@
                                 <div class="slide--incontent trigs-m">
                                     <div class="next-s my-auto pb-3 pt-3 d-xl-flex d-none justify-content-end">
                                         <a href="#" class="p-0 my-auto d-flex align-content-center align-items-center"><span>1- 17 Years of Experience
-                                               </span>
+                                            </span>
                                             <img class="ms-3" src="assets/materials/1-slider.jpg"></a>
                                     </div>
 
@@ -563,7 +569,7 @@
                             <li data-filter="pid-1" class="pid-1 active">Blog</li>
                             <li data-filter="pid-2" class="pid-2">Event</li>
                             <li data-filter="pid-3" class="pid-3">News</li>
-                   
+
                         </ul>
                     </div>
                 </div>
@@ -571,121 +577,64 @@
             <div class="container-fluid col-xl-10 pt-5">
                 <div class="row">
                     <ul class="newSlider clearfix">
-                        <div class="row justify-content-between pid-1 d-flex">
-                            <li class="col-xl-6">
-                                <a href="single-blog.php">
-                                    <div class="flatten d-xl-flex">
-                                        <div class="outbox me-xl-4">
-                                            <img src="assets/materials/sec-img.png">
-                                        </div>
-                                        <div class="description mt-xl-0 mt-4">
-                                            <h1>News #1</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
+                        <div class="row justify-content-between pid-1  d-flex">
+                            <?php for ($i = 0; $i < 4; $i++) { ?>
+                                <li class="col-xl-6">
+                                    <a href="single-blog.php">
 
-                            <li class="col-xl-6">
-                                <a href="single-blog.php">
-                                    <div class="flatten d-xl-flex">
-                                        <div class="outbox me-xl-4">
-                                            <img src="assets/materials/sec-img.png">
+                                        <div class="flatten d-xl-flex">
+                                            <div class="outbox me-xl-4 col-md-7">
+                                                <img src="https://projects.fikirbuzzprojects.com/refine/img/i/<?= $blogList[$i]->igorsel ?>">
+                                            </div>
+                                            <div class="mt-xl-0 mt-4 col-md-5">
+                                                <h1><?= $blogList[$i]->iname  ?></h1>
+                                                <p style="   overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"    > <?= $blogList[$i]->ikisa_icerik  ?></p>
+                                            </div>
                                         </div>
-                                        <div class="description mt-xl-0 mt-4">
-                                            <h1>News #1</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
+                                    </a>
+                                </li>
+                            <?php }  ?>
 
-                            <li class="col-xl-6">
-                                <a href="single-blog.php">
-                                    <div class="flatten d-xl-flex">
-                                        <div class="outbox me-xl-4">
-                                            <img src="assets/materials/sec-img.png">
-                                        </div>
-                                        <div class="description mt-xl-0 mt-4">
-                                            <h1>News #1</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="col-xl-6">
-                                <a href="single-blog.php">
-                                    <div class="flatten d-xl-flex">
-                                        <div class="outbox me-xl-4">
-                                            <img src="assets/materials/sec-img.png">
-                                        </div>
-                                        <div class="description mt-xl-0 mt-4">
-                                            <h1>News #1</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
 
                         </div>
+                        <div class="row justify-content-between  pid-2  d-flex">
+                            <?php for ($i = 5; $i < 9; $i++) { ?>
+                                <li class="col-xl-6">
+                                    <a href="single-blog.php">
 
-                        <div class="row justify-content-between pid-2 pid-3 d-flex">
-                            <li class="col-xl-6">
-                                <a href="single-blog.php">
-                                    <div class="flatten d-xl-flex">
-                                        <div class="outbox me-xl-4">
-                                            <img src="assets/materials/sec-img.png">
+                                        <div class="flatten d-xl-flex">
+                                            <div class="outbox me-xl-4 col-md-7">
+                                                <img src="https://projects.fikirbuzzprojects.com/refine/img/i/<?= $blogList[$i]->igorsel ?>">
+                                            </div>
+                                            <div class="mt-xl-0 mt-4 col-md-5">
+                                                <h1><?= $blogList[$i]->iname  ?></h1>
+                                                <p style="   overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"    > <?= $blogList[$i]->ikisa_icerik  ?></p>
+                                            </div>
                                         </div>
-                                        <div class="description mt-xl-0 mt-4">
-                                            <h1>Event #1</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
+                                    </a>
+                                </li>
+                            <?php }  ?>
 
-                            <li class="col-xl-6">
-                                <a href="single-blog.php">
-                                    <div class="flatten d-xl-flex">
-                                        <div class="outbox me-xl-4">
-                                            <img src="assets/materials/sec-img.png">
-                                        </div>
-                                        <div class="description mt-xl-0 mt-4">
-                                            <h1>News #1</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
 
-                            <li class="col-xl-6">
-                                <a href="single-blog.php">
-                                    <div class="flatten d-xl-flex">
-                                        <div class="outbox me-xl-4">
-                                            <img src="assets/materials/sec-img.png">
-                                        </div>
-                                        <div class="description mt-xl-0 mt-4">
-                                            <h1>News #1</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
+                        </div>
+                        <div class="row justify-content-between  pid-3 d-flex">
+                            <?php for ($i = 14; $i < 18; $i++) { ?>
+                                <li class="col-xl-6">
+                                    <a href="single-blog.php">
 
-                            <li class="col-xl-6">
-                                <a href="single-blog.php">
-                                    <div class="flatten d-xl-flex">
-                                        <div class="outbox me-xl-4">
-                                            <img src="assets/materials/sec-img.png">
+                                        <div class="flatten d-xl-flex">
+                                            <div class="outbox me-xl-4 col-md-7">
+                                                <img src="https://projects.fikirbuzzprojects.com/refine/img/i/<?= $blogList[$i]->igorsel ?>">
+                                            </div>
+                                            <div class="mt-xl-0 mt-4 col-md-5">
+                                                <h1><?= $blogList[$i]->iname  ?></h1>
+                                                <p style="   overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"    > <?= $blogList[$i]->ikisa_icerik  ?></p>
+                                            </div>
                                         </div>
-                                        <div class="description mt-xl-0 mt-4">
-                                            <h1>News #1</h1>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
+                                    </a>
+                                </li>
+                            <?php }  ?>
+
 
                         </div>
                     </ul>
@@ -721,7 +670,7 @@
         <!-- Mobile Fast Contact Nav -->
 
 
-       
+
         <!-- Login Area -->
 
         <!--Push Button-->
