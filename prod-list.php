@@ -3,15 +3,15 @@ include 'database/connection.php';
 
 
 $lorem = 'Lorem ipsum';
-
+// SELECT * FROM `curunler` WHERE `ikategori` = "4"
 if (isset($_GET['cid'])) {
     $cid = $_GET['cid'];
 
-    $sorgu = $vt->prepare("SELECT * FROM curunler WHERE ikategori = '$cid' AND igenel_bakis NOT LIKE '%$lorem%'  AND sort <> -1 AND page_description <> 'test'  AND language = '0' GROUP BY page_url");
+    $sorgu = $vt->prepare("SELECT * FROM curunler WHERE ikategori = '$cid' AND igenel_bakis NOT LIKE '%$lorem%' AND  (sort <> -1) AND (page_description <> 'test') AND (user <> 'root') ORDER BY cdate DESC");
     $sorgu->execute();
     $productItems = $sorgu->fetchAll(PDO::FETCH_OBJ);
 
-    $sorgu = $vt->prepare("SELECT * FROM ckategoriler WHERE cid = '$cid'  AND sort <> -1 AND page_description <> 'test'  AND language = '0' GROUP BY page_url");
+    $sorgu = $vt->prepare("SELECT  * FROM ckategoriler WHERE cid = '$cid'  AND (sort <> -1) AND (page_description <> 'test') AND (user <> 'root')  AND language = '1'  ORDER BY cdate DESC");
     $sorgu->execute();
     $category = $sorgu->fetchAll(PDO::FETCH_OBJ);
 }
@@ -47,7 +47,7 @@ if (isset($_GET['cid'])) {
                         </div>
                     </div>
                     <div class="col-xl-4 ms-xl-auto mx-auto text-center mt-5 mt-xl-auto">
-                        <img src="assets/materials/prod.png" class="img-fluid">
+                        <img src="assets/<?= $category[0]->iresim ?>" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@ if (isset($_GET['cid'])) {
                                 <div class="outbox">
                                     <a href="#">
                                     </a>
-                                    <img src="assets/materials/network-device.png">
+                                    <img src="assets/<?= $category[0]->iresim ?>">
                                 </div>
                                 <div class="description">
                                     <h1><?= $prodItem->iname ?></h1>

@@ -3,11 +3,21 @@
 include 'database/connection.php';
 
 
-$sorgu = $vt->prepare("SELECT * FROM cblog  WHERE (sort <> -1) AND (page_description <> 'test') AND (user <> 'root') GROUP BY page_url");
+$sorgu = $vt->prepare("SELECT * FROM cblog  WHERE (sort <> -1) AND (page_description <> 'test') AND (user <> 'root') AND igorsel <> '' ORDER BY cdate DESC");
 $sorgu->execute();
 $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
 
+$blogCount = count($blogList);
 
+$dupHandler = array();
+$filteredBlogList = array();
+
+for ($i = 0; $i < $blogCount; $i++) {
+  if (!in_array(trim($blogList[$i]->cid), $dupHandler)) {
+    array_push($dupHandler, trim($blogList[$i]->cid));
+    array_push($filteredBlogList, $blogList[$i]);
+  }
+}
 
 
 ?>
@@ -46,7 +56,7 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
       <div class="container-fluid col-xl-10">
         <div class="row list clearfix">
           <div class="col-xl-12 ms-auto text-end title mb-5">
-            <h1>Related Products <img class="ms-2" src="assets/materials/smb.svg"></h1>
+            <h1>Highlights <img class="ms-2" src="assets/materials/smb.svg"></h1>
           </div>
           <div class="boxed-content mx-auto mx-xl-0 p-0 row col-xl-7">
             <div class="col-xl-6 inp mb-4 mb-xl-0">
@@ -173,7 +183,7 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
           <div class="boxed-content mx-auto mx-xl-0 p-0 row col-xl-12">
 
             <?php
-            foreach ($blogList as $singleBlog) { ?>
+            foreach ($filteredBlogList as $singleBlog) { ?>
               <div class="col-xl-4 inp mb-5">
                 <div class="full-box">
                   <div class="outbox">

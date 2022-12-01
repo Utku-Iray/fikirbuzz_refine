@@ -1,21 +1,43 @@
 <?php
-$sorgu = $vt->prepare("SELECT * FROM ckategoriler  WHERE (sort <> -1) AND (page_description <> 'test') AND (user <> 'root')  AND language = '0' GROUP BY page_url");
+$sorgu = $vt->prepare("SELECT * FROM ckategoriler  WHERE (sort <> -1) AND (page_description <> 'test') AND (user <> 'root')  AND language = '1' ORDER BY cdate DESC");
 $sorgu->execute();
 $categoryList = $sorgu->fetchAll(PDO::FETCH_OBJ);
 
-$mainCategoryList = array();
+
 
 $categoryCount = count($categoryList);
 
+
+$mainCategoryList = array();
+$mainCatIDList = array();
 for ($i = 0; $i < $categoryCount; $i++) {
     if ($categoryList[$i]->up == "0") {
         if (!in_array($categoryList[$i]->iname, $mainCategoryList)) {
-            array_push($mainCategoryList, [$categoryList[$i]->iname, $categoryList[$i]->cid]);
+            array_push($mainCategoryList, $categoryList[$i]->iname);
+            array_push($mainCatIDList, $categoryList[$i]->cid);
+        }
+    }
+}
+$mainCatCount = count($mainCategoryList);
+$mainCatIDCount = count($mainCatIDList);
+
+
+$subCategoryList = array();
+
+$subCategoryCidList = array();
+
+for ($j = 0; $j < $mainCatIDCount; $j++) {
+    for ($k = 0; $k < $categoryCount; $k++) {
+        if ($categoryList[$k]->up == $mainCatIDList[$j]) {
+            if (!in_array($categoryList[$k]->cid, $subCategoryCidList)) {
+                array_push($subCategoryCidList, $categoryList[$k]->cid);
+                array_push($subCategoryList, [$categoryList[$k]->cid, $categoryList[$k]->iname, $categoryList[$k]->up, $categoryList[$k]->iresim]);
+            }
         }
     }
 }
 
-$mainCatCount = count($mainCategoryList);
+$subCategoryCount = count($subCategoryList);
 
 ?>
 
@@ -33,7 +55,7 @@ $mainCatCount = count($mainCategoryList);
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="about-us.php">About Us</a>
+                        <a class="nav-link" aria-current="page" href="about-us.php">
                     </li>
 
                     <li class="nav-item dropdown has-megamenu">
@@ -46,28 +68,28 @@ $mainCatCount = count($mainCategoryList);
                                         <?php
                                         for ($i = 0; $i < $mainCatCount; $i++) { ?>
                                             <li data-filter="pid-<?= $i + 1 ?>" class="<?php if ($i + 1 == 1) echo 'active onTrigger';
-                                                                                        else echo ''; ?> pid-<?= $i + 1 ?> adaptive"><?= $mainCategoryList[$i][0] ?></li>
+                                                                                        else echo ''; ?> pid-<?= $i + 1 ?> adaptive"><?= $mainCategoryList[$i] ?></li>
                                         <?php  } ?>
                                     </ul>
                                     <div class="col-xl-9">
                                         <ul class="prodMegaSlider clearfix">
 
                                             <?php
-                                            for ($i = 0; $i < $mainCatCount; $i++) {
+                                            for ($i = 0; $i < $mainCatIDCount; $i++) {
 
-                                                for ($k = 0; $k < $categoryCount; $k++) {
-                                                    if ($mainCategoryList[$i][1] == $categoryList[$k]->up) { ?>
+                                                for ($k = 0; $k < $subCategoryCount; $k++) {
+                                                    if ($subCategoryList[$k][2] == $mainCatIDList[$i]) { ?>
                                                         <li class="pid-<?= $i + 1 ?>">
                                                             <div class="outbox">
                                                                 <a href="#">
-                                                                    <div class="prod-tag"><?= $mainCategoryList[$i][0] ?></div>
+                                                                    <div class="prod-tag"><?= $mainCategoryList[$i] ?></div>
                                                                 </a>
-                                                                <img src="assets/materials/network-device.png">
+                                                                <img src="assets/<?= $subCategoryList[$k][3] ?>" style="width: 200px;">
                                                             </div>
                                                             <div class="description">
-                                                                <h1><?= $categoryList[$k]->iname ?></h1>
+                                                                <h1><?= $subCategoryList[$k][1] ?></h1>
                                                             </div>
-                                                            <a href="prod-list.php?cid=<?= $categoryList[$k]->cid ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                                                            <a href="prod-list.php?cid=<?= $subCategoryList[$k][0] ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
                                                                 MORE
                                                                 <hr />
                                                             </a>
@@ -75,6 +97,7 @@ $mainCatCount = count($mainCategoryList);
                                             <?php  }
                                                 }
                                             }   ?>
+
 
 
                                         </ul>
@@ -85,7 +108,7 @@ $mainCatCount = count($mainCategoryList);
                         <!-- dropdown-mega-menu.// -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" target="_blank"  href="https://tr.transcend-info.com/">Transcend</a>
+                        <a class="nav-link" aria-current="page" target="_blank" href="https://tr.transcend-info.com/">Transcend</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" target="_blank" href="https://global1.shuttle.com/">Shuttle</a>
