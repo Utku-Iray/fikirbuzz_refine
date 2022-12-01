@@ -580,7 +580,7 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                         <div class="row justify-content-between pid-1  d-flex">
                             <?php for ($i = 0; $i < 4; $i++) { ?>
                                 <li class="col-xl-6">
-                                    <a href="single-blog.php">
+                                    <a  href="single-blog.php?name=<?= $blogList[$i]->page_url  ?>">
 
                                         <div class="flatten d-xl-flex">
                                             <div class="outbox me-xl-4 col-md-7">

@@ -1,3 +1,4 @@
+<?php include 'database/connection.php'; ?>
 <!doctype html>
 <html lang="en">
 
