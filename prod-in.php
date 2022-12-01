@@ -53,7 +53,7 @@ if (isset($_GET["product"])) {
                         </div>
                     </div>
                     <div class="col-xl-4 ms-xl-auto mx-auto text-center mt-5 mt-xl-auto">
-                        <img src="https://projects.fikirbuzzprojects.com/refine/img/i/products/<?= $productItem[0]->iresim ?>" class="img-fluid">
+                        <img src="https://projects.fikirbuzzprojects.com/refine/img/i/products/<?= $productItem[0]->iresim ?>assets/materials/prod.png" class="img-fluid">
                     </div>
                 </div>
             </div>

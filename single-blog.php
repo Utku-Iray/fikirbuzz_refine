@@ -525,7 +525,7 @@ if (isset($_GET["name"])) {
         <div class="col-xl-4 text-center text-xl-start mb-5">
           <h4 class="mb-5 ms-xl-5 ps-xl-1"><img class="me-4" src="assets/materials/post-ico.svg">How Can We Help?</h4>
           <div class="mini-box d-flex justify-content-center justify-content-xl-start mt-3">
-            <a href="single-page.html">
+            <a href="single-page.php">
               <div class="text-center mb me-3">
                 <div class="incontent">
                   <img src="assets/materials/info.svg">
@@ -533,7 +533,7 @@ if (isset($_GET["name"])) {
                 </div>
               </div>
             </a>
-            <a href="single-page.html">
+            <a href="single-page.php">
               <div class="text-center mb">
                 <div class="incontent">
                   <img src="assets/materials/product-ico.svg">
@@ -567,19 +567,19 @@ if (isset($_GET["name"])) {
             <h4 class="mb-3 d-xl-flex"><span class="order-1">Menu</span>
               <hr class="mx-xl-2 mx-auto" />
             </h4>
-            <a href="about-us.html">
+            <a href="about-us.php">
               <p>About Us</p>
             </a>
-            <a href="prod-list.html">
+            <a href="prod-list.php">
               <p>Products</p>
             </a>
-            <a href="single-page.html">
+            <a href="single-page.php">
               <p>PCB Design & Manufacturing</p>
             </a>
-            <a href="blog-page.html">
+            <a href="blog-page.php">
               <p>Blog</p>
             </a>
-            <a href="contact.html">
+            <a href="contact.php">
               <p>Contact Us</p>
             </a>
           </div>
@@ -642,9 +642,9 @@ if (isset($_GET["name"])) {
           <p>© Copyright <span id="year"></span> Refine Inc.</p>
         </div>
         <div class="col-xl-6 ms-auto text-xl-end text-center">
-          <a href="single-page.html">Privacy</a>
-          <a href="single-page.html">Terms of Use</a>
-          <a href="single-page.html">Sitemap</a>
+          <a href="single-page.php">Privacy</a>
+          <a href="single-page.php">Terms of Use</a>
+          <a href="single-page.php">Sitemap</a>
         </div>
       </div>
     </div>

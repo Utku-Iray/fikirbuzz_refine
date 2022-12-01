@@ -67,7 +67,7 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                     <img src="assets/materials/calendar.svg"><span>22.03.22</span>
                   </div>
                 </div>
-                <a href="single-blog.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
+                <a href="single-blog.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
                   ARTICLE
                   <hr />
                 </a>
@@ -92,7 +92,7 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                     <img src="assets/materials/calendar.svg"><span>22.03.22</span>
                   </div>
                 </div>
-                <a href="single-blog.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
+                <a href="single-blog.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
                   ARTICLE
                   <hr />
                 </a>
@@ -105,19 +105,19 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
               <h1>WHERE IS 5G TECHNOLOGY USED?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur
                 aucibus, suscipit ac mi.</p>
-              <a href="single-blog.html">READ ARTICLE</a>
+              <a href="single-blog.php">READ ARTICLE</a>
             </div>
             <div class="incontent mb-4">
               <h1>WHERE IS 5G TECHNOLOGY USED?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur
                 aucibus, suscipit ac mi.</p>
-              <a href="single-blog.html">READ ARTICLE</a>
+              <a href="single-blog.php">READ ARTICLE</a>
             </div>
             <div class="incontent mb-4">
               <h1>WHERE IS 5G TECHNOLOGY USED?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur
                 aucibus, suscipit ac mi.</p>
-              <a href="single-blog.html">READ ARTICLE</a>
+              <a href="single-blog.php">READ ARTICLE</a>
             </div>
 
           </div>
@@ -133,13 +133,13 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
               <h1>WHERE IS 5G TECHNOLOGY USED?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur
                 aucibus, suscipit ac mi.</p>
-              <a href="single-blog.html">READ ARTICLE</a>
+              <a href="single-blog.php">READ ARTICLE</a>
             </div>
             <div class="incontent mb-5">
               <h1>WHERE IS 5G TECHNOLOGY USED?</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur
                 aucibus, suscipit ac mi.</p>
-              <a href="single-blog.html">READ ARTICLE</a>
+              <a href="single-blog.php">READ ARTICLE</a>
             </div>
           </div>
 
@@ -152,7 +152,7 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                 </div>
                 <div class="title">
                   <div class="post-tag-w">SECURITY</div>
-                  <a href="single-blog.html">
+                  <a href="single-blog.php">
                     <h1>Where is 5g <br />
                       technology used?</h1>
                   </a>
@@ -301,7 +301,7 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
         <div class="col-xl-4 text-center text-xl-start mb-5">
           <h4 class="mb-5 ms-xl-5 ps-xl-1"><img class="me-4" src="assets/materials/post-ico.svg">How Can We Help?</h4>
           <div class="mini-box d-flex justify-content-center justify-content-xl-start mt-3">
-            <a href="single-page.html">
+            <a href="single-page.php">
               <div class="text-center mb me-3">
                 <div class="incontent">
                   <img src="assets/materials/info.svg">
@@ -309,7 +309,7 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                 </div>
               </div>
             </a>
-            <a href="single-page.html">
+            <a href="single-page.php">
               <div class="text-center mb">
                 <div class="incontent">
                   <img src="assets/materials/product-ico.svg">
@@ -343,19 +343,19 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
             <h4 class="mb-3 d-xl-flex"><span class="order-1">Menu</span>
               <hr class="mx-xl-2 mx-auto" />
             </h4>
-            <a href="about-us.html">
+            <a href="about-us.php">
               <p>About Us</p>
             </a>
-            <a href="prod-list.html">
+            <a href="prod-list.php">
               <p>Products</p>
             </a>
-            <a href="single-page.html">
+            <a href="single-page.php">
               <p>PCB Design & Manufacturing</p>
             </a>
-            <a href="blog-page.html">
+            <a href="blog-page.php">
               <p>Blog</p>
             </a>
-            <a href="contact.html">
+            <a href="contact.php">
               <p>Contact Us</p>
             </a>
           </div>
@@ -418,9 +418,9 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
           <p>© Copyright <span id="year"></span> Refine Inc.</p>
         </div>
         <div class="col-xl-6 ms-auto text-xl-end text-center">
-          <a href="single-page.html">Privacy</a>
-          <a href="single-page.html">Terms of Use</a>
-          <a href="single-page.html">Sitemap</a>
+          <a href="single-page.php">Privacy</a>
+          <a href="single-page.php">Terms of Use</a>
+          <a href="single-page.php">Sitemap</a>
         </div>
       </div>
     </div>

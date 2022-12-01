@@ -29,11 +29,11 @@ $mainCatCount = count($mainCategoryList);
     </button>
     <nav class="navbar navbar-expand-xl navbar-light custom-bg fixed-top bg-scroll">
         <div class="container-fluid col-11">
-            <a class="navbar-brand" href="index.html"><img src="assets/materials/logo.svg"></a>
+            <a class="navbar-brand" href="index.php"><img src="assets/materials/logo.svg"></a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="about-us.html">About Us</a>
+                        <a class="nav-link" aria-current="page" href="about-us.php">About Us</a>
                     </li>
 
                     <li class="nav-item dropdown has-megamenu">
@@ -85,19 +85,19 @@ $mainCatCount = count($mainCategoryList);
                         <!-- dropdown-mega-menu.// -->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="https://tr.transcend-info.com/">Transcend</a>
+                        <a class="nav-link" aria-current="page" target="_blank"  href="https://tr.transcend-info.com/">Transcend</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="https://global1.shuttle.com/">Shuttle</a>
+                        <a class="nav-link" aria-current="page" target="_blank" href="https://global1.shuttle.com/">Shuttle</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="single-page.html">PCB Design & Manufacturing</a>
+                        <a class="nav-link" href="single-page.php">PCB Design & Manufacturing</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="blog-page.php">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
+                        <a class="nav-link" href="contact.php">Contact Us</a>
                     </li>
                 </ul>
 
@@ -120,16 +120,16 @@ $mainCatCount = count($mainCategoryList);
                         <div class="dropdown lang-list">
                             <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" src="assets/materials/lang.svg">
 
-                            <ul class="dropdown-menu lang-menu d-flex" aria-labelledby="dropdownMenuLink">
-                                <li>
+                            <ul class="dropdown-menu lang-menu d-flex justify-content-center" aria-labelledby="dropdownMenuLink">
+                                <!-- <li>
                                     <a class="dropdown-item" href="#"><img src="assets/materials/tr.svg" width="24px"></a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a class="dropdown-item" href="#"><img src="assets/materials/en.svg" width="24px"></a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a class="dropdown-item" href="#"><img src="assets/materials/ar.svg" width="24px"></a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </li>
@@ -150,19 +150,19 @@ $mainCatCount = count($mainCategoryList);
     <div id="sideNav" class="sidenav-m">
         <div class="menu-items">
             <img src="assets/materials/logo.svg" class="img-fluid mb-5">
-            <a href="about-us.html">About Us</a>
+            <a href="about-us.php">About Us</a>
             <a href="#">Lanner</a>
             <a href="https://tr.transcend-info.com/">Transcend</a>
             <a href="https://global1.shuttle.com/">Shuttle</a>
-            <a href="single-page.html">PCB Design & Manufacturing</a>
+            <a href="single-page.php">PCB Design & Manufacturing</a>
             <a href="blog-page.php">Blog</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.php">Contact Us</a>
             <a href="ebook-download.php" aria-haspopup="dialog" title="Download.pdf" class="btn-green lightbox">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
             <!-- <a href="#" class="btn-white login">Reseller Login</a> -->
             <div class="langArea d-flex">
-                <a href="#" class="me-4"><img src="assets/materials/tr.svg" width="24px"></a>
+                <!-- <a href="#" class="me-4"><img src="assets/materials/tr.svg" width="24px"></a> -->
                 <a href="#" class="me-4"><img src="assets/materials/en.svg" width="24px"></a>
-                <a href="#" class="me-4"><img src="assets/materials/ar.svg" width="24px"></a>
+                <!-- <a href="#" class="me-4"><img src="assets/materials/ar.svg" width="24px"></a> -->
             </div>
         </div>
     </div>
