@@ -11,6 +11,20 @@ if (isset($_GET['cid'])) {
     $sorgu->execute();
     $productItems = $sorgu->fetchAll(PDO::FETCH_OBJ);
 
+    $productCounter = count($productItems);
+
+    $filteredProductList = array();
+    $dupProdHandler = array();
+
+    for ($i = 0; $i < $productCounter; $i++) {
+        if (!in_array($productItems[$i]->page_url, $dupProdHandler)) {
+            array_push($dupProdHandler, $productItems[$i]->page_url);
+            array_push($filteredProductList, $productItems[$i]);
+        }
+    }
+
+
+
     $sorgu = $vt->prepare("SELECT  * FROM ckategoriler WHERE cid = '$cid'  AND (sort <> -1) AND (page_description <> 'test') AND (user <> 'root')  AND language = '1'  ORDER BY cdate DESC");
     $sorgu->execute();
     $category = $sorgu->fetchAll(PDO::FETCH_OBJ);
@@ -56,7 +70,7 @@ if (isset($_GET['cid'])) {
             <div class="container-fluid col-xl-10">
                 <div class="row list clearfix">
 
-                    <?php foreach ($productItems as $prodItem) { ?>
+                    <?php foreach ($filteredProductList as $prodItem) { ?>
                         <div class="col-xl-3 col-lg-4 mt-5 inp">
                             <div class="full-box">
                                 <div class="outbox">
