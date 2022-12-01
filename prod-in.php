@@ -7,7 +7,7 @@ $lorem = 'Lorem ipsum';
 if (isset($_GET["product"])) {
     $product = $_GET["product"];
 
-    $sorgu = $vt->prepare("SELECT * FROM curunler WHERE page_url = '$product' AND igenel_bakis NOT LIKE '%$lorem%'  AND sort <> -1 AND page_description <> 'test' AND user <> 'root' AND language = '0' GROUP BY page_url");
+    $sorgu = $vt->prepare("SELECT * FROM curunler WHERE page_url = '$product' AND igenel_bakis NOT LIKE '%$lorem%'  AND sort <> -1 AND page_description <> 'test' AND user <> 'root' AND language = '1' GROUP BY page_url");
     $sorgu->execute();
     $productItem = $sorgu->fetchAll(PDO::FETCH_OBJ);
 

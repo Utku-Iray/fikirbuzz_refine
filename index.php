@@ -219,16 +219,16 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
             <div class="container-fluid col-xl-10 pt-5">
                 <div class="row">
                     <ul class="prodFilter">
-                        <li data-filter="pid-1" class="pid-1 onTrigger active-prod">Network Appliances</li>
-                        <li data-filter="pid-2" class="pid-2">Telecom Datacenter Appliances</li>
-                        <li data-filter="pid-3" class="pid-3">Industrial Communication Platforms</li>
-                        <li data-filter="pid-4" class="pid-4">Vehicle Computers</li>
-                        <li data-filter="pid-5" class="pid-5">Embedded Box PCs</li>
-                        <li data-filter="pid-6" class="pid-6">Extension Modules</li>
+                        <!-- <li data-filter="pid-1" class="pid-1 onTrigger active-prod">Network Appliances</li> -->
+                        <?php
+                        for ($i = 0; $i < $mainCatCount; $i++) { ?>
+                            <li data-filter="pid-<?= $i + 1 ?>" class="<?php if ($i + 1 == 1) echo 'active-prod onTrigger';
+                                                                        else echo ''; ?> pid-<?= $i + 1 ?>"><?= $mainCategoryList[$i] ?></li>
+                        <?php  } ?>
                     </ul>
 
                     <ul class="prodSlider clearfix" data-aos="fade-up">
-                        <li class="pid-1">
+                        <!-- <li class="pid-1">
                             <div class="outbox">
                                 <a href="prod-in.php">
                                     <div class="prod-tag">NCA-0123</div>
@@ -243,317 +243,33 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                                 MORE
                                 <hr />
                             </a>
-                        </li>
+                        </li> -->
 
-                        <li class="pid-1">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
+                        <?php
+                        for ($i = 0; $i < $mainCatIDCount; $i++) {
 
-                        <li class="pid-1">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
+                            for ($k = 0; $k < $subCategoryCount; $k++) {
+                                if ($subCategoryList[$k][2] == $mainCatIDList[$i]) { ?>
+                                    <li class="pid-<?= $i + 1 ?>">
+                                        <div class="outbox">
+                                            <a href="#">
+                                                <div class="prod-tag"><?= $mainCategoryList[$i] ?></div>
+                                            </a>
+                                            <img src="assets/<?= $subCategoryList[$k][3] ?>">
+                                        </div>
+                                        <div class="description" style="width: inherit;">
+                                            <h1><?= $subCategoryList[$k][1] ?></h1>
+                                            <p style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"><?= $subCategoryList[$k][4] ?></p>
 
-                        <li class="pid-1">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-1">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-1">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-1">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-2">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>TELECOM DATACENTER APPLIANCES NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-2">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-2">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-2">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-2">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-2">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-2">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-3">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-3">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-3">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-3">
-                            <div class="outbox">
-                                <a href="prod-in.php">
-                                    <div class="prod-tag">NCA-0123</div>
-                                </a>
-                                <!-- <div class="prod-tag">NCA-0123</div> -->
-                                <img src="assets/materials/network-device.png">
-                            </div>
-                            <div class="description">
-                                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                            </div>
-                            <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
-                                <hr />
-                            </a>
-                        </li>
-
-                        <li class="pid-4">4</li>
-                        <li class="pid-5">5</li>
-                        <li class="pid-6">6</li>
+                                        </div>
+                                        <a href="prod-list.php?cid=<?= $subCategoryList[$k][0] ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                                            MORE
+                                            <hr />
+                                        </a>
+                                    </li>
+                        <?php  }
+                            }
+                        }   ?>
 
                     </ul>
                 </div>
@@ -588,7 +304,7 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                                             </div>
                                             <div class="mt-xl-0 mt-4 col-md-5">
                                                 <h1><?= $blogList[$i]->iname  ?></h1>
-                                                <p style="   overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"    > <?= $blogList[$i]->ikisa_icerik  ?></p>
+                                                <p style="   overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"> <?= $blogList[$i]->ikisa_icerik  ?></p>
                                             </div>
                                         </div>
                                     </a>
@@ -608,7 +324,7 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                                             </div>
                                             <div class="mt-xl-0 mt-4 col-md-5">
                                                 <h1><?= $blogList[$i]->iname  ?></h1>
-                                                <p style="   overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"    > <?= $blogList[$i]->ikisa_icerik  ?></p>
+                                                <p style="   overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"> <?= $blogList[$i]->ikisa_icerik  ?></p>
                                             </div>
                                         </div>
                                     </a>
@@ -628,7 +344,7 @@ $blogList = $sorgu->fetchAll(PDO::FETCH_OBJ);
                                             </div>
                                             <div class="mt-xl-0 mt-4 col-md-5">
                                                 <h1><?= $blogList[$i]->iname  ?></h1>
-                                                <p style="   overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"    > <?= $blogList[$i]->ikisa_icerik  ?></p>
+                                                <p style="   overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"> <?= $blogList[$i]->ikisa_icerik  ?></p>
                                             </div>
                                         </div>
                                     </a>

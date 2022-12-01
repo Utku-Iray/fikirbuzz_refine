@@ -31,7 +31,7 @@ for ($j = 0; $j < $mainCatIDCount; $j++) {
         if ($categoryList[$k]->up == $mainCatIDList[$j]) {
             if (!in_array($categoryList[$k]->cid, $subCategoryCidList)) {
                 array_push($subCategoryCidList, $categoryList[$k]->cid);
-                array_push($subCategoryList, [$categoryList[$k]->cid, $categoryList[$k]->iname, $categoryList[$k]->up, $categoryList[$k]->iresim]);
+                array_push($subCategoryList, [$categoryList[$k]->cid, $categoryList[$k]->iname, $categoryList[$k]->up, $categoryList[$k]->iresim, $categoryList[$k]->iaciklama]);
             }
         }
     }
