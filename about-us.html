@@ -55,7 +55,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="about-us.html">About Us</a>
+              <a class="nav-link active" aria-current="page" href="about-us.html">About Us</a>
             </li>
             <li class="nav-item dropdown has-megamenu">
               <a class="nav-link dropdown-toggle" href="prod-list.html">Products</a>
@@ -264,11 +264,9 @@
               <a href="assets/materials/sample.pdf" class="btn-green lightbox" aria-haspopup="dialog"
                 title="Sample.pdf">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
             </li>
-            <li class="nav-item ms-2 log-preview">
-              <a class="pe-2" href="account.html"><img src="assets/materials/profile.png" class="profile me-2">Welcome, Dwayne</a>
-              <div class="logout-box">
-                <a href="#"><img src="assets/materials/logout.svg" class="imgout"></a>
-              </div>
+            <li class="nav-item ms-2">
+              <a class="btn-white login">Reseller Login</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -287,8 +285,7 @@
         <a href="contact.html">Contact Us</a>
         <a href="assets//materials/sample.pdf" aria-haspopup="dialog"
         title="Sample.pdf" class="btn-green lightbox">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
-        <a href="account.html" class="btn-white login">Profile</a>
-        <a href="#">Logout</a>
+        <a href="#" class="btn-white login">Reseller Login</a>
         <div class="langArea d-flex">
           <a href="#" class="me-4"><img src="assets/materials/tr.svg" width="24px"></a>
           <a href="#" class="me-4"><img src="assets/materials/en.svg" width="24px"></a>
@@ -301,487 +298,383 @@
 
   </header>
 
+
   <main>
-    <div class="banner dark short">
+    <div class="banner dark">
       <div class="image-area">
-        <img class="bannerImg" src="assets/materials/single-cover.png">
+        <img class="bannerImg" src="assets/materials/about-cover.png">
       </div>
       <div class="container-fluid col-xl-10">
-        <div class="row align-content-end align-items-end">
+        <div class="row align-content-center align-items-center">
           <div class="col-xl-7">
             <div class="breadcrumb" data-aos="fade-in">
-              <a href="#">Home</a><a href="#">Control Panel</a>
+              <a href="#">Products</a><a href="#">Network Appliances</a>
             </div>
-            <div class="title" data-aos="fade-right">
-              <h1>Welcome, Dwayne</h1>
-            </div>
-          </div>
-          <div class="pics d-xl-block d-none text-end ms-auto">
-            <div class="profile">
-              <img src="assets/materials/profile.png">
-              <button class="edit">
-              </button>
+            <div class="title">
+              <h1 data-aos="fade-right">About Us</h1>
+              <p data-aos="fade-in">Cras ac tortor at magna porttitor consequat quis a lacus. Suspendisse maximus purus vestibulum, tempor
+                tortor vel, dignissim tortor. Sed sed commodo orci. Nullam eget lectus aliquam, egestas nisl non,
+                vehicula
+                elit.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="index-sec-1 bg-white with-pattern pb-0 login-doc">
+    <div class="index-sec-1 pb-0">
       <div class="container-fluid col-xl-9">
-        <div class="featured-device bg-transparent row">
-          <div class="col-xl-6 my-auto mx-auto pt-5 pb-5">
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Datasheet
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body d-flex justify-content-between">
-                    <div class="col-11 mx-auto text-center pt-3 pb-3">
-                        <div class="form-group">
-                          <input type="text" placeholder="Search" id="search-text-ds" onkeyup="searchDS()">
-                          <button type="submit"><img src="assets/materials/search-icon.svg" alt=""></button>
-                        </div>
-
-                        <div class="form-group clearfix search-group p-2 mt-3">
-                          <div class="contsearch row" id="datasheet">
-                            <div class="col-xl-6 col-lg-4 mb-5 inp" >
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NCA-0123</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-4 mb-5 inp">
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NHS-2300</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
-                            
-                            <div class="col-xl-6 col-lg-4 mb-5 inp">
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NHS-2300</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-4 mb-5 inp">
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NHS-2300</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-4 mb-5 inp">
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NHS-2300</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-4 mb-5 inp">
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NHS-2300</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="textArea row pb-5">
+          <h1 class="mb-5">Lanner Products Focus on Three Main Fields</h1>
+          <div class="col-xl-1 d-xl-block d-none">
+            <hr>
           </div>
+          <p class="col-xl-11 ms-auto pb-3">
+            Lanner Electronics Inc. is one of the world-leading suppliers in designing, engineering and manufacturing
+            advanced network appliances, embedded computers, virtual platforms and rugged industrial hardware.
+            <br /><br />
 
-          <div class="col-xl-6 my-auto mx-auto pt-5 pb-5">
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    User Manual
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample">
-                  <div class="accordion-body d-flex justify-content-between">
-                    <div class="col-11 mx-auto text-center pt-3 pb-3">
-                        <div class="form-group">
-                          <input type="text" placeholder="Search" id="search-text-um" onkeyup="searchUM()">
-                          <button type="submit"><img src="assets/materials/search-icon.svg" alt=""></button>
-                        </div>
+            The company possesses well-managed manufacturing lines and is capable of customizing both hardware and
+            software parts of a platform (OEM/ODM), including chassis, dimensions, ports, BIOs, extension cards, NIC
+            modules and required certifications.
+            <br /><br />
 
-                        <div class="form-group clearfix search-group p-2 mt-3">
-                          <div class="contsearch row" id="usermanual">
-                            <div class="col-xl-6 col-lg-4 mb-5 inp" >
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NCA-0123</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
+            Lanner offers a variety of products from network appliances, embedded computing, and carrier-grade Telco
+            platforms to heavy duty computers.
+            <br /><br />
 
-                            <div class="col-xl-6 col-lg-4 mb-5 inp">
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NHS-2300</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
-                            
-                            <div class="col-xl-6 col-lg-4 mb-5 inp">
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NHS-2300</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
+            As of 2017, 39% of all companies providing enterprise network security, optimization and application
+            delivery appliances use Lanner manufactured hardware.
+            <br /><br />
 
-                            <div class="col-xl-6 col-lg-4 mb-5 inp">
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NHS-2300</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
+            In addition of serving as Lanner’s authorized distributor in the Middle East, Turkey and Pakistan, we offer
+            sourcing for PCB manufacturing and assembly, all while maintaining the prices competitive thanks to our
+            strong ties to top manufacturers.
+          </p>
+        </div>
+      </div>
 
-                            <div class="col-xl-6 col-lg-4 mb-5 inp">
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NHS-2300</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
-
-                            <div class="col-xl-6 col-lg-4 mb-5 inp">
-                              <div class="full-box">
-                              <div class="outbox">
-                                <a href="#">
-                                </a>
-                                <img src="assets/materials/network-device.png">
-                              </div>
-                              <div class="description">
-                                <h1>NHS-2300</h1>
-                              </div>
-                              <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">DOWNLOAD
-                                <img src="assets/materials/pdf.svg">
-                              </a>
-                            </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                    
-                  </div>
+      <div class="promote" data-aos="fade-up">
+        <div class="col-xl-11 ms-auto">
+          <div class="row">
+            <div class="col-xl-6 sr-img ms-auto order-xl-1 order-12">
+              <img src="assets/materials/about-rubic.png">
+            </div>
+            <div class="col-xl-5 p-xl-0 p-5">
+              <div class="outbox">
+                <div class="title d-flex align-content-center align-items-center">
+                  <img src="assets/materials/network-ico.svg">
+                  <h1 class="my-auto ms-3 abs-low">Network Security</h1>
+                  <h1 class="my-auto ms-3">Network Security</h1>
+                </div>
+                <div class="description mt-4">
+                  <p>Lanner Electronics Inc. is one of the world-leading suppliers in designing, engineering and
+                    manufacturing advanced network appliances, embedded computers, virtual platforms and rugged
+                    industrial
+                    hardware.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="newsletter-area index-sec-1 without-pattern pt-5 ps-3 pe-3">
-          <div class="col-xl-12 row mx-auto">
-            <div class="col-xl-5 col-12">
-              <h1>Refine Newsletters</h1>
-            </div>
-            <div class="col-xl-4 ms-xl-auto col-12 text-end">
-              <div class="form-group">
-                <input type="text" placeholder="Search" id="search-text-nl" data-search />
-                <button type="submit"><img src="assets/materials/search-icon.svg" alt=""></button>
+        <div class="container-fluid col-xl-10 pb-5">
+          <div class="row clearfix slick-promote">
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/firewall.png">
+                </div>
+                <div class="description">
+                  <h1>FIREWALLS</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
               </div>
             </div>
 
-            <div class="col-xl-12 mt-5">
-              <div class="accordion" id="accordionExample-2">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                      2022
-                    </button>
-                  </h2>
-                  <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample-2">
-                    <div class="accordion-body d-flex justify-content-between">
-                      <div class="col-11 mx-auto text-center pt-3 pb-3">
-  
-                          <div class="form-group clearfix search-group p-2 mt-3">
-                            <div class="contsearch row" id="newsletter">
-                              <div class="col-xl-12 mx-auto row">
-                               
-                                <div class="col-xl-12 row" data-filter-item data-filter-name="march">
-
-                                  <div class="col-xl-12 mt-4 mb-4">
-                                    <h1>MARCH</h1>
-                                    <hr/>
-                                  </div>
-    
-                                  <a href="prod-in.html" data-lightbox-type="iframe" aria-haspopup="dialog"
-                                  title="21.03.2022" class="col-xl-3 mb-3 lightbox">
-                                    <div class="flutter">
-                                      <img src="assets/materials/logo.svg">
-                                      <div class="description">
-                                        <h1>21.03.2022</h1>
-                                      </div>
-                                    </div>
-                                  </a>
-    
-                                  <a href="prod-in.html" data-lightbox-type="iframe" aria-haspopup="dialog"
-                                  title="21.03.2022" class="col-xl-3 mb-3 lightbox">
-                                    <div class="flutter">
-                                      <img src="assets/materials/logo.svg">
-                                      <div class="description">
-                                        <h1>21.03.2022</h1>
-                                      </div>
-                                    </div>
-                                  </a>
-    
-                                  <a href="prod-in.html" data-lightbox-type="iframe" aria-haspopup="dialog"
-                                  title="21.03.2022" class="col-xl-3 mb-3 lightbox">
-                                    <div class="flutter">
-                                      <img src="assets/materials/logo.svg">
-                                      <div class="description">
-                                        <h1>21.03.2022</h1>
-                                      </div>
-                                    </div>
-                                  </a>
-    
-                                  <a href="prod-in.html" data-lightbox-type="iframe" aria-haspopup="dialog"
-                                  title="21.03.2022" class="col-xl-3 mb-3 lightbox">
-                                    <div class="flutter">
-                                      <img src="assets/materials/logo.svg">
-                                      <div class="description">
-                                        <h1>21.03.2022</h1>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-
-                                <div class="col-xl-12 row" data-filter-item data-filter-name="february">
-                                  <div class="col-xl-12 mt-4 mb-4">
-                                    <h1>FEBRUARY</h1>
-                                    <hr/>
-                                  </div>
-
-                                  <a href="prod-in.html" data-lightbox-type="iframe" aria-haspopup="dialog"
-                                  title="21.03.2022" class="col-xl-3 mb-3 lightbox">
-                                    <div class="flutter">
-                                      <img src="assets/materials/logo.svg">
-                                      <div class="description">
-                                        <h1>21.03.2022</h1>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-  
-                              </div>
-
-                            </div>
-                          </div>
-                      </div>
-                      
-                    </div>
-                  </div>
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/UTM.png">
                 </div>
+                <div class="description">
+                  <h1>UTM</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
 
-                <div class="accordion-item mt-5">
-                  <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                      2021
-                    </button>
-                  </h2>
-                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                    data-bs-parent="#accordionExample-2">
-                    <div class="accordion-body d-flex justify-content-between">
-                      <div class="col-11 mx-auto text-center pt-3 pb-3">
-  
-                          <div class="form-group clearfix search-group p-2 mt-3">
-                            <div class="contsearch row" id="newsletter">
-                              <div class="col-xl-12 mx-auto row">
-                               
-                                <div class="col-xl-12 row" data-filter-item data-filter-name="march">
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/ADC.png">
+                </div>
+                <div class="description">
+                  <h1>ADC</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
 
-                                  <div class="col-xl-12 mt-4 mb-4">
-                                    <h1>MARCH</h1>
-                                    <hr/>
-                                  </div>
-    
-                                  <a href="prod-in.html" data-lightbox-type="iframe" aria-haspopup="dialog"
-                                  title="21.03.2022" class="col-xl-3 mb-3 lightbox">
-                                    <div class="flutter">
-                                      <img src="assets/materials/logo.svg">
-                                      <div class="description">
-                                        <h1>21.03.2022</h1>
-                                      </div>
-                                    </div>
-                                  </a>
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/wan.png">
+                </div>
+                <div class="description">
+                  <h1>WAN</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-                                      
-                                  <a href="prod-in.html" data-lightbox-type="iframe" aria-haspopup="dialog"
-                                  title="21.03.2022" class="col-xl-3 mb-3 lightbox">
-                                    <div class="flutter">
-                                      <img src="assets/materials/logo.svg">
-                                      <div class="description">
-                                        <h1>21.03.2022</h1>
-                                      </div>
-                                    </div>
-                                  </a>
+      <div class="promote reverse">
+        <div class="col-xl-11 me-auto">
+          <div class="row">
 
-                                      
-                                  <a href="prod-in.html" data-lightbox-type="iframe" aria-haspopup="dialog"
-                                  title="21.03.2022" class="col-xl-3 mb-3 lightbox">
-                                    <div class="flutter">
-                                      <img src="assets/materials/logo.svg">
-                                      <div class="description">
-                                        <h1>21.03.2022</h1>
-                                      </div>
-                                    </div>
-                                  </a>
+            <div class="col-xl-6 sr-img me-auto">
+              <img src="assets/materials/sec-2-bg.jpg">
+            </div>
 
-                                      
-                                  <a href="prod-in.html" data-lightbox-type="iframe" aria-haspopup="dialog"
-                                  title="21.03.2022" class="col-xl-3 mb-3 lightbox">
-                                    <div class="flutter">
-                                      <img src="assets/materials/logo.svg">
-                                      <div class="description">
-                                        <h1>21.03.2022</h1>
-                                      </div>
-                                    </div>
-                                  </a>
-    
-                                </div>
-
-                                <div class="col-xl-12 row" data-filter-item data-filter-name="february">
-                                  <div class="col-xl-12 mt-4 mb-4">
-                                    <h1>FEBRUARY</h1>
-                                    <hr/>
-                                  </div>
-
-                                  <a href="prod-in.html" data-lightbox-type="iframe" aria-haspopup="dialog"
-                                  title="21.03.2022" class="col-xl-3 mb-3">
-                                    <div class="flutter">
-                                      <img src="assets/materials/logo.svg">
-                                      <div class="description">
-                                        <h1>21.04.2022</h1>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-  
-                              </div>
-
-                            </div>
-                          </div>
-                      </div>
-                      
-                    </div>
-                  </div>
+            <div class="col-xl-5 p-xl-0 p-5">
+              <div class="outbox">
+                <div class="title d-flex align-content-center align-items-center justify-content-xl-end text-xl-end">
+                  <img src="assets/materials/virtualizastion.svg">
+                  <h1 class="my-auto ms-3 abs-low">Virtualization Computing</h1>
+                  <h1 class="my-auto ms-3">Virtualization Computing</h1>
+                </div>
+                <div class="description mt-4 text-xl-end">
+                  <p>Lanner Electronics Inc. is one of the world-leading suppliers in designing, engineering and
+                    manufacturing advanced network appliances, embedded computers, virtual platforms and rugged
+                    industrial
+                    hardware.</p>
                 </div>
               </div>
-              
-              
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid col-xl-10 pb-5">
+          <div class="row clearfix slick-promote">
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/sd-wan.png">
+                </div>
+                <div class="description">
+                  <h1>SD-WAN</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/sd-security.png">
+                </div>
+                <div class="description">
+                  <h1>SD-SECURITY</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/MEC.png">
+                </div>
+                <div class="description">
+                  <h1>MEC</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/cloud-ran.png">
+                </div>
+                <div class="description">
+                  <h1>CLOUD RAN</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/sd-wan.png">
+                </div>
+                <div class="description">
+                  <h1>SD-WAN</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/sd-security.png">
+                </div>
+                <div class="description">
+                  <h1>SD-SECURITY</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/MEC.png">
+                </div>
+                <div class="description">
+                  <h1>MEC</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/cloud-ran.png">
+                </div>
+                <div class="description">
+                  <h1>CLOUD RAN</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="promote">
+        <div class="col-xl-11 ms-auto">
+          <div class="row">
+            <div class="col-xl-6 sr-img ms-auto order-xl-1 order-12">
+              <img src="assets/materials/sec-3-bg.jpg">
+            </div>
+            <div class="col-xl-5 p-xl-0 p-5">
+              <div class="outbox">
+                <div class="title d-flex align-content-center align-items-center">
+                  <img src="assets/materials/network-ico.svg">
+                  <h1 class="my-auto ms-3 abs-low">Industrial Computing</h1>
+                  <h1 class="my-auto ms-3">Industrial Computing</h1>
+                </div>
+                <div class="description mt-4">
+                  <p>Lanner Electronics Inc. is one of the world-leading suppliers in designing, engineering and
+                    manufacturing advanced network appliances, embedded computers, virtual platforms and rugged
+                    industrial hardware.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid col-xl-10 pb-5">
+          <div class="row clearfix slick-promote">
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/firewall.png">
+                </div>
+                <div class="description">
+                  <h1>MACHINE VISION</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/UTM.png">
+                </div>
+                <div class="description">
+                  <h1>SURVEILLANCE</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/ADC.png">
+                </div>
+                <div class="description">
+                  <h1>INTELLIGENT 
+                    TRANSPORTATION</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+              <div class="full-box">
+                <div class="outbox">
+                  <img src="assets/materials/wan.png">
+                </div>
+                <div class="description">
+                  <h1>INDUSTRIAL 
+                    CYBER SECURITY</h1>
+                </div>
+                <a href="prod-list.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                  MORE
+                  <hr />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -801,6 +694,8 @@
         </div>
       </div>
     </div>
+
+
     <!-- Mobile Fast Contact Nav -->
     <div class="mini-nav d-flex justify-content-center d-xl-none">
       <div class="position-relative d-flex">
