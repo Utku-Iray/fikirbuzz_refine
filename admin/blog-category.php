@@ -29,7 +29,7 @@ $blogCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
                             <h2><strong>Refine Admin | Blog Kategori</strong></h2>
 
 
-                            <a href="javascript:void(0);" class="btn btn-primary"> <strong>Yeni Ekle</strong></a>
+                            <a href="add-new-blog-category.php" class="btn btn-primary"> <strong>Yeni Ekle</strong></a>
 
                         </div>
 
@@ -52,10 +52,10 @@ $blogCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
                                     <tbody>
                                         <?php
                                         foreach ($blogCategoryResult as $singleResult) { ?>
-                                            <tr class="bcr-<?= $singleResult->id ?>">
+                                            <tr class="blogcat-<?= $singleResult->id ?>">
                                                 <td><?= $singleResult->name ?></td>
-                                                <td class="text-center"><button class="btn btn-info">DÜZENLE</button></td>
-                                                <td class="text-center"><button class="btn btn-danger">SİL</button></td>
+                                                <td class="text-center"><a href="blog-category-details.php?cid=<?= $singleResult->id ?>" class="btn btn-info <?php if ($singleResult->id == 1) echo "disabled" ?>">DÜZENLE</a></td>
+                                                <td class="text-center"><button class="btn btn-danger blogCategoryDeleteBtn" blogCat-id="<?= $singleResult->id ?>" <?php if ($singleResult->id == 1) echo "disabled" ?>>SİL</button></td>
                                             </tr>
                                         <?php }
                                         ?>
@@ -72,6 +72,63 @@ $blogCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
     </section>
 
     <?php include "utility/script.php"; ?>
+
+
+    <!-- // UPDATE BLOG CATEGORY // -->
+
+    <!-- // DELETE BLOG CATEGORY // -->
+    <script>
+        $(document).on('click', '.blogCategoryDeleteBtn', function() {
+            event.preventDefault();
+            var blogCatID = $(this).attr("blogCat-id");
+
+            Swal.fire({
+                title: 'Kategoriyi silmek istediğinize emin misiniz?',
+                text: "Not: Silmeniz durumunda bu kategoriye ait bloglar kategorisiz olarak görünecektir.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: "#18ce0f",
+                cancelButtonColor: "#FF3636",
+                confirmButtonText: 'Evet, eminim!',
+                cancelButtonText: 'Vazgeç',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "API/delete-blog-category.php",
+                        type: "POST",
+                        data: {
+                            blogCatID: blogCatID
+                        },
+                        cache: false,
+                        dataType: "json",
+                        success: function(data) {
+                            if (data.status == true) {
+                                setInterval(reloadHandler, 1600)
+                                $(".blogcat-" + blogCatID).fadeOut('slow');
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: data.message,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            } else {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: data.message,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+
+                        }
+                    });
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>
