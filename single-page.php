@@ -1,12 +1,14 @@
+
 <!doctype html>
 <html lang="en">
 
-  <?php include 'php/head.php' ?>
+<?php include 'php/head.php' ?>
 
-  
+
 <body>
 
   <?php include 'php/header.php' ?>
+
 
   <main>
     <div class="banner dark">
@@ -30,19 +32,25 @@
     </div>
     <div class="index-sec-1 pb-0">
       <div class="container-fluid col-xl-9">
-        <div class="textArea row pb-5">
-          <h1 class="mb-5">PCB Manufacturing and Assembly [Different Title Area]</h1>
+        <div class="textArea  row pb-5">
           <div class="col-xl-1 d-xl-block d-none">
             <hr>
           </div>
+          <h2 class="mb-5 col-xl-11">PCB Design & Manufacturing</h2>
+
           <div class="col-xl-11 ms-auto pb-3">
             <p>
-              With strong ties to top manufacturers in Shenzhen area, our company has more than 17 years of experience
-              in
-              PCB assembly services.<br /><br />
-              Our strength lies in achieving the lowest assembly and manufacturing costs for various projects based on
-              our
-              experience and strong relations to our manufacturing partners in China.
+              In addition to being the authorized distributor of Lanner in Türkiye, Pakistan and the Middle East, we provide services in PCB design and production processes.
+
+
+            </p><br />
+
+            <h2>PCB Manufacturing & Assembly </h2><br />
+
+            <p>
+              With strong ties to top manufacturers in Shenzhen area, our company has more than 17 years of experience in PCB assembly services.
+              <br><br>
+              Our strength lies in achieving the lowest assembly and manufacturing costs for various projects based on our experience and strong relations to our manufacturing partners in China.
             </p><br />
 
             <h2>Sourcing</h2><br />
@@ -71,7 +79,7 @@
 
             <p>
               Our experienced team can offer the easiest logistics and shipping solutions tailored to the demands of our
-              clients in Europe, Middle East and Central Asia.<br/><br/>
+              clients in Europe, Middle East and Central Asia.<br /><br />
 
               Our company handles numerous shipments originating from Shenzhen, Taiwan and Hong Kong. Providing cheap
               and reliable shipping solutions.
@@ -97,11 +105,9 @@
     <!-- Mobile Fast Contact Nav -->
     <div class="mini-nav d-flex justify-content-center d-xl-none">
       <div class="position-relative d-flex">
-        <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg"
-            width="20px" class="me-2">Call Us</a>
+        <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg" width="20px" class="me-2">Call Us</a>
         <div class="seperator mx-auto"></div>
-        <a href="#" class="btn-white text-center mx-auto"><img src="assets/materials/handshake.svg" width="26px"
-            class="me-2">Be Reseller</a>
+        <a href="#" class="btn-white text-center mx-auto"><img src="assets/materials/handshake.svg" width="26px" class="me-2">Be Reseller</a>
       </div>
     </div>
     <!-- Mobile Fast Contact Nav -->
@@ -134,34 +140,35 @@
         <div class="col-xl-7 p-0">
           <div class="outflow-half text-center d-flex align-content-center align-items-center justify-content-center">
             <div class="rightSide">
-               <h1 class="mb-5 pb-xl-5">Reseller Login</h1>
-            <form class="form mt-5" action="account.html">
-              <div class="form-group">
-                <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
-              </div>
-              <div class="form-group mt-3">
-                <input type="password" placeholder="Password"><img src="assets/materials/env-pw.svg">
-              </div>
-              <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
-                <button type="submit" class="text-start ps-3">LOGIN</button><div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
-              </div>
-              <div class="form-group mt-3 mx-auto d-flex justify-content-center">
-                <a href="#">Register Now</a>
-              </div>
-            </form>
+              <h1 class="mb-5 pb-xl-5">Reseller Login</h1>
+              <form class="form mt-5" action="account.html">
+                <div class="form-group">
+                  <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
+                </div>
+                <div class="form-group mt-3">
+                  <input type="password" placeholder="Password"><img src="assets/materials/env-pw.svg">
+                </div>
+                <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
+                  <button type="submit" class="text-start ps-3">LOGIN</button>
+                  <div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
+                </div>
+                <div class="form-group mt-3 mx-auto d-flex justify-content-center">
+                  <a href="#">Register Now</a>
+                </div>
+              </form>
             </div>
-           
+
           </div>
-         
+
         </div>
       </div>
     </div>
     <!-- Login Area -->
 
     <!--Push Button-->
-        <a target="blank_" href="https://api.whatsapp.com/send?phone=+905000000000&text=Merhabalar, Refine Inc. ayrıcalıklarından yararlanmak istiyorum." class="pusher d-xl-flex d-none">
-          <img src="assets/materials/chat.svg">
-        </a>
+    <a target="blank_" href="https://api.whatsapp.com/send?phone=+905000000000&text=Merhabalar, Refine Inc. ayrıcalıklarından yararlanmak istiyorum." class="pusher d-xl-flex d-none">
+      <img src="assets/materials/chat.svg">
+    </a>
     <!--Push Button-->
   </main>
 

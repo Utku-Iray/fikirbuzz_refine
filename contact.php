@@ -1,11 +1,14 @@
+
 <!doctype html>
 <html lang="en">
 
   <?php include 'php/head.php' ?>
 
+  
 <body>
 
   <?php include 'php/header.php' ?>
+
 
   <main>
     <div class="banner dark">
@@ -98,8 +101,7 @@
                       data-bs-parent="#accordionExample">
                       <div class="accordion-body d-flex justify-content-between">
                         <div class="col-11 ms-auto text-end">
-                          <h5 class="mb-4">Kasap Sok. Gamze Apt. No:19/1 34394
-                            Esentepe, Şişli, İstanbul, Türkiye</h5>
+                          <h5 class="mb-4">Warehouse I: Room 1202, 12/F Global Gateway (Tsuen Wan), 168 Yeung Uk Road, Tsuen Wan, Hong Kong</h5>
   
                           <a href="mailto:info@refine-tr.com"><h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2">info@refine-tr.com</h5></a>
                           <a href="tel:+908504338760"><h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2">+90 850 433 87 60&nbsp;</h5></a>
@@ -120,8 +122,7 @@
                       data-bs-parent="#accordionExample">
                       <div class="accordion-body d-flex justify-content-between">
                         <div class="col-11 ms-auto text-end">
-                          <h5 class="mb-4">Kasap Sok. Gamze Apt. No:19/1 34394
-                            Esentepe, Şişli, İstanbul, Türkiye</h5>
+                          <h5 class="mb-4">Warehouse II: No. 121 Tai Tao Tsuen Hung Shui Kiu Yuen Long, Hong Kong</h5>
   
                           <a href="mailto:info@refine-tr.com"><h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2">info@refine-tr.com</h5></a>
                           <a href="tel:+908504338760"><h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2">+90 850 433 87 60&nbsp;</h5></a>
@@ -142,10 +143,7 @@
 
 
     <div class="mapsArea">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12032.287046673857!2d29.0112085!3d41.067424!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7e5abcf92e97bfe6!2sRefine%20-%20Lanner%20Authorized%20Distributor!5e0!3m2!1str!2suk!4v1650294488599!5m2!1str!2suk"
-        width="100%" height="500px" style="border:0; line-height: 0; margin: 0; font-size: 0;" allowfullscreen=""
-        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.071762615664!2d29.00901981515844!3d41.06742397929473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7272b56ea45%3A0x7e5abcf92e97bfe6!2sRefine%20-%20Lanner%20Authorized%20Distributor!5e0!3m2!1str!2str!4v1669857585904!5m2!1str!2str" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
 
@@ -236,7 +234,7 @@
   </main>
 
   <?php include 'php/footer.php' ?>
-
+  
 </body>
 
 </html>

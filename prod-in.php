@@ -25,7 +25,7 @@
               <p  data-aos="fade-right">Fanless x86 Desktop Network Appliance with Wide Operating Temperature</p>
               <div class="datasheets d-md-flex col-xl-8"  data-aos="fade-up">
                 <a href="assets/materials/sample.pdf" class="btn-data-w lightbox" aria-haspopup="dialog"
-                  title="Sample.pdf">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
+                  title="Sample.pdf">Datasheet<img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
 
                 <a href="assets/materials/sample.pdf" class="btn-data-w lightbox" aria-haspopup="dialog"
                   title="Sample.pdf">User Manual <img class="ms-1" width="12px"
