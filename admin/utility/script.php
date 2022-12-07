@@ -1,7 +1,8 @@
     <!-- Jquery Core Js -->
     <script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
     <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert Plugin Js -->
+    <script src="assets/plugins/ckeditor/ckeditor.js"></script> <!-- Ckeditor -->
     <!-- Jquery DataTable Plugin Js -->
     <script src="assets/bundles/datatablescripts.bundle.js"></script>
     <script src="assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js"></script>
@@ -13,3 +14,9 @@
     <!-- Custom Js -->
     <script src="assets/bundles/mainscripts.bundle.js"></script>
     <script src="assets/js/pages/tables/jquery-datatable.js"></script>
+
+    <script>
+        function reloadHandler() {
+            location.reload();
+        }
+    </script>

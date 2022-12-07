@@ -1,3 +1,11 @@
+<?php
+require "database/connection.php";
+
+$query = $vt->prepare("SELECT * FROM blog ORDER BY created_at ASC");
+$query->execute();
+$blogResult = $query->fetchAll(PDO::FETCH_OBJ);
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -6,7 +14,7 @@
 
 <body>
 
-<?php include 'php/header.php' ?>
+    <?php include 'php/header.php' ?>
 
     <main>
         <div class="banner dark">
@@ -17,7 +25,7 @@
                 <div class="row align-content-center align-items-center">
                     <div class="col-xl-7">
                         <div class="breadcrumb" data-aos="fade-in">
-                            <a href="#">Home</a><a href="#">Blog</a>
+                            <a href="index.php'">Home</a><a href="blog-page.php">Blog</a>
                         </div>
                         <div class="title" data-aos="fade-right">
                             <h1>Blog</h1>
@@ -146,138 +154,29 @@
                     </div>
                     <div class="boxed-content mx-auto mx-xl-0 p-0 row col-xl-12">
 
-                        <div class="col-xl-4 inp mb-5">
-                            <div class="full-box">
-                                <div class="outbox">
-                                    <img src="assets/materials/blog-box-cover.png">
-                                </div>
-                                <div class="description">
-                                    <h1>Where is 5g technology used?</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                </div>
-                                <div class="details d-flex">
-                                    <div class="post-tag">SECURITY</div>
-                                    <div class="date">
-                                        <img src="assets/materials/calendar.svg"><span>22.03.22</span>
+                        <?php foreach ($blogResult as $singleBlog) { ?>
+                            <div class="col-xl-4 inp mb-5">
+                                <div class="full-box">
+                                    <div class="outbox">
+                                        <img src="<?= $singleBlog->image ?>">
                                     </div>
-                                </div>
-                                <a href="single-blog.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                                    ARTICLE
-                                    <hr />
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 inp mb-5">
-                            <div class="full-box">
-                                <div class="outbox">
-                                    <img src="assets/materials/blog-box-cover.png">
-                                </div>
-                                <div class="description">
-                                    <h1>Where is 5g technology used?</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                </div>
-                                <div class="details d-flex">
-                                    <div class="post-tag">SECURITY</div>
-                                    <div class="date">
-                                        <img src="assets/materials/calendar.svg"><span>22.03.22</span>
+                                    <div class="description">
+                                        <h1><?= $singleBlog->title ?></h1>
+                                        <p><?= $singleBlog->short_content ?></p>
                                     </div>
-                                </div>
-                                <a href="single-blog.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                                    ARTICLE
-                                    <hr />
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <div class="col-xl-4 inp mb-5">
-                            <div class="full-box">
-                                <div class="outbox">
-                                    <img src="assets/materials/blog-box-cover.png">
-                                </div>
-                                <div class="description">
-                                    <h1>Where is 5g technology used?</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                </div>
-                                <div class="details d-flex">
-                                    <div class="post-tag">SECURITY</div>
-                                    <div class="date">
-                                        <img src="assets/materials/calendar.svg"><span>22.03.22</span>
+                                    <div class="details d-flex">
+                                        <div class="post-tag">BLOG</div>
+                                        <div class="date">
+                                            <img src="assets/materials/calendar.svg"><span><?= $singleBlog->created_at ?></span>
+                                        </div>
                                     </div>
+                                    <a href="single-blog.php?url=<?= $singleBlog->url ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
+                                        ARTICLE
+                                        <hr />
+                                    </a>
                                 </div>
-                                <a href="single-blog.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                                    ARTICLE
-                                    <hr />
-                                </a>
                             </div>
-                        </div>
-
-                        <div class="col-xl-4 inp mb-5">
-                            <div class="full-box">
-                                <div class="outbox">
-                                    <img src="assets/materials/blog-box-cover.png">
-                                </div>
-                                <div class="description">
-                                    <h1>Where is 5g technology used?</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                </div>
-                                <div class="details d-flex">
-                                    <div class="post-tag">SECURITY</div>
-                                    <div class="date">
-                                        <img src="assets/materials/calendar.svg"><span>22.03.22</span>
-                                    </div>
-                                </div>
-                                <a href="single-blog.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                                    ARTICLE
-                                    <hr />
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 inp mb-5">
-                            <div class="full-box">
-                                <div class="outbox">
-                                    <img src="assets/materials/blog-box-cover.png">
-                                </div>
-                                <div class="description">
-                                    <h1>Where is 5g technology used?</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                </div>
-                                <div class="details d-flex">
-                                    <div class="post-tag">SECURITY</div>
-                                    <div class="date">
-                                        <img src="assets/materials/calendar.svg"><span>22.03.22</span>
-                                    </div>
-                                </div>
-                                <a href="single-blog.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                                    ARTICLE
-                                    <hr />
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 inp mb-5">
-                            <div class="full-box">
-                                <div class="outbox">
-                                    <img src="assets/materials/blog-box-cover.png">
-                                </div>
-                                <div class="description">
-                                    <h1>Where is 5g technology used?</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce est sapien, accumsan non efficitur faucibus, suscipit ac mi.</p>
-                                </div>
-                                <div class="details d-flex">
-                                    <div class="post-tag">SECURITY</div>
-                                    <div class="date">
-                                        <img src="assets/materials/calendar.svg"><span>22.03.22</span>
-                                    </div>
-                                </div>
-                                <a href="single-blog.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">READ
-                                    ARTICLE
-                                    <hr />
-                                </a>
-                            </div>
-                        </div>
+                        <?php } ?>
 
                         <button class="load-more__btn mt-5 mb-5">SEE MORE<br /><img src="assets/materials/downron.svg"></button>
                     </div>

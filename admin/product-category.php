@@ -45,7 +45,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                             <h2><strong>Ana Kategori</strong></h2>
 
 
-                            <a href="javascript:void(0);" class="btn btn-primary"> <strong>Yeni Ekle</strong></a>
+                            <a href="add-new-product-category.php" class="btn btn-primary"> <strong>Yeni Ekle</strong></a>
 
                         </div>
 
@@ -69,11 +69,11 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                                     <tbody>
                                         <?php
                                         foreach ($productCategoryResult as $singleResult) { ?>
-                                            <tr class="cat-<?= $singleResult->id ?>">
+                                            <tr class="mcat-<?= $singleResult->id ?>">
                                                 <td><?= $singleResult->name ?></td>
                                                 <td><?= $singleResult->status ?></td>
                                                 <td class="text-center"><button class="btn btn-info">DÜZENLE</button></td>
-                                                <td class="text-center"><button class="btn btn-danger">SİL</button></td>
+                                                <td class="text-center"><button class="btn btn-danger productMainCategoryDeleteBtn" mcat-id=<?= $singleResult->id ?>>SİL</button></td>
                                             </tr>
                                         <?php }
                                         ?>
@@ -92,7 +92,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                     <div class="card">
                         <div class="header d-flex justify-content-between">
                             <h2><strong>Alt Kategori</strong></h2>
-                            <a href="javascript:void(0);" class="btn btn-primary"> <strong>Yeni Ekle</strong></a>
+                            <a href="add-new-product-subcategory.php" class="btn btn-primary"> <strong>Yeni Ekle</strong></a>
                         </div>
                     </div>
                 </div>
@@ -135,6 +135,60 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
     </section>
 
     <?php include "utility/script.php"; ?>
+
+    <!-- Delete Product Main Category -->
+    <script>
+        $(document).on('click', '.productMainCategoryDeleteBtn', function() {
+            event.preventDefault();
+            var mainCatID = $(this).attr("mcat-id");
+
+            Swal.fire({
+                title: 'Ana kategoriyi silmek istediğinize emin misiniz?',
+                text: "Not: Geri dönüşü olmayacaktır. Tekrar eklemek zorunda kalabilirsiniz.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: "#18ce0f",
+                cancelButtonColor: "#FF3636",
+                confirmButtonText: 'Evet, eminim!',
+                cancelButtonText: 'Vazgeç',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "API/delete-blog.php",
+                        type: "POST",
+                        data: {
+                            mainCatID: mainCatID
+                        },
+                        cache: false,
+                        dataType: "json",
+                        success: function(data) {
+                            if (data.status == true) {
+                                setInterval(reloadHandler, 1600)
+                                $(".mcat-" + blogID).fadeOut('slow');
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: data.message,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            } else {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: data.message,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+
+                        }
+                    });
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>
