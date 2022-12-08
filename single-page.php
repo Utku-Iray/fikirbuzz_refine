@@ -1,4 +1,4 @@
-
+<?php require "database/connection.php"; ?>
 <!doctype html>
 <html lang="en">
 

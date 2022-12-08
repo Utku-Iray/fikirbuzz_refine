@@ -76,7 +76,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                       <div class="title mb-5">
                         <h1 class="mb-4">Exclusive offers for you to buy the best quality Lanner products at the most special prices…</h1>
                       </div>
-                      <a style="cursor: pointer;"class="btn-view form"><span>See Details
+                      <a style="cursor: pointer;" class="btn-view form"><span>See Details
                           <hr>
                         </span></a>
                     </div>
@@ -203,7 +203,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
               </div>
 
               <div class="clearfix">
-                <a >
+                <a>
                   <div class="inbox">
                     <img src="assets/materials/homepage-box/edge-cloud.png">
                     <div class="desc p-4">
@@ -229,7 +229,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                 </a>
               </div>
               <div class="clearfix">
-                <a >
+                <a>
                   <div class="inbox">
                     <img src="assets/materials/homepage-box/ot-network-security.png">
                     <div class="desc p-4">
@@ -264,40 +264,39 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
       <div class="container-fluid col-xl-10 pt-5">
         <div class="row">
           <ul class="prodFilter">
-            <li data-filter="pid-1" class="pid-1 onTrigger active-prod">Network Appliances</li>
-            <li data-filter="pid-2" class="pid-2">Telecom Datacenter Appliances</li>
-            <li data-filter="pid-3" class="pid-3">Industrial Communication Platforms</li>
-            <li data-filter="pid-4" class="pid-4">Vehicle Computers</li>
-            <li data-filter="pid-5" class="pid-5">Embedded Box PCs</li>
-            <li data-filter="pid-6" class="pid-6">Extension Modules</li>
+            <?php
+            for ($i = 0; $i < $mainCatCount; $i++) { ?>
+              <li data-filter="pid-<?= $i + 1 ?>" class="pid-<?= $i + 1; ?>  <?php if ($i + 1 == 1) echo "onTrigger active-prod";
+                                                                              else "" ?>"><?= $mainCategoryList[$i]->name ?></li>
+            <?php }  ?>
           </ul>
 
           <ul class="prodSlider clearfix" data-aos="fade-up">
 
+            <?php
+            for ($i = 0; $i < $mainCatCount; $i++) {
+              for ($j = 0; $j < $subCatCount; $j++) {
+                if ($subCategoryList[$j]->category_id == $mainCategoryList[$i]->id) { ?>
+                  <li class="pid-<?= $i + 1 ?>">
+                    <div class="outbox">
 
-            <li class="pid-3 pid-1 pid-2 pid-4 pid-5 pid-6">
-              <div class="outbox">
-                <a href="prod-in.php">
-                  <div class="prod-tag">NCA-0123</div>
-                </a>
-                <!-- <div class="prod-tag">NCA-0123</div> -->
-                <img src="assets/materials/network-device.png">
-              </div>
-              <div class="description">
-                <h1>DESKTOP NETWORK APPLIANCES</h1>
-                <p>Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Fusce
-                  est sapien, accumsan non efficitur
-                  faucibus, suscipit ac mi.</p>
-              </div>
-              <a href="prod-in.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                MORE
-                <hr />
-              </a>
-            </li>
+                      <div class="prod-tag"><?= $mainCategoryList[$i]->name ?></div>
 
-
-
+                      <img src="<?= $subCategoryList[$j]->image ?>">
+                    </div>
+                    <div class="description">
+                      <h1><?= $subCategoryList[$j]->name ?></h1>
+                      <p style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"><?= $subCategoryList[$j]->description ?></p>
+                    </div>
+                    <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                      MORE
+                      <hr />
+                    </a>
+                  </li>
+            <?php }
+              }
+            }
+            ?>
           </ul>
         </div>
       </div>
@@ -332,7 +331,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                       <div class="description mt-xl-0 mt-4">
                         <h1><?= $sort->title ?></h1>
                         <p><?= $sort->short_content ?></p>
-                        
+
                       </div>
                     </div>
                   </a>

@@ -119,7 +119,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                                                 <td><?= $singleResult->name ?></td>
                                                 <td><?= $singleResult->status ?></td>
                                                 <td><?= $singleResult->category_id ?></td>
-                                                <td class="text-center"><button class="btn btn-info">DÜZENLE</button></td>
+                                                <td class="text-center"><a href="product-subcategory-details.php?scid=<?= $singleResult->id ?>" class="btn btn-info">DÜZENLE</a></td>
                                                 <td class="text-center"><button class="btn btn-danger productSubCategoryDeleteBtn" subcat-id="<?= $singleResult->id ?>" subcat-img="<?= $singleResult->image ?>">SİL</button></td>
                                             </tr>
                                         <?php }
@@ -142,7 +142,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
     <script>
         $(document).on('click', '.productMainCategoryDeleteBtn', function() {
             event.preventDefault();
-            var mainCatID = $(this).attr(" mcat-id");
+            var mainCatID = $(this).attr("mcat-id");
 
 
             Swal.fire({

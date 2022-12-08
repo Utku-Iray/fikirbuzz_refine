@@ -177,26 +177,24 @@ $specCount = count($specResult);
                         dataType: "json",
                         data: $data,
                         success: function(data) {
-
-                            // if (data.status == false) {
-                            //     Swal.fire({
-                            //         position: 'top-end',
-                            //         icon: 'error',
-                            //         title: data.errors.error,
-                            //         showConfirmButton: false,
-                            //         timer: 1500
-                            //     })
-                            // } else {
-                            //     Swal.fire({
-                            //         position: 'top-end',
-                            //         icon: 'success',
-                            //         title: data.success,
-                            //         showConfirmButton: false,
-                            //         timer: 1500
-                            //     })
-                            //     // setInterval(reloadHandler, 1600);
-
-                            // }
+                            setInterval(location.href = "products.php", 2500);
+                            if (data.status == false) {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: data.errors.error,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            } else {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: data.success,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
                         }
                     });
                 }

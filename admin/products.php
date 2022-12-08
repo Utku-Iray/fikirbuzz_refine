@@ -83,7 +83,7 @@ $productResult = $query->fetchAll(PDO::FETCH_OBJ);
         $(document).on('click', '.productDeleteBtn', function() {
             event.preventDefault();
             var catID = $(this).attr("cat-id");
-            var subCatImg = $(this).attr("subcat-img");
+            // var subCatImg = $(this).attr("subcat-img");
 
             Swal.fire({
                 title: 'Ürünü silmek istediğinize emin misiniz?',
@@ -101,15 +101,14 @@ $productResult = $query->fetchAll(PDO::FETCH_OBJ);
                         url: "API/delete-product.php",
                         type: "POST",
                         data: {
-                            subCatID: subCatID,
-                            subCatImg: subCatImg
+                            catID: catID,
                         },
                         cache: false,
                         dataType: "json",
                         success: function(data) {
                             if (data.status == true) {
                                 setInterval(reloadHandler, 2500)
-                                $(".subcat-" + subCatID).fadeOut('slow');
+                                $(".product-" + catID).fadeOut('slow');
                                 Swal.fire({
                                     position: 'top-end',
                                     icon: 'success',

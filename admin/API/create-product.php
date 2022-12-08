@@ -72,9 +72,6 @@ $efilename = explode('.', $manualFilename);
 $manualUzanti = $efilename[count($efilename) - 1];
 $manualLocation  = "";
 
-var_dump($manualTmpFilePath);
-var_dump($manualFilename);
-
 
 // Specs
 for ($i = 0; $i < $specCount; $i++) {

@@ -1,3 +1,18 @@
+<?php
+
+$query = $vt->prepare("SELECT * FROM category WHERE status = 1");
+$query->execute();
+$mainCategoryList = $query->fetchAll(PDO::FETCH_OBJ);
+
+$mainCatCount = count($mainCategoryList);
+
+$query = $vt->prepare("SELECT * FROM sub_category WHERE status = 1");
+$query->execute();
+$subCategoryList = $query->fetchAll(PDO::FETCH_OBJ);
+
+$subCatCount = count($subCategoryList);
+?>
+
 <header>
   <button class="navbar-toggler menu-reverse" type="button">
     <div class="menu-icon" onclick="menuTrigger(this)">
@@ -35,158 +50,41 @@
               <div class="container-fluid col-xl-11">
                 <div class="row">
                   <ul class="col-xl-3 selection prodMegaFilter">
-                    <li data-filter="pid-1" class="pid-1 onTrigger adaptive active">Network Appliances</li>
-                    <li data-filter="pid-2" class="pid-2 adaptive">Telecom Datacenter Appliances</li>
-                    <li data-filter="pid-3" class="pid-3 adaptive">Industrial Communication Platforms</li>
-                    <li data-filter="pid-4" class="pid-4 adaptive">Vehicle Computers</li>
-                    <li data-filter="pid-5" class="pid-5 adaptive">Embedded Box PCs</li>
-                    <li data-filter="pid-6" class="pid-6 adaptive">Extension Modules</li>
+                    <?php
+
+                    for ($i = 0; $i < $mainCatCount; $i++) { ?>
+                      <li data-filter="pid-<?= $i + 1 ?>" class="pid-<?= $i + 1; ?>  <?php if ($i + 1 == 1) echo "active onTrigger";
+                                                                                      else "" ?> adaptive"><?= $mainCategoryList[$i]->name ?></li>
+                    <?php }  ?>
+
                   </ul>
                   <div class="col-xl-9">
                     <ul class="prodMegaSlider clearfix">
-                      <li class="pid-1">
-                        <div class="outbox">
-                          <a href="#">
-                            <div class="prod-tag">NCA-0123</div>
-                          </a>
-                          <img src="assets/materials/network-device.png">
-                        </div>
-                        <div class="description">
-                          <h1>DESKTOP NETWORK APPLIANCES</h1>
-                        </div>
-                        <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                          MORE
-                          <hr />
-                        </a>
-                      </li>
 
-                      <li class="pid-1">
-                        <div class="outbox">
-                          <a href="#">
-                            <div class="prod-tag">NCA-0123</div>
-                          </a>
-                          <img src="assets/materials/network-device.png">
-                        </div>
-                        <div class="description">
-                          <h1>DESKTOP NETWORK APPLIANCES</h1>
-                        </div>
-                        <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                          MORE
-                          <hr />
-                        </a>
-                      </li>
+                      <?php
+                      for ($i = 0; $i < $mainCatCount; $i++) {
+                        for ($j = 0; $j < $subCatCount; $j++) {
+                          if ($subCategoryList[$j]->category_id == $mainCategoryList[$i]->id) { ?>
+                            <li class="pid-<?= $i + 1 ?>">
+                              <div class="outbox">
+                                <a href="#">
+                                  <div class="prod-tag"><?= $mainCategoryList[$i]->name ?></div>
+                                </a>
+                                <img src="<?= $subCategoryList[$j]->image ?>" style="width: 200px;">
+                              </div>
+                              <div class="description">
+                                <h1><?= $subCategoryList[$j]->name ?></h1>
+                              </div>
+                              <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
+                                MORE
+                                <hr />
+                              </a>
+                            </li>
+                      <?php }
+                        }
+                      }
+                      ?>
 
-                      <li class="pid-1">
-                        <div class="outbox">
-                          <a href="#">
-                            <div class="prod-tag">NCA-0123</div>
-                          </a>
-                          <img src="assets/materials/network-device.png">
-                        </div>
-                        <div class="description">
-                          <h1>DESKTOP NETWORK APPLIANCES</h1>
-                        </div>
-                        <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                          MORE
-                          <hr />
-                        </a>
-                      </li>
-
-                      <li class="pid-1">
-                        <div class="outbox">
-                          <a href="#">
-                            <div class="prod-tag">NCA-0123</div>
-                          </a>
-                          <img src="assets/materials/network-device.png">
-                        </div>
-                        <div class="description">
-                          <h1>DESKTOP NETWORK APPLIANCES</h1>
-                        </div>
-                        <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                          MORE
-                          <hr />
-                        </a>
-                      </li>
-
-                      <li class="pid-1">
-                        <div class="outbox">
-                          <a href="#">
-                            <div class="prod-tag">NCA-0123</div>
-                          </a>
-                          <img src="assets/materials/network-device.png">
-                        </div>
-                        <div class="description">
-                          <h1>DESKTOP NETWORK APPLIANCES</h1>
-                        </div>
-                        <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                          MORE
-                          <hr />
-                        </a>
-                      </li>
-
-                      <li class="pid-1">
-                        <div class="outbox">
-                          <a href="#">
-                            <div class="prod-tag">NCA-0123</div>
-                          </a>
-                          <img src="assets/materials/network-device.png">
-                        </div>
-                        <div class="description">
-                          <h1>DESKTOP NETWORK APPLIANCES</h1>
-                        </div>
-                        <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                          MORE
-                          <hr />
-                        </a>
-                      </li>
-
-                      <li class="pid-1">
-                        <div class="outbox">
-                          <a href="#">
-                            <div class="prod-tag">NCA-0123</div>
-                          </a>
-                          <img src="assets/materials/network-device.png">
-                        </div>
-                        <div class="description">
-                          <h1>DESKTOP NETWORK APPLIANCES</h1>
-                        </div>
-                        <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                          MORE
-                          <hr />
-                        </a>
-                      </li>
-
-                      <li class="pid-1">
-                        <div class="outbox">
-                          <a href="#">
-                            <div class="prod-tag">NCA-0123</div>
-                          </a>
-                          <img src="assets/materials/network-device.png">
-                        </div>
-                        <div class="description">
-                          <h1>DESKTOP NETWORK APPLIANCES</h1>
-                        </div>
-                        <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                          MORE
-                          <hr />
-                        </a>
-                      </li>
-
-                      <li class="pid-2">
-                        <div class="outbox">
-                          <a href="#">
-                            <div class="prod-tag">NCA-0123</div>
-                          </a>
-                          <img src="assets/materials/network-device.png">
-                        </div>
-                        <div class="description">
-                          <h1>DESKTOP NETWORK APPLIANCES PID-2</h1>
-                        </div>
-                        <a href="#" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                          MORE
-                          <hr />
-                        </a>
-                      </li>
                     </ul>
                   </div>
                 </div>
@@ -272,19 +170,12 @@
         </h2>
         <div id="lanerProduct" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
           <div class="accordion-body d-flex " style="padding: 0 !important;">
-            <div class="col-12" style="text-align: left;
-    border-style: solid;
-    border-width:1px;
-    border-top: none;
-    padding: 10px;
-    border-radius: 11px;
-    margin-bottom: 10px;">
-              <a href="#">Industrial Communication Platforms</a>
-              <a href="#">Embedded Box PCs</a>
-              <a href="#">Vehicle Computers</a>
-              <a href="#">Telecom Data Center Appliances</a>
-              <a href="#">Extension Modules</a>
-              <a href="#">Network Appliances</a>
+            <div class="col-12" style="text-align: left;border-style: solid;border-width:1px;border-top: none;padding: 10px;border-radius: 11px;margin-bottom: 10px;">
+              <?php
+
+              for ($i = 0; $i < $mainCatCount; $i++) { ?>
+                <a href="lanner-product.php?mcid=<?= $mainCategoryList[$i]->id ?>"><?= $mainCategoryList[$i]->name ?></a>
+              <?php }  ?>
 
 
             </div>

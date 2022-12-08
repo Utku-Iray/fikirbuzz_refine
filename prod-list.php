@@ -1,9 +1,27 @@
+<?php
+require "database/connection.php";
+
+if ($_GET["cid"]) {
+  $cid = $_GET["cid"];
+
+  $query = $vt->prepare("SELECT * FROM sub_category WHERE id = '$cid' AND status = 1");
+  $query->execute();
+  $catResult = $query->fetchAll(PDO::FETCH_OBJ);
+
+  $query = $vt->prepare("SELECT * FROM product WHERE category_id = '$cid' AND status = 1");
+  $query->execute();
+  $productList = $query->fetchAll(PDO::FETCH_OBJ);
+} else {
+  header("Location: index.php");
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
-  <?php include 'php/head.php' ?>
+<?php include 'php/head.php' ?>
 
-  
+
 <body>
 
   <?php include 'php/header.php' ?>
@@ -18,17 +36,15 @@
         <div class="row align-content-center align-items-center">
           <div class="col-xl-7">
             <div class="breadcrumb" data-aos="fade-in">
-              <a href="#">Products</a><a href="#">Network Appliances</a>
+              <a href="#">Products</a><a href="#"><?= $catResult[0]->name ?></a>
             </div>
             <div class="title" data-aos="fade-right">
-              <h1>DESKTOP NETWORK APPLIANCES</h1>
-              <p>Cras ac tortor at magna porttitor consequat quis a lacus. Suspendisse maximus purus vestibulum, tempor
-                tortor vel, dignissim tortor. Sed sed commodo orci. Nullam eget lectus aliquam, egestas nisl non, vehicula
-                elit.</p>
+              <h1><?= $catResult[0]->name ?></h1>
+              <p><?= $catResult[0]->description ?></p>
             </div>
           </div>
           <div class="col-xl-4 ms-xl-auto mx-auto text-center mt-5 mt-xl-auto">
-            <img src="assets/materials/prod.png" class="img-fluid">
+            <img src="<?= $catResult[0]->image ?>" class="img-fluid">
           </div>
         </div>
       </div>
@@ -36,174 +52,28 @@
     <div class="index-sec-1">
       <div class="container-fluid col-xl-10">
         <div class="row list clearfix">
-          <div class="col-xl-3 col-lg-4 mt-5 inp">
-            <div class="full-box">
-            <div class="outbox">
-              <a href="#">
-              </a>
-              <img src="assets/materials/network-device.png">
-            </div>
-            <div class="description">
-              <h1>NCA-0123</h1>
-              <p>Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Fusce
-                est sapien, accumsan non efficitur
-                faucibus, suscipit ac mi.</p>
-            </div>
-            <a href="prod-in.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
-          </div>
-          </div>
 
-          <div class="col-xl-3 col-lg-4 mt-5 inp">
-            <div class="full-box">
-            <div class="outbox">
-              <a href="#">
-              </a>
-              <img src="assets/materials/network-device.png">
-            </div>
-            <div class="description">
-              <h1>NCA-0123</h1>
-              <p>Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Fusce
-                est sapien, accumsan non efficitur
-                faucibus, suscipit ac mi.</p>
-            </div>
-            <a href="prod-in.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
-          </div>
-          </div>
+          <?php foreach ($productList as $product) { ?>
+            <div class="col-xl-3 col-lg-4 mt-5 inp">
+              <div class="full-box">
+                <div class="outbox">
+                  <a href="prod-in.php?pid=<?= $product->id ?>&cid=<?= $cid ?>">
+                    <img src="<?= $product->image ?>">
+                  </a>
 
-          <div class="col-xl-3 col-lg-4 mt-5 inp">
-            <div class="full-box">
-            <div class="outbox">
-              <a href="#">
-              </a>
-              <img src="assets/materials/network-device.png">
+                </div>
+                <div class="description">
+                  <h1><?= $product->name ?></h1>
+                  <p><?= $product->short_description ?></p>
+                </div>
+                <a href="prod-in.php?pid=<?= $product->id ?>&cid=<?= $cid ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE MORE
+                  <hr />
+                </a>
+              </div>
             </div>
-            <div class="description">
-              <h1>NCA-0123</h1>
-              <p>Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Fusce
-                est sapien, accumsan non efficitur
-                faucibus, suscipit ac mi.</p>
-            </div>
-            <a href="prod-in.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
-          </div>
-          </div>
+          <?php  } ?>
 
-          <div class="col-xl-3 col-lg-4 mt-5 inp">
-            <div class="full-box">
-            <div class="outbox">
-              <a href="#">
-              </a>
-              <img src="assets/materials/network-device.png">
-            </div>
-            <div class="description">
-              <h1>NCA-0123</h1>
-              <p>Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Fusce
-                est sapien, accumsan non efficitur
-                faucibus, suscipit ac mi.</p>
-            </div>
-            <a href="prod-in.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
-          </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-4 mt-5 inp">
-            <div class="full-box">
-            <div class="outbox">
-              <a href="#">
-              </a>
-              <img src="assets/materials/network-device.png">
-            </div>
-            <div class="description">
-              <h1>NCA-0123</h1>
-              <p>Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Fusce
-                est sapien, accumsan non efficitur
-                faucibus, suscipit ac mi.</p>
-            </div>
-            <a href="prod-in.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
-          </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-4 mt-5 inp">
-            <div class="full-box">
-            <div class="outbox">
-              <a href="#">
-              </a>
-              <img src="assets/materials/network-device.png">
-            </div>
-            <div class="description">
-              <h1>NCA-0123</h1>
-              <p>Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Fusce
-                est sapien, accumsan non efficitur
-                faucibus, suscipit ac mi.</p>
-            </div>
-            <a href="prod-in.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
-          </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-4 mt-5 inp">
-            <div class="full-box">
-            <div class="outbox">
-              <a href="#">
-              </a>
-              <img src="assets/materials/network-device.png">
-            </div>
-            <div class="description">
-              <h1>NCA-0123</h1>
-              <p>Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Fusce
-                est sapien, accumsan non efficitur
-                faucibus, suscipit ac mi.</p>
-            </div>
-            <a href="prod-in.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
-          </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-4 mt-5 inp">
-            <div class="full-box">
-            <div class="outbox">
-              <a href="#">
-              </a>
-              <img src="assets/materials/network-device.png">
-            </div>
-            <div class="description">
-              <h1>NCA-0123</h1>
-              <p>Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Fusce
-                est sapien, accumsan non efficitur
-                faucibus, suscipit ac mi.</p>
-            </div>
-            <a href="prod-in.html" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-              MORE
-              <hr />
-            </a>
-          </div>
-          </div>
-          <button class="load-more__btn mt-5 mb-5">SEE MORE<br/><img src="assets/materials/downron.svg"></button>
+          <button class="load-more__btn mt-5 mb-5">SEE MORE<br /><img src="assets/materials/downron.svg"></button>
         </div>
       </div>
     </div>
@@ -229,7 +99,9 @@
                         consectetur adipiscing elit. Fusce
                         est sapien, accumsan non efficitur
                         faucibus, suscipit ac mi.</p>
-                        <div class="btn-line">See Details <hr/></div>
+                      <div class="btn-line">See Details
+                        <hr />
+                      </div>
                     </div>
                   </div>
                 </a>
@@ -247,7 +119,9 @@
                         consectetur adipiscing elit. Fusce
                         est sapien, accumsan non efficitur
                         faucibus, suscipit ac fsdfsdfsdffffdsfsdfdsfdsfsdfds.</p>
-                        <div class="btn-line">See Details <hr/></div>
+                      <div class="btn-line">See Details
+                        <hr />
+                      </div>
                     </div>
                   </div>
                 </a>
@@ -265,7 +139,9 @@
                         consectetur adipiscing elit. Fusce
                         est sapien, accumsan non efficitur
                         faucibus, suscipit ac mi.</p>
-                        <div class="btn-line">See Details <hr/></div>
+                      <div class="btn-line">See Details
+                        <hr />
+                      </div>
                     </div>
                   </div>
                 </a>
@@ -283,7 +159,9 @@
                         consectetur adipiscing elit. Fusce
                         est sapien, accumsan non efficitur
                         faucibus, suscipit ac mi.</p>
-                        <div class="btn-line">See Details <hr/></div>
+                      <div class="btn-line">See Details
+                        <hr />
+                      </div>
                     </div>
                   </div>
                 </a>
@@ -310,11 +188,9 @@
     <!-- Mobile Fast Contact Nav -->
     <div class="mini-nav d-flex justify-content-center d-xl-none">
       <div class="position-relative d-flex">
-        <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg"
-            width="20px" class="me-2">Call Us</a>
+        <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg" width="20px" class="me-2">Call Us</a>
         <div class="seperator mx-auto"></div>
-        <a href="#" class="btn-white text-center mx-auto"><img src="assets/materials/handshake.svg" width="26px"
-            class="me-2">Be Reseller</a>
+        <a href="#" class="btn-white text-center mx-auto"><img src="assets/materials/handshake.svg" width="26px" class="me-2">Be Reseller</a>
       </div>
     </div>
     <!-- Mobile Fast Contact Nav -->
@@ -347,34 +223,35 @@
         <div class="col-xl-7 p-0">
           <div class="outflow-half text-center d-flex align-content-center align-items-center justify-content-center">
             <div class="rightSide">
-               <h1 class="mb-5 pb-xl-5">Reseller Login</h1>
-            <form class="form mt-5" action="account.html">
-              <div class="form-group">
-                <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
-              </div>
-              <div class="form-group mt-3">
-                <input type="password" placeholder="Password"><img src="assets/materials/env-pw.svg">
-              </div>
-              <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
-                <button type="submit" class="text-start ps-3">LOGIN</button><div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
-              </div>
-              <div class="form-group mt-3 mx-auto d-flex justify-content-center">
-                <a href="#">Register Now</a>
-              </div>
-            </form>
+              <h1 class="mb-5 pb-xl-5">Reseller Login</h1>
+              <form class="form mt-5" action="account.html">
+                <div class="form-group">
+                  <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
+                </div>
+                <div class="form-group mt-3">
+                  <input type="password" placeholder="Password"><img src="assets/materials/env-pw.svg">
+                </div>
+                <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
+                  <button type="submit" class="text-start ps-3">LOGIN</button>
+                  <div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
+                </div>
+                <div class="form-group mt-3 mx-auto d-flex justify-content-center">
+                  <a href="#">Register Now</a>
+                </div>
+              </form>
             </div>
-           
+
           </div>
-         
+
         </div>
       </div>
     </div>
     <!-- Login Area -->
 
     <!--Push Button-->
-        <a target="blank_" href="https://api.whatsapp.com/send?phone=+905000000000&text=Merhabalar, Refine Inc. ayrıcalıklarından yararlanmak istiyorum." class="pusher d-xl-flex d-none">
-          <img src="assets/materials/chat.svg">
-        </a>
+    <a target="blank_" href="https://api.whatsapp.com/send?phone=+905000000000&text=Merhabalar, Refine Inc. ayrıcalıklarından yararlanmak istiyorum." class="pusher d-xl-flex d-none">
+      <img src="assets/materials/chat.svg">
+    </a>
     <!--Push Button-->
   </main>
 
