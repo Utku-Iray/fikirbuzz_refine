@@ -12,10 +12,8 @@
                          <a href="https://www.linkedin.com/company/refineinc/" class="me-3">
                              <div class="sBox"><img src="assets/materials/linked-in.svg"></div>
                          </a>
-                         <a href="#" class="me-3">
-                             <div class="sBox"><img src="assets/materials/insta.svg"></div>
-                         </a>
-                         <a href="#">
+
+                         <a href="https://www.youtube.com/channel/UCkyVtjw77RO3C6qRN1uDDXg">
                              <div class="sBox"><img src="assets/materials/youtube.svg"></div>
                          </a>
                      </div>
@@ -25,21 +23,24 @@
          <div class="col-xl-7 p-0">
              <div class="outflow-half text-center d-flex align-content-center align-items-center justify-content-center">
                  <div class="rightSide">
-                     <h1 class="mb-5 pb-xl-5">Reseller Login</h1>
+                     <h1 class="mb-5 pb-xl-5">FORM</h1>
                      <form class="form mt-5" action="account.html">
                          <div class="form-group">
                              <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
                          </div>
                          <div class="form-group mt-3">
-                             <input type="password" placeholder="Password"><img src="assets/materials/env-pw.svg">
+                             <input type="password" placeholder="Phone Number"><img src="assets/materials/env-pw.svg">
+                         </div>
+                         <div class="form-group mt-3">
+
+
+                             <textarea cols="30" rows="4" placeholder="Text..."></textarea>
                          </div>
                          <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
-                             <button type="submit" class="text-start ps-3">LOGIN</button>
+                             <button type="submit" class="text-start ps-3">SEND</button>
                              <div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
                          </div>
-                         <div class="form-group mt-3 mx-auto d-flex justify-content-center">
-                             <a href="#">Register Now</a>
-                         </div>
+
                      </form>
                  </div>
 
@@ -108,6 +109,13 @@
                      <a href="prod-list.php">
                          <p>Products</p>
                      </a>
+
+                     <a href="https://tr.transcend-info.com/">
+                         <p>Transcend</p>
+                     </a>
+                     <a href="https://global1.shuttle.com/">
+                         <p>Shuttle</p>
+                     </a>
                      <a href="single-page.php">
                          <p>PCB Design & Manufacturing</p>
                      </a>
@@ -149,7 +157,7 @@
                      <form class="form mt-4">
                          <div class="form-group">
                              <!-- <input type="text" placeholder="Your E-Mail Address"> -->
-                             <button type="submit"><img width="20px" style="margin-right: 10px;" src="assets/materials/pdf-fikirbuz.png" alt="">Datasheet</button>
+                             <button type="submit"><img width="20px" style="margin-right: 10px;" src="assets/materials/pdf-fikirbuz.png" alt="">E-Book</button>
                          </div>
                      </form>
                  </div>

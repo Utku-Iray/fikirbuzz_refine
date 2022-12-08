@@ -2309,6 +2309,7 @@ main .index-sec-1 .clearfix .outbox img {
 
 main .index-sec-1 .clearfix .description {
     position: relative;
+    height: 160px;
     margin-top: 1em;
     padding: 1em;
 }
@@ -3077,11 +3078,12 @@ main .index-sec-2 .newSlider .col-xl-6 img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover !important;
-    object-fit: cover !important;
+    object-fit: fill !important;
 }
 
 main .index-sec-2 .newSlider .flatten {
-    padding: 2em;
+    height: 100%;
+    padding: 1.5em;
     background: #3D6086;
     color: #fff;
 }
@@ -3628,7 +3630,7 @@ footer .col-xl-4 .mini-box p {
     }
     .banner .col-xl-4 img {
         max-width: 450px !important;
-        width: 100% !important;
+        width: 100%;
         padding: 1em;
     }
     .index-sec-0 {
@@ -3773,4 +3775,8 @@ footer .col-xl-4 .mini-box p {
 .youtube-embed iframe {
     padding: 10px;
     border-radius: 25px;
+}
+
+textarea::-webkit-input-placeholder {
+    padding-left: 15px;
 }

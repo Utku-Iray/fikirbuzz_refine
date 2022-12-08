@@ -1,10 +1,9 @@
-
 <!doctype html>
 <html lang="en">
 
-  <?php include 'php/head.php' ?>
+<?php include 'php/head.php' ?>
 
-  
+
 <body>
 
   <?php include 'php/header.php' ?>
@@ -50,8 +49,7 @@
             <textarea rows="8" class="form-control p-3 ps-3" placeholder="Message"></textarea>
             <img src="assets/materials/paragraph.svg">
           </div>
-          <div
-            class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
+          <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
             <button type="submit" class="text-start ps-3">SEND</button>
             <div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
           </div>
@@ -70,63 +68,69 @@
                 <div class="accordion" id="accordionExample">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         HQ
                       </button>
                     </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                      data-bs-parent="#accordionExample">
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div class="accordion-body d-flex justify-content-between">
                         <div class="col-11 ms-auto text-end">
                           <h5 class="mb-4">Kasap Sok. Gamze Apt. No:19/1 34394
                             Esentepe, Şişli, İstanbul, Türkiye</h5>
-  
-                          <a href="mailto:info@refine-tr.com"><h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2">info@refine-tr.com</h5></a>
-                          <a href="tel:+908504338760"><h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2">+90 850 433 87 60&nbsp;</h5></a>
-  
+
+                          <a href="mailto:info@refine-tr.com">
+                            <h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2">info@refine-tr.com</h5>
+                          </a>
+                          <a href="tel:+908504338760">
+                            <h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2">+90 850 433 87 60&nbsp;</h5>
+                          </a>
+
                         </div>
                       </div>
                     </div>
                   </div>
-  
+
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         WAREHOUSE - 1
                       </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                      data-bs-parent="#accordionExample">
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                       <div class="accordion-body d-flex justify-content-between">
                         <div class="col-11 ms-auto text-end">
                           <h5 class="mb-4">Warehouse I: Room 1202, 12/F Global Gateway (Tsuen Wan), 168 Yeung Uk Road, Tsuen Wan, Hong Kong</h5>
-  
-                          <a href="mailto:info@refine-tr.com"><h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2">info@refine-tr.com</h5></a>
-                          <a href="tel:+908504338760"><h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2">+90 850 433 87 60&nbsp;</h5></a>
-  
+
+                          <a href="mailto:info@refine-tr.com">
+                            <h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2">info@refine-tr.com</h5>
+                          </a>
+                          <a href="tel:+908504338760">
+                            <h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2">+90 850 433 87 60&nbsp;</h5>
+                          </a>
+
                         </div>
                       </div>
                     </div>
                   </div>
-  
+
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         WAREHOUSE - 2
                       </button>
                     </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                      data-bs-parent="#accordionExample">
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                       <div class="accordion-body d-flex justify-content-between">
                         <div class="col-11 ms-auto text-end">
                           <h5 class="mb-4">Warehouse II: No. 121 Tai Tao Tsuen Hung Shui Kiu Yuen Long, Hong Kong</h5>
-  
-                          <a href="mailto:info@refine-tr.com"><h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2">info@refine-tr.com</h5></a>
-                          <a href="tel:+908504338760"><h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2">+90 850 433 87 60&nbsp;</h5></a>
-  
+
+                          <a href="mailto:info@refine-tr.com">
+                            <h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2">info@refine-tr.com</h5>
+                          </a>
+                          <a href="tel:+908504338760">
+                            <h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2">+90 850 433 87 60&nbsp;</h5>
+                          </a>
+
                         </div>
                       </div>
                     </div>
@@ -143,7 +147,7 @@
 
 
     <div class="mapsArea">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.071762615664!2d29.00901981515844!3d41.06742397929473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7272b56ea45%3A0x7e5abcf92e97bfe6!2sRefine%20-%20Lanner%20Authorized%20Distributor!5e0!3m2!1str!2str!4v1669857585904!5m2!1str!2str" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.071762615664!2d29.00901981515844!3d41.06742397929473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7272b56ea45%3A0x7e5abcf92e97bfe6!2sRefine%20-%20Lanner%20Authorized%20Distributor!5e0!3m2!1str!2str!4v1669857585904!5m2!1str!2str" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
 
@@ -165,11 +169,9 @@
     <!-- Mobile Fast Contact Nav -->
     <div class="mini-nav d-flex justify-content-center d-xl-none">
       <div class="position-relative d-flex">
-        <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg"
-            width="20px" class="me-2">Call Us</a>
+        <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg" width="20px" class="me-2">Call Us</a>
         <div class="seperator mx-auto"></div>
-        <a href="#" class="btn-white text-center mx-auto"><img src="assets/materials/handshake.svg" width="26px"
-            class="me-2">Be Reseller</a>
+        <a href="#" class="btn-white text-center mx-auto"><img src="assets/materials/handshake.svg" width="26px" class="me-2">Be Reseller</a>
       </div>
     </div>
     <!-- Mobile Fast Contact Nav -->
@@ -202,39 +204,40 @@
         <div class="col-xl-7 p-0">
           <div class="outflow-half text-center d-flex align-content-center align-items-center justify-content-center">
             <div class="rightSide">
-               <h1 class="mb-5 pb-xl-5">Reseller Login</h1>
-            <form class="form mt-5" action="account.html">
-              <div class="form-group">
-                <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
-              </div>
-              <div class="form-group mt-3">
-                <input type="password" placeholder="Password"><img src="assets/materials/env-pw.svg">
-              </div>
-              <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
-                <button type="submit" class="text-start ps-3">LOGIN</button><div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
-              </div>
-              <div class="form-group mt-3 mx-auto d-flex justify-content-center">
-                <a href="#">Register Now</a>
-              </div>
-            </form>
+              <h1 class="mb-5 pb-xl-5">Reseller Login</h1>
+              <form class="form mt-5" action="account.html">
+                <div class="form-group">
+                  <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
+                </div>
+                <div class="form-group mt-3">
+                  <input type="password" placeholder="Password"><img src="assets/materials/env-pw.svg">
+                </div>
+                <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
+                  <button type="submit" class="text-start ps-3">LOGIN</button>
+                  <div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
+                </div>
+                <div class="form-group mt-3 mx-auto d-flex justify-content-center">
+                  <a href="#">Register Now</a>
+                </div>
+              </form>
             </div>
-           
+
           </div>
-         
+
         </div>
       </div>
     </div>
     <!-- Login Area -->
 
     <!--Push Button-->
-        <a target="blank_" href="https://api.whatsapp.com/send?phone=+905000000000&text=Merhabalar, Refine Inc. ayrıcalıklarından yararlanmak istiyorum." class="pusher d-xl-flex d-none">
-          <img src="assets/materials/chat.svg">
-        </a>
+    <a target="blank_" href="https://api.whatsapp.com/send?phone=+905000000000&text=Merhabalar, Refine Inc. ayrıcalıklarından yararlanmak istiyorum." class="pusher d-xl-flex d-none">
+      <img src="assets/materials/chat.svg">
+    </a>
     <!--Push Button-->
   </main>
 
   <?php include 'php/footer.php' ?>
-  
+
 </body>
 
 </html>

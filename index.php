@@ -1,3 +1,13 @@
+<?php
+require "database/connection.php";
+
+
+
+$query = $vt->prepare("SELECT * FROM blog WHERE sort = 5 ORDER BY created_at ASC");
+$query->execute();
+$blogSort = $query->fetchAll(PDO::FETCH_OBJ);
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -26,7 +36,7 @@
                       <div class="title mb-5">
                         <h1 class="mb-4">17 years of experience in hardware and information security service…</h1>
                       </div>
-                      <a href="single-blog.php" class="btn-view"><span>See Details
+                      <a href="single-blog.php?url=who-is-refine-what-benefits-does-refine-provide-for-you" class="btn-view"><span>See Details
                           <hr>
                         </span></a>
                     </div>
@@ -46,7 +56,7 @@
                       <div class="title mb-5">
                         <h1 class="mb-4">Lanner's authorized distributor in the Middle East, Türkiye and Pakistan…</h1>
                       </div>
-                      <a href="single-blog.php" class="btn-view"><span>See Details
+                      <a href="https://www.lannerinc.com/contact/channel-partners" class="btn-view"><span>See Details
                           <hr>
                         </span></a>
                     </div>
@@ -66,7 +76,7 @@
                       <div class="title mb-5">
                         <h1 class="mb-4">Exclusive offers for you to buy the best quality Lanner products at the most special prices…</h1>
                       </div>
-                      <a href="single-blog.php" class="btn-view"><span>See Details
+                      <a style="cursor: pointer;"class="btn-view form"><span>See Details
                           <hr>
                         </span></a>
                     </div>
@@ -151,14 +161,13 @@
             </div>
             <div class="box--slider" data-aos="fade-in">
               <div class="clearfix">
-                <a href="single-page.php">
+                <a>
                   <div class="inbox">
-                    <img src="assets/materials/box-1.png">
+                    <img src="assets/materials/homepage-box/industrial-iot.png">
                     <div class="desc p-4">
                       <div class="in-content">
-                        <h3>IT Network Security</h3>
-                        <p>Enterprise Network Security<br />
-                          SASE Edge Security</p>
+                        <h3>INDUSTRIAL IOT</h3>
+                        <p>Use our network of interconnected smart devices to build systems that monitor, collect, exchange and analyze your data.</p>
                       </div>
                     </div>
                   </div>
@@ -166,14 +175,13 @@
               </div>
 
               <div class="clearfix">
-                <a href="single-page.php">
+                <a>
                   <div class="inbox">
-                    <img src="assets/materials/box-2.png">
+                    <img src="assets/materials/homepage-box/it-network-security.png">
                     <div class="desc p-4">
                       <div class="in-content">
-                        <h3>OT Network Security</h3>
-                        <p>OT Security and Visibility<br />
-                          Critical Infrastructure Security</p>
+                        <h3>IT NETWORK SECURITY</h3>
+                        <p>Protect your company's infrastructure by preventing a wide variety of potential threats from infiltrating and spreading into your corporate network with our network security solutions. </p>
                       </div>
                     </div>
                   </div>
@@ -181,14 +189,13 @@
               </div>
 
               <div class="clearfix">
-                <a href="single-page.php">
+                <a>
                   <div class="inbox">
-                    <img src="assets/materials/box-3.png">
+                    <img src="assets/materials/homepage-box/sd-wan-ucpe.png">
                     <div class="desc p-4">
                       <div class="in-content">
                         <h3>SD-WAN & uCPE</h3>
-                        <p>SD-WAN for Remote Sites<br />
-                          5G Ready uCPE Platforms</p>
+                        <p>Upload different network features to devices in different locations with SD-WAN, which provides balancing, optimization and visibility.</p>
                       </div>
                     </div>
                   </div>
@@ -196,14 +203,52 @@
               </div>
 
               <div class="clearfix">
-                <a href="single-page.php">
+                <a >
                   <div class="inbox">
-                    <img src="assets/materials/box-3.png">
+                    <img src="assets/materials/homepage-box/edge-cloud.png">
                     <div class="desc p-4">
                       <div class="in-content">
-                        <h3>SD-WAN & uCPE</h3>
-                        <p>SD-WAN for Remote Sites<br />
-                          5G Ready uCPE Platforms</p>
+                        <h3>EDGE CLOUD </h3>
+                        <p>By implementing cloud computing at the user-generated edge, reduce latency and significantly optimize resource utilization with better performance. </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="clearfix">
+                <a>
+                  <div class="inbox">
+                    <img src="assets/materials/homepage-box/edge-all.png">
+                    <div class="desc p-4">
+                      <div class="in-content">
+                        <h3>EDGE AI </h3>
+                        <p>Devices process data locally, enabling you to make real-time operating decisions. Reduce your data communication costs by creating a faster and safer workspace with this application.</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="clearfix">
+                <a >
+                  <div class="inbox">
+                    <img src="assets/materials/homepage-box/ot-network-security.png">
+                    <div class="desc p-4">
+                      <div class="in-content">
+                        <h3>OT NETWORK SECURİTY </h3>
+                        <p>Easily read and monitor your data by controlling the production equipment used at every stage of industrial production.</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="clearfix">
+                <a>
+                  <div class="inbox">
+                    <img src="assets/materials/homepage-box/pcb.png">
+                    <div class="desc p-4">
+                      <div class="in-content">
+                        <h3>PCB DESIGN & MANUFACTURING </h3>
+                        <p>Use sourcing services for PCB design and manufacturing as well as being Lanner's authorized distributor in the Middle East, Türkiye and Pakistan.</p>
                       </div>
                     </div>
                   </div>
@@ -264,11 +309,11 @@
           <div class="col-xl-1 p-0"></div>
           <div class="col-xl-11 p-0 sep-2">
             <div class="col-4" style="float: right;">
-             <a href="https://www.lannerinc.com/news-and-events/latest-news" target="_blank" class="btn-loader" style="margin-top: 27px;background-color:#187352">News <img class="ms-2" src="assets/materials/smb.svg"></a>
+              <a href="https://www.lannerinc.com/news-and-events/latest-news" target="_blank" class="btn-loader" style="margin-top: 27px;background-color:#187352"> Lanner News <img class="ms-2" src="assets/materials/mouse.png"></a>
             </div>
             <ul class="newsFilter">
               <li data-filter="pid-1" class="pid-1 active">Blogs</li>
-              <li data-filter="pid-2" class="pid-2">Event</li>
+              <!-- <li data-filter="pid-2" class="pid-2">Event</li> -->
             </ul>
           </div>
         </div>
@@ -277,23 +322,22 @@
         <div class="row">
           <ul class="newSlider clearfix">
             <div class="row justify-content-between pid-1 pid-2 d-flex">
-              <li class="col-xl-6">
-                <a href="single-blog.php">
-                  <div class="flatten d-xl-flex">
-                    <div class="outbox me-xl-4">
-                      <img src="assets/materials/sec-img.png">
+              <?php foreach ($blogSort as $sort) { ?>
+                <li class="col-xl-6">
+                  <a href="single-blog.php">
+                    <div class="flatten d-xl-flex">
+                      <div class="outbox me-xl-4">
+                        <img src="<?= $sort->image  ?>">
+                      </div>
+                      <div class="description mt-xl-0 mt-4">
+                        <h1><?= $sort->title ?></h1>
+                        <p><?= $sort->short_content ?></p>
+                        
+                      </div>
                     </div>
-                    <div class="description mt-xl-0 mt-4">
-                      <h1>News #1</h1>
-                      <p>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Fusce
-                        est sapien, accumsan non efficitur
-                        faucibus, suscipit ac mi.</p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
+                  </a>
+                </li>
+              <?php }  ?>
 
 
             </div>
@@ -313,7 +357,7 @@
         <div class="row">
           <div class="col-xl-6 text-xl-start text-center">
             <h1>Refine is Lanner’s Authorized Distributor In <br />
-              The Middle East, Turkey And Pakistan.</h1>
+              The Middle East, Türkiye And Pakistan.</h1>
           </div>
           <div class="col-xl-6 my-xl-auto mt-3 ms-auto text-xl-end text-center">
             <a target="blank_" href="https://www.lannerinc.com/"><img src="assets/materials/path74.png"></a>
