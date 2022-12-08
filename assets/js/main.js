@@ -738,6 +738,11 @@ $('.list').simpleLoadMore({
     count: 4,
     itemsToLoad: 4,
 });
+$('.list-product').simpleLoadMore({
+    item: '.inp',
+    count: 6,
+
+});
 
 $('.list-blog').simpleLoadMore({
     item: '.inp',

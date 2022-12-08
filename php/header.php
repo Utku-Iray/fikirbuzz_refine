@@ -258,16 +258,45 @@
 
 
   <div id="sideNav" class="sidenav-m">
+
     <div class="menu-items">
       <img src="assets/materials/logo.svg" class="img-fluid mb-5">
       <a href="about-us.php">About Us</a>
-      <a href="#">Lanner</a>
+
+      <a href="media.php">Media</a>
+      <div class="accordion-item" style="border: none;">
+        <h2 class="accordion-header" id="headingTwo">
+          <button style="padding:0;margin-bottom:10px" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lanerProduct" aria-expanded="false" aria-controls="lanerProduct">
+            Lanner
+          </button>
+        </h2>
+        <div id="lanerProduct" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body d-flex " style="padding: 0 !important;">
+            <div class="col-12" style="text-align: left;
+    border-style: solid;
+    border-width:1px;
+    border-top: none;
+    padding: 10px;
+    border-radius: 11px;
+    margin-bottom: 10px;">
+              <a href="#">Industrial Communication Platforms</a>
+              <a href="#">Embedded Box PCs</a>
+              <a href="#">Vehicle Computers</a>
+              <a href="#">Telecom Data Center Appliances</a>
+              <a href="#">Extension Modules</a>
+              <a href="#">Network Appliances</a>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
       <a href="https://tr.transcend-info.com/">Transcend</a>
       <a href="https://global1.shuttle.com/">Shuttle</a>
       <a href="single-page.php">PCB Design & Manufacturing</a>
       <a href="blog-page.php">Blog</a>
       <a href="contact.php">Contact Us</a>
-      <a href="ebook-download.php" aria-haspopup="dialog" title="Download.pdf" class="btn-green lightbox">Datasheet <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
+      <a href="ebook-download.php" aria-haspopup="dialog" title="Download.pdf" class="btn-green lightbox">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
       <!-- <a href="#" class="btn-white login">Reseller Login</a> -->
       <div class="langArea d-flex">
         <!-- <a href="#" class="me-4"><img src="assets/materials/tr.svg" width="24px"></a> -->
