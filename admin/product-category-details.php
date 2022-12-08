@@ -1,17 +1,24 @@
 <?php
 require "../database/connection.php";
 
-$query = $vt->prepare("SELECT * FROM category");
-$query->execute();
-$productCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
-?>
+if (isset($_GET["cid"])) {
+    $catID = $_GET["cid"];
+    $query = $vt->prepare("SELECT * FROM category WHERE id='$catID'");
+    $query->execute();
+    $result = $query->fetchAll(PDO::FETCH_OBJ);
+} else {
+    header("Location: product-category.php");
+}
 
+
+
+?>
 <!doctype html>
 <html class="no-js " lang="en">
 
 <head>
     <?php include "utility/head.php" ?>
-    <title>Refine Admin | Yeni Alt Kategori Ekle</title>
+    <title>Refine Admin | Ana Kategori Düzenle</title>
 </head>
 
 <body data-alpino="theme-purple">
@@ -25,7 +32,7 @@ $productCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2><strong>Refine Admin | </strong>Yeni Alt Kategori Ekle</h2>
+                            <h2><strong>Refine Admin | </strong>Ana Kategori Düzenle</h2>
                         </div>
                     </div>
                 </div>
@@ -34,45 +41,21 @@ $productCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="body">
-                            <form id="addNewProductSubCategory" name="addNewProductSubCategory" method="post" enctype="multipart/form-data">
+                            <form id="updateProductMainCategory" name="updateProductMainCategory" method="post" enctype="multipart/form-data">
 
-                                <!-- Product Sub Category Name -->
-                                <label for="productSubCatName" class="mb-1">Alt Kategori Adı</label>
+                                <!-- Product Main Category Name -->
+                                <label for="productCatName" class="mb-1">Ana Kategori Adı</label>
                                 <div class="form-group mb-3">
-                                    <input type="text" id="productSubCatName" name="productSubCatName" class="form-control" placeholder="Alt Kategori Adı">
+                                    <input type="text" id="productCatName" name="productCatName" class="form-control" placeholder="Ana kategori adını giriniz" value="<?= $result[0]->name ?>">
                                 </div>
 
-                                <label for="productSubCatDesc" class="mb-1">Alt Kategori Açıklama</label>
-                                <div class="form-group mb-3">
-                                    <input type="text" id="productSubCatDesc" name="productSubCatDesc" class="form-control" placeholder="Alt Kategori Açıklama">
-                                </div>
-
-
-                                <label for="prodMainCategory" class="mb-1">Bağlı Olduğu Ana Kategori</label>
+                                <label for="prodCatStatus" class="mb-1">Ana Kategori Durum</label>
                                 <div class="form-group select-set mb-3">
-                                    <select class="form-select" id="prodMainCategory" name="prodMainCategory">
-                                        <option selected>Ana Kategori Seçiniz</option>
-                                        <?php foreach ($productCategoryResult as $result) {   ?>
-                                            <option value="<?= $result->id ?>"><?= $result->name ?></option>
-                                        <?php } ?>
-
-                                    </select>
-                                </div>
-
-                                <label for="prodSubCatStatus" class="mb-1">Alt Kategori Durum</label>
-                                <div class="form-group select-set mb-3">
-                                    <select class="form-select" id="prodSubCatStatus" name="prodSubCatStatus" aria-describedby="catStatusHelp">
+                                    <select class="form-select" id="prodCatStatus" name="prodCatStatus" aria-describedby="catStatusHelp">
                                         <option value="1" selected>Aktif</option>
                                         <option value="0">Pasif</option>
                                     </select>
-                                    <small for="catStatusHelp">* Kategori durumu aktif ise ürün eklenebilir ve websitede erişilebilir olacaktır.</small>
-                                </div>
-
-                                <!-- Product Sub Category Image -->
-                                <label for="prodSubCatImage" class="mb-1">Fotoğraf</label>
-                                <div class="form-group mb-2">
-                                    <input type="file" class="form-control-file" id="prodSubCatImage" name="prodSubCatImage" accept="image/png" aria-describedby="fileHelp">
-                                    <small for="fileHelp">Fotoğraf türü PNG olmalıdır.</small>
+                                    <small for="catStatusHelp">* Kategori durumu aktif ise alt kategori eklenebilir ve websitede erişilebilir olacaktır.</small>
                                 </div>
 
                                 <div style="text-align: right !important">
@@ -89,14 +72,14 @@ $productCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
 
     <?php include "utility/script.php"; ?>
 
-    <!-- Create new Blog Category -->
+    <!-- Update Product Main Category -->
     <script>
-        $('#addNewProductSubCategory').submit(function() {
+        $('#updateProductMainCategory').submit(function() {
             event.preventDefault()
             var $data = new FormData(this);
 
             Swal.fire({
-                title: 'Alt kategoriyi eklemek istediğinize emin misiniz?',
+                title: 'Ana kategoriyi güncellemek istediğinize emin misiniz?',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Evet, eminim.',
@@ -105,7 +88,7 @@ $productCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: "API/create-prod-sub-cat.php",
+                        url: "API/update-product-category.php",
                         type: "POST",
                         contentType: false,
                         processData: false,

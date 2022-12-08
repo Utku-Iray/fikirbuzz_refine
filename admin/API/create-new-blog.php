@@ -34,7 +34,7 @@ if (!empty($errors)) {
     $form_data['errors'] = $errors;
 } else {
 
-    $nameWithURL = $url . ".$uzanti";
+    $nameWithURL = $url . "." . $uzanti;
 
 
     if ($tmpFilePath != "") {

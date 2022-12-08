@@ -1,4 +1,7 @@
-﻿<!doctype html>
+﻿<?php
+require "../database/connection.php";
+?>
+<!doctype html>
 <html class="no-js " lang="en">
 
 <head>

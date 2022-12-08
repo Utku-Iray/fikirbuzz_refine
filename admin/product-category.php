@@ -72,7 +72,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                                             <tr class="mcat-<?= $singleResult->id ?>">
                                                 <td><?= $singleResult->name ?></td>
                                                 <td><?= $singleResult->status ?></td>
-                                                <td class="text-center"><button class="btn btn-info">DÜZENLE</button></td>
+                                                <td class="text-center"><a href="product-category-details.php?cid=<?= $singleResult->id ?>" class="btn btn-info">DÜZENLE</a></td>
                                                 <td class="text-center"><button class="btn btn-danger productMainCategoryDeleteBtn" mcat-id=<?= $singleResult->id ?>>SİL</button></td>
                                             </tr>
                                         <?php }
@@ -118,7 +118,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                                                 <td><?= $singleResult->name ?></td>
                                                 <td><?= $singleResult->status ?></td>
                                                 <td class="text-center"><button class="btn btn-info">DÜZENLE</button></td>
-                                                <td class="text-center"><button class="btn btn-danger">SİL</button></td>
+                                                <td class="text-center"><button class="btn btn-danger productSubCategoryDeleteBtn" subcat-id="<?= $singleResult->id ?>" subcat-img="<?= $singleResult->image ?>">SİL</button></td>
                                             </tr>
                                         <?php }
                                         ?>
@@ -140,11 +140,12 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
     <script>
         $(document).on('click', '.productMainCategoryDeleteBtn', function() {
             event.preventDefault();
-            var mainCatID = $(this).attr("mcat-id");
+            var mainCatID = $(this).attr(" mcat-id");
+
 
             Swal.fire({
                 title: 'Ana kategoriyi silmek istediğinize emin misiniz?',
-                text: "Not: Geri dönüşü olmayacaktır. Tekrar eklemek zorunda kalabilirsiniz.",
+                text: "Dikkat: Bu ANA kategoriye ait ALT kategoriler ve ÜRÜNLER SİLİNECEKTİR!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: "#18ce0f",
@@ -155,7 +156,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: "API/delete-blog.php",
+                        url: "API/delete-product-category.php",
                         type: "POST",
                         data: {
                             mainCatID: mainCatID
@@ -164,8 +165,64 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                         dataType: "json",
                         success: function(data) {
                             if (data.status == true) {
-                                setInterval(reloadHandler, 1600)
-                                $(".mcat-" + blogID).fadeOut('slow');
+                                setInterval(reloadHandler, 2500)
+                                $(".mcat-" + mainCatID).fadeOut('slow');
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: data.message,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            } else {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: data.message,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+
+                        }
+                    });
+                }
+            })
+        });
+    </script>
+
+    <!-- Delete Product Sub Category -->
+    <script>
+        $(document).on('click', '.productSubCategoryDeleteBtn', function() {
+            event.preventDefault();
+            var subCatID = $(this).attr("subcat-id");
+            var subCatImg = $(this).attr("subcat-img");
+
+            Swal.fire({
+                title: 'Alt kategoriyi silmek istediğinize emin misiniz?',
+                text: "Dikkat: Bu ALT kategoriye ait ÜRÜNLER SİLİNECEKTİR!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: "#18ce0f",
+                cancelButtonColor: "#FF3636",
+                confirmButtonText: 'Evet, eminim!',
+                cancelButtonText: 'Vazgeç',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "API/delete-product-subcategory.php",
+                        type: "POST",
+                        data: {
+                            subCatID: subCatID,
+                            subCatImg: subCatImg
+                        },
+                        cache: false,
+                        dataType: "json",
+                        success: function(data) {
+                            if (data.status == true) {
+                                setInterval(reloadHandler, 2500)
+                                $(".subcat-" + subCatID).fadeOut('slow');
                                 Swal.fire({
                                     position: 'top-end',
                                     icon: 'success',
