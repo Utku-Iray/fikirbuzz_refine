@@ -71,8 +71,8 @@ $productCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
                                 <!-- Product Sub Category Image -->
                                 <label for="prodSubCatImage" class="mb-1">Fotoğraf</label>
                                 <div class="form-group mb-2">
-                                    <input type="file" class="form-control-file" id="prodSubCatImage" name="prodSubCatImage" accept="image/png" aria-describedby="fileHelp">
-                                    <small for="fileHelp">Fotoğraf türü PNG olmalıdır.</small>
+                                    <input type="file" class="form-control-file" id="prodSubCatImage" name="prodSubCatImage" accept="image/png, image/jpeg" aria-describedby="fileHelp">
+                                    <small for="fileHelp">Fotoğraf türü PNG veya JPG olmalıdır.</small>
                                 </div>
 
                                 <div style="text-align: right !important">

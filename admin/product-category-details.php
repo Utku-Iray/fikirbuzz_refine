@@ -52,15 +52,15 @@ if (isset($_GET["cid"])) {
                                 <label for="prodCatStatus" class="mb-1">Ana Kategori Durum</label>
                                 <div class="form-group select-set mb-3">
                                     <select class="form-select" id="prodCatStatus" name="prodCatStatus" aria-describedby="catStatusHelp">
-                                        <option value="1" selected>Aktif</option>
-                                        <option value="0">Pasif</option>
+                                        <option value="1" <?php if ($result[0]->status == 1) echo "selected" ?>>Aktif</option>
+                                        <option value="0" <?php if ($result[0]->status == 0) echo "selected" ?>>Pasif</option>
                                     </select>
                                     <small for="catStatusHelp">* Kategori durumu aktif ise alt kategori eklenebilir ve websitede erişilebilir olacaktır.</small>
                                 </div>
 
                                 <div style="text-align: right !important">
-                                    <input type="text" id="userNameInput" name="userNameInput" class="d-none" value="admin">
-                                    <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect mt-5 ">EKLE</button>
+                                    <input type="text" id="idHolderInput" name="idHolderInput" class="d-none" value="<?= $result[0]->id ?>">
+                                    <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect mt-5 ">GÜNCELLE</button>
                                 </div>
 
                             </form>

@@ -10,8 +10,11 @@ $prodSubCatStatus = trim(filter_input(INPUT_POST, 'prodSubCatStatus'));
 $image = "prodSubCatImage";
 
 
+
+$marks = array("(", ")", "?", ",", ":", "/");
 $productSubCatNameLower = strtolower($productSubCatName);
-$url = str_replace(" ", "-", $productSubCatNameLower);
+$spaceRemovedTitle = str_replace(" ", "-", $productSubCatNameLower);
+$url = str_replace($marks, "-", $spaceRemovedTitle);
 
 $tmpFilePath = $_FILES[$image]['tmp_name'];
 
@@ -21,13 +24,13 @@ $uzanti = $efilename[count($efilename) - 1];
 $location  = "";
 
 if (
-    empty($productSubCatName && $productSubCatDesc && $prodMainCategory && $filename)
+    empty($productSubCatName  && $prodMainCategory && $filename)
 ) {
     $errors['error'] = 'Bütün alanları doldurunuz.';
 }
 
-if ($uzanti != "png") {
-    $errors['error'] = 'Seçilen fotoğraf PNG olmalıdır.';
+if ($uzanti != "png" && $uzanti != "jpg" && $uzanti != "jpeg") {
+    $errors['error'] = 'Seçilen fotoğraf PNG veya JPG olmalıdır.';
 }
 //Kategoriden aynısı varsa hata çıkacak.
 

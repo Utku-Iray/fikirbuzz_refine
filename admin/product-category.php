@@ -107,6 +107,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                                         <tr>
                                             <th>Alt Kategori Adı</th>
                                             <th>Alt Kategori Durumu</th>
+                                            <th>Ana Kategorisi</th>
                                             <th>Düzenle</th>
                                             <th>Sil</th>
                                         </tr>
@@ -117,6 +118,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                                             <tr class="subcat-<?= $singleResult->id ?>">
                                                 <td><?= $singleResult->name ?></td>
                                                 <td><?= $singleResult->status ?></td>
+                                                <td><?= $singleResult->category_id ?></td>
                                                 <td class="text-center"><button class="btn btn-info">DÜZENLE</button></td>
                                                 <td class="text-center"><button class="btn btn-danger productSubCategoryDeleteBtn" subcat-id="<?= $singleResult->id ?>" subcat-img="<?= $singleResult->image ?>">SİL</button></td>
                                             </tr>

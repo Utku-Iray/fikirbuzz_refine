@@ -30,7 +30,7 @@ $productResult = $query->fetchAll(PDO::FETCH_OBJ);
                             <h2><strong>Refine Admin | Ürünler</strong></h2>
 
 
-                            <a href="javascript:void(0);" class="btn btn-primary"> <strong>Yeni Ekle</strong></a>
+                            <a href="add-new-product.php" class="btn btn-primary"> <strong>Yeni Ekle</strong></a>
 
                         </div>
 
@@ -60,7 +60,7 @@ $productResult = $query->fetchAll(PDO::FETCH_OBJ);
                                                 <td><?= $singleResult->click_count ?></td>
                                                 <td><?= $singleResult->status ?></td>
                                                 <td class="text-center"><button class="btn btn-info">DÜZENLE</button></td>
-                                                <td class="text-center"><button class="btn btn-danger">SİL</button></td>
+                                                <td class="text-center"><button class="btn btn-danger productDeleteBtn" cat-id="<?= $singleResult->id ?>">SİL</button></td>
                                             </tr>
                                         <?php }
                                         ?>
@@ -77,6 +77,62 @@ $productResult = $query->fetchAll(PDO::FETCH_OBJ);
     </section>
 
     <?php include "utility/script.php"; ?>
+
+    <!-- Delete Product -->
+    <script>
+        $(document).on('click', '.productDeleteBtn', function() {
+            event.preventDefault();
+            var catID = $(this).attr("cat-id");
+            var subCatImg = $(this).attr("subcat-img");
+
+            Swal.fire({
+                title: 'Ürünü silmek istediğinize emin misiniz?',
+                text: "Dikkat: Ürünü tekrar eklemek zorunda kalabilirsiniz!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: "#18ce0f",
+                cancelButtonColor: "#FF3636",
+                confirmButtonText: 'Evet, eminim!',
+                cancelButtonText: 'Vazgeç',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "API/delete-product.php",
+                        type: "POST",
+                        data: {
+                            subCatID: subCatID,
+                            subCatImg: subCatImg
+                        },
+                        cache: false,
+                        dataType: "json",
+                        success: function(data) {
+                            if (data.status == true) {
+                                setInterval(reloadHandler, 2500)
+                                $(".subcat-" + subCatID).fadeOut('slow');
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: data.message,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            } else {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'error',
+                                    title: data.message,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+
+                        }
+                    });
+                }
+            })
+        });
+    </script>
 </body>
 
 </html>

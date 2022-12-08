@@ -2,10 +2,11 @@
 include "../../database/connection.php";
 
 $idHolder = trim(filter_input(INPUT_POST, 'idHolderInput'));
-$blogCatName = trim(filter_input(INPUT_POST, 'blogCatName'));
+$productCatName = trim(filter_input(INPUT_POST, 'productCatName'));
+$prodCatStatus = trim(filter_input(INPUT_POST, 'prodCatStatus'));
 
 if (
-    empty($blogCatName)
+    empty($productCatName)
 ) {
     $errors['error'] = 'Bütün alanları doldurunuz.';
 }
@@ -16,14 +17,15 @@ if (!empty($errors)) {
     $form_data['errors'] = $errors;
 } else {
 
-    $sorgu = $vt->prepare("UPDATE blog_category SET name = :b_name WHERE id='$idHolder'");
+    $sorgu = $vt->prepare("UPDATE category SET name = :c_name, status = :c_status WHERE id='$idHolder'");
     if ($sorgu) {
         $result = $sorgu->execute([
-            ':b_name' => $blogCatName,
+            ':c_name' => $productCatName,
+            ':c_status' => $prodCatStatus,
         ]);
         if ($result) {
             $form_data['status'] = true;
-            $form_data['success'] = 'Blog başarıyla güncellendi.';
+            $form_data['success'] = 'Ana kategori başarıyla güncellendi.';
         }
     }
 }

@@ -10,7 +10,7 @@ $image = "blogImage";
 $date = date("YY-MM-DD, h:i:sa");
 
 
-$marks = array("(", ")", "?", ",", ":");
+$marks = array("(", ")", "?", ",", ":", "/");
 $blogTitleLower = strtolower($blogTitle);
 $spaceRemovedTitle = str_replace(" ", "-", $blogTitleLower);
 $url = str_replace($marks, "", $spaceRemovedTitle);
