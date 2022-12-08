@@ -25,7 +25,7 @@
                 <li>
                   <a class="dropdown-item" style="color:black" href="media.php">Media</a>
                 </li>
-              
+
               </ul>
             </div>
           </li>
@@ -247,8 +247,8 @@
             <a href="ebook-download.php" class="btn-green lightbox" aria-haspopup="dialog" title="Download.pdf">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
           </li>
           <!-- <li class="nav-item ms-2">
-                            <a class="btn-white login">Reseller Login</a>
-                        </li> -->
+            <a class="btn-white form">Reseller Login</a>
+          </li> -->
         </ul>
       </div>
     </div>

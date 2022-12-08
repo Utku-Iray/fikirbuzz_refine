@@ -342,7 +342,7 @@
         <div class="row">
           <div class="col-xl-6 text-xl-start text-center">
             <h1>Refine is Lanner’s Authorized Distributor In <br />
-              The Middle East, Turkey And Pakistan.</h1>
+              The Middle East, Türkiye And Pakistan.</h1>
           </div>
           <div class="col-xl-6 my-xl-auto mt-3 ms-auto text-xl-end text-center">
             <a target="blank_" href="https://www.lannerinc.com/"><img src="assets/materials/path74.png"></a>

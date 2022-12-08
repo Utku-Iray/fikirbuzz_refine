@@ -301,7 +301,7 @@
 
           </ul>
           <div class="col-xl-12 text-center mt-5 position-relative mb-5 d-flex justify-content-center">
-            <a href="blog-page.php" class="btn-loader">See More <img class="ms-2" src="assets/materials/smb.svg"></a>
+            <a href="blog-page.php" class="btn-loader">See All <img class="ms-2" src="assets/materials/smb.svg"></a>
           </div>
 
         </div>
