@@ -3,7 +3,6 @@ require "../database/connection.php";
 
 if (isset($_COOKIE["loginController"]) && $_COOKIE["loginController"] == "1") {
     header("location: index.php");
-    exit;
 }
 
 ?>

@@ -30,11 +30,11 @@
                  <li>
                      <div class="user-info mb-3">
                          <div class="image">
-                             <a href="#"><img src="assets/images/profile_av.jpg" alt="User"></a>
+                             <a href="#"><img src="assets/img/profileIcon.png" alt="" style="object-fit:contain;width:100px !important;height:100px !important;"></a>
                          </div>
                          <div class="detail">
-                             <h6>Refine User</h6>
-                             <p class="mb-0">user@refine.com</p>
+                             <h6><?= $userFullname ?></h6>
+                             <p class="mb-0"><?= $userMail ?></p>
                              <!-- <a href="SETTINGS" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-settings"></i></a> -->
                              <a href="logout.php" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-power"></i></a>
                          </div>

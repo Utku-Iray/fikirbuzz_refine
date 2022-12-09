@@ -1,6 +1,6 @@
 <?php
 require "../database/connection.php";
-require "utility/controller.php";
+require "controller.php";
 
 if (isset($_GET["cid"]) && $_GET["cid"] != "1") {
     $catID = $_GET["cid"];

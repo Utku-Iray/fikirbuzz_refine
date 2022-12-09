@@ -1,6 +1,6 @@
 ﻿<?php
 require "../database/connection.php";
-require "utility/controller.php";
+require "controller.php";
 ?>
 <!doctype html>
 <html class="no-js " lang="en">

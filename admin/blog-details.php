@@ -1,6 +1,6 @@
 <?php
 require "../database/connection.php";
-require "utility/controller.php";
+require "controller.php";
 
 if ($_GET["id"]) {
     $id = $_GET["id"];

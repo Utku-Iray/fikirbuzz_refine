@@ -2,6 +2,9 @@
 
 if (!isset($_COOKIE["loginController"]) && $_COOKIE["loginController"] != "1") {
     header("location: login.php");
+    $userMail = "";
+    $userFullname = "";
+    $userRole = "";
 } else {
     $userMail = $_COOKIE["email"];
     $userFullname = $_COOKIE["fullname"];
