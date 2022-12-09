@@ -17,7 +17,7 @@
          </li>
          <li class="power">
              <!-- <a href="SETTINGS" class="js-right-sidebar"><i class="zmdi zmdi-settings"></i></a> -->
-             <a href="LOGOUT" class="mega-menu"><i class="zmdi zmdi-power"></i></a>
+             <a href="logout.php" class="mega-menu"><i class="zmdi zmdi-power"></i></a>
          </li>
      </ul>
  </aside>
@@ -36,7 +36,7 @@
                              <h6>Refine User</h6>
                              <p class="mb-0">user@refine.com</p>
                              <!-- <a href="SETTINGS" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-settings"></i></a> -->
-                             <a href="LOGOUT" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-power"></i></a>
+                             <a href="logout.php" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-power"></i></a>
                          </div>
                      </div>
                  </li>

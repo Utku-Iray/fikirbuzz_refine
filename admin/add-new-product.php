@@ -1,5 +1,6 @@
 <?php
 require "../database/connection.php";
+require "utility/controller.php";
 
 $query = $vt->prepare("SELECT * FROM sub_category");
 $query->execute();

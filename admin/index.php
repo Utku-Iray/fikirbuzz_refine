@@ -1,5 +1,6 @@
 <?php
 require "../database/connection.php";
+require "utility/controller.php";
 
 $query = $vt->prepare("SELECT blog.title, blog.click_count, blog_category.name FROM blog, blog_category WHERE blog.category_id = blog_category.id ORDER BY blog.click_count DESC LIMIT 5");
 $query->execute();
