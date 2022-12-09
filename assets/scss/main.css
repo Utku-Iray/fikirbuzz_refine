@@ -3088,6 +3088,10 @@ main .index-sec-2 .newSlider .flatten {
     color: #fff;
 }
 
+main .index-sec-2 .newSlider .list-hover:hover {
+    background: #07388A !important;
+}
+
 main .index-sec-2 .newSlider .flatten img {
     width: 100%;
 }
