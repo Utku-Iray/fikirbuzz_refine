@@ -9,6 +9,12 @@ if ($_GET["mcid"]) {
 }
 
 
+$query = $vt->prepare("SELECT * FROM category WHERE id='$mcid'");
+$query->execute();
+$mainCategoryResultLanner = $query->fetchAll(PDO::FETCH_OBJ);
+
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,7 +27,25 @@ if ($_GET["mcid"]) {
     <?php include 'php/header.php' ?>
 
     <main>
-        <div class="index-sec-1">
+        <div class="banner dark">
+            <div class="image-area">
+                <img class="bannerImg" src="assets/materials/single-cover.png">
+            </div>
+            <div class="container-fluid col-xl-10">
+                <div class="row align-content-center align-items-center" style="min-height: 300px !important;">
+                    <div class="col-xl-7">
+                        <div class="breadcrumb" data-aos="fade-in">
+                            <a href="#">Products</a><a href="#">Category</a>
+                        </div>
+                        <div class="title" data-aos="fade-right">
+                            <h1><?= $mainCategoryResultLanner[0]->name ?></h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="index-sec-1" style="padding-top: 0 !important;">
             <div class="container-fluid col-xl-10">
                 <div class="row list-product clearfix">
 
