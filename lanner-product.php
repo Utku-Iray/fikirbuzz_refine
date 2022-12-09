@@ -8,6 +8,22 @@ if ($_GET["mcid"]) {
     $subCategoryListLanner = $query->fetchAll(PDO::FETCH_OBJ);
 }
 
+$baslik="";
+
+if ($mcid == 1) {
+    $baslik = "Network Appliances";
+} elseif($mcid == 2){
+    $baslik = "Telecom Datacenter Appliances";
+}elseif($mcid == 3){
+    $baslik = "Industrial Communication Platforms";
+}elseif($mcid == 4){
+    $baslik = "Vehicle Computers";
+}elseif($mcid == 5){
+    $baslik = "Embedded Box PCs";
+}elseif($mcid == 6){
+    $baslik = "Extension Modules";
+}
+
 
 ?>
 <!doctype html>
@@ -21,7 +37,25 @@ if ($_GET["mcid"]) {
     <?php include 'php/header.php' ?>
 
     <main>
-        <div class="index-sec-1">
+    <div class="banner dark">
+      <div class="image-area">
+        <img class="bannerImg" src="assets/materials/single-cover.png">
+      </div>
+      <div class="container-fluid col-xl-10">
+        <div class="row align-content-center align-items-center" style="min-height: 300px !important;">
+          <div class="col-xl-7">
+            <div class="breadcrumb" data-aos="fade-in">
+              <a href="#">Products</a><a href="#">Category</a>
+            </div>
+            <div class="title" data-aos="fade-right">
+              <h1><?= $baslik ?></h1>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="index-sec-1" style="padding-top: 0 !important;">
             <div class="container-fluid col-xl-10">
                 <div class="row list-product clearfix">
 

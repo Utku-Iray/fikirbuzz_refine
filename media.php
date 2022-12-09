@@ -10,7 +10,7 @@
 
 
     <main>
-        
+
         <div class="banner">
             <div class="image-area">
                 <img class="bannerImg" src="assets/materials/world.png">
@@ -28,9 +28,9 @@
                                 <a href="assets/materials/medya-kit/medya-kit.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Download.pdf">Medya Kit
                                     <img class="ms-1" width="15px" src="assets/materials/pdf.svg"></span></a>
 
-                                
+
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="col-xl-4 ms-xl-auto mx-auto text-center mt-5 mt-xl-auto">
@@ -64,6 +64,12 @@
                 <div class="col-md-4"><iframe width="100%" height="315" src="https://www.youtube.com/embed/7IzNFsA34uc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                 <div class="col-md-4"><iframe width="100%" height="315" src="https://www.youtube.com/embed/GOgeYNdqna0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                 <div class="col-md-4"><iframe width="100%" height="315" src="https://www.youtube.com/embed/td0ndCnTUCM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="col-md-4"><iframe width="100%" height="315" src="https://www.youtube.com/embed/dLGJ5D9ojNY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="col-md-4"><iframe width="100%" height="315" src="https://www.youtube.com/embed/jpEoAr090qs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="col-md-4"><iframe width="100%" height="315" src="https://www.youtube.com/embed/_Op3JYn5TR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="col-md-4"><iframe width="100%" height="315" src="https://www.youtube.com/embed/rofnxzQ6EnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="col-md-4"><iframe width="100%" height="315" src="https://www.youtube.com/embed/Qj4tXaCfoEk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <div class="col-md-4"><iframe width="100%" height="315" src="https://www.youtube.com/embed/gsGERiohpHM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
             </div>
         </div>
         <!-- Mobile Fast Contact Nav -->
