@@ -11271,7 +11271,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "First",
+				"sFirst": "İlk",
 	
 	
 				/**
@@ -11294,7 +11294,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Last",
+				"sLast": "Son",
 	
 	
 				/**
@@ -11317,7 +11317,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "Sonra",
 	
 	
 				/**
@@ -11340,7 +11340,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "Önce"
 			},
 	
 			/**
@@ -11363,7 +11363,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "Tabloda kayıt bulunmamaktadır.",
 	
 	
 			/**
@@ -11395,7 +11395,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "_TOTAL_ kayıttan _START_ ile _END_ arası gösteriliyor",
 	
 	
 			/**
@@ -11416,7 +11416,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "0 kayıttan 0 to 0 arası gösteriliyor",
 	
 	
 			/**
@@ -11438,7 +11438,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(_MAX_ kayıttan filtrelenmiştir)",
 	
 	
 			/**
@@ -11556,7 +11556,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "Göster _MENU_ Adet",
 	
 	
 			/**
@@ -11580,7 +11580,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLoadingRecords": "Loading...",
+			"sLoadingRecords": "Yükleniyor...",
 	
 	
 			/**
@@ -11601,7 +11601,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sProcessing": "Processing...",
+			"sProcessing": "İşleniyor...",
 	
 	
 			/**
@@ -11636,7 +11636,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Ara:",
 	
 	
 			/**
@@ -11694,7 +11694,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "Eşleşen kayıt bulunamadı"
 		},
 	
 	

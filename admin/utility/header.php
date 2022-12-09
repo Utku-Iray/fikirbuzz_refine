@@ -16,7 +16,7 @@
              <a class="navbar-brand" href="index.php"><img src="assets/img/logo_white.png" alt="Refine"></a>
          </li>
          <li class="power">
-             <a href="SETTINGS" class="js-right-sidebar"><i class="zmdi zmdi-settings"></i></a>
+             <!-- <a href="SETTINGS" class="js-right-sidebar"><i class="zmdi zmdi-settings"></i></a> -->
              <a href="LOGOUT" class="mega-menu"><i class="zmdi zmdi-power"></i></a>
          </li>
      </ul>
@@ -30,12 +30,12 @@
                  <li>
                      <div class="user-info mb-3">
                          <div class="image">
-                             <a href="profile.html"><img src="assets/images/profile_av.jpg" alt="User"></a>
+                             <a href="#"><img src="assets/images/profile_av.jpg" alt="User"></a>
                          </div>
                          <div class="detail">
                              <h6>Refine User</h6>
                              <p class="mb-0">user@refine.com</p>
-                             <a href="SETTINGS" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-settings"></i></a>
+                             <!-- <a href="SETTINGS" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-settings"></i></a> -->
                              <a href="LOGOUT" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-power"></i></a>
                          </div>
                      </div>
