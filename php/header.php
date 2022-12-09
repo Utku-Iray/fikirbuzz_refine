@@ -110,7 +110,7 @@ $subCatCount = count($subCategoryList);
         </ul>
 
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item hiddenSearch">
+          <!-- <li class="nav-item hiddenSearch">
             <div class="dropdown mini-searchbox">
               <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" aria-expanded="false" src="assets/materials/search-icon.svg">
 
@@ -123,7 +123,7 @@ $subCatCount = count($subCategoryList);
                 </form>
               </ul>
             </div>
-          </li>
+          </li> -->
           <!-- <li class="nav-item ms-2">
             <div class="dropdown lang-list">
               <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" src="assets/materials/lang.svg">

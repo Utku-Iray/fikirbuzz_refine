@@ -26,7 +26,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
           <div class="slide--content">
             <div class="slider--trigger col-xl-11">
               <div class="slide--desc col-xl-7 col-11">
-                <div class="searchBox">
+                <div class="searchBox" style="visibility: hidden;">
                   <input class="mb-4" type="text" placeholder="Type Something...">
                   <button type="submit" class="searchBtn"><img src="assets/materials/search-icon.svg"></button>
                 </div>
@@ -46,7 +46,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                       <div class="title mb-5">
                         <h1 class="mb-4">Your solution partner for all hardware, network and security solutions your business needs…</h1>
                       </div>
-                      <a href="single-blog.php" class="btn-view"><span>See Details
+                      <a href="lanner-product.php?mcid=1" class="btn-view"><span>See Details
                           <hr>
                         </span></a>
                     </div>
@@ -66,7 +66,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                       <div class="title mb-5">
                         <h1 class="mb-4">The easiest logistics and transportation solutions…</h1>
                       </div>
-                      <a href="single-blog.php" class="btn-view"><span>See Details
+                      <a href="lanner-product.php?mcid=4" class="btn-view"><span>See Details
                           <hr>
                         </span></a>
                     </div>
@@ -307,7 +307,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
         <div class="row sep">
           <div class="col-xl-1 p-0"></div>
           <div class="col-xl-11 p-0 sep-2">
-            <div class="col-4" style="float: right;">
+            <div class="col-4" style="float: right;margin-right:45px">
               <a href="https://www.lannerinc.com/news-and-events/latest-news" target="_blank" class="btn-loader" style="margin-top: 27px;background-color:#187352"> Lanner News <img class="ms-2" src="assets/materials/mouse.png"></a>
             </div>
             <ul class="newsFilter">
@@ -324,14 +324,13 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
               <?php foreach ($blogSort as $sort) { ?>
                 <li class="col-xl-6">
                   <a href="single-blog.php">
-                    <div class="flatten d-xl-flex">
+                    <div class="flatten list-hover d-xl-flex">
                       <div class="outbox me-xl-4">
                         <img src="<?= $sort->image  ?>">
                       </div>
                       <div class="description mt-xl-0 mt-4">
                         <h1><?= $sort->title ?></h1>
                         <p><?= $sort->short_content ?></p>
-
                       </div>
                     </div>
                   </a>
