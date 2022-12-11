@@ -148,7 +148,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
 
             Swal.fire({
                 title: 'Ana kategoriyi silmek istediğinize emin misiniz?',
-                text: "Dikkat: Bu ANA kategoriye ait ALT kategoriler ve ÜRÜNLER SİLİNECEKTİR!",
+                text: "Dikkat: Bu ANA kategoriye ait ALT kategorileri ve ÜRÜNLERİ düzenlemeniz gerekmektedir.",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: "#18ce0f",

@@ -85,7 +85,7 @@ $blogCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
 
             Swal.fire({
                 title: 'Kategoriyi silmek istediğinize emin misiniz?',
-                text: "Not: Silmeniz durumunda bu kategoriye ait bloglar kategorisiz olarak görünecektir.",
+                text: "Not: Silmeniz durumunda bu kategoriye ait bloglar kategorisiz kalacağı için blogları düzenlemeniz gerekebilir.",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: "#18ce0f",

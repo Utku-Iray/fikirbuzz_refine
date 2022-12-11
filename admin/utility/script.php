@@ -1,3 +1,5 @@
+    <div class="submitLoaderModal"></div>
+
     <!-- Jquery Core Js -->
     <script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
     <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
@@ -19,4 +21,15 @@
         function reloadHandler() {
             location.reload();
         }
+
+        $body = $("body");
+
+        $(document).on({
+            ajaxStart: function() {
+                $body.addClass("loading");
+            },
+            ajaxStop: function() {
+                $body.removeClass("loading");
+            }
+        });
     </script>
