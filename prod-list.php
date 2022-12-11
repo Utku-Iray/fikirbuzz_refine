@@ -8,7 +8,7 @@ if (isset($_GET["cid"])) {
   $query->execute();
   $catResult = $query->fetchAll(PDO::FETCH_OBJ);
 
-  $query = $vt->prepare("SELECT * FROM product WHERE category_id = '$cid' AND status = 1");
+  $query = $vt->prepare("SELECT * FROM product WHERE category_id = '$cid' AND status = 1 ORDER BY name ASC");
   $query->execute();
   $productList = $query->fetchAll(PDO::FETCH_OBJ);
 } else {
