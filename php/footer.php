@@ -185,9 +185,9 @@
                  <p>© Copyright <span id="year"></span> Refine Inc.</p>
              </div>
              <div class="col-xl-6 ms-auto text-xl-end text-center">
-                 <a href="single-page.php">Privacy</a>
+                 <a href="single-page.php">Privacy  </a>
+                 |
                  <a href="single-page.php">Terms of Use</a>
-                 <a href="single-page.php">Sitemap</a>
              </div>
          </div>
      </div>

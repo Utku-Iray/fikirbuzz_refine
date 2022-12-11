@@ -1,7 +1,7 @@
 <?php
 require "database/connection.php";
 
-if ($_GET["mcid"]) {
+if (isset($_GET["mcid"])) {
     $mcid = $_GET["mcid"];
     $query = $vt->prepare("SELECT * FROM sub_category WHERE category_id = '$mcid'");
     $query->execute();

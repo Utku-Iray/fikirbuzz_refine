@@ -26,9 +26,11 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
           <div class="slide--content">
             <div class="slider--trigger col-xl-11">
               <div class="slide--desc col-xl-7 col-11">
-                <div class="searchBox" style="visibility: hidden;">
-                  <input class="mb-4" type="text" placeholder="Type Something...">
-                  <button type="submit" class="searchBtn"><img src="assets/materials/search-icon.svg"></button>
+                <div class="searchBox">
+                  <form action="search.php" method="get">
+                    <input class="mb-4" type="text" name="term" placeholder="Type Something...">
+                    <button type="submit" class="searchBtn"><img src="assets/materials/search-icon.svg"></button>
+                  </form>
                 </div>
                 <div class="main-pusher">
                   <div class="push-it">

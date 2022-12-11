@@ -60,7 +60,7 @@ $productResult = $query->fetchAll(PDO::FETCH_OBJ);
                                                 <td><?= $singleResult->name ?></td>
                                                 <td><?= $singleResult->click_count ?></td>
                                                 <td><?= $singleResult->status ?></td>
-                                                <td class="text-center"><button class="btn btn-info">DÜZENLE</button></td>
+                                                <td class="text-center"><a href="product-details.php?pid=<?= $singleResult->id ?>" class="btn btn-info">DÜZENLE</a></td>
                                                 <td class="text-center"><button class="btn btn-danger productDeleteBtn" cat-id="<?= $singleResult->id ?>">SİL</button></td>
                                             </tr>
                                         <?php }

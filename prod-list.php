@@ -1,7 +1,7 @@
 <?php
 require "database/connection.php";
 
-if ($_GET["cid"]) {
+if (isset($_GET["cid"])) {
   $cid = $_GET["cid"];
 
   $query = $vt->prepare("SELECT * FROM sub_category WHERE id = '$cid' AND status = 1");

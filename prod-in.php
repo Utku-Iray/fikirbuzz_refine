@@ -1,6 +1,6 @@
 <?php require "database/connection.php";
 
-if ($_GET["pid"] && $_GET["cid"]) {
+if (isset($_GET["pid"]) && isset($_GET["cid"])) {
   $pid = $_GET["pid"];
   $cid = $_GET["cid"];
 

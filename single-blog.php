@@ -1,7 +1,7 @@
 <?php
 require "database/connection.php";
 
-if ($_GET["url"]) {
+if (isset($_GET["url"])) {
   $url = $_GET["url"];
 
   $query = $vt->prepare("SELECT * FROM blog WHERE url= '$url'");

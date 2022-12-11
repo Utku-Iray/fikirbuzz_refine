@@ -110,20 +110,20 @@ $subCatCount = count($subCategoryList);
         </ul>
 
         <ul class="navbar-nav ms-auto">
-          <!-- <li class="nav-item hiddenSearch">
+          <li class="nav-item">
             <div class="dropdown mini-searchbox">
               <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" aria-expanded="false" src="assets/materials/search-icon.svg">
 
               <ul class="dropdown-menu search-box d-flex" aria-labelledby="dropdownMenuLink">
-                <form class="form mx-auto">
+                <form class="form mx-auto" action="search.php" method="get">
                   <div class="form-group">
-                    <input type="text" placeholder="Type Something">
+                    <input type="text" name="term" placeholder="Type Something...">
                     <button type="submit"><img src="assets/materials/send-icon.svg" alt=""></button>
                   </div>
                 </form>
               </ul>
             </div>
-          </li> -->
+          </li>
           <!-- <li class="nav-item ms-2">
             <div class="dropdown lang-list">
               <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" src="assets/materials/lang.svg">

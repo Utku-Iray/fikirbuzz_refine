@@ -82,12 +82,14 @@ $specCount = count($specResult);
                                     <input type="file" class="form-control-file" id="prodImage" name="prodImage" accept="image/png, image/jpeg" aria-describedby="imageHelp">
                                     <small for="imageHelp">Fotoğraf türü JPG veya PNG olmalıdır.</small>
                                 </div>
+
                                 <!-- Product Datasheet -->
                                 <label for="prodDatasheet" class="mb-1">Datasheet</label>
                                 <div class="form-group mb-3">
                                     <input type="file" class="form-control-file" id="prodDatasheet" name="prodDatasheet" accept="application/pdf, application/vnd.ms-excel" aria-describedby="datasheetHelp">
                                     <small for="datasheetHelp">Datasheet türü PDF olmalıdır.</small>
                                 </div>
+
                                 <!-- Product User Manual -->
                                 <label for="prodUserManual" class="mb-1">User Manual</label>
                                 <div class="form-group mb-3">
