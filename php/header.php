@@ -26,9 +26,9 @@ $subCatCount = count($subCategoryList);
       <a class="navbar-brand" href="index.php"><img src="assets/materials/logo.svg"></a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" aria-current="page" href="about-us.php">About Us</a>
-          </li>
+          </li> -->
           <li class="nav-item ms-2">
             <div class="dropdown ">
               <a class="nav-link" aria-current="page" href="#">Refine</a>
@@ -110,7 +110,7 @@ $subCatCount = count($subCategoryList);
         </ul>
 
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <div class="dropdown mini-searchbox">
               <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" aria-expanded="false" src="assets/materials/search-icon.svg">
 
@@ -123,7 +123,7 @@ $subCatCount = count($subCategoryList);
                 </form>
               </ul>
             </div>
-          </li>
+          </li> -->
           <!-- <li class="nav-item ms-2">
             <div class="dropdown lang-list">
               <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" src="assets/materials/lang.svg">
