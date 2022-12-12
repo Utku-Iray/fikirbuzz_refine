@@ -25,7 +25,7 @@
                             <h1 data-aos="fade-right">Media & Gallery</h1>
                             <p data-aos="fade-right">Download PDF Documents</p>
                             <div class="datasheets d-md-flex col-xl-8" data-aos="fade-up">
-                                <a href="assets/materials/medya-kit/medya-kit.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Download.pdf">Medya Kit
+                                <a href="assets/materials/medya-kit/medya-kit.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Download.pdf">Media Kit
                                     <img class="ms-1" width="15px" src="assets/materials/pdf.svg"></span></a>
 
 
@@ -48,7 +48,7 @@
             <div class="container-fluid col-xl-10">
                 <div class="row">
                     <div class="col-xl-6 text-xl-start text-center">
-                        <h1>Refine is Lanner’s Authorized Distributor In <br /> The Middle East, Turkey And Pakistan.</h1>
+                        <h1>Refine is Lanner’s Authorized Distributor In <br /> The Middle East, Türkiye And Pakistan.</h1>
                     </div>
                     <div class="col-xl-6 my-xl-auto mt-3 ms-auto text-xl-end text-center">
                         <a target="blank_" href="https://www.lannerinc.com/"><img src="assets/materials/path74.png"></a>
