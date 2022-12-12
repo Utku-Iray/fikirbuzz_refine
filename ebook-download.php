@@ -24,17 +24,17 @@
                             <h1 data-aos="fade-right">Download</h1>
                             <p data-aos="fade-right">Download PDF Documents</p>
                             <div class="datasheets d-md-flex col-xl-8" data-aos="fade-up">
-                                <a href="assets/pdf/IOT_brochure.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Download.pdf">Intelligent Edge Appliances
+                                <a href="assets/pdf/IOT_brochure.pdf" class="btn-data-w lightbox" style="padding: 1.40em 0.5em 1.40em 0.5em !important;" aria-haspopup="dialog" title="Download.pdf">Intelligent Edge Appliances
                                     <img class="ms-1" width="15px" src="assets/materials/pdf.svg"></span></a>
 
-                                <a href="assets/pdf/NC_brochure.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Download.pdf">Network Appliances
+                                <a href="assets/pdf/NC_brochure.pdf" class="btn-data-w lightbox" style="padding: 1.40em 0.5em 1.40em 0.5em !important;" aria-haspopup="dialog" title="Download.pdf">Network Appliances
                                     <img class="ms-1" width="15px" src="assets/materials/pdf.svg"></span></a>
                             </div>
                             <div class="datasheets d-md-flex col-xl-8" data-aos="fade-up">
-                                <a href="assets/pdf/brochure_2022.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Download.pdf">Telecom Datacenter Appliances
+                                <a href="assets/pdf/brochure_2022.pdf" class="btn-data-w lightbox" style="padding:1.40em 0.5em 1.40em 0.5em !important;" aria-haspopup="dialog" title="Download.pdf">Telecom Datacenter Appliances
                                     <img class="ms-1" width="15px" src="assets/materials/pdf.svg"></span></a>
 
-                                <a href="assets/pdf/uCPE_brochure_2022-1109.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Download.pdf">uCPE Solutions
+                                <a href="assets/pdf/uCPE_brochure_2022-1109.pdf" class="btn-data-w lightbox" style="padding: 1.40em 0.5em 1.40em 0.5em !important;" aria-haspopup="dialog" title="Download.pdf">uCPE Solutions
                                     <img class="ms-1" width="15px" src="assets/materials/pdf.svg"></span></a>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
             <div class="container-fluid col-xl-10">
                 <div class="row">
                     <div class="col-xl-6 text-xl-start text-center">
-                        <h1>Refine is Lanner’s Authorized Distributor In <br /> The Middle East, Turkey And Pakistan.</h1>
+                        <h1>Refine is Lanner’s Authorized Distributor In <br /> The Middle East, Türkiye And Pakistan.</h1>
                     </div>
                     <div class="col-xl-6 my-xl-auto mt-3 ms-auto text-xl-end text-center">
                         <a target="blank_" href="https://www.lannerinc.com/"><img src="assets/materials/path74.png"></a>
