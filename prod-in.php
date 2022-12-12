@@ -434,6 +434,35 @@ if (isset($_GET["pid"]) && isset($_GET["cid"])) {
 
   <?php include 'php/footer.php' ?>
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var interval = 0;
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const pid = urlParams.get('pid')
+
+      setInterval(function() {
+        interval++;
+        postFunction();
+      }, 15000);
+
+      function postFunction() {
+        if (interval == 1) {
+          $.ajax({
+            url: "php/update-product-click-count.php",
+            type: "POST",
+            dataType: "json",
+            data: {
+              click_count: "plus",
+              pid: pid
+            },
+            success: function() {}
+          });
+        }
+      }
+    });
+  </script>
+
 </body>
 
 </html>
