@@ -442,7 +442,7 @@ if (isset($_GET["url"])) {
         <div class="row">
           <div class="col-xl-6 text-xl-start text-center">
             <h1>Refine is Lanner’s Authorized Distributor In <br />
-              The Middle East, Turkey And Pakistan.</h1>
+              The Middle East, Türkiye And Pakistan.</h1>
           </div>
           <div class="col-xl-6 my-xl-auto mt-3 ms-auto text-xl-end text-center">
             <a target="blank_" href="https://www.lannerinc.com/"><img src="assets/materials/path74.png"></a>
@@ -471,6 +471,37 @@ if (isset($_GET["url"])) {
   </main>
 
   <?php include 'php/footer.php' ?>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var interval = 0;
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const url = urlParams.get('url')
+
+      setInterval(function() {
+        interval++;
+        postFunction();
+      }, 25000);
+
+      function postFunction() {
+        if (interval == 1) {
+          $.ajax({
+            url: "php/update-blog-click-count.php",
+            type: "POST",
+            dataType: "json",
+            data: {
+              click_count: "plus",
+              url: url
+            },
+            success: function() {}
+          });
+          console.log(interval);
+        }
+      }
+
+    });
+  </script>
 
 </body>
 
