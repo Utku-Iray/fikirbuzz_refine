@@ -24,10 +24,7 @@
             </div>
             <div class="title">
               <h1 data-aos="fade-right">About Us</h1>
-              <p data-aos="fade-in">Cras ac tortor at magna porttitor consequat quis a lacus. Suspendisse maximus purus vestibulum, tempor
-                tortor vel, dignissim tortor. Sed sed commodo orci. Nullam eget lectus aliquam, egestas nisl non,
-                vehicula
-                elit.</p>
+              <p data-aos="fade-in">Refine is a customer oriented company focusing on customer collaboration. We believe that your success is ours.Our professional sales team works hand in hand with Lanner ensuring the best solution to your requirements.</p>
             </div>
           </div>
         </div>
@@ -54,8 +51,13 @@
             platforms to heavy duty computers.
             <br /><br />
 
-            As of 2017, 39% of all companies providing enterprise network security, optimization and application
-            delivery appliances use Lanner manufactured hardware.
+            According to Gartner Magic Quadrants, 60% of all 46 companies supplying
+            Enterprise Network Firewalls, UTM, Wired/Wireless LAN, WAN optimization
+            and Application Delivery use hardware made by Lanner. Lanner had thus
+            far shipped over 2 million networking appliances, reaching a significant
+            corporate milestone. Such demand demonstrates Lanner’s strength and
+            commitment to designing superior network platforms in the field.
+            
             <br /><br />
 
             In addition of serving as Lanner’s authorized distributor in the Middle East, Türkiye and Pakistan, we offer
