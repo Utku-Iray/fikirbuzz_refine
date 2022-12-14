@@ -1,13 +1,12 @@
 <?php require "database/connection.php";
 
-if (isset($_GET["pid"]) && isset($_GET["cid"])) {
+if (isset($_GET["pid"])) {
   $pid = $_GET["pid"];
-  $cid = $_GET["cid"];
-
   $query = $vt->prepare("SELECT * FROM product WHERE id = '$pid'");
   $query->execute();
   $productVal = $query->fetchAll(PDO::FETCH_OBJ);
-
+  
+  $cid = $_GET["cid"];
   $query = $vt->prepare("SELECT * FROM product WHERE category_id = '$cid' LIMIT 4");
   $query->execute();
   $relatedProds = $query->fetchAll(PDO::FETCH_OBJ);

@@ -107,7 +107,7 @@
                          <p>About Us</p>
                      </a>
                      <a href="prod-list.php">
-                         <p>Products</p>
+                         <p>Lanner</p>
                      </a>
 
                      <a href="https://tr.transcend-info.com/">

@@ -38,7 +38,7 @@ $mostRead = $query->fetchAll(PDO::FETCH_OBJ);
                         </div>
                         <div class="title" data-aos="fade-right">
                             <h1>Blog</h1>
-                            <p>In addition to being Lanner’s authorized distributor in the Middle East, we also offer sourcing services for PCB design & manufacturing.</p>
+                            <p>In addition to being Lanner’s authorized distributor in the Middle East, Türkiye and Pakistan. We also offer sourcing services for PCB design & manufacturing.</p>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ $mostRead = $query->fetchAll(PDO::FETCH_OBJ);
 
                     <div class="col-xl-5 mt-xl-0 mt-5 sec-right ms-auto">
                         <?php
-                        for ($i = 2; $i < 4; $i++) { ?>
+                        for ($i = 2; $i < 5; $i++) { ?>
                             <div class="incontent mb-4">
                                 <h1><?= $highlights[$i]->title ?></h1>
                                 <p><?= $highlights[$i]->short_content ?></p>

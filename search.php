@@ -56,7 +56,7 @@ if (isset($_GET["term"])) {
                             <div class="col-xl-3 col-lg-4 mt-5 inp">
                                 <div class="full-box">
                                     <div class="outbox">
-                                        <a href="prod-in.php?pid=<?= $product->id ?>">
+                                        <a href="prod-in.php?pid=<?= $product->id ?>&cid=<?= $product->category_id ?>">
                                             <img src="<?= $product->image ?>">
                                         </a>
 
@@ -65,7 +65,7 @@ if (isset($_GET["term"])) {
                                         <h1><?= $product->name ?></h1>
                                         <p><?= $product->short_description ?></p>
                                     </div>
-                                    <a href="prod-in.php?pid=<?= $product->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE MORE
+                                    <a href="prod-in.php?pid=<?= $product->id ?>&cid=<?= $product->category_id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE MORE
                                         <hr />
                                     </a>
                                 </div>
