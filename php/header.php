@@ -11,6 +11,11 @@ $query->execute();
 $subCategoryList = $query->fetchAll(PDO::FETCH_OBJ);
 
 $subCatCount = count($subCategoryList);
+
+
+$query = $vt->prepare("SELECT * FROM contact WHERE contact_status = 1");
+$query->execute();
+$contactResult = $query->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <header>

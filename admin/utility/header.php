@@ -49,6 +49,8 @@
                  <li class="header">BLOG</li>
                  <li><a href="blogs.php"><i class="zmdi zmdi-delicious"></i><span>Bloglar</span></a></li>
                  <li> <a href="blog-category.php"><i class="zmdi zmdi-copy"></i><span>Blog Kategori</span></a></li>
+                 <li class="header">İLETİŞİM</li>
+                 <li><a href="contacts.php"><i class="zmdi zmdi-phone"></i><span>İletişim Bilgileri</span></a></li>
                  <!-- class="sm_menu_btm active open" -->
              </ul>
          </div>

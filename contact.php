@@ -1,4 +1,6 @@
-<?php require "database/connection.php"; ?>
+<?php
+require "database/connection.php";
+?>
 <!doctype html>
 <html lang="en">
 
@@ -67,75 +69,33 @@
             <div class="featured-device bg-transparent">
               <div class="col-xl-12 my-auto mx-auto pt-5 pb-5">
                 <div class="accordion" id="accordionExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        HQ
-                      </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                      <div class="accordion-body d-flex justify-content-between">
-                        <div class="col-11 ms-auto text-end">
-                          <h5 class="mb-4">Kasap Sok. Gamze Apt. No:19/1 34394
-                            Esentepe, Şişli, İstanbul, Türkiye</h5>
+                  <?php
+                  foreach ($contactResult as $contact) {  ?>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading<?= $contact->contact_id ?>">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $contact->contact_id ?>" aria-expanded="true" aria-controls="collapse<?= $contact->contact_id ?>">
+                          <?= $contact->contact_title ?>
+                        </button>
+                      </h2>
+                      <div id="collapse<?= $contact->contact_id ?>" class="accordion-collapse collapse <?php if ($contact->contact_id == 1) echo " show" ?> " aria-labelledby="heading<?= $contact->contact_id ?>" data-bs-parent="#accordionExample">
+                        <div class="accordion-body d-flex justify-content-between">
+                          <div class="col-11 ms-auto text-end">
+                            <h5 class="mb-4"><?= $contact->contact_address ?></h5>
 
-                          <a href="mailto:info@refine-tr.com">
-                            <h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2">info@refine-tr.com</h5>
-                          </a>
-                          <a href="tel:+908504338760">
-                            <h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2">+90 850 433 87 60&nbsp;</h5>
-                          </a>
+                            <a href="mailto:<?= $contact->contact_mail ?>">
+                              <h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2"><?= $contact->contact_mail ?></h5>
+                            </a>
+                            <a href="tel:<?= $contact->contact_phone ?>">
+                              <h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2"><?= $contact->contact_phone ?>&nbsp;</h5>
+                            </a>
 
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  <?php  }
+                  ?>
 
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        WAREHOUSE - 1
-                      </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                      <div class="accordion-body d-flex justify-content-between">
-                        <div class="col-11 ms-auto text-end">
-                          <h5 class="mb-4">Warehouse I: Room 1202, 12/F Global Gateway (Tsuen Wan), 168 Yeung Uk Road, Tsuen Wan, Hong Kong</h5>
-
-                          <a href="mailto:info@refine-tr.com">
-                            <h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2">info@refine-tr.com</h5>
-                          </a>
-                          <a href="tel:+908504338760">
-                            <h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2">+90 850 433 87 60&nbsp;</h5>
-                          </a>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        WAREHOUSE - 2
-                      </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                      <div class="accordion-body d-flex justify-content-between">
-                        <div class="col-11 ms-auto text-end">
-                          <h5 class="mb-4">Warehouse II: No. 121 Tai Tao Tsuen Hung Shui Kiu Yuen Long, Hong Kong</h5>
-
-                          <a href="mailto:info@refine-tr.com">
-                            <h5><img src="assets//materials/env-mail.svg" width="16px" class="me-2">info@refine-tr.com</h5>
-                          </a>
-                          <a href="tel:+908504338760">
-                            <h5><img src="assets//materials/phone-env.svg" width="14px" class="me-2">+90 850 433 87 60&nbsp;</h5>
-                          </a>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

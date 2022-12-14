@@ -133,21 +133,19 @@
                      <h4 class="mb-3 d-xl-flex"><span class="order-1">Contact</span>
                          <hr class="mx-xl-2 mx-auto" />
                      </h4>
-                     <a target="blank_" href="https://g.page/refine-tr?share">
-                         <p>HQ: Kasap Sok. Gamze Apt. No:19/1 34394 Esentepe, Şişli, İstanbul, Türkiye</p>
-                     </a>
-                     <a href="#" target="blank_">
-                         <p>Warehouse I: Room 1202, 12/F Global Gateway (Tsuen Wan), 168 Yeung Uk Road, Tsuen Wan, Hong Kong</p>
-                     </a>
-                     <a href="#" target="blank_">
-                         <p>Warehouse II: No. 121 Tai Tao Tsuen Hung Shui Kiu Yuen Long, Hong Kong</p>
-                     </a>
-                     <div class="numberArea d-flex mt-5">
-                         <a href="tel:+90 850 433 87 60" class="d-flex justify-content-center justify-content-xl-start me-3 mb-2"><img src="assets/materials/phone.svg" width="24px">
-                             <p>+90 850 433 87 60</p>
+                     <?php
+                        foreach ($contactResult as $contact) {  ?>
+                         <a href="<?= $contact->contact_maps ?>" <?php if ($contact->contact_maps != "#") echo 'target="_blank"' ?>>
+                             <p><?= $contact->contact_title ?>: <?= $contact->contact_address ?></p>
                          </a>
-                         <a href="mailto:info@refine-tr.com" class="d-flex justify-content-center justify-content-xl-start me-2 mb-2"><img src="assets/materials/mail.svg" width="24px">
-                             <p>info@refine-tr.com</p>
+                     <?php  }
+                        ?>
+                     <div class="numberArea d-flex mt-5">
+                         <a href="tel:<?= $contactResult[0]->contact_phone ?>" class="d-flex justify-content-center justify-content-xl-start me-3 mb-2"><img src="assets/materials/phone.svg" width="24px">
+                             <p><?= $contactResult[0]->contact_phone ?></p>
+                         </a>
+                         <a href="mailto:<?= $contactResult[0]->contact_mail ?>" class="d-flex justify-content-center justify-content-xl-start me-2 mb-2"><img src="assets/materials/mail.svg" width="24px">
+                             <p><?= $contactResult[0]->contact_mail ?></p>
                          </a>
                      </div>
                  </div>
@@ -164,13 +162,13 @@
 
                  <div class="col-xl-6 mt-auto ms-xl-auto mx-auto text-xl-end text-center">
                      <div class="social d-flex justify-content-xl-end justify-content-center mt-4 mt-xl-auto">
-                         <a href="https://www.linkedin.com/company/refineinc/" target="blank_" class="me-3">
+                         <a href="https://www.linkedin.com/company/refineinc/" target="_blank" class="me-3">
                              <div class="sBox"><img src="assets/materials/linked-in.svg"></div>
                          </a>
                          <!-- <a href="#" target="blank_" class="me-3">
                                 <div class="sBox"><img src="assets/materials/insta.svg"></div>
                             </a> -->
-                         <a href="https://www.youtube.com/channel/UCkyVtjw77RO3C6qRN1uDDXg" target="blank_">
+                         <a href="https://www.youtube.com/channel/UCkyVtjw77RO3C6qRN1uDDXg" target="_blank">
                              <div class="sBox"><img src="assets/materials/youtube.svg"></div>
                          </a>
                      </div>
@@ -185,7 +183,7 @@
                  <p>© Copyright <span id="year"></span> Refine Inc.</p>
              </div>
              <div class="col-xl-6 ms-auto text-xl-end text-center">
-                 <a href="single-page.php">Privacy  </a>
+                 <a href="single-page.php">Privacy </a>
                  |
                  <a href="single-page.php">Terms of Use</a>
              </div>
