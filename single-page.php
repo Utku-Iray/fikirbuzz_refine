@@ -1,4 +1,10 @@
-<?php require "database/connection.php"; ?>
+<?php
+require "database/connection.php";
+
+$query = $vt->prepare("SELECT * FROM general WHERE g_page_url='pcb-design'");
+$query->execute();
+$pcbDesign = $query->fetchAll(PDO::FETCH_OBJ);
+?>
 <!doctype html>
 <html lang="en">
 
@@ -18,9 +24,6 @@
       <div class="container-fluid col-xl-10">
         <div class="row align-content-center align-items-center">
           <div class="col-xl-7">
-            <div class="breadcrumb" data-aos="fade-in">
-              <a href="#">Products</a><a href="#">Network Appliances</a>
-            </div>
             <div class="title" data-aos="fade-right">
               <h1>PCB Design & Manufacturing</h1>
               <p>In addition to being Lanner’s authorized distributor in the Middle East, we also offer sourcing
@@ -30,60 +33,12 @@
         </div>
       </div>
     </div>
+
     <div class="index-sec-1 pb-0">
       <div class="container-fluid col-xl-9">
-        <div class="textArea  row pb-5">
-          <div class="col-xl-1 d-xl-block d-none">
-            <hr>
-          </div>
-          <h2 class="mb-5 col-xl-11">PCB Design & Manufacturing</h2>
-
-          <div class="col-xl-11 ms-auto pb-3">
-            <p>
-              In addition to being the authorized distributor of Lanner in Türkiye, Pakistan and the Middle East, we provide services in PCB design and production processes.
-
-
-            </p><br />
-
-            <h2>PCB Manufacturing & Assembly </h2><br />
-
-            <p>
-              With strong ties to top manufacturers in Shenzhen area, our company has more than 17 years of experience in PCB assembly services.
-              <br><br>
-              Our strength lies in achieving the lowest assembly and manufacturing costs for various projects based on our experience and strong relations to our manufacturing partners in China.
-            </p><br />
-
-            <h2>Sourcing</h2><br />
-
-            <p>
-              The foundation for successful manufacturing at the lowest possible cost is purchasing high quality
-              components at a low cost from reliable suppliers.<br /><br />
-
-              For more than 17 years, our company has worked to establish strong business relations with reliable
-              suppliers in order to fulfill our customer’s goals of manufacturing.<br /><br />
-
-              Our teams of engineers, buyers and logistics handling will review your project’s needs, bill of material
-              (BOM) and together they will tailor the best solutions for your projects.<br /><br />
-
-              Through years of experience and global reach, we can analyze all aspects of component sourcing for the
-              client’s project in order to identify and mitigate any risks of obsolescence and save costs and money
-              throughout the project.<br /><br />
-
-              With strong ties in China, Taiwan, Hong Kong and Europe, we can offer traceable and reliable components
-              sourced directly from the manufacturers or authorized dealers to save costs and avoid counterfeit
-              components
-              issues.
-            </p><br />
-
-            <h2>Supply chain and logistics</h2><br />
-
-            <p>
-              Our experienced team can offer the easiest logistics and shipping solutions tailored to the demands of our
-              clients in Europe, Middle East and Central Asia.<br /><br />
-
-              Our company handles numerous shipments originating from Shenzhen, Taiwan and Hong Kong. Providing cheap
-              and reliable shipping solutions.
-            </p>
+        <div class="textArea pb-5 row">
+          <div class="col-md-12">
+            <?= $pcbDesign[0]->g_main_content_en ?>
           </div>
         </div>
       </div>

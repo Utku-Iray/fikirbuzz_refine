@@ -1,4 +1,9 @@
-<?php require "database/connection.php"; ?>
+<?php
+require "database/connection.php";
+$query = $vt->prepare("SELECT * FROM general WHERE g_page_url='about-us'");
+$query->execute();
+$aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
+?>
 <!doctype html>
 <html lang="en">
 
@@ -20,7 +25,7 @@
         <div class="row align-content-center align-items-center">
           <div class="col-xl-7">
             <div class="breadcrumb" data-aos="fade-in">
-              <a href="#">Products</a><a href="#">Network Appliances</a>
+              <a href="index.php">Home</a><a href="#">Network Appliances</a>
             </div>
             <div class="title">
               <h1 data-aos="fade-right">About Us</h1>
@@ -33,37 +38,9 @@
     <div class="index-sec-1 pb-0">
       <div class="container-fluid col-xl-9">
         <div class="textArea row pb-5">
-          <h1 class="mb-5">Lanner Products Focus on Three Main Fields</h1>
-          <div class="col-xl-1 d-xl-block d-none">
-            <hr>
+          <div class="col-md-12">
+            <?= $aboutResult[0]->g_main_content_en ?>
           </div>
-          <p class="col-xl-11 ms-auto pb-3">
-            Lanner Electronics Inc. is one of the world-leading suppliers in designing, engineering and manufacturing
-            advanced network appliances, embedded computers, virtual platforms and rugged industrial hardware.
-            <br /><br />
-
-            The company possesses well-managed manufacturing lines and is capable of customizing both hardware and
-            software parts of a platform (OEM/ODM), including chassis, dimensions, ports, BIOs, extension cards, NIC
-            modules and required certifications.
-            <br /><br />
-
-            Lanner offers a variety of products from network appliances, embedded computing, and carrier-grade Telco
-            platforms to heavy duty computers.
-            <br /><br />
-
-            According to Gartner Magic Quadrants, 60% of all 46 companies supplying
-            Enterprise Network Firewalls, UTM, Wired/Wireless LAN, WAN optimization
-            and Application Delivery use hardware made by Lanner. Lanner had thus
-            far shipped over 2 million networking appliances, reaching a significant
-            corporate milestone. Such demand demonstrates Lanner’s strength and
-            commitment to designing superior network platforms in the field.
-            
-            <br /><br />
-
-            In addition of serving as Lanner’s authorized distributor in the Middle East, Türkiye and Pakistan, we offer
-            sourcing for PCB manufacturing and assembly, all while maintaining the prices competitive thanks to our
-            strong ties to top manufacturers.
-          </p>
         </div>
       </div>
 
