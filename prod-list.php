@@ -11,6 +11,10 @@ if (isset($_GET["cid"])) {
   $query = $vt->prepare("SELECT * FROM product WHERE category_id = '$cid' AND status = 1 ORDER BY name ASC");
   $query->execute();
   $productList = $query->fetchAll(PDO::FETCH_OBJ);
+
+  $query = $vt->prepare("SELECT * FROM product ORDER BY click_count DESC LIMIT 4");
+  $query->execute();
+  $mostPopularProduct = $query->fetchAll(PDO::FETCH_OBJ);
 } else {
   header("Location: index.php");
 }
@@ -87,85 +91,30 @@ if (isset($_GET["cid"])) {
           </div>
           <ul class="newSlider clearfix mt-5">
             <div class="row justify-content-between pid-1 d-flex">
-              <li class="col-xl-3 mt-5">
-                <a href="prod-in.html">
-                  <div class="flatten">
-                    <div class="outbox text-center mx-auto">
-                      <img src="assets/materials/prod-1.png">
-                    </div>
-                    <div class="description mt-xl-0 pt-5">
-                      <h1>NCI-200</h1>
-                      <p>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Fusce
-                        est sapien, accumsan non efficitur
-                        faucibus, suscipit ac mi.</p>
-                      <div class="btn-line">See Details
-                        <hr />
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </li>
 
-              <li class="col-xl-3 mt-5">
-                <a href="prod-in.html">
-                  <div class="flatten">
-                    <div class="outbox text-center mx-auto">
-                      <img src="assets/materials/prod-2.png">
-                    </div>
-                    <div class="description mt-xl-0 pt-5">
-                      <h1>NCI-200</h1>
-                      <p>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Fusce
-                        est sapien, accumsan non efficitur
-                        faucibus, suscipit ac fsdfsdfsdffffdsfsdfdsfdsfsdfds.</p>
-                      <div class="btn-line">See Details
-                        <hr />
+              <?php
+              foreach ($mostPopularProduct as $mprod) {    ?>
+                <li class="col-xl-3 mt-5">
+                  <a href="prod-in.php?pid=<?= $mprod->id ?>&cid=<?= $mprod->category_id ?>">
+                    <div class="flatten">
+                      <div class="outbox text-center mx-auto">
+                        <img src="<?= $mprod->image ?>">
+                      </div>
+                      <div class="description mt-xl-0 pt-5">
+                        <h1><?= $mprod->name ?></h1>
+                        <p><?= $mprod->short_description ?></p>
+                        <div class="btn-line">See Details
+                          <hr />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </a>
-              </li>
+                  </a>
+                </li>
+              <?php   }
+              ?>
 
-              <li class="col-xl-3 mt-5">
-                <a href="prod-in.html">
-                  <div class="flatten">
-                    <div class="outbox text-center mx-auto">
-                      <img src="assets/materials/prod-3.png">
-                    </div>
-                    <div class="description mt-xl-0 pt-5">
-                      <h1>NCI-200</h1>
-                      <p>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Fusce
-                        est sapien, accumsan non efficitur
-                        faucibus, suscipit ac mi.</p>
-                      <div class="btn-line">See Details
-                        <hr />
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </li>
 
-              <li class="col-xl-3 mt-5">
-                <a href="prod-in.html">
-                  <div class="flatten">
-                    <div class="outbox text-center mx-auto">
-                      <img src="assets/materials/prod-4.png">
-                    </div>
-                    <div class="description mt-xl-0 pt-5">
-                      <h1>NCI-200</h1>
-                      <p>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Fusce
-                        est sapien, accumsan non efficitur
-                        faucibus, suscipit ac mi.</p>
-                      <div class="btn-line">See Details
-                        <hr />
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </li>
+
             </div>
           </ul>
         </div>
