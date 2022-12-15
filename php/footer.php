@@ -1,3 +1,36 @@
+ 
+    <div class="index-sec-3">
+      <div class="container-fluid col-xl-10">
+        <div class="row">
+          <div class="col-xl-6 text-xl-start text-center">
+            <h1>Refine is Lanner’s Authorized Distributor In <br />
+              The Middle East, Türkiye And Pakistan.</h1>
+          </div>
+          <div class="col-xl-6 my-xl-auto mt-3 ms-auto text-xl-end text-center">
+            <a target="blank_" href="https://www.lannerinc.com/"><img src="assets/materials/path74.png"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Fast Contact Nav -->
+    <div class="mini-nav d-flex justify-content-center d-xl-none">
+      <div class="position-relative d-flex">
+        <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg" width="20px" class="me-2">Call Us</a>
+        <div class="seperator mx-auto"></div>
+        <a href="#" class="btn-white text-center mx-auto"><img src="assets/materials/handshake.svg" width="26px" class="me-2">Be Reseller</a>
+      </div>
+    </div>
+    <!-- Mobile Fast Contact Nav -->
+
+
+
+    <!--Push Button-->
+    <a target="blank_" href="mailto:info@refine-tr.com" class="pusher d-xl-flex d-none">
+      <img src="assets/materials/chat.svg">
+    </a>
+    <!--Push Button-->
+  </main>
  <!-- Login Area -->
  <div class="container logMe">
      <div class="row">
@@ -87,7 +120,7 @@
                              </div>
                          </div>
                      </a>
-                     <a href="https://api.whatsapp.com/send?phone=+905000000000&text=Merhabalar,%20Refine%20Inc.%20ayr%C4%B1cal%C4%B1klar%C4%B1ndan%20yararlanmak%20istiyorum.">
+                     <a href="mailto:info@refine-tr.com">
                          <div class="text-center mb">
                              <div class="incontent">
                                  <img src="assets/materials/chat.svg">
