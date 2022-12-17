@@ -25,7 +25,7 @@ require "database/connection.php";
             </div>
             <div class="title" data-aos="fade-right">
               <h1>CONTACT</h1>
-              <p>In addition to being Lanner’s authorized distributor in the Middle East, we also offer sourcing
+              <p>In addition to being Lanner’s authorized distributor in the Middle East Türkiye and Pakistan, we also offer sourcing
                 services for PCB design & manufacturing.</p>
             </div>
           </div>

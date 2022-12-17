@@ -50,7 +50,7 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
             </div>
           </li>
           <li class="nav-item dropdown has-megamenu">
-            <a class="nav-link dropdown-toggle" href="#" style="color:#187352 !important;font-weight:bold">Lanner</a>
+            <a class="nav-link dropdown-toggle " href="#" style="color:#187352 !important;font-weight:bold">Lanner</a>
             <div class="dropdown-menu megamenu pt-5" role="menu">
               <div class="container-fluid col-xl-11">
                 <div class="row">
@@ -173,7 +173,7 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
             Lanner
           </button>
         </h2>
-        <div id="lanerProduct" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div id="lanerProduct" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
           <div class="accordion-body d-flex " style="padding: 0 !important;">
             <div class="col-12" style="text-align: left;border-style: solid;border-width:1px;border-top: none;padding: 10px;border-radius: 11px;margin-bottom: 10px;">
               <?php

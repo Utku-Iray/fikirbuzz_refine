@@ -1,36 +1,35 @@
- 
-    <div class="index-sec-3">
-      <div class="container-fluid col-xl-10">
-        <div class="row">
-          <div class="col-xl-6 text-xl-start text-center">
-            <h1>Refine is Lanner’s Authorized Distributor In <br />
-              The Middle East, Türkiye And Pakistan.</h1>
-          </div>
-          <div class="col-xl-6 my-xl-auto mt-3 ms-auto text-xl-end text-center">
-            <a target="blank_" href="https://www.lannerinc.com/"><img src="assets/materials/path74.png"></a>
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="index-sec-3">
+     <div class="container-fluid col-xl-10">
+         <div class="row">
+             <div class="col-xl-6 text-xl-start text-center">
+                 <h1>Refine is Lanner’s Authorized Distributor In <br />
+                     The Middle East, Türkiye And Pakistan.</h1>
+             </div>
+             <div class="col-xl-6 my-xl-auto mt-3 ms-auto text-xl-end text-center">
+                 <a target="blank_" href="https://www.lannerinc.com/"><img src="assets/materials/path74.png"></a>
+             </div>
+         </div>
+     </div>
+ </div>
 
-    <!-- Mobile Fast Contact Nav -->
-    <div class="mini-nav d-flex justify-content-center d-xl-none">
-      <div class="position-relative d-flex">
-        <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg" width="20px" class="me-2">Call Us</a>
-        <div class="seperator mx-auto"></div>
-        <a href="#" class="btn-white text-center mx-auto"><img src="assets/materials/handshake.svg" width="26px" class="me-2">Be Reseller</a>
-      </div>
-    </div>
-    <!-- Mobile Fast Contact Nav -->
-
+ <!-- Mobile Fast Contact Nav -->
+ <div class="mini-nav d-flex justify-content-center d-xl-none">
+     <div class="position-relative d-flex">
+         <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg" width="20px" class="me-2">Call Us</a>
+         <div class="seperator mx-auto"></div>
+         <a  class="btn-white text-center mx-auto form"> <img src="assets/materials/handshake.svg" width="26px" class="me-2">Be Reseller</a>
+     </div>
+ </div>
+ <!-- Mobile Fast Contact Nav -->
 
 
-    <!--Push Button-->
-    <a target="blank_" href="mailto:info@refine-tr.com" class="pusher d-xl-flex d-none">
-      <img src="assets/materials/chat.svg">
-    </a>
-    <!--Push Button-->
-  </main>
+
+ <!--Push Button-->
+ <!-- <a target="blank_" href="mailto:info@refine-tr.com" class="pusher d-xl-flex d-none">
+     <img src="assets/materials/chat.svg">
+ </a> -->
+ <!--Push Button-->
+ </main>
  <!-- Login Area -->
  <div class="container logMe">
      <div class="row">
@@ -62,7 +61,7 @@
                              <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
                          </div>
                          <div class="form-group mt-3">
-                             <input type="password" placeholder="Phone Number"><img src="assets/materials/env-pw.svg">
+                             <input type="password" placeholder="Phone Number"><img src="assets/materials/env-mail.svg">
                          </div>
                          <div class="form-group mt-3">
 
@@ -185,7 +184,7 @@
 
                  <div class="col-xl-6 mt-auto text-center text-xl-start">
                      <h4>Download PDF Documents</h4>
-                     <form class="form mt-4">
+                     <form class="mt-4" action="ebook-download.php">
                          <div class="form-group">
                              <!-- <input type="text" placeholder="Your E-Mail Address"> -->
                              <button type="submit"><img width="20px" style="margin-right: 10px;" src="assets/materials/pdf-fikirbuz.png" alt="">E-Book</button>
@@ -210,12 +209,16 @@
          </div>
      </div>
 
-     <div class="container-fluid col-xl-10 subFooter">
+     <div class="container-fluid col-xl-10 ">
          <div class="row">
-             <div class="col-xl-6 text-xl-start text-center">
-                 <p>© Copyright <span id="year"></span> Refine Inc.</p>
+
+             <div class="col-xl-4 text-xl-start text-center" style="padding-top: 10px;margin-bottom: 10px;">
+                 <a href="https://www.fikirbuzz.com/"> <img width="170px" src="assets/materials/fb.png" alt=""></a>
              </div>
-             <div class="col-xl-6 ms-auto text-xl-end text-center">
+             <div class="col-xl-4 text-xl-start text-center">
+             </div>
+             <div class="col-xl-4 ms-auto text-xl-end text-center subFooter">
+                 <a style="padding-right:15px" href="single-page.php">© Copyright <span id="year"></span> Refine Inc. </a>
                  <a href="single-page.php">Privacy </a>
                  |
                  <a href="single-page.php">Terms of Use</a>
