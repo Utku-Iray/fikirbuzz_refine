@@ -36,10 +36,40 @@ $result = $query->fetchAll(PDO::FETCH_OBJ);
                     <div class="card">
                         <div class="body">
                             <form id="updateAboutForm" name="updateAboutForm" method="post" enctype="multipart/form-data">
-                                <!-- Blog Content -->
-                                <label for="ckeditor" class="mb-1">İçerik</label>
-                                <div class="form-group mb-3">
-                                    <textarea id="ckeditorEN" name="ckeditorEN"><?= $result[0]->g_main_content_en ?></textarea>
+
+                                <ul class="nav nav-tabs" id="aboutTabList" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="about-en-tab" data-bs-toggle="tab" data-bs-target="#aboutEn" type="button" role="tab" aria-controls="aboutEn" aria-selected="true">İngilizce</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="about-tr-tab" data-bs-toggle="tab" data-bs-target="#aboutTr" type="button" role="tab" aria-controls="aboutTr" aria-selected="false">Türkçe</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="about-ar-tab" data-bs-toggle="tab" data-bs-target="#aboutAr" type="button" role="tab" aria-controls="aboutAr" aria-selected="false">Arapça</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="aboutTabContent">
+                                    <!-- About Us Content EN -->
+                                    <div class="tab-pane fade show active" id="aboutEn" role="tabpanel" aria-labelledby="about-en-tab">
+                                        <label for="ckeditorEN" class="mb-1">İçerik</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="ckeditorEN" name="ckeditorEN"><?= $result[0]->g_main_content_en ?></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- About Us Content TR -->
+                                    <div class="tab-pane fade" id="aboutTr" role="tabpanel" aria-labelledby="about-tr-tab">
+                                        <label for="ckeditorTR" class="mb-1">İçerik</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="ckeditorTR" name="ckeditorTR"><?= $result[0]->g_main_content_tr ?></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- About Us Content AR -->
+                                    <div class="tab-pane fade" id="aboutAr" role="tabpanel" aria-labelledby="about-ar-tab">
+                                        <label for="ckeditorAR" class="mb-1">İçerik</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="ckeditorAR" name="ckeditorAR"><?= $result[0]->g_main_content_ar ?></textarea>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div style="text-align: right !important">
@@ -59,20 +89,27 @@ $result = $query->fetchAll(PDO::FETCH_OBJ);
         $(function() {
             //CKEditor
             CKEDITOR.replace('ckeditorEN');
+            CKEDITOR.replace('ckeditorTR');
+            CKEDITOR.replace('ckeditorAR');
             CKEDITOR.config.height = 400;
 
         });
     </script>
 
-    <!-- Update PCB -->
+    <!-- Update About us -->
     <script>
         $('#updateAboutForm').submit(function() {
             event.preventDefault()
             var $data = new FormData(this);
 
             var ckeditordataEN = CKEDITOR.instances['ckeditorEN'].getData();
+            var ckeditordataTR = CKEDITOR.instances['ckeditorTR'].getData();
+            var ckeditordataAR = CKEDITOR.instances['ckeditorAR'].getData();
 
             $data.append("ckeditordataEN", ckeditordataEN)
+            $data.append("ckeditordataTR", ckeditordataTR)
+            $data.append("ckeditordataAR", ckeditordataAR)
+
 
             Swal.fire({
                 title: 'Hakkımızda içeriğini güncellemek istediğinize emin misiniz?',

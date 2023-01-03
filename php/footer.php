@@ -17,7 +17,7 @@
      <div class="position-relative d-flex">
          <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg" width="20px" class="me-2">Call Us</a>
          <div class="seperator mx-auto"></div>
-         <a  class="btn-white text-center mx-auto form"> <img src="assets/materials/handshake.svg" width="26px" class="me-2">Be Reseller</a>
+         <a class="btn-white text-center mx-auto form"> <img src="assets/materials/handshake.svg" width="26px" class="me-2">Be Reseller</a>
      </div>
  </div>
  <!-- Mobile Fast Contact Nav -->
@@ -149,13 +149,13 @@
                          <p>Shuttle</p>
                      </a>
                      <a href="single-page.php">
-                         <p>PCB Design & Manufacturing</p>
+                         <p><?php echo $lang['pcbDesignNav'] ?></p>
                      </a>
                      <a href="blog-page.php">
                          <p>Blog</p>
                      </a>
                      <a href="contact.php">
-                         <p>Contact Us</p>
+                         <p><?php echo $lang['contactUsNav'] ?></p>
                      </a>
                  </div>
 

@@ -1,3 +1,8 @@
+<?php
+require "../database/connection.php";
+require "controller.php";
+
+?>
 <!doctype html>
 <html class="no-js " lang="en">
 
@@ -90,7 +95,7 @@
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
-                                setInterval(location.href = "blog-category.php", 3000);
+                                setInterval(location.href = "blog-category.php", 3500);
 
                             }
                         }

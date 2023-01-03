@@ -2,15 +2,22 @@
 include "../../database/connection.php";
 
 $idHolder = trim(filter_input(INPUT_POST, 'idHolderInput'));
-$productSubCatName = trim(filter_input(INPUT_POST, 'productSubCatName'));
-$productSubCatDesc = trim(filter_input(INPUT_POST, 'productSubCatDesc'));
+
+$productSubCatNameEN = trim(filter_input(INPUT_POST, 'productSubCatNameEN'));
+$productSubCatNameTR = trim(filter_input(INPUT_POST, 'productSubCatNameTR'));
+$productSubCatNameAR = trim(filter_input(INPUT_POST, 'productSubCatNameAR'));
+
+$productSubCatDescEN = trim(filter_input(INPUT_POST, 'productSubCatDescEN'));
+$productSubCatDescTR = trim(filter_input(INPUT_POST, 'productSubCatDescTR'));
+$productSubCatDescAR = trim(filter_input(INPUT_POST, 'productSubCatDescAR'));
+
 $prodMainCategory = trim(filter_input(INPUT_POST, 'prodMainCategory'));
 $prodSubCatStatus = trim(filter_input(INPUT_POST, 'prodSubCatStatus'));
 
 if (
-    empty($productSubCatName)
+    empty($productSubCatNameEN) || empty($productSubCatNameTR) || empty($productSubCatNameAR)
 ) {
-    $errors['error'] = 'Alt kategori adı boş bırakılamaz.';
+    $errors['error'] = 'Lütfen her dilde alt kategori adını yazınız.';
 }
 //Kategoriden aynısı varsa hata çıkacak.
 
@@ -19,11 +26,20 @@ if (!empty($errors)) {
     $form_data['errors'] = $errors;
 } else {
 
-    $sorgu = $vt->prepare("UPDATE sub_category SET name = :c_name, description = :c_desc, category_id = :c_id, status = :c_status WHERE id='$idHolder'");
+    $sorgu = $vt->prepare("UPDATE sub_category SET 
+    name_en = :c_name_en, name_tr = :c_name_tr, name_ar = :c_name_ar,
+    description_en = :c_desc_en, description_tr = :c_desc_tr, description_ar = :c_desc_ar, 
+    category_id = :c_id, status = :c_status WHERE id='$idHolder'");
     if ($sorgu) {
         $result = $sorgu->execute([
-            ':c_name' => $productSubCatName,
-            ':c_desc' => $productSubCatDesc,
+            ':c_name_en' => $productSubCatNameEN,
+            ':c_name_tr' => $productSubCatNameTR,
+            ':c_name_ar' => $productSubCatNameAR,
+
+            ':c_desc_en' => $productSubCatDescEN,
+            ':c_desc_tr' => $productSubCatDescTR,
+            ':c_desc_ar' => $productSubCatDescAR,
+
             ':c_id' => $prodMainCategory,
             ':c_status' => $prodSubCatStatus,
         ]);

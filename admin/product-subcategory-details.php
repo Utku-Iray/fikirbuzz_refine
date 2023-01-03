@@ -45,15 +45,63 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                         <div class="body">
                             <form id="updateProductSubCategory" name="updateProductSubCategory" method="post" enctype="multipart/form-data">
 
-                                <!-- Product Sub Category Name -->
-                                <label for="productSubCatName" class="mb-1">Alt Kategori Adı</label>
-                                <div class="form-group mb-3">
-                                    <input type="text" id="productSubCatName" name="productSubCatName" class="form-control" placeholder="Alt Kategori Adı" value="<?= $productSubCategoryResult[0]->name ?>">
-                                </div>
+                                <ul class="nav nav-tabs" id="refineTabList" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="en-tab" data-bs-toggle="tab" data-bs-target="#tabEN" type="button" role="tab" aria-controls="tabEN" aria-selected="true">İngilizce</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="tr-tab" data-bs-toggle="tab" data-bs-target="#tabTR" type="button" role="tab" aria-controls="tabTR" aria-selected="false">Türkçe</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="ar-tab" data-bs-toggle="tab" data-bs-target="#tabAR" type="button" role="tab" aria-controls="tabAR" aria-selected="false">Arapça</button>
+                                    </li>
+                                </ul>
 
-                                <label for="productSubCatDesc" class="mb-1">Alt Kategori Açıklama</label>
-                                <div class="form-group mb-3">
-                                    <input type="text" id="productSubCatDesc" name="productSubCatDesc" class="form-control" placeholder="Alt Kategori Açıklama" value="<?= $productSubCategoryResult[0]->description ?>">
+                                <div class="tab-content" id="refineTabContent">
+                                    <!-- Content EN -->
+                                    <div class="tab-pane fade show active" id="tabEN" role="tabpanel" aria-labelledby="en-tab">
+
+                                        <label for="productSubCatNameEN" class="mb-1">Alt Kategori Adı (İngilizce)</label>
+                                        <div class="form-group mb-3">
+                                            <input type="text" id="productSubCatNameEN" name="productSubCatNameEN" class="form-control" placeholder="Alt Kategori Adı" value="<?= $productSubCategoryResult[0]->name_en ?>">
+                                        </div>
+
+                                        <label for="productSubCatDescEN" class="mb-1">Alt Kategori Açıklama (İngilizce)</label>
+                                        <div class="form-group mb-3">
+                                            <input type="text" id="productSubCatDescEN" name="productSubCatDescEN" class="form-control" placeholder="Alt Kategori Açıklama" value="<?= $productSubCategoryResult[0]->description_en ?>">
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Content TR -->
+                                    <div class="tab-pane fade" id="tabTR" role="tabpanel" aria-labelledby="tr-tab">
+
+                                        <label for="productSubCatNameTR" class="mb-1">Alt Kategori Adı (Türkçe)</label>
+                                        <div class="form-group mb-3">
+                                            <input type="text" id="productSubCatNameTR" name="productSubCatNameTR" class="form-control" placeholder="Alt Kategori Adı" value="<?= $productSubCategoryResult[0]->name_tr ?>">
+                                        </div>
+
+                                        <label for="productSubCatDescTR" class="mb-1">Alt Kategori Açıklama (Türkçe)</label>
+                                        <div class="form-group mb-3">
+                                            <input type="text" id="productSubCatDescTR" name="productSubCatDescTR" class="form-control" placeholder="Alt Kategori Açıklama" value="<?= $productSubCategoryResult[0]->description_tr ?>">
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Content AR -->
+                                    <div class="tab-pane fade" id="tabAR" role="tabpanel" aria-labelledby="ar-tab">
+
+                                        <label for="productSubCatNameAR" class="mb-1">Alt Kategori Adı (Arapça)</label>
+                                        <div class="form-group mb-3">
+                                            <input type="text" id="productSubCatNameAR" name="productSubCatNameAR" class="form-control" placeholder="Alt Kategori Adı" value="<?= $productSubCategoryResult[0]->name_ar ?>">
+                                        </div>
+
+                                        <label for="productSubCatDescAR" class="mb-1">Alt Kategori Açıklama (Arapça)</label>
+                                        <div class="form-group mb-3">
+                                            <input type="text" id="productSubCatDescAR" name="productSubCatDescAR" class="form-control" placeholder="Alt Kategori Açıklama" value="<?= $productSubCategoryResult[0]->description_ar ?>">
+                                        </div>
+
+                                    </div>
                                 </div>
 
 
@@ -62,7 +110,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                                     <select class="form-select" id="prodMainCategory" name="prodMainCategory">
 
                                         <?php foreach ($productCategoryResult as $result) {   ?>
-                                            <option value="<?= $result->id ?>" <?php if ($productSubCategoryResult[0]->category_id == $result->id) echo "selected"; ?>><?= $result->name ?></option>
+                                            <option value="<?= $result->id ?>" <?php if ($productSubCategoryResult[0]->category_id == $result->id) echo "selected"; ?>><?= $result->name_en ?></option>
                                         <?php } ?>
 
                                     </select>
@@ -138,7 +186,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
-                                setInterval(location.href = "product-category.php", 3000);
+                                setInterval(location.href = "product-category.php", 3500);
 
                             }
                         }

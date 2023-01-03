@@ -105,7 +105,7 @@ $blogCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
                         dataType: "json",
                         success: function(data) {
                             if (data.status == true) {
-                                setInterval(reloadHandler, 1600)
+                                setInterval(reloadHandler, 3500)
                                 $(".blogcat-" + blogCatID).fadeOut('slow');
                                 Swal.fire({
                                     position: 'top-end',

@@ -1,5 +1,6 @@
 <?php
 require "database/connection.php";
+include "config.php";
 
 if (isset($_GET["cid"])) {
   $cid = $_GET["cid"];
@@ -12,7 +13,7 @@ if (isset($_GET["cid"])) {
   $query->execute();
   $productList = $query->fetchAll(PDO::FETCH_OBJ);
 
-  $query = $vt->prepare("SELECT * FROM product ORDER BY click_count DESC LIMIT 4");
+  $query = $vt->prepare("SELECT * FROM product WHERE status = 1 ORDER BY click_count DESC LIMIT 4");
   $query->execute();
   $mostPopularProduct = $query->fetchAll(PDO::FETCH_OBJ);
 } else {
@@ -40,11 +41,39 @@ if (isset($_GET["cid"])) {
         <div class="row align-content-center align-items-center">
           <div class="col-xl-7">
             <div class="breadcrumb" data-aos="fade-in">
-              <a href="#">Products</a><a href="#"><?= $catResult[0]->name ?></a>
+              <a href="#">Products</a>
+              <a href="#">
+                <?php if ($_SESSION['lang'] == "en") {
+                  echo $catResult[0]->name_en;
+                } else if ($_SESSION['lang'] == "tr") {
+                  echo $catResult[0]->name_tr;
+                } else if ($_SESSION['lang'] == "ar") {
+                  echo $catResult[0]->name_ar;
+                }
+                ?>
+              </a>
             </div>
             <div class="title" data-aos="fade-right">
-              <h1><?= $catResult[0]->name ?></h1>
-              <p><?= $catResult[0]->description ?></p>
+              <h1>
+                <?php if ($_SESSION['lang'] == "en") {
+                  echo $catResult[0]->name_en;
+                } else if ($_SESSION['lang'] == "tr") {
+                  echo $catResult[0]->name_tr;
+                } else if ($_SESSION['lang'] == "ar") {
+                  echo $catResult[0]->name_ar;
+                }
+                ?>
+              </h1>
+              <p>
+                <?php if ($_SESSION['lang'] == "en") {
+                  echo $catResult[0]->description_en;
+                } else if ($_SESSION['lang'] == "tr") {
+                  echo $catResult[0]->description_tr;
+                } else if ($_SESSION['lang'] == "ar") {
+                  echo $catResult[0]->description_ar;
+                }
+                ?>
+              </p>
             </div>
           </div>
           <div class="col-xl-4 ms-xl-auto mx-auto text-center mt-5 mt-xl-auto">
@@ -68,7 +97,17 @@ if (isset($_GET["cid"])) {
                 </div>
                 <div class="description">
                   <h1><?= $product->name ?></h1>
-                  <p><?= $product->short_description ?></p>
+                  <p>
+
+                    <?php if ($_SESSION['lang'] == "en") {
+                      echo $product->short_description_en;
+                    } else if ($_SESSION['lang'] == "tr") {
+                      echo $product->short_description_tr;
+                    } else if ($_SESSION['lang'] == "ar") {
+                      echo $product->short_description_ar;
+                    }
+                    ?>
+                  </p>
                 </div>
                 <a href="prod-in.php?pid=<?= $product->id ?>&cid=<?= $cid ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE MORE
                   <hr />
@@ -102,7 +141,16 @@ if (isset($_GET["cid"])) {
                       </div>
                       <div class="description mt-xl-0 pt-5">
                         <h1><?= $mprod->name ?></h1>
-                        <p><?= $mprod->short_description ?></p>
+                        <p>
+                          <?php if ($_SESSION['lang'] == "en") {
+                            echo $mprod->short_description_en;
+                          } else if ($_SESSION['lang'] == "tr") {
+                            echo $mprod->short_description_tr;
+                          } else if ($_SESSION['lang'] == "ar") {
+                            echo $mprod->short_description_ar;
+                          }
+                          ?>
+                        </p>
                         <div class="btn-line">See Details
                           <hr />
                         </div>
@@ -121,9 +169,9 @@ if (isset($_GET["cid"])) {
       </div>
     </div>
 
-    
 
-  <?php include 'php/footer.php' ?>
+
+    <?php include 'php/footer.php' ?>
 </body>
 
 </html>

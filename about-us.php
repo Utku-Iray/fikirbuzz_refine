@@ -1,5 +1,7 @@
 <?php
 require "database/connection.php";
+include "config.php";
+
 $query = $vt->prepare("SELECT * FROM general WHERE g_page_url='about-us'");
 $query->execute();
 $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
@@ -39,7 +41,14 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
       <div class="container-fluid col-xl-9">
         <div class="textArea row pb-5">
           <div class="col-md-12">
-            <?= $aboutResult[0]->g_main_content_en ?>
+            <?php if ($_SESSION['lang'] == "en") {
+              echo $aboutResult[0]->g_main_content_en;
+            } else if ($_SESSION['lang'] == "tr") {
+              echo $aboutResult[0]->g_main_content_tr;
+            } else if ($_SESSION['lang'] == "ar") {
+              echo $aboutResult[0]->g_main_content_ar;
+            }
+            ?>
           </div>
         </div>
       </div>
@@ -372,9 +381,9 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
 
-   
 
-  <?php include 'php/footer.php' ?>
+
+    <?php include 'php/footer.php' ?>
 
 </body>
 

@@ -48,21 +48,7 @@ $specCount = count($specResult);
                                 <div class="form-group mb-3">
                                     <input type="text" id="prodName" name="prodName" class="form-control" placeholder="Ürün Adı">
                                 </div>
-                                <!-- Product Short Description -->
-                                <label for="prodShortDescription" class="mb-1">Kısa Açıklama *</label>
-                                <div class="form-group mb-3">
-                                    <input type="text" id="prodShortDescription" name="prodShortDescription" class="form-control" placeholder="Kısa Açıklama">
-                                </div>
-                                <!-- Product Ana Özellikler -->
-                                <label for="ckeditorKeyFeatures" class="mb-1">Ana Özellikler</label>
-                                <div class="form-group mb-3">
-                                    <textarea id="ckeditorKeyFeatures" name="ckeditorKeyFeatures"></textarea>
-                                </div>
-                                <!-- Product Overview -->
-                                <label for="prodOverview" class="mb-1">Genel Bakış *</label>
-                                <div class="form-group mb-3">
-                                    <textarea id="prodOverview" name="prodOverview" class="form-control" placeholder="Genel Bakış"></textarea>
-                                </div>
+
 
                                 <!-- Product Category -->
                                 <label for="prodCategory" class="mb-1">Kategori *</label>
@@ -71,7 +57,7 @@ $specCount = count($specResult);
                                         <option class="d-none" value="" selected>Kategori Seçiniz</option>
                                         <?php
                                         foreach ($subCatResult as $catResult) {   ?>
-                                            <option value="<?= $catResult->id ?>"><?= $catResult->name ?></option>
+                                            <option value="<?= $catResult->id ?>"><?= $catResult->name_en ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -106,27 +92,147 @@ $specCount = count($specResult);
                                     </select>
                                 </div>
 
-                                <!-- Product Specifications Start -->
-                                <?php for ($i = 0; $i < $specCount; $i++) { ?>
-                                    <h3 class="mt-2 mb-2 bg-dark text-white text-center"><strong><?= $specResult[$i]->name ?></strong></h3>
-                                    <div class="row mt-2">
-                                        <?php
-                                        $detailArray = json_decode($specResult[$i]->details);
-                                        $detailsCount = count($detailArray);
+                                <!-- TAB LIST -->
+                                <div class="nav nav-pills flex-column flex-sm-row mb-3" id="refineTabList" role="tablist">
+                                    <a class="flex-sm-fill text-sm-center nav-link font-weight-bold rounded-0 mt-2 border active" data-bs-toggle="tab" href="#tabEN">
+                                        İngilizce
+                                    </a>
+                                    <a class="flex-sm-fill text-sm-center nav-link font-weight-bold rounded-0 mt-2 border" data-bs-toggle="tab" href="#tabTR">
+                                        Türkçe
+                                    </a>
+                                    <a class="flex-sm-fill text-sm-center nav-link font-weight-bold rounded-0 mt-2 border" data-bs-toggle="tab" href="#tabAR">
+                                        Arapça
+                                    </a>
+                                </div>
+                                <div class="tab-content mt-2">
+                                    <!-- TAB EN -->
+                                    <div class="tab-pane fade active show" id="tabEN" role="tabpanel">
+                                        <!-- Product Short Description EN -->
+                                        <label for="prodShortDescriptionEN" class="mb-1">Kısa Açıklama *</label>
+                                        <div class="form-group mb-3">
+                                            <input type="text" id="prodShortDescriptionEN" name="prodShortDescriptionEN" class="form-control" placeholder="Kısa Açıklama">
+                                        </div>
+                                        <!-- Product Ana Özellikler EN -->
+                                        <label for="ckeditorKeyFeaturesEN" class="mb-1">Ana Özellikler</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="ckeditorKeyFeaturesEN" name="ckeditorKeyFeaturesEN"></textarea>
+                                        </div>
+                                        <!-- Product Overview EN -->
+                                        <label for="prodOverviewEN" class="mb-1">Genel Bakış *</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="prodOverviewEN" name="prodOverviewEN" class="form-control" placeholder="Genel Bakış"></textarea>
+                                        </div>
 
-                                        for ($k = 0; $k <  $detailsCount; $k++) {
-                                            $filteredDetail =  str_replace(" ", "", $detailArray[$k]);
-                                        ?>
-                                            <div class="col-md-6">
-                                                <label for="prod<?= $filteredDetail ?>" class="mb-1"><?= $detailArray[$k] ?></label>
-                                                <div class="form-group mb-3">
-                                                    <input type="text" id="prod<?= $filteredDetail ?>" name="prod<?= $filteredDetail ?>" class="form-control" placeholder="<?= $detailArray[$k] ?>">
-                                                </div>
+
+
+                                        <!-- Product Specifications Start EN -->
+                                        <?php for ($i = 0; $i < $specCount; $i++) { ?>
+                                            <h3 class="mt-2 mb-2 bg-dark text-white text-center"><strong><?= $specResult[$i]->name ?> (İngilizce)</strong></h3>
+                                            <div class="row mt-2">
+                                                <?php
+                                                $detailArray = json_decode($specResult[$i]->details);
+                                                $detailsCount = count($detailArray);
+                                                for ($k = 0; $k <  $detailsCount; $k++) {
+                                                    $filteredDetail =  str_replace(" ", "", $detailArray[$k]);
+                                                ?>
+                                                    <div class="col-md-6">
+                                                        <label for="prod<?= $filteredDetail ?>-EN" class="mb-1"><?= $detailArray[$k] ?></label>
+                                                        <div class="form-group mb-3">
+                                                            <input type="text" id="prod<?= $filteredDetail ?>-EN" name="prod<?= $filteredDetail ?>-EN" class="form-control" placeholder="<?= $detailArray[$k] ?>">
+                                                        </div>
+                                                    </div>
+                                                <?php } ?>
                                             </div>
                                         <?php } ?>
+                                        <!-- Product Specifications End EN -->
                                     </div>
-                                <?php } ?>
-                                <!-- Product Specifications End -->
+
+                                    <!-- TAB TR -->
+                                    <div class="tab-pane fade" id="tabTR" role="tabpanel">
+                                        <!-- Product Short Description TR -->
+                                        <label for="prodShortDescriptionTR" class="mb-1">Kısa Açıklama *</label>
+                                        <div class="form-group mb-3">
+                                            <input type="text" id="prodShortDescriptionTR" name="prodShortDescriptionTR" class="form-control" placeholder="Kısa Açıklama">
+                                        </div>
+                                        <!-- Product Ana Özellikler TR -->
+                                        <label for="ckeditorKeyFeaturesTR" class="mb-1">Ana Özellikler</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="ckeditorKeyFeaturesTR" name="ckeditorKeyFeaturesTR"></textarea>
+                                        </div>
+                                        <!-- Product Overview TR -->
+                                        <label for="prodOverviewTR" class="mb-1">Genel Bakış *</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="prodOverviewTR" name="prodOverviewTR" class="form-control" placeholder="Genel Bakış"></textarea>
+                                        </div>
+
+
+
+                                        <!-- Product Specifications Start TR -->
+                                        <?php for ($i = 0; $i < $specCount; $i++) { ?>
+                                            <h3 class="mt-2 mb-2 bg-dark text-white text-center"><strong><?= $specResult[$i]->name ?> (Türkçe)</strong></h3>
+                                            <div class="row mt-2">
+                                                <?php
+                                                $detailArray = json_decode($specResult[$i]->details);
+                                                $detailsCount = count($detailArray);
+                                                for ($k = 0; $k <  $detailsCount; $k++) {
+                                                    $filteredDetail =  str_replace(" ", "", $detailArray[$k]);
+                                                ?>
+                                                    <div class="col-md-6">
+                                                        <label for="prod<?= $filteredDetail ?>-TR" class="mb-1"><?= $detailArray[$k] ?></label>
+                                                        <div class="form-group mb-3">
+                                                            <input type="text" id="prod<?= $filteredDetail ?>-TR" name="prod<?= $filteredDetail ?>-TR" class="form-control" placeholder="<?= $detailArray[$k] ?>">
+                                                        </div>
+                                                    </div>
+                                                <?php } ?>
+                                            </div>
+                                        <?php } ?>
+                                        <!-- Product Specifications End TR -->
+                                    </div>
+
+                                    <!-- TAB AR -->
+                                    <div class="tab-pane fade" id="tabAR" role="tabpanel">
+                                        <!-- Product Short Description AR -->
+                                        <label for="prodShortDescriptionAR" class="mb-1">Kısa Açıklama *</label>
+                                        <div class="form-group mb-3">
+                                            <input type="text" id="prodShortDescriptionAR" name="prodShortDescriptionAR" class="form-control" placeholder="Kısa Açıklama">
+                                        </div>
+                                        <!-- Product Ana Özellikler AR -->
+                                        <label for="ckeditorKeyFeaturesAR" class="mb-1">Ana Özellikler</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="ckeditorKeyFeaturesAR" name="ckeditorKeyFeaturesAR"></textarea>
+                                        </div>
+                                        <!-- Product Overview AR -->
+                                        <label for="prodOverviewAR" class="mb-1">Genel Bakış *</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="prodOverviewAR" name="prodOverviewAR" class="form-control" placeholder="Genel Bakış"></textarea>
+                                        </div>
+
+
+
+                                        <!-- Product Specifications Start AR -->
+                                        <?php for ($i = 0; $i < $specCount; $i++) { ?>
+                                            <h3 class="mt-2 mb-2 bg-dark text-white text-center"><strong><?= $specResult[$i]->name ?> (Arapça)</strong></h3>
+                                            <div class="row mt-2">
+                                                <?php
+                                                $detailArray = json_decode($specResult[$i]->details);
+                                                $detailsCount = count($detailArray);
+                                                for ($k = 0; $k <  $detailsCount; $k++) {
+                                                    $filteredDetail =  str_replace(" ", "", $detailArray[$k]);
+                                                ?>
+                                                    <div class="col-md-6">
+                                                        <label for="prod<?= $filteredDetail ?>-AR" class="mb-1"><?= $detailArray[$k] ?></label>
+                                                        <div class="form-group mb-3">
+                                                            <input type="text" id="prod<?= $filteredDetail ?>-AR" name="prod<?= $filteredDetail ?>-AR" class="form-control" placeholder="<?= $detailArray[$k] ?>">
+                                                        </div>
+                                                    </div>
+                                                <?php } ?>
+                                            </div>
+                                        <?php } ?>
+                                        <!-- Product Specifications End AR -->
+                                    </div>
+                                </div>
+
+
 
                                 <div style="text-align: right !important">
                                     <input type="text" id="userNameInput" name="userNameInput" class="d-none" value="admin">
@@ -146,7 +252,9 @@ $specCount = count($specResult);
     <script>
         $(function() {
             //CKEditor
-            CKEDITOR.replace('ckeditorKeyFeatures');
+            CKEDITOR.replace('ckeditorKeyFeaturesEN');
+            CKEDITOR.replace('ckeditorKeyFeaturesTR');
+            CKEDITOR.replace('ckeditorKeyFeaturesAR');
             CKEDITOR.config.height = 300;
 
         });
@@ -158,9 +266,14 @@ $specCount = count($specResult);
             event.preventDefault()
             var $data = new FormData(this);
 
-            var ckeditordata = CKEDITOR.instances['ckeditorKeyFeatures'].getData();
+            var ckeditordataEN = CKEDITOR.instances['ckeditorKeyFeaturesEN'].getData();
+            var ckeditordataTR = CKEDITOR.instances['ckeditorKeyFeaturesTR'].getData();
+            var ckeditordataAR = CKEDITOR.instances['ckeditorKeyFeaturesAR'].getData();
 
-            $data.append("prodKeyFeatures", ckeditordata);
+            $data.append("prodKeyFeaturesEN", ckeditordataEN);
+            $data.append("prodKeyFeaturesTR", ckeditordataTR);
+            $data.append("prodKeyFeaturesAR", ckeditordataAR);
+
 
             Swal.fire({
                 title: 'Ürünü eklemek istediğinize emin misiniz?',
@@ -180,16 +293,16 @@ $specCount = count($specResult);
                         dataType: "json",
                         data: $data,
                         success: function(data) {
-                            setInterval(location.href = "products.php", 2500);
                             if (data.status == false) {
                                 Swal.fire({
                                     position: 'top-end',
                                     icon: 'error',
                                     title: data.errors.error,
                                     showConfirmButton: false,
-                                    timer: 1500
+                                    timer: 2500
                                 })
                             } else {
+                                setInterval(location.href = "products.php", 3500);
                                 Swal.fire({
                                     position: 'top-end',
                                     icon: 'success',

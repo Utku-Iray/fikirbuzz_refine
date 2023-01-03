@@ -2,11 +2,15 @@
 include "../../database/connection.php";
 
 $idHolder = trim(filter_input(INPUT_POST, 'idHolderInput'));
-$productCatName = trim(filter_input(INPUT_POST, 'productCatName'));
+
+$productCatNameEN = trim(filter_input(INPUT_POST, 'productCatNameEN'));
+$productCatNameTR = trim(filter_input(INPUT_POST, 'productCatNameTR'));
+$productCatNameAR = trim(filter_input(INPUT_POST, 'productCatNameAR'));
+
 $prodCatStatus = trim(filter_input(INPUT_POST, 'prodCatStatus'));
 
 if (
-    empty($productCatName)
+    empty($productCatNameEN || $productCatNameTR || $productCatNameAR)
 ) {
     $errors['error'] = 'Bütün alanları doldurunuz.';
 }
@@ -17,10 +21,14 @@ if (!empty($errors)) {
     $form_data['errors'] = $errors;
 } else {
 
-    $sorgu = $vt->prepare("UPDATE category SET name = :c_name, status = :c_status WHERE id='$idHolder'");
+    $sorgu = $vt->prepare("UPDATE category SET 
+    name_en = :c_name_en, name_tr = :c_name_tr, name_ar = :c_name_ar, status = :c_status 
+    WHERE id='$idHolder'");
     if ($sorgu) {
         $result = $sorgu->execute([
-            ':c_name' => $productCatName,
+            ':c_name_en' => $productCatNameEN,
+            ':c_name_tr' => $productCatNameTR,
+            ':c_name_ar' => $productCatNameAR,
             ':c_status' => $prodCatStatus,
         ]);
         if ($result) {

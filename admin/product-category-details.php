@@ -44,10 +44,22 @@ if (isset($_GET["cid"])) {
                         <div class="body">
                             <form id="updateProductMainCategory" name="updateProductMainCategory" method="post" enctype="multipart/form-data">
 
-                                <!-- Product Main Category Name -->
-                                <label for="productCatName" class="mb-1">Ana Kategori Adı</label>
+                                <!-- Product Main Category Name EN -->
+                                <label for="productCatNameEN" class="mb-1">Ana Kategori Adı (İngilizce)</label>
                                 <div class="form-group mb-3">
-                                    <input type="text" id="productCatName" name="productCatName" class="form-control" placeholder="Ana kategori adını giriniz" value="<?= $result[0]->name ?>">
+                                    <input type="text" id="productCatNameEN" name="productCatNameEN" class="form-control" placeholder="Ana kategori adını İngilizce yazınız." value="<?= $result[0]->name_en ?>">
+                                </div>
+
+                                <!-- Product Main Category Name TR -->
+                                <label for="productCatNameTR" class="mb-1">Ana Kategori Adı (Türkçe)</label>
+                                <div class="form-group mb-3">
+                                    <input type="text" id="productCatNameTR" name="productCatNameTR" class="form-control" placeholder="Ana kategori adını Türkçe yazınız." value="<?= $result[0]->name_tr ?>">
+                                </div>
+
+                                <!-- Product Main Category Name AR -->
+                                <label for="productCatNameAR" class="mb-1">Ana Kategori Adı (Arapça)</label>
+                                <div class="form-group mb-3">
+                                    <input type="text" id="productCatNameAR" name="productCatNameAR" class="form-control" placeholder="Ana kategori adını Arapça yazınız." value="<?= $result[0]->name_ar ?>">
                                 </div>
 
                                 <label for="prodCatStatus" class="mb-1">Ana Kategori Durum</label>
@@ -113,7 +125,7 @@ if (isset($_GET["cid"])) {
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
-                                setInterval(location.href = "product-category.php", 3000);
+                                setInterval(location.href = "product-category.php", 3500);
 
                             }
                         }

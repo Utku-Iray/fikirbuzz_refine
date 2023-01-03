@@ -105,7 +105,7 @@ if (isset($_GET["cid"]) && $_GET["cid"] != "1") {
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
-                                setInterval(location.href = "blog-category.php", 3000);
+                                setInterval(location.href = "blog-category.php", 3500);
 
                             }
                         }

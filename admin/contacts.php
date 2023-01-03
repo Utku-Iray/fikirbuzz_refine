@@ -54,7 +54,8 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
                                             <tr class="contact-<?= $singleResult->contact_id ?>">
                                                 <td><?= $singleResult->contact_title ?></td>
                                                 <td><?= $singleResult->contact_mail ?></td>
-                                                <td><?= $singleResult->contact_status ?></td>
+                                                <td><?php if ($singleResult->contact_status == "1") echo "Aktif";
+                                                    else echo "Pasif"  ?></td>
                                                 <td class="text-center"><a href="contact-details.php?contactid=<?= $singleResult->contact_id ?>" class="btn btn-info">DÜZENLE</a></td>
                                                 <td class="text-center"><button class="btn btn-danger contactDeleteBtn" contact-id="<?= $singleResult->contact_id ?>">SİL</button></td>
                                             </tr>
@@ -101,7 +102,7 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
                         dataType: "json",
                         success: function(data) {
                             if (data.status == true) {
-                                setInterval(reloadHandler, 2000)
+                                setInterval(reloadHandler, 3500)
                                 $(".contact-" + contactID).fadeOut('slow');
                                 Swal.fire({
                                     position: 'top-end',

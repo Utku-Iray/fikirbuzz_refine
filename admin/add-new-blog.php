@@ -146,7 +146,7 @@ $blogCatResult = $query->fetchAll(PDO::FETCH_OBJ);
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
-                                setInterval(reloadHandler, 1600);
+                                setInterval(reloadHandler, 3500);
 
                             }
                         }

@@ -36,11 +36,43 @@ $result = $query->fetchAll(PDO::FETCH_OBJ);
                     <div class="card">
                         <div class="body">
                             <form id="updatePCBForm" name="updatePCBForm" method="post" enctype="multipart/form-data">
-                                <!-- Blog Content -->
-                                <label for="ckeditor" class="mb-1">İçerik</label>
-                                <div class="form-group mb-3">
-                                    <textarea id="ckeditor" name="ckeditor"><?= $result[0]->g_main_content_en ?></textarea>
+                                <ul class="nav nav-tabs" id="pcbTabList" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="pcb-en-tab" data-bs-toggle="tab" data-bs-target="#pcbEn" type="button" role="tab" aria-controls="pcbEn" aria-selected="true">İngilizce</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pcb-tr-tab" data-bs-toggle="tab" data-bs-target="#pcbTr" type="button" role="tab" aria-controls="pcbTr" aria-selected="false">Türkçe</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pcb-ar-tab" data-bs-toggle="tab" data-bs-target="#pcbAr" type="button" role="tab" aria-controls="pcbAr" aria-selected="false">Arapça</button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content" id="pcbTabContent">
+                                    <!-- Blog Content EN -->
+                                    <div class="tab-pane fade show active" id="pcbEn" role="tabpanel" aria-labelledby="pcb-en-tab">
+                                        <label for="ckeditorEN" class="mb-1">İçerik</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="ckeditorEN" name="ckeditorEN"><?= $result[0]->g_main_content_en ?></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- Blog Content TR -->
+                                    <div class="tab-pane fade" id="pcbTr" role="tabpanel" aria-labelledby="pcb-tr-tab">
+                                        <label for="ckeditorTR" class="mb-1">İçerik</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="ckeditorTR" name="ckeditorTR"><?= $result[0]->g_main_content_tr ?></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- Blog Content AR -->
+                                    <div class="tab-pane fade" id="pcbAr" role="tabpanel" aria-labelledby="pcb-ar-tab">
+                                        <label for="ckeditorAR" class="mb-1">İçerik</label>
+                                        <div class="form-group mb-3">
+                                            <textarea id="ckeditorAR" name="ckeditorAR"><?= $result[0]->g_main_content_ar ?></textarea>
+                                        </div>
+                                    </div>
                                 </div>
+
+
 
                                 <div style="text-align: right !important">
                                     <button type="submit" class="btn btn-raised btn-primary btn-round waves-effect mt-5">GÜNCELLE</button>
@@ -57,8 +89,10 @@ $result = $query->fetchAll(PDO::FETCH_OBJ);
 
     <script>
         $(function() {
-            //CKEditor
-            CKEDITOR.replace('ckeditor');
+            // CK Editor 
+            CKEDITOR.replace('ckeditorEN');
+            CKEDITOR.replace('ckeditorTR');
+            CKEDITOR.replace('ckeditorAR');
             CKEDITOR.config.height = 400;
 
         });
@@ -70,9 +104,13 @@ $result = $query->fetchAll(PDO::FETCH_OBJ);
             event.preventDefault()
             var $data = new FormData(this);
 
-            var ckeditordata = CKEDITOR.instances['ckeditor'].getData();
+            var ckeditordataEN = CKEDITOR.instances['ckeditorEN'].getData();
+            var ckeditordataTR = CKEDITOR.instances['ckeditorTR'].getData();
+            var ckeditordataAR = CKEDITOR.instances['ckeditorAR'].getData();
 
-            $data.append("ckeditordata", ckeditordata)
+            $data.append("ckeditordataEN", ckeditordataEN)
+            $data.append("ckeditordataTR", ckeditordataTR)
+            $data.append("ckeditordataAR", ckeditordataAR)
 
             Swal.fire({
                 title: 'İçeriği güncellemek istediğinize emin misiniz?',

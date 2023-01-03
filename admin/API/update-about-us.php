@@ -2,6 +2,8 @@
 include "../../database/connection.php";
 
 $aboutContentEN = $_POST["ckeditordataEN"];
+$aboutContentTR = $_POST["ckeditordataTR"];
+$aboutContentAR = $_POST["ckeditordataAR"];
 
 if (
     empty($aboutContentEN)
@@ -13,10 +15,16 @@ if (!empty($errors)) {
     $form_data['status'] = false;
     $form_data['errors'] = $errors;
 } else {
-    $sorgu = $vt->prepare("UPDATE general SET g_main_content_en = :content WHERE g_page_url = 'about-us'");
+    $sorgu = $vt->prepare("UPDATE general SET 
+    g_main_content_en = :contentEN,
+    g_main_content_tr = :contentTR,
+    g_main_content_ar = :contentAR
+    WHERE g_page_url = 'about-us'");
     if ($sorgu) {
         $result = $sorgu->execute([
-            ':content' => $aboutContentEN,
+            ':contentEN' => $aboutContentEN,
+            ':contentTR' => $aboutContentTR,
+            ':contentAR' => $aboutContentAR,
         ]);
         if ($result) {
             $form_data['status'] = true;

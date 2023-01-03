@@ -1,5 +1,6 @@
 <?php
 require "database/connection.php";
+include "config.php";
 
 $searchCount = 0;
 $term = "";
@@ -36,7 +37,7 @@ if (isset($_GET["term"])) {
                             <a href="index.php">Home</a><a href="#">Search Result</a>
                         </div>
                         <div class="title" data-aos="fade-right">
-                            <h1>Search Result</h1>
+                            <h1>Search Result "<?= $term ?>"</h1>
                             <p></p>
                         </div>
                     </div>
@@ -181,9 +182,9 @@ if (isset($_GET["term"])) {
             </div>
         </div>
 
-        
 
-    <?php include 'php/footer.php' ?>
+
+        <?php include 'php/footer.php' ?>
 </body>
 
 </html>

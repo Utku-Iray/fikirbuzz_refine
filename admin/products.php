@@ -59,7 +59,8 @@ $productResult = $query->fetchAll(PDO::FETCH_OBJ);
                                             <tr class="product-<?= $singleResult->id ?>">
                                                 <td><?= $singleResult->name ?></td>
                                                 <td><?= $singleResult->click_count ?></td>
-                                                <td><?= $singleResult->status ?></td>
+                                                <td><?php if ($singleResult->status == "1") echo "Aktif";
+                                                    else echo "Pasif"  ?></td>
                                                 <td class="text-center"><a href="product-details.php?pid=<?= $singleResult->id ?>" class="btn btn-info">DÜZENLE</a></td>
                                                 <td class="text-center"><button class="btn btn-danger productDeleteBtn" cat-id="<?= $singleResult->id ?>">SİL</button></td>
                                             </tr>
@@ -108,7 +109,7 @@ $productResult = $query->fetchAll(PDO::FETCH_OBJ);
                         dataType: "json",
                         success: function(data) {
                             if (data.status == true) {
-                                setInterval(reloadHandler, 2500)
+                                setInterval(reloadHandler, 3500)
                                 $(".product-" + catID).fadeOut('slow');
                                 Swal.fire({
                                     position: 'top-end',

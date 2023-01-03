@@ -1,4 +1,5 @@
-<?php require "database/connection.php"; ?>
+<?php require "database/connection.php";
+include "config.php"; ?>
 <!doctype html>
 <html lang="en">
 
@@ -51,9 +52,9 @@
 
 
 
-        
 
-    <?php include 'php/footer.php' ?>
+
+        <?php include 'php/footer.php' ?>
 </body>
 
 </html>

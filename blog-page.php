@@ -1,5 +1,6 @@
 <?php
 require "database/connection.php";
+include "config.php";
 
 $query = $vt->prepare("SELECT blog.image, blog.title, blog.short_content, blog.created_at, blog.url, blog_category.name FROM blog, blog_category WHERE blog.category_id = blog_category.id ORDER BY blog.created_at DESC");
 $query->execute();

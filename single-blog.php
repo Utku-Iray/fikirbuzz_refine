@@ -1,5 +1,6 @@
 <?php
 require "database/connection.php";
+include "config.php";
 
 if (isset($_GET["url"])) {
   $url = $_GET["url"];

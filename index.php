@@ -1,5 +1,6 @@
 <?php
 require "database/connection.php";
+include "config.php";
 
 
 
@@ -269,7 +270,16 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
             <?php
             for ($i = 0; $i < $mainCatCount; $i++) { ?>
               <li data-filter="pid-<?= $i + 1 ?>" class="pid-<?= $i + 1; ?>  <?php if ($i + 1 == 1) echo "onTrigger active-prod";
-                                                                              else "" ?>"><?= $mainCategoryList[$i]->name ?></li>
+                                                                              else "" ?>">
+                <?php if ($_SESSION['lang'] == "en") {
+                  echo $mainCategoryList[$i]->name_en;
+                } else if ($_SESSION['lang'] == "tr") {
+                  echo $mainCategoryList[$i]->name_tr;
+                } else if ($_SESSION['lang'] == "ar") {
+                  echo $mainCategoryList[$i]->name_ar;
+                }
+                ?>
+              </li>
             <?php }  ?>
           </ul>
 
@@ -282,13 +292,41 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                   <li class="pid-<?= $i + 1 ?>">
                     <div class="outbox">
 
-                      <div class="prod-tag"><?= $mainCategoryList[$i]->name ?></div>
+                      <div class="prod-tag">
+                        <?php if ($_SESSION['lang'] == "en") {
+                          echo $mainCategoryList[$i]->name_en;
+                        } else if ($_SESSION['lang'] == "tr") {
+                          echo $mainCategoryList[$i]->name_tr;
+                        } else if ($_SESSION['lang'] == "ar") {
+                          echo $mainCategoryList[$i]->name_ar;
+                        }
+                        ?>
+                      </div>
 
                       <img src="<?= $subCategoryList[$j]->image ?>">
                     </div>
                     <div class="description">
-                      <h1><?= $subCategoryList[$j]->name ?></h1>
-                      <p style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;"><?= $subCategoryList[$j]->description ?></p>
+                      <h1>
+                        <?php if ($_SESSION['lang'] == "en") {
+                          echo $subCategoryList[$j]->name_en;
+                        } else if ($_SESSION['lang'] == "tr") {
+                          echo $subCategoryList[$j]->name_tr;
+                        } else if ($_SESSION['lang'] == "ar") {
+                          echo $subCategoryList[$j]->name_ar;
+                        }
+                        ?>
+
+                      </h1>
+                      <p style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+                        <?php if ($_SESSION['lang'] == "en") {
+                          echo $subCategoryList[$j]->description_en;
+                        } else if ($_SESSION['lang'] == "tr") {
+                          echo $subCategoryList[$j]->description_tr;
+                        } else if ($_SESSION['lang'] == "ar") {
+                          echo $subCategoryList[$j]->description_ar;
+                        }
+                        ?>
+                      </p>
                     </div>
                     <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
                       MORE
@@ -323,8 +361,8 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
         <div class="row">
           <ul class="newSlider clearfix">
             <div class="row justify-content-between pid-1 pid-2 d-flex">
-           
-              <?php for ($i=0; $i < 4; $i++) { ?>
+
+              <?php for ($i = 0; $i < 4; $i++) { ?>
                 <li class="col-xl-6">
                   <a href="single-blog.php">
                     <div class="flatten list-hover d-xl-flex">
@@ -338,8 +376,8 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                     </div>
                   </a>
                 </li>
-           
-                
+
+
               <?php    } ?>
 
             </div>
@@ -354,9 +392,9 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
 
- 
 
-  <?php include 'php/footer.php' ?>
+
+    <?php include 'php/footer.php' ?>
 </body>
 
 </html>

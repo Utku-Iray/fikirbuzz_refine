@@ -59,7 +59,17 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
 
                     for ($i = 0; $i < $mainCatCount; $i++) { ?>
                       <li data-filter="pid-<?= $i + 1 ?>" class="pid-<?= $i + 1; ?>  <?php if ($i + 1 == 1) echo "active onTrigger";
-                                                                                      else "" ?> adaptive"><?= $mainCategoryList[$i]->name ?></li>
+                                                                                      else "" ?> adaptive">
+
+                        <?php if ($_SESSION['lang'] == "en") {
+                          echo $mainCategoryList[$i]->name_en;
+                        } else if ($_SESSION['lang'] == "tr") {
+                          echo $mainCategoryList[$i]->name_tr;
+                        } else if ($_SESSION['lang'] == "ar") {
+                          echo $mainCategoryList[$i]->name_ar;
+                        }
+                        ?>
+                      </li>
                     <?php }  ?>
 
                   </ul>
@@ -73,12 +83,30 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
                             <li class="pid-<?= $i + 1 ?>">
                               <div class="outbox">
                                 <a href="#">
-                                  <div class="prod-tag"><?= $mainCategoryList[$i]->name ?></div>
+                                  <div class="prod-tag">
+                                    <?php if ($_SESSION['lang'] == "en") {
+                                      echo $mainCategoryList[$i]->name_en;
+                                    } else if ($_SESSION['lang'] == "tr") {
+                                      echo $mainCategoryList[$i]->name_tr;
+                                    } else if ($_SESSION['lang'] == "ar") {
+                                      echo $mainCategoryList[$i]->name_ar;
+                                    }
+                                    ?>
+                                  </div>
                                 </a>
                                 <img src="<?= $subCategoryList[$j]->image ?>" style="width: 200px;">
                               </div>
                               <div class="description">
-                                <h1><?= $subCategoryList[$j]->name ?></h1>
+                                <h1>
+                                  <?php if ($_SESSION['lang'] == "en") {
+                                    echo $subCategoryList[$j]->name_en;
+                                  } else if ($_SESSION['lang'] == "tr") {
+                                    echo $subCategoryList[$j]->name_tr;
+                                  } else if ($_SESSION['lang'] == "ar") {
+                                    echo $subCategoryList[$j]->name_ar;
+                                  }
+                                  ?>
+                                </h1>
                               </div>
                               <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
                                 MORE
@@ -104,13 +132,13 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
             <a class="nav-link" aria-current="page" target="_blank" style="color:rgba(14, 117, 180, 1) !important;font-weight:bold" href="https://global1.shuttle.com/">Shuttle</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="single-page.php">PCB Design & Manufacturing</a>
+            <a class="nav-link" href="single-page.php"><?php echo $lang['pcbDesignNav'] ?></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="blog-page.php">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact Us</a>
+            <a class="nav-link" href="contact.php"><?php echo $lang['contactUsNav'] ?></a>
           </li>
         </ul>
 
@@ -129,23 +157,32 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
               </ul>
             </div>
           </li> -->
-          <!-- <li class="nav-item ms-2">
+          <li class="nav-item ms-2">
             <div class="dropdown lang-list">
               <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" src="assets/materials/lang.svg">
 
               <ul class="dropdown-menu lang-menu d-flex justify-content-center" aria-labelledby="dropdownMenuLink">
                 <li>
-                  <a class="dropdown-item" href="#"><img src="assets/materials/tr.svg" width="24px"></a>
+                  <a class="dropdown-item" href="<?php
+                                                  $langQuery['lang'] = "en";
+                                                  $query_result = http_build_query($langQuery);
+                                                  echo basename($_SERVER['PHP_SELF']) . "?" . $query_result;  ?>"><img src="assets/materials/en.svg" width="24px"></a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"><img src="assets/materials/en.svg" width="24px"></a>
+                  <a class="dropdown-item" href="<?php
+                                                  $langQuery['lang'] = "tr";
+                                                  $query_result = http_build_query($langQuery);
+                                                  echo basename($_SERVER['PHP_SELF']) . "?" . $query_result;  ?>"><img src="assets/materials/tr.svg" width="24px"></a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#"><img src="assets/materials/ar.svg" width="24px"></a>
+                  <a class="dropdown-item" href="<?php
+                                                  $langQuery['lang'] = "ar";
+                                                  $query_result = http_build_query($langQuery);
+                                                  echo basename($_SERVER['PHP_SELF']) . "?" . $query_result;  ?>"><img src="assets/materials/ar.svg" width="24px"></a>
                 </li>
               </ul>
             </div>
-          </li> -->
+          </li>
           <li class="nav-item ms-2">
             <a href="ebook-download.php" class="btn-green lightbox" aria-haspopup="dialog" title="Download.pdf">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
           </li>
@@ -179,7 +216,16 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
               <?php
 
               for ($i = 0; $i < $mainCatCount; $i++) { ?>
-                <a href="lanner-product.php?mcid=<?= $mainCategoryList[$i]->id ?>"><?= $mainCategoryList[$i]->name ?></a>
+                <a href="lanner-product.php?mcid=<?= $mainCategoryList[$i]->id ?>">
+                  <?php if ($_SESSION['lang'] == "en") {
+                    echo $mainCategoryList[$i]->name_en;
+                  } else if ($_SESSION['lang'] == "tr") {
+                    echo $mainCategoryList[$i]->name_tr;
+                  } else if ($_SESSION['lang'] == "ar") {
+                    echo $mainCategoryList[$i]->name_ar;
+                  }
+                  ?>
+                </a>
               <?php }  ?>
 
 
@@ -189,15 +235,26 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
       </div>
       <a href="https://tr.transcend-info.com/">Transcend</a>
       <a href="https://global1.shuttle.com/">Shuttle</a>
-      <a href="single-page.php">PCB Design & Manufacturing</a>
+      <a href="single-page.php"><?php echo $lang['pcbDesignNav'] ?></a>
       <a href="blog-page.php">Blog</a>
-      <a href="contact.php">Contact Us</a>
+      <a href="contact.php"><?php echo $lang['contactUsNav'] ?></a>
       <a href="ebook-download.php" aria-haspopup="dialog" title="Download.pdf" class="btn-green lightbox">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
       <!-- <a href="#" class="btn-white login">Reseller Login</a> -->
       <div class="langArea d-flex">
-        <!-- <a href="#" class="me-4"><img src="assets/materials/tr.svg" width="24px"></a> -->
-        <a href="#" class="me-4"><img src="assets/materials/en.svg" width="24px"></a>
-        <!-- <a href="#" class="me-4"><img src="assets/materials/ar.svg" width="24px"></a> -->
+        <a href="<?php
+                  $langQuery['lang'] = "en";
+                  $query_result = http_build_query($langQuery);
+                  echo basename($_SERVER['PHP_SELF']) . "?" . $query_result;  ?>" class="me-4"><img src="assets/materials/en.svg" width="24px"></a>
+
+        <a href="<?php
+                  $langQuery['lang'] = "tr";
+                  $query_result = http_build_query($langQuery);
+                  echo basename($_SERVER['PHP_SELF']) . "?" . $query_result;  ?>" class="me-4"><img src="assets/materials/tr.svg" width="24px"></a>
+
+        <a href="<?php
+                  $langQuery['lang'] = "ar";
+                  $query_result = http_build_query($langQuery);
+                  echo basename($_SERVER['PHP_SELF']) . "?" . $query_result;  ?>" class="me-4"><img src="assets/materials/ar.svg" width="24px"></a>
       </div>
     </div>
   </div>

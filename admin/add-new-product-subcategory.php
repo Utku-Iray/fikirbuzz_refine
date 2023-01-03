@@ -37,15 +37,36 @@ $productCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
                         <div class="body">
                             <form id="addNewProductSubCategory" name="addNewProductSubCategory" method="post" enctype="multipart/form-data">
 
-                                <!-- Product Sub Category Name -->
-                                <label for="productSubCatName" class="mb-1">Alt Kategori Adı</label>
+                                <label for="productSubCatNameEN" class="mb-1">Alt Kategori Adı (İngilizce)</label>
                                 <div class="form-group mb-3">
-                                    <input type="text" id="productSubCatName" name="productSubCatName" class="form-control" placeholder="Alt Kategori Adı">
+                                    <input type="text" id="productSubCatNameEN" name="productSubCatNameEN" class="form-control" placeholder="Alt Kategori Adı (İngilizce)">
                                 </div>
 
-                                <label for="productSubCatDesc" class="mb-1">Alt Kategori Açıklama</label>
+                                <label for="productSubCatDescEN" class="mb-1">Alt Kategori Açıklama (İngilizce)</label>
                                 <div class="form-group mb-3">
-                                    <input type="text" id="productSubCatDesc" name="productSubCatDesc" class="form-control" placeholder="Alt Kategori Açıklama">
+                                    <input type="text" id="productSubCatDescEN" name="productSubCatDescEN" class="form-control" placeholder="Alt Kategori Açıklama (İngilizce)">
+                                </div>
+
+
+                                <label for="productSubCatNameTR" class="mb-1">Alt Kategori Adı (Türkçe)</label>
+                                <div class="form-group mb-3">
+                                    <input type="text" id="productSubCatNameTR" name="productSubCatNameTR" class="form-control" placeholder="Alt Kategori Adı (Türkçe)">
+                                </div>
+
+                                <label for="productSubCatDescTR" class="mb-1">Alt Kategori Açıklama (Türkçe)</label>
+                                <div class="form-group mb-3">
+                                    <input type="text" id="productSubCatDescTR" name="productSubCatDescTR" class="form-control" placeholder="Alt Kategori Açıklama (Türkçe)">
+                                </div>
+
+
+                                <label for="productSubCatNameAR" class="mb-1">Alt Kategori Adı (Arapça)</label>
+                                <div class="form-group mb-3">
+                                    <input type="text" id="productSubCatNameAR" name="productSubCatNameAR" class="form-control" placeholder="Alt Kategori Adı (Arapça)">
+                                </div>
+
+                                <label for="productSubCatDescAR" class="mb-1">Alt Kategori Açıklama (Arapça)</label>
+                                <div class="form-group mb-3">
+                                    <input type="text" id="productSubCatDescAR" name="productSubCatDescAR" class="form-control" placeholder="Alt Kategori Açıklama (Arapça)">
                                 </div>
 
 
@@ -54,7 +75,7 @@ $productCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
                                     <select class="form-select" id="prodMainCategory" name="prodMainCategory">
                                         <option selected>Ana Kategori Seçiniz</option>
                                         <?php foreach ($productCategoryResult as $result) {   ?>
-                                            <option value="<?= $result->id ?>"><?= $result->name ?></option>
+                                            <option value="<?= $result->id ?>"><?= $result->name_en ?></option>
                                         <?php } ?>
 
                                     </select>
@@ -130,7 +151,7 @@ $productCategoryResult = $query->fetchAll(PDO::FETCH_OBJ);
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
-                                setInterval(location.href = "product-category.php", 3000);
+                                setInterval(location.href = "product-category.php", 3500);
 
                             }
                         }

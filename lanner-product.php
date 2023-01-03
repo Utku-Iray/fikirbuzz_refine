@@ -1,5 +1,6 @@
 <?php
 require "database/connection.php";
+include "config.php";
 
 if (isset($_GET["mcid"])) {
     $mcid = $_GET["mcid"];
@@ -38,7 +39,16 @@ $mainCategoryResultLanner = $query->fetchAll(PDO::FETCH_OBJ);
                             <a href="#">Products</a><a href="#">Category</a>
                         </div>
                         <div class="title" data-aos="fade-right">
-                            <h1><?= $mainCategoryResultLanner[0]->name ?></h1>
+                            <h1>
+                                <?php if ($_SESSION['lang'] == "en") {
+                                    echo $mainCategoryResultLanner[0]->name_en;
+                                } else if ($_SESSION['lang'] == "tr") {
+                                    echo $mainCategoryResultLanner[0]->name_tr;
+                                } else if ($_SESSION['lang'] == "ar") {
+                                    echo $mainCategoryResultLanner[0]->name_ar;
+                                }
+                                ?>
+                            </h1>
 
                         </div>
                     </div>
@@ -58,8 +68,26 @@ $mainCategoryResultLanner = $query->fetchAll(PDO::FETCH_OBJ);
                                     <img src="<?= $singleSubCat->image ?>">
                                 </div>
                                 <div class="description">
-                                    <h1><?= $singleSubCat->name ?></h1>
-                                    <p><?= $singleSubCat->description ?></p>
+                                    <h1>
+                                        <?php if ($_SESSION['lang'] == "en") {
+                                            echo $singleSubCat->name_en;
+                                        } else if ($_SESSION['lang'] == "tr") {
+                                            echo $singleSubCat->name_tr;
+                                        } else if ($_SESSION['lang'] == "ar") {
+                                            echo $singleSubCat->name_ar;
+                                        }
+                                        ?>
+                                    </h1>
+                                    <p>
+                                        <?php if ($_SESSION['lang'] == "en") {
+                                            echo $singleSubCat->description_en;
+                                        } else if ($_SESSION['lang'] == "tr") {
+                                            echo $singleSubCat->description_tr;
+                                        } else if ($_SESSION['lang'] == "ar") {
+                                            echo $singleSubCat->description_ar;
+                                        }
+                                        ?>
+                                    </p>
                                 </div>
                                 <a href="prod-list.php?cid=<?= $singleSubCat->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
                                     MORE
@@ -78,9 +106,9 @@ $mainCategoryResultLanner = $query->fetchAll(PDO::FETCH_OBJ);
 
 
 
-        
 
-    <?php include 'php/footer.php' ?>
+
+        <?php include 'php/footer.php' ?>
 
 </body>
 

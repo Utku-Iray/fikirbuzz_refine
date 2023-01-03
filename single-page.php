@@ -1,5 +1,6 @@
 <?php
 require "database/connection.php";
+include "config.php";
 
 $query = $vt->prepare("SELECT * FROM general WHERE g_page_url='pcb-design'");
 $query->execute();
@@ -25,9 +26,8 @@ $pcbDesign = $query->fetchAll(PDO::FETCH_OBJ);
         <div class="row align-content-center align-items-center">
           <div class="col-xl-7">
             <div class="title" data-aos="fade-right">
-              <h1>PCB Design & Manufacturing</h1>
-              <p>In addition to being Lanner’s authorized distributor in the Middle East, we also offer sourcing
-                services for PCB design & manufacturing.</p>
+              <h1><?php echo $lang['pcbDesignPageTitle'] ?></h1>
+              <p><?php echo $lang['pcbDesignPageShortDescription'] ?></p>
             </div>
           </div>
         </div>
@@ -38,15 +38,23 @@ $pcbDesign = $query->fetchAll(PDO::FETCH_OBJ);
       <div class="container-fluid col-xl-9">
         <div class="textArea pb-5 row">
           <div class="col-md-12">
-            <?= $pcbDesign[0]->g_main_content_en ?>
+
+            <?php if ($_SESSION['lang'] == "en") {
+              echo $pcbDesign[0]->g_main_content_en;
+            } else if ($_SESSION['lang'] == "tr") {
+              echo $pcbDesign[0]->g_main_content_tr;
+            } else if ($_SESSION['lang'] == "ar") {
+              echo $pcbDesign[0]->g_main_content_ar;
+            }
+            ?>
           </div>
         </div>
       </div>
     </div>
 
-    
 
-  <?php include 'php/footer.php' ?>
+
+    <?php include 'php/footer.php' ?>
 
 </body>
 

@@ -3,8 +3,14 @@ include "../../database/connection.php";
 
 $userNameInput = trim(filter_input(INPUT_POST, 'userNameInput'));
 
-$productSubCatName = trim(filter_input(INPUT_POST, 'productSubCatName'));
-$productSubCatDesc = trim(filter_input(INPUT_POST, 'productSubCatDesc'));
+$productSubCatNameEN = trim(filter_input(INPUT_POST, 'productSubCatNameEN'));
+$productSubCatNameTR = trim(filter_input(INPUT_POST, 'productSubCatNameTR'));
+$productSubCatNameAR = trim(filter_input(INPUT_POST, 'productSubCatNameAR'));
+
+$productSubCatDescEN = trim(filter_input(INPUT_POST, 'productSubCatDescEN'));
+$productSubCatDescTR = trim(filter_input(INPUT_POST, 'productSubCatDescTR'));
+$productSubCatDescAR = trim(filter_input(INPUT_POST, 'productSubCatDescAR'));
+
 $prodMainCategory = trim(filter_input(INPUT_POST, 'prodMainCategory'));
 $prodSubCatStatus = trim(filter_input(INPUT_POST, 'prodSubCatStatus'));
 $image = "prodSubCatImage";
@@ -12,7 +18,7 @@ $image = "prodSubCatImage";
 
 
 $marks = array("(", ")", "?", ",", ":", "/");
-$productSubCatNameLower = strtolower($productSubCatName);
+$productSubCatNameLower = strtolower($productSubCatNameEN);
 $spaceRemovedTitle = str_replace(" ", "-", $productSubCatNameLower);
 $url = str_replace($marks, "-", $spaceRemovedTitle);
 
@@ -24,9 +30,10 @@ $uzanti = $efilename[count($efilename) - 1];
 $location  = "";
 
 if (
-    empty($productSubCatName  && $prodMainCategory && $filename)
+    empty($productSubCatNameEN) ||  empty($productSubCatNameTR) ||
+    empty($productSubCatNameAR) || empty($prodMainCategory && $filename)
 ) {
-    $errors['error'] = 'Bütün alanları doldurunuz.';
+    $errors['error'] = 'Açıklamalar hariç bütün alanları doldurmanız gerekmektedir.';
 }
 
 if ($uzanti != "png" && $uzanti != "jpg" && $uzanti != "jpeg") {
@@ -50,13 +57,25 @@ if (!empty($errors)) {
         move_uploaded_file($_FILES[$image]['tmp_name'], "../../attachments/subcategory/" . $nameWithURL);
     }
 
-    $sorgu = $vt->prepare('INSERT INTO sub_category (category_id, name, description, image, sort, status, created_by)
-    VALUES (:c_id, :name, :desc, :img, :sort, :status, :c_by)');
+    $sorgu = $vt->prepare('INSERT INTO sub_category 
+    (category_id, 
+    name_en, name_tr, name_ar, 
+    description_en, description_tr, description_ar,
+    image, sort, status, created_by)
+    VALUES 
+    (:c_id, :name_en, :name_tr, :name_ar, :desc_en, :desc_tr, :desc_ar, :img, :sort, :status, :c_by)');
     if ($sorgu) {
         $result = $sorgu->execute([
             ':c_id' => $prodMainCategory,
-            ':name' => $productSubCatName,
-            ':desc' => $productSubCatDesc,
+
+            ':name_en' => $productSubCatNameEN,
+            ':name_tr' => $productSubCatNameTR,
+            ':name_ar' => $productSubCatNameAR,
+
+            ':desc_en' => $productSubCatDescEN,
+            ':desc_tr' => $productSubCatDescTR,
+            ':desc_ar' => $productSubCatDescAR,
+
             ':img' => $location,
             ':sort' => "0",
             ':status' => $prodSubCatStatus,

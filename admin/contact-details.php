@@ -143,7 +143,7 @@ if (isset($_GET["contactid"])) {
                                     showConfirmButton: false,
                                     timer: 1500
                                 })
-                                setInterval(location.href = "contacts.php", 3000);
+                                setInterval(location.href = "contacts.php", 3500);
 
                             }
                         }

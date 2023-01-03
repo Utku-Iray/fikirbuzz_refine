@@ -71,8 +71,9 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                                         <?php
                                         foreach ($productCategoryResult as $singleResult) { ?>
                                             <tr class="mcat-<?= $singleResult->id ?>">
-                                                <td><?= $singleResult->name ?></td>
-                                                <td><?= $singleResult->status ?></td>
+                                                <td><?= $singleResult->name_en ?></td>
+                                                <td><?php if ($singleResult->status == "1") echo "Aktif";
+                                                    else echo "Pasif"  ?></td>
                                                 <td class="text-center"><a href="product-category-details.php?cid=<?= $singleResult->id ?>" class="btn btn-info">DÜZENLE</a></td>
                                                 <td class="text-center"><button class="btn btn-danger productMainCategoryDeleteBtn" mcat-id=<?= $singleResult->id ?>>SİL</button></td>
                                             </tr>
@@ -117,9 +118,18 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                                         <?php
                                         foreach ($productSubCategoryResult as $singleResult) { ?>
                                             <tr class="subcat-<?= $singleResult->id ?>">
-                                                <td><?= $singleResult->name ?></td>
-                                                <td><?= $singleResult->status ?></td>
-                                                <td><?= $singleResult->category_id ?></td>
+                                                <td><?= $singleResult->name_en ?></td>
+                                                <td><?php if ($singleResult->status == "1") echo "Aktif";
+                                                    else echo "Pasif"  ?></td>
+                                                <td>
+                                                    <?php
+                                                    foreach ($productCategoryResult as $mainCatR) {
+                                                        if ($singleResult->category_id == $mainCatR->id) {
+                                                            echo "$mainCatR->name_en";
+                                                        }
+                                                    }
+                                                    ?>
+                                                </td>
                                                 <td class="text-center"><a href="product-subcategory-details.php?scid=<?= $singleResult->id ?>" class="btn btn-info">DÜZENLE</a></td>
                                                 <td class="text-center"><button class="btn btn-danger productSubCategoryDeleteBtn" subcat-id="<?= $singleResult->id ?>" subcat-img="<?= $singleResult->image ?>">SİL</button></td>
                                             </tr>
@@ -224,7 +234,7 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
                         dataType: "json",
                         success: function(data) {
                             if (data.status == true) {
-                                setInterval(reloadHandler, 2500)
+                                setInterval(reloadHandler, 3500)
                                 $(".subcat-" + subCatID).fadeOut('slow');
                                 Swal.fire({
                                     position: 'top-end',
