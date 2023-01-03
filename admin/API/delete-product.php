@@ -18,14 +18,20 @@ if ($result) {
     $form_data['status'] = true;
     $form_data['message'] = 'Ürün başarıyla silindi!';
 
-    if (file_exists('../../' . $prodImg)) {
-        unlink('../../' . $prodImg);
+    if ($prodImg != "") {
+        if (file_exists('../../' . $prodImg)) {
+            unlink('../../' . $prodImg);
+        }
     }
-    if (file_exists('../../' . $prodDatasheet)) {
-        unlink('../../' . $prodDatasheet);
+    if ($prodDatasheet != "") {
+        if (file_exists('../../' . $prodDatasheet)) {
+            unlink('../../' . $prodDatasheet);
+        }
     }
-    if (file_exists('../../' . $prodManual)) {
-        unlink('../../' . $prodManual);
+    if ($prodManual != "") {
+        if (file_exists('../../' . $prodManual)) {
+            unlink('../../' . $prodManual);
+        }
     }
 } else {
     $form_data['status'] = false;
