@@ -40,10 +40,10 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
 
               <ul class="dropdown-menu lang-menu justify-content-center" aria-labelledby="dropdownMenuLink">
                 <li>
-                  <a class="dropdown-item" style="color:black" href="about-us.php">About Us</a>
+                  <a class="dropdown-item" style="color:black" href="about-us.php"><?php echo $lang['aboutUsNav'] ?></a>
                 </li>
                 <li>
-                  <a class="dropdown-item" style="color:black" href="media.php">Media</a>
+                  <a class="dropdown-item" style="color:black" href="media.php"><?php echo $lang['mediaNav'] ?></a>
                 </li>
 
               </ul>
@@ -134,7 +134,8 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
           <li class="nav-item">
             <a class="nav-link" href="single-page.php"><?php echo $lang['pcbDesignNav'] ?></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?php if ($_SESSION['lang'] == "ar"|| $_SESSION['lang'] == "tr") echo "d-none";
+                            else echo "d-block"; ?>">
             <a class="nav-link" href="blog-page.php">Blog</a>
           </li>
           <li class="nav-item">

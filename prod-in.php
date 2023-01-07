@@ -30,7 +30,8 @@ if (isset($_GET["pid"])) {
 <?php include 'php/head.php' ?>
 
 
-<body>
+<body dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>">
 
   <?php include 'php/header.php' ?>
 

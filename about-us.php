@@ -12,7 +12,8 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
 <?php include 'php/head.php' ?>
 
 
-<body>
+<body dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>">
 
   <?php include 'php/header.php' ?>
 
@@ -53,13 +54,13 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
         </div>
       </div>
 
-      <div class="promote" data-aos="fade-up">
+      <div class="promote" data-aos="fade-up" >
         <div class="col-xl-11 ms-auto">
           <div class="row">
             <div class="col-xl-6 sr-img ms-auto order-xl-1 order-12">
               <img src="assets/materials/about-rubic.png">
             </div>
-            <div class="col-xl-5 p-xl-0 p-5">
+            <div class="col-xl-5 p-xl-0 p-5" >
               <div class="outbox">
                 <div class="title d-flex align-content-center align-items-center">
                   <img src="assets/materials/network-ico.svg">
@@ -166,7 +167,7 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
             </div>
           </div>
         </div>
-        <div class="container-fluid col-xl-10 pb-5">
+        <div class="container-fluid col-xl-10 pb-5" dir="ltr">
           <div class="row clearfix slick-promote">
             <div class="col-xl-3 col-lg-4 mt-5 inp-short">
               <div class="full-box">

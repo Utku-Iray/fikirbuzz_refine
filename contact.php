@@ -8,7 +8,8 @@ include "config.php";
 <?php include 'php/head.php' ?>
 
 
-<body>
+<body dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>">
 
   <?php include 'php/header.php' ?>
 
@@ -34,7 +35,7 @@ include "config.php";
       </div>
     </div>
 
-    <div class="index-sec-1 pb-0 contactArea pb-5">
+    <div class="index-sec-1 pb-0 contactArea pb-5" dir="ltr">
       <div class="container-fluid col-xl-9">
         <form class="col-xl-10 mx-auto row mb-5">
           <div class="form-group col-xl-4 mb-2 mb-xl-0">
@@ -53,7 +54,8 @@ include "config.php";
             <textarea rows="8" class="form-control p-3 ps-3" placeholder="Message"></textarea>
             <img src="assets/materials/paragraph.svg">
           </div>
-          <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
+          <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>" class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
             <button type="submit" class="text-start ps-3">SEND</button>
             <div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
           </div>

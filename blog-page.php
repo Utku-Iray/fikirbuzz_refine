@@ -22,7 +22,7 @@ $mostRead = $query->fetchAll(PDO::FETCH_OBJ);
 <?php include 'php/head.php' ?>
 
 
-<body>
+<body >
 
     <?php include 'php/header.php' ?>
 

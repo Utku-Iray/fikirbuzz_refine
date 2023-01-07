@@ -15,7 +15,8 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
 
 <?php include 'php/head.php' ?>
 
-<body class="wrapper">
+<body class="wrapper" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>">
   <?php include 'php/header.php' ?>
 
 
@@ -29,91 +30,99 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
               <div class="slide--desc col-xl-7 col-11">
                 <div class="searchBox">
                   <form action="search.php" method="get">
-                    <input class="mb-4" type="text" name="term" placeholder="Type Something...">
+                    <input class="mb-4" type="text" name="term" placeholder="<?php echo $lang['search'] ?>">
                     <button type="submit" class="searchBtn"><img src="assets/materials/search-icon.svg"></button>
                   </form>
                 </div>
-                <div class="main-pusher">
-                  <div class="push-it">
+                <div dir="ltr" class="main-pusher">
+                  <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>" class="push-it">
                     <div class="slide--incontent">
                       <div class="title mb-5">
-                        <h1 class="mb-4">17 years of experience in hardware and information security service…</h1>
+                        <h1 class="mb-4"><?php echo $lang['sliderOne'] ?></h1>
                       </div>
-                      <a href="single-blog.php?url=who-is-refine-what-benefits-does-refine-provide-for-you" class="btn-view"><span>See Details
+                      <a href="single-blog.php?url=who-is-refine-what-benefits-does-refine-provide-for-you" class="btn-view"><span><?php echo $lang['seeDetails'] ?>
                           <hr>
                         </span></a>
                     </div>
                   </div>
-                  <div class="push-it">
+                  <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>" class="push-it">
                     <div class="slide--incontent">
                       <div class="title mb-5">
-                        <h1 class="mb-4">Your solution partner for all hardware, network and security solutions your business needs…</h1>
+                        <h1 class="mb-4"><?php echo $lang['sliderTwo'] ?></h1>
                       </div>
-                      <a href="lanner-product.php?mcid=1" class="btn-view"><span>See Details
+                      <a href="lanner-product.php?mcid=1" class="btn-view"><span><?php echo $lang['seeDetails'] ?>
                           <hr>
                         </span></a>
                     </div>
                   </div>
-                  <div class="push-it">
+                  <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>" class="push-it">
                     <div class="slide--incontent">
                       <div class="title mb-5">
-                        <h1 class="mb-4">Lanner's authorized distributor in the Middle East, Türkiye and Pakistan…</h1>
+                        <h1 class="mb-4"><?php echo $lang['sliderThree'] ?></h1>
                       </div>
-                      <a href="https://www.lannerinc.com/contact/channel-partners" class="btn-view"><span>See Details
+                      <a href="https://www.lannerinc.com/contact/channel-partners" class="btn-view"><span><?php echo $lang['seeDetails'] ?>
                           <hr>
                         </span></a>
                     </div>
                   </div>
-                  <div class="push-it">
+                  <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>" class="push-it">
                     <div class="slide--incontent">
                       <div class="title mb-5">
-                        <h1 class="mb-4">The easiest logistics and transportation solutions…</h1>
+                        <h1 class="mb-4"><?php echo $lang['sliderFour'] ?></h1>
                       </div>
-                      <a href="lanner-product.php?mcid=4" class="btn-view"><span>See Details
+                      <a href="lanner-product.php?mcid=4" class="btn-view"><span><?php echo $lang['seeDetails'] ?>
                           <hr>
                         </span></a>
                     </div>
                   </div>
-                  <div class="push-it">
+                  <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>" class="push-it">
                     <div class="slide--incontent">
                       <div class="title mb-5">
-                        <h1 class="mb-4">Exclusive offers for you to buy the best quality Lanner products at the most special prices…</h1>
+                        <h1 class="mb-4"><?php echo $lang['sliderFive'] ?></h1>
                       </div>
-                      <a style="cursor: pointer;" class="btn-view form"><span>See Details
+                      <a style="cursor: pointer;" class="btn-view form"><span><?php echo $lang['seeDetails'] ?>
                           <hr>
                         </span></a>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-btns">
-                  <button type="button" class="btn btn-primary btn-prev"><i class="fa-solid fa-chevron-left me-3"></i></button>
-                  <button type="button" class="btn btn-primary btn-next"><i class="fa-solid fa-chevron-right"></i></button>
+                  <?php if ($_SESSION['lang'] == "ar") echo '<button type="button" class="btn btn-primary btn-next"><i class="fa-solid fa-chevron-right"></i></button><button type="button" class="btn btn-primary btn-prev"><i class="fa-solid fa-chevron-left me-3"></i></button>
+                            ';
+                  else echo '<button type="button" class="btn btn-primary btn-prev"><i class="fa-solid fa-chevron-left me-3"></i></button>
+                            <button type="button" class="btn btn-primary btn-next"><i class="fa-solid fa-chevron-right"></i></button>'; ?>
+
                 </div>
               </div>
               <div class="next--slide d-xl-flex d-none justify-content-end col-xl-4 ms-auto">
                 <div class="slide--incontent trigs-m">
                   <div class="next-s my-auto pb-3 pt-3 d-xl-flex d-none justify-content-end">
-                    <a href="#" class="p-0 my-auto d-flex align-content-center align-items-center"><span>17 Years of Experience</span>
+                    <a href="#" class="p-0 my-auto d-flex align-content-center align-items-center"><span><?php echo $lang['sliderOneShort'] ?></span>
                       <img class="ms-3" src="assets/materials/slider-bg.jpg"></a>
                   </div>
 
                   <div class="next-s my-auto pb-3 pt-3 d-xl-flex d-none justify-content-end">
-                    <a href="#" class="p-0 my-auto d-flex align-content-center align-items-center"><span>For Your Busniess Need</span>
+                    <a href="#" class="p-0 my-auto d-flex align-content-center align-items-center"><span><?php echo $lang['sliderTwoShort'] ?></span>
                       <img class="ms-3" src="assets/materials/sec-2-bg.jpg"></a>
                   </div>
 
                   <div class="next-s my-auto pb-3 pt-3 d-xl-flex d-none justify-content-end">
-                    <a href="#" class="p-0 my-auto d-xl-flex d-none align-content-center align-items-center"><span>Lanner</span>
+                    <a href="#" class="p-0 my-auto d-xl-flex d-none align-content-center align-items-center"><span><?php echo $lang['sliderThreeShort'] ?></span>
                       <img class="ms-3" src="assets/materials/slide-2.jpg"></a>
                   </div>
 
                   <div class="next-s my-auto pb-3 pt-3 d-xl-flex d-none justify-content-end">
-                    <a href="#" class="p-0 my-auto d-xl-flex d-none align-content-center align-items-center"><span>Logistics Solutions</span>
+                    <a href="#" class="p-0 my-auto d-xl-flex d-none align-content-center align-items-center"><span><?php echo $lang['sliderFourShort'] ?></span>
                       <img class="ms-3" src="assets/materials/slide-3.jpg"></a>
                   </div>
 
                   <div class="next-s my-auto pb-3 pt-3 d-xl-flex d-none justify-content-end">
-                    <a href="#" class="p-0 my-auto d-xl-flex d-none align-content-center align-items-center"><span>Exclusive Offers For you</span>
+                    <a href="#" class="p-0 my-auto d-xl-flex d-none align-content-center align-items-center"><span><?php echo $lang['sliderFiveShort'] ?></span>
                       <img class="ms-3" src="assets/materials/slide-4.jpg"></a>
                   </div>
                 </div>
@@ -145,18 +154,16 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
 
-    <div class="index-sec-0 pt-xl-0 pt-5 pb-5 pb-xl-0">
+    <div class="index-sec-0 pt-xl-0 pt-5 pb-5 pb-xl-0" dir="ltr">
       <div class="container-fluid col-xl-10 mx-auto">
         <div class="row">
           <div class="col-xl-3"></div>
           <div class="col-xl-9">
             <div class="title">
-              <h2 data-aos="fade-right">Innovating The Solutions You Need Tomorrow, Today</h2>
-              <p data-aos="fade-in">Cras ac tortor at magna porttitor consequat quis a lacus. Suspendisse maximus purus
-                vestibulum, tempor
-                tortor vel, dignissim tortor. Sed sed commodo orci. Nullam eget lectus aliquam, egestas nisl non,
-                vehicula
-                elit.</p>
+              <h2 data-aos="fade-right" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                              else echo "ltr"; ?>"><?php echo $lang['blueTitle'] ?></h2>
+              <p data-aos="fade-in" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                          else echo "ltr"; ?>"><?php echo $lang['blueContent'] ?></p>
               <div class="swiper-btns mt-5 mb-3">
                 <button type="button" class="btn btn-primary btn-next-box"><i class="fa-solid fa-chevron-left"></i></button>
                 <button type="button" class="btn btn-primary btn-prev-box"><i class="fa-solid fa-chevron-right"></i></button>
@@ -169,8 +176,10 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                     <img src="assets/materials/homepage-box/industrial-iot.png">
                     <div class="desc p-4">
                       <div class="in-content">
-                        <h3>INDUSTRIAL IOT</h3>
-                        <p>Use our network of interconnected smart devices to build systems that monitor, collect, exchange and analyze your data.</p>
+                        <h3 dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                  else echo "ltr"; ?>"><?php echo $lang['blueSliderOneTitle'] ?></h3>
+                        <p dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                else echo "ltr"; ?>"><?php echo $lang['blueSliderOneContent'] ?></p>
                       </div>
                     </div>
                   </div>
@@ -183,8 +192,10 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                     <img src="assets/materials/homepage-box/it-network-security.png">
                     <div class="desc p-4">
                       <div class="in-content">
-                        <h3>IT NETWORK SECURITY</h3>
-                        <p>Protect your company's infrastructure by preventing a wide variety of potential threats from infiltrating and spreading into your corporate network with our network security solutions. </p>
+                        <h3 dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                  else echo "ltr"; ?>"><?php echo $lang['blueSliderTwoTitle'] ?></h3>
+                        <p dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                else echo "ltr"; ?>"><?php echo $lang['blueSliderTwoContent'] ?></p>
                       </div>
                     </div>
                   </div>
@@ -197,8 +208,10 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                     <img src="assets/materials/homepage-box/sd-wan-ucpe.png">
                     <div class="desc p-4">
                       <div class="in-content">
-                        <h3>SD-WAN & uCPE</h3>
-                        <p>Upload different network features to devices in different locations with SD-WAN, which provides balancing, optimization and visibility.</p>
+                        <h3 dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                  else echo "ltr"; ?>"><?php echo $lang['blueSliderThreeTitle'] ?></h3>
+                        <p dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                else echo "ltr"; ?>"><?php echo $lang['blueSliderThreeContent'] ?></p>
                       </div>
                     </div>
                   </div>
@@ -211,8 +224,10 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                     <img src="assets/materials/homepage-box/edge-cloud.png">
                     <div class="desc p-4">
                       <div class="in-content">
-                        <h3>EDGE CLOUD </h3>
-                        <p>By implementing cloud computing at the user-generated edge, reduce latency and significantly optimize resource utilization with better performance. </p>
+                        <h3 dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                  else echo "ltr"; ?>"><?php echo $lang['blueSliderFourTitle'] ?> </h3>
+                        <p dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                else echo "ltr"; ?>"><?php echo $lang['blueSliderFourContent'] ?> </p>
                       </div>
                     </div>
                   </div>
@@ -224,8 +239,10 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                     <img src="assets/materials/homepage-box/edge-all.png">
                     <div class="desc p-4">
                       <div class="in-content">
-                        <h3>EDGE AI </h3>
-                        <p>Devices process data locally, enabling you to make real-time operating decisions. Reduce your data communication costs by creating a faster and safer workspace with this application.</p>
+                        <h3 dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                  else echo "ltr"; ?>"><?php echo $lang['blueSliderFiveTitle'] ?></h3>
+                        <p dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                else echo "ltr"; ?>"><?php echo $lang['blueSliderFiveContent'] ?></p>
                       </div>
                     </div>
                   </div>
@@ -237,8 +254,10 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                     <img src="assets/materials/homepage-box/ot-network-security.png">
                     <div class="desc p-4">
                       <div class="in-content">
-                        <h3>OT NETWORK SECURİTY </h3>
-                        <p>Easily read and monitor your data by controlling the production equipment used at every stage of industrial production.</p>
+                        <h3 dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                  else echo "ltr"; ?>"><?php echo $lang['blueSliderSixTitle'] ?> </h3>
+                        <p dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                else echo "ltr"; ?>"><?php echo $lang['blueSliderSixContent'] ?></p>
                       </div>
                     </div>
                   </div>
@@ -250,8 +269,10 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                     <img src="assets/materials/homepage-box/pcb.png">
                     <div class="desc p-4">
                       <div class="in-content">
-                        <h3>PCB DESIGN & MANUFACTURING </h3>
-                        <p>Use sourcing services for PCB design and manufacturing as well as being Lanner's authorized distributor in the Middle East, Türkiye and Pakistan.</p>
+                        <h3 dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                  else echo "ltr"; ?>"><?php echo $lang['blueSliderSevenTitle'] ?></h3>
+                        <p dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                else echo "ltr"; ?>"><?php echo $lang['blueSliderSevenContent'] ?></p>
                       </div>
                     </div>
                   </div>
@@ -263,7 +284,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
     <!-- Anasayfa Urunler Kısmı -->
-    <div class="index-sec-1">
+    <div class="index-sec-1" dir="ltr">
       <div class="container-fluid col-xl-10 pt-5">
         <div class="row">
           <ul class="prodFilter">
@@ -342,7 +363,8 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
 
-    <div class="index-sec-2">
+    <div class="index-sec-2 <?php if ($_SESSION['lang'] == "ar" || $_SESSION['lang'] == "tr") echo "d-none";
+                            else echo "d-block"; ?>">
       <div class="container-fluid">
         <div class="row sep">
           <div class="col-xl-1 p-0"></div>
