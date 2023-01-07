@@ -10,19 +10,18 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
 
 ?>
 <!doctype html>
-<html  lang="en">
+<html lang="en">
 
 
 <?php include 'php/head.php' ?>
 
-<body class="wrapper" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>">
+<body class="wrapper">
   <?php include 'php/header.php' ?>
 
 
 
   <main>
-    <div class="mainSlider" >
+    <div class="mainSlider">
       <div class="container-fluid">
         <div class="row">
           <div class="slide--content">
@@ -122,7 +121,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
             </div>
             <div class="img-pusher">
               <div class="push-it-img">
-                <img  src="assets/materials/slider-bg.jpg">
+                <img src="assets/materials/slider-bg.jpg">
               </div>
 
               <div class="push-it-img">
@@ -146,7 +145,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
 
-    <div class="index-sec-0 pt-xl-0 pt-5 pb-5 pb-xl-0" dir="ltr">
+    <div class="index-sec-0 pt-xl-0 pt-5 pb-5 pb-xl-0">
       <div class="container-fluid col-xl-10 mx-auto">
         <div class="row">
           <div class="col-xl-3"></div>
@@ -264,7 +263,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
     <!-- Anasayfa Urunler Kısmı -->
-    <div class="index-sec-1" dir="ltr">
+    <div class="index-sec-1">
       <div class="container-fluid col-xl-10 pt-5">
         <div class="row">
           <ul class="prodFilter">
@@ -343,9 +342,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
       </div>
     </div>
 
-    
-    <div class="index-sec-2 <?php if ($_SESSION['lang'] == "ar") echo "d-none";
-                            else echo "d-block"; ?>" >
+    <div class="index-sec-2">
       <div class="container-fluid">
         <div class="row sep">
           <div class="col-xl-1 p-0"></div>
