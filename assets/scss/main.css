@@ -3785,3 +3785,7 @@ footer .col-xl-4 .mini-box p {
 textarea::-webkit-input-placeholder {
     padding-left: 15px;
 }
+
+[dir="rtl"] header .bg-scroll .navbar-brand img {
+    margin-left: 100px;
+}
