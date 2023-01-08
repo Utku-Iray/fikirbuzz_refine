@@ -213,17 +213,17 @@ $specCount = count($specResult);
                                         <!-- Product Short Description AR -->
                                         <label for="prodShortDescriptionAR" class="mb-1">Kısa Açıklama *</label>
                                         <div class="form-group mb-3">
-                                            <input type="text" id="prodShortDescriptionAR" name="prodShortDescriptionAR" class="form-control" placeholder="Kısa Açıklama" value="<?= $productResult[0]->short_description_ar ?>">
+                                            <input type="text" dir="rtl" id="prodShortDescriptionAR" name="prodShortDescriptionAR" class="form-control" placeholder="Kısa Açıklama" value="<?= $productResult[0]->short_description_ar ?>">
                                         </div>
                                         <!-- Product Ana Özellikler AR -->
                                         <label for="ckeditorKeyFeaturesAR" class="mb-1">Ana Özellikler</label>
                                         <div class="form-group mb-3">
-                                            <textarea id="ckeditorKeyFeaturesAR" name="ckeditorKeyFeaturesAR"><?= $productResult[0]->key_features_ar ?></textarea>
+                                            <textarea id="ckeditorKeyFeaturesAR" dir="rtl" name="ckeditorKeyFeaturesAR"><?= $productResult[0]->key_features_ar ?></textarea>
                                         </div>
                                         <!-- Product Overview AR -->
                                         <label for="prodOverviewAR" class="mb-1">Genel Bakış *</label>
                                         <div class="form-group mb-3">
-                                            <textarea id="prodOverviewAR" name="prodOverviewAR" class="form-control" placeholder="Genel Bakış"><?= $productResult[0]->overview_ar ?></textarea>
+                                            <textarea id="prodOverviewAR" dir="rtl" name="prodOverviewAR" class="form-control" placeholder="Genel Bakış"><?= $productResult[0]->overview_ar ?></textarea>
                                         </div>
 
 
@@ -243,9 +243,9 @@ $specCount = count($specResult);
                                                         <div class="form-group mb-3">
                                                             <?php if (in_array($detailArray[$k], $prodKeyArr) && !empty($prodValueArrAR)) {
                                                                 $position = array_search($detailArray[$k], $prodKeyArr); ?>
-                                                                <input type="text" id="prod<?= $filteredDetail ?>-AR" name="prod<?= $filteredDetail ?>-AR" class="form-control" placeholder="<?= $detailArray[$k] ?>" value="<?= $prodValueArrAR[$position] ?>">
+                                                                <input type="text" dir="rtl" id="prod<?= $filteredDetail ?>-AR" name="prod<?= $filteredDetail ?>-AR" class="form-control" placeholder="<?= $detailArray[$k] ?>" value="<?= $prodValueArrAR[$position] ?>">
                                                             <?php  } else { ?>
-                                                                <input type="text" id="prod<?= $filteredDetail ?>-AR" name="prod<?= $filteredDetail ?>-AR" class="form-control" placeholder="<?= $detailArray[$k] ?>">
+                                                                <input type="text" dir="rtl" id="prod<?= $filteredDetail ?>-AR" name="prod<?= $filteredDetail ?>-AR" class="form-control" placeholder="<?= $detailArray[$k] ?>">
                                                             <?php  } ?>
 
                                                         </div>

@@ -59,7 +59,7 @@ if (isset($_GET["cid"])) {
                                 <!-- Product Main Category Name AR -->
                                 <label for="productCatNameAR" class="mb-1">Ana Kategori Adı (Arapça)</label>
                                 <div class="form-group mb-3">
-                                    <input type="text" id="productCatNameAR" name="productCatNameAR" class="form-control" placeholder="Ana kategori adını Arapça yazınız." value="<?= $result[0]->name_ar ?>">
+                                    <input type="text" dir="rtl" id="productCatNameAR" name="productCatNameAR" class="form-control" placeholder="Ana kategori adını Arapça yazınız." value="<?= $result[0]->name_ar ?>">
                                 </div>
 
                                 <label for="prodCatStatus" class="mb-1">Ana Kategori Durum</label>

@@ -93,12 +93,12 @@ $productSubCategoryResult = $query2->fetchAll(PDO::FETCH_OBJ);
 
                                         <label for="productSubCatNameAR" class="mb-1">Alt Kategori Adı (Arapça)</label>
                                         <div class="form-group mb-3">
-                                            <input type="text" id="productSubCatNameAR" name="productSubCatNameAR" class="form-control" placeholder="Alt Kategori Adı" value="<?= $productSubCategoryResult[0]->name_ar ?>">
+                                            <input type="text" dir="rtl" id="productSubCatNameAR" name="productSubCatNameAR" class="form-control" placeholder="Alt Kategori Adı" value="<?= $productSubCategoryResult[0]->name_ar ?>">
                                         </div>
 
                                         <label for="productSubCatDescAR" class="mb-1">Alt Kategori Açıklama (Arapça)</label>
                                         <div class="form-group mb-3">
-                                            <input type="text" id="productSubCatDescAR" name="productSubCatDescAR" class="form-control" placeholder="Alt Kategori Açıklama" value="<?= $productSubCategoryResult[0]->description_ar ?>">
+                                            <input type="text" dir="rtl" id="productSubCatDescAR" name="productSubCatDescAR" class="form-control" placeholder="Alt Kategori Açıklama" value="<?= $productSubCategoryResult[0]->description_ar ?>">
                                         </div>
 
                                     </div>
