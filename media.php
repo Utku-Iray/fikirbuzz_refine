@@ -23,13 +23,13 @@ include "config.php";
                 <div class="row align-content-center align-items-center">
                     <div class="col-xl-7">
                         <div class="breadcrumb" data-aos="fade-in">
-                            <a href="#">Media & Gallery</a><a href="#">PDF</a>
+                            <a href="#"><?php echo $lang['mediaBannerShortOne'] ?></a><a href="#"><?php echo $lang['mediaBannerShortTwo'] ?></a>
                         </div>
                         <div class="title">
-                            <h1 data-aos="fade-right">Media & Gallery</h1>
-                            <p data-aos="fade-right">Download PDF Documents</p>
+                            <h1 data-aos="fade-right"><?php echo $lang['mediaBanner'] ?></h1>
+                            <p data-aos="fade-right"><?php echo $lang['mediaBannerContent'] ?></p>
                             <div class="datasheets d-md-flex col-xl-8" data-aos="fade-up">
-                                <a href="assets/materials/medya-kit/medya-kit.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Download.pdf">Media Kit
+                                <a href="assets/materials/medya-kit/medya-kit.pdf" class="btn-data-w lightbox" aria-haspopup="dialog" title="Download.pdf"><?php echo $lang['mediaBannerPdf'] ?>
                                     <img class="ms-1" width="15px" src="assets/materials/pdf.svg"></span></a>
 
 

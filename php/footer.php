@@ -3,8 +3,7 @@
      <div class="container-fluid col-xl-10">
          <div class="row">
              <div class="col-xl-6 text-xl-start text-center">
-                 <h1>Refine is Lanner’s Authorized Distributor In <br />
-                     The Middle East, Türkiye And Pakistan.</h1>
+                 <h1><?php echo $lang['RefineLannerBanner'] ?></h1>
              </div>
              <div class="col-xl-6 my-xl-auto mt-3 ms-auto text-xl-end text-center">
                  <a target="blank_" href="https://www.lannerinc.com/"><img src="assets/materials/path74.png"></a>
@@ -16,9 +15,9 @@
  <!-- Mobile Fast Contact Nav -->
  <div class="mini-nav d-flex justify-content-center d-xl-none">
      <div class="position-relative d-flex">
-         <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg" width="20px" class="me-2">Call Us</a>
+         <a href="tel:+90 850 433 87 60" class="btn-white text-center mx-auto"><img src="assets/materials/phone.svg" width="20px" class="me-2"><?php echo $lang['callUs'] ?></a>
          <div class="seperator mx-auto"></div>
-         <a class="btn-white text-center mx-auto form"> <img src="assets/materials/handshake.svg" width="26px" class="me-2">Be Reseller</a>
+         <a class="btn-white text-center mx-auto form"> <img src="assets/materials/handshake.svg" width="26px" class="me-2"><?php echo $lang['beReseller'] ?></a>
      </div>
  </div>
  <!-- Mobile Fast Contact Nav -->
@@ -56,7 +55,7 @@
          <div class="col-xl-7 p-0">
              <div class="outflow-half text-center d-flex align-content-center align-items-center justify-content-center">
                  <div class="rightSide">
-                     <h1 class="mb-5 pb-xl-5">FORM</h1>
+                     <h1 class="mb-5 pb-xl-5"><?php echo $lang['form'] ?></h1>
                      <form class="form mt-5" action="account.html">
                          <div class="form-group">
                              <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
@@ -70,7 +69,7 @@
                              <textarea cols="30" rows="4" placeholder="Text..."></textarea>
                          </div>
                          <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
-                             <button type="submit" class="text-start ps-3">SEND</button>
+                             <button type="submit" class="text-start ps-3"><?php echo $lang['Send'] ?></button>
                              <div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
                          </div>
 
@@ -92,13 +91,13 @@
      <div class="container-fluid col-xl-10 drop">
          <div class="row pt-5 pb-5">
              <div class="col-xl-4 text-center text-xl-start mb-5">
-                 <h4 class="mb-5 ms-xl-5 ps-xl-1"><img class="me-4" src="assets/materials/post-ico.svg">How Can We Help?</h4>
+                 <h4 class="mb-5  ps-xl-1"><img class="me-4" src="assets/materials/post-ico.svg"><?php echo $lang['howCanHelp'] ?></h4>
                  <div class="mini-box d-flex justify-content-center justify-content-xl-start mt-3">
                      <a href="tel:+908504338760 ">
                          <div class="text-center mb me-3">
                              <div class="incontent">
                                  <img src="assets/materials/info.svg">
-                                 <p class="mt-3">How to buy!</p>
+                                 <p class="mt-3"><?php echo $lang['howToBuy'] ?></p>
                              </div>
                          </div>
                      </a>
@@ -106,7 +105,7 @@
                          <div class="text-center mb form">
                              <div class="incontent">
                                  <img src="assets/materials/product-ico.svg">
-                                 <p class="mt-3">Product Support</p>
+                                 <p class="mt-3"><?php echo $lang['productSupport'] ?></p>
                              </div>
                          </div>
                  </div>
@@ -116,7 +115,7 @@
                          <div class="text-center mb me-3">
                              <div class="incontent">
                                  <img src="assets/materials/mail.svg">
-                                 <p class="mt-3">E-Mail Sales</p>
+                                 <p class="mt-3"><?php echo $lang['emailSales'] ?></p>
                              </div>
                          </div>
                      </a>
@@ -124,7 +123,7 @@
                          <div class="text-center mb">
                              <div class="incontent">
                                  <img src="assets/materials/chat.svg">
-                                 <p class="mt-3">Chat with Sales </p>
+                                 <p class="mt-3"><?php echo $lang['chatWithSales'] ?></p>
                              </div>
                          </div>
                      </a>
@@ -133,11 +132,11 @@
              <div class="col-1 d-xl-auto d-none"></div>
              <div class="col-xl-7 row p-xl-0 mx-auto ms-xl-auto mx-xl-0 my-auto">
                  <div class="col-xl-4 mb-5 text-center text-xl-start">
-                     <h4 class="mb-3 d-xl-flex"><span class="order-1">Menu</span>
+                     <h4 class="mb-3 d-xl-flex"><span class="order-1"><?php echo $lang['menu'] ?></span>
                          <hr class="mx-xl-2 mx-auto" />
                      </h4>
                      <a href="about-us.php">
-                         <p>About Us</p>
+                         <p><?php echo $lang['aboutUsNav'] ?></p>
                      </a>
                      <a href="prod-list.php">
                          <p>Lanner</p>
@@ -152,7 +151,8 @@
                      <a href="single-page.php">
                          <p><?php echo $lang['pcbDesignNav'] ?></p>
                      </a>
-                     <a href="blog-page.php">
+                     <a class="<?php if ($_SESSION['lang'] == "ar" || $_SESSION['lang'] == "tr") echo "d-none";
+                            else echo "d-block"; ?>" href="blog-page.php">
                          <p>Blog</p>
                      </a>
                      <a href="contact.php">
@@ -163,7 +163,7 @@
                  <div class="col-xl-1 mb-5"></div>
 
                  <div class="col-xl-7 mb-5 text-center text-xl-start">
-                     <h4 class="mb-3 d-xl-flex"><span class="order-1">Contact</span>
+                     <h4 class="mb-3 d-xl-flex"><span class="order-1"><?php echo $lang['contactUsNav'] ?></span>
                          <hr class="mx-xl-2 mx-auto" />
                      </h4>
                      <?php
@@ -184,7 +184,7 @@
                  </div>
 
                  <div class="col-xl-6 mt-auto text-center text-xl-start">
-                     <h4>Download PDF Documents</h4>
+                     <h4><?php echo $lang['downloadPdf'] ?></h4>
                      <form class="mt-4" action="ebook-download.php">
                          <div class="form-group">
                              <!-- <input type="text" placeholder="Your E-Mail Address"> -->
@@ -220,9 +220,7 @@
              </div>
              <div class="col-xl-4 ms-auto text-xl-end text-center subFooter">
                  <a style="padding-right:15px" href="single-page.php">© Copyright <span id="year"></span> Refine Inc. </a>
-                 <a href="single-page.php">Privacy </a>
-                 |
-                 <a href="single-page.php">Terms of Use</a>
+                 
              </div>
          </div>
      </div>

@@ -28,11 +28,11 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
         <div class="row align-content-center align-items-center">
           <div class="col-xl-7">
             <div class="breadcrumb" data-aos="fade-in">
-              <a href="index.php">Home</a><a href="#">Network Appliances</a>
+              <a href="index.php"><?php echo $lang['aboutBannerShortOne'] ?></a><a href="#"><?php echo $lang['aboutBannerShortTwo'] ?></a>
             </div>
             <div class="title">
-              <h1 data-aos="fade-right">About Us</h1>
-              <p data-aos="fade-in">Refine is a customer oriented company focusing on customer collaboration. We believe that your success is ours.Our professional sales team works hand in hand with Lanner ensuring the best solution to your requirements.</p>
+              <h1 data-aos="fade-right"><?php echo $lang['aboutUsNav'] ?></h1>
+              <p data-aos="fade-in"><?php echo $lang['aboutBanner'] ?></p>
             </div>
           </div>
         </div>
@@ -64,14 +64,11 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
               <div class="outbox">
                 <div class="title d-flex align-content-center align-items-center">
                   <img src="assets/materials/network-ico.svg">
-                  <h1 class="my-auto ms-3 abs-low">Network Security</h1>
-                  <h1 class="my-auto ms-3">Network Security</h1>
+                  <h1 class="my-auto ms-3 abs-low"><?php echo $lang['bannerOneTitle'] ?></h1>
+                  <h1 class="my-auto ms-3"><?php echo $lang['bannerOneTitle'] ?></h1>
                 </div>
                 <div class="description mt-4">
-                  <p>Lanner Electronics Inc. is one of the world-leading suppliers in designing, engineering and
-                    manufacturing advanced network appliances, embedded computers, virtual platforms and rugged
-                    industrial
-                    hardware.</p>
+                  <p><?php echo $lang['bannerOne'] ?></p>
                 </div>
               </div>
             </div>
@@ -154,14 +151,11 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
               <div class="outbox">
                 <div class="title d-flex align-content-center align-items-center justify-content-xl-end text-xl-end">
                   <img src="assets/materials/virtualizastion.svg">
-                  <h1 class="my-auto ms-3 abs-low">Virtualization Computing</h1>
-                  <h1 class="my-auto ms-3">Virtualization Computing</h1>
+                  <h1 class="my-auto ms-3 abs-low"><?php echo $lang['bannerTwoTitle'] ?></h1>
+                  <h1 class="my-auto ms-3"><?php echo $lang['bannerTwoTitle'] ?></h1>
                 </div>
                 <div class="description mt-4 text-xl-end">
-                  <p>Lanner Electronics Inc. is one of the world-leading suppliers in designing, engineering and
-                    manufacturing advanced network appliances, embedded computers, virtual platforms and rugged
-                    industrial
-                    hardware.</p>
+                  <p><?php echo $lang['bannerTwo'] ?></p>
                 </div>
               </div>
             </div>
@@ -302,13 +296,11 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
               <div class="outbox">
                 <div class="title d-flex align-content-center align-items-center">
                   <img src="assets/materials/network-ico.svg">
-                  <h1 class="my-auto ms-3 abs-low">Industrial Computing</h1>
-                  <h1 class="my-auto ms-3">Industrial Computing</h1>
+                  <h1 class="my-auto ms-3 abs-low"><?php echo $lang['bannerThreeTitle'] ?></h1>
+                  <h1 class="my-auto ms-3"><?php echo $lang['bannerThreeTitle'] ?></h1>
                 </div>
                 <div class="description mt-4">
-                  <p>Lanner Electronics Inc. is one of the world-leading suppliers in designing, engineering and
-                    manufacturing advanced network appliances, embedded computers, virtual platforms and rugged
-                    industrial hardware.</p>
+                  <p><?php echo $lang['bannerThree'] ?></p>
                 </div>
               </div>
             </div>
