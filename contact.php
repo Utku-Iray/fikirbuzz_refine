@@ -9,7 +9,7 @@ include "config.php";
 
 
 <body dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>">
+            else echo "ltr"; ?>">
 
   <?php include 'php/header.php' ?>
 
@@ -23,12 +23,11 @@ include "config.php";
         <div class="row align-content-center align-items-center">
           <div class="col-xl-7">
             <div class="breadcrumb" data-aos="fade-in">
-              <a href="#">Products</a><a href="#">Contact</a>
+              <a href="index.php"><?php echo $lang['contactBannerShortOne'] ?></a><a href="#"><?php echo $lang['contactBannerShortTwo'] ?></a>
             </div>
             <div class="title" data-aos="fade-right">
-              <h1>CONTACT</h1>
-              <p>In addition to being Lanner’s authorized distributor in the Middle East Türkiye and Pakistan, we also offer sourcing
-                services for PCB design & manufacturing.</p>
+              <h1><?php echo $lang['contactTitle'] ?></h1>
+              <p><?php echo $lang['contactTitleShort'] ?></p>
             </div>
           </div>
         </div>
@@ -39,24 +38,31 @@ include "config.php";
       <div class="container-fluid col-xl-9">
         <form class="col-xl-10 mx-auto row mb-5">
           <div class="form-group col-xl-4 mb-2 mb-xl-0">
-            <input type="email" class="form-control" placeholder="E-Mail">
+            <input type="email" class="form-control" placeholder="<?php echo $lang['eMail'] ?>">
             <img src="assets/materials/env-mail.svg">
           </div>
           <div class="form-group col-xl-4 mb-2 mb-xl-0">
-            <input type="text" class="form-control" placeholder="Name Surname">
+            <input type="text" class="form-control" placeholder="<?php echo $lang['nameSurname'] ?>">
             <img src="assets/materials/sign.svg">
           </div>
           <div class="form-group col-xl-4 mb-2 mb-xl-0">
-            <input type="number" class="form-control" placeholder="Phone">
+            <input type="number" class="form-control" placeholder="<?php echo $lang['phone'] ?>">
             <img src="assets/materials/phone-env.svg">
           </div>
           <div class="form-group col-xl-12 mt-3 ta-icon">
-            <textarea rows="8" class="form-control p-3 ps-3" placeholder="Message"></textarea>
+            <textarea rows="8" class="form-control p-3 ps-3" placeholder="<?php echo $lang['message'] ?>"></textarea>
             <img src="assets/materials/paragraph.svg">
           </div>
+          <div class="form-group mt-3 <?php if ($_SESSION['lang'] == "ar" || $_SESSION['lang'] == "en") echo "d-none";
+                            else echo "d-block"; ?>">
+            <input class="form-check-input" type="checkbox" value="" style="padding: 10px;height:10px">
+            <label class="form-check-label" for="flexCheckDefault">
+              İletişim formu <a href="kvkk.php">Kişisel Verilerin Korunması Kanunu (KVKK) aydınlatma metnini</a> okudum, onaylıyorum.
+            </label>
+          </div>
           <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>" class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
-            <button type="submit" class="text-start ps-3">SEND</button>
+                    else echo "ltr"; ?>" class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
+            <button type="submit" class="text-start ps-3"><?php echo $lang['Send'] ?></button>
             <div class="prefix"><img src="assets/materials/arrow-right.svg"></div>
           </div>
         </form>
@@ -116,8 +122,8 @@ include "config.php";
 
 
 
-    
-  <?php include 'php/footer.php' ?>
+
+    <?php include 'php/footer.php' ?>
 
 </body>
 

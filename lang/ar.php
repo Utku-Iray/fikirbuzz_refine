@@ -9,19 +9,23 @@ $lang = array(
   "mediaNav" => "وسائل الإعلام",
   // Footer
   "RefineLannerBanner" => "شركة Refine هي الموزع  المعتمد لشركة <br> Lanner في الشرق الأوسط وتركيا وباكستان.",
-  "howCanHelp" =>"كيف يمكن أن نساعد؟",
-  "callUs"=>"اتصل بنا",
-  "beReseller"=>"كن موزعًا",
-  "howToBuy"=>"كيف اشترى!",
-  "productSupport"=>"دعم المنتج",
-  "emailSales"=>"مبيعات البريد الإلكتروني",
-  "chatWithSales"=>"الدردشة مع المبيعات",
-  "menu"=>"قائمة",
-  "downloadPdf"=>"قم بتنزيل مستندات PDF",
+  "howCanHelp" => "كيف يمكن أن نساعد؟",
+  "callUs" => "اتصل بنا",
+  "beReseller" => "كن موزعًا",
+  "howToBuy" => "كيف اشترى!",
+  "productSupport" => "دعم المنتج",
+  "emailSales" => "مبيعات البريد الإلكتروني",
+  "chatWithSales" => "الدردشة مع المبيعات",
+  "menu" => "قائمة",
+  "downloadPdf" => "قم بتنزيل مستندات PDF",
 
   //Form
-  "form"=>"استمارة",
+  "form" => "استمارة",
   "Send" => "إرسال",
+  "eMail" => "بريد",
+  "nameSurname" => "اسم اللقب",
+  "phone" => "هاتف",
+  "message" => "رسالة",
 
 
   // PCB Design 
@@ -58,32 +62,39 @@ $lang = array(
   "blueSliderSevenTitle" => "تصميم وتصنيع ثنائي الفينيل متعدد الكلور",
   "blueSliderSevenContent" => "استخدم خدمات المصادر لتصميم وتصنيع ثنائي الفينيل متعدد الكلور بالإضافة إلى كونك الموزع المعتمد لشركة Lanner في الشرق الأوسط وتركيا وباكستان.",
 
-//About
-"aboutBannerShortOne" =>"مسكن",
-"aboutBannerShortTwo" =>"أجهزة الشبكة",
-"aboutBanner"=>"Refine هي شركة موجهة نحو العملاء تركز على تعاون العملاء. نحن نؤمن بأن نجاحك هو نجاحنا. يعمل فريق المبيعات المحترف لدينا جنبًا إلى جنب مع Lanner لضمان أفضل حل لمتطلباتك.",
-"bannerOneTitle"=>"أمن الشبكة",
-"bannerOne" => "Lanner Electronics Inc. هي واحدة من الموردين العالميين الرائدين في تصميم وهندسة وتصنيع أجهزة الشبكات المتقدمة وأجهزة الكمبيوتر المدمجة والمنصات الافتراضية والأجهزة الصناعية القوية.",
-"bannerTwoTitle"=>"الحوسبة الافتراضية",
-"bannerTwo"=> "Lanner Electronics Inc. هي واحدة من الموردين العالميين الرائدين في تصميم وهندسة وتصنيع أجهزة الشبكات المتقدمة وأجهزة الكمبيوتر المدمجة والمنصات الافتراضية والأجهزة الصناعية القوية.",
-"bannerThreeTitle"=>"الحوسبة الافتراضية",
-"bannerThree"=> "Lanner Electronics Inc. هي واحدة من الموردين العالميين الرائدين في تصميم وهندسة وتصنيع أجهزة الشبكات المتقدمة وأجهزة الكمبيوتر المدمجة والمنصات الافتراضية والأجهزة ",
+  //About
+  "aboutBannerShortOne" => "مسكن",
+  "aboutBannerShortTwo" => "أجهزة الشبكة",
+  "aboutBanner" => "Refine هي شركة موجهة نحو العملاء تركز على تعاون العملاء. نحن نؤمن بأن نجاحك هو نجاحنا. يعمل فريق المبيعات المحترف لدينا جنبًا إلى جنب مع Lanner لضمان أفضل حل لمتطلباتك.",
+  "bannerOneTitle" => "أمن الشبكة",
+  "bannerOne" => "Lanner Electronics Inc. هي واحدة من الموردين العالميين الرائدين في تصميم وهندسة وتصنيع أجهزة الشبكات المتقدمة وأجهزة الكمبيوتر المدمجة والمنصات الافتراضية والأجهزة الصناعية القوية.",
+  "bannerTwoTitle" => "الحوسبة الافتراضية",
+  "bannerTwo" => "Lanner Electronics Inc. هي واحدة من الموردين العالميين الرائدين في تصميم وهندسة وتصنيع أجهزة الشبكات المتقدمة وأجهزة الكمبيوتر المدمجة والمنصات الافتراضية والأجهزة الصناعية القوية.",
+  "bannerThreeTitle" => "الحوسبة الافتراضية",
+  "bannerThree" => "Lanner Electronics Inc. هي واحدة من الموردين العالميين الرائدين في تصميم وهندسة وتصنيع أجهزة الشبكات المتقدمة وأجهزة الكمبيوتر المدمجة والمنصات الافتراضية والأجهزة ",
 
 
-//Media
-"mediaBannerShortOne"=>"معرض الوسائط",
-"mediaBannerShortTwo"=>"PDF",
-"mediaBanner"=>"معرض الوسائط",
-"mediaBannerContent"=>"قم بتنزيل مستندات PDF",
-"mediaBannerPdf"=>"طقم الوسائط",
+  //Media
+  "mediaBannerShortOne" => "معرض الوسائط",
+  "mediaBannerShortTwo" => "PDF",
+  "mediaBanner" => "معرض الوسائط",
+  "mediaBannerContent" => "قم بتنزيل مستندات PDF",
+  "mediaBannerPdf" => "طقم الوسائط",
 
-//E-book
-"ebookBannerShortOne"=>"ورقة البيانات",
-"ebookBannerShortTwo"=>"PDF",
-"ebookBannerTitle"=>"تحميل",
-"ebookBannerTitleShort"=>"قم بتنزيل مستندات PDF",
-"ebookPdfIntelligent"=>"أجهزة الحافة الذكية",
-"ebookPdfNetwork"=>"أجهزة الشبكة",
-"ebookPdfUcpe"=>"حلول uCPE",
-"ebookPdfTelecom"=>"أجهزة مراكز بيانات الاتصالات",
+  //E-book
+  "ebookBannerShortOne" => "ورقة البيانات",
+  "ebookBannerShortTwo" => "PDF",
+  "ebookBannerTitle" => "تحميل",
+  "ebookBannerTitleShort" => "قم بتنزيل مستندات PDF",
+  "ebookPdfIntelligent" => "أجهزة الحافة الذكية",
+  "ebookPdfNetwork" => "أجهزة الشبكة",
+  "ebookPdfUcpe" => "حلول uCPE",
+  "ebookPdfTelecom" => "أجهزة مراكز بيانات الاتصالات",
+
+  //Contact
+  "contactBannerShortOne"=>"الصفحة الرئيسية",
+  "contactBannerShortTwo"=>"اتصال",
+  "contactTitle"=>"اتصل",
+  "contactTitleShort"=>"بالإضافة إلى كوننا الموزع المعتمد لشركة Lanner في الشرق الأوسط وتركيا وباكستان ، فإننا نقدم أيضًا مصادر
+  خدمات لتصميم وتصنيع ثنائي الفينيل متعدد الكلور.",
 );

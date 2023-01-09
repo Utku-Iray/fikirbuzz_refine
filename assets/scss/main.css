@@ -3644,10 +3644,10 @@
             overflow-y: scroll !important;
         }
         .logMe .col-xl-5 {
-            height: 30vh !important;
+            height: 20vh !important;
         }
         .logMe .outflow {
-            height: 30vh !important;
+            height: 20vh !important;
         }
         .logMe .outflow-half {
             height: 57vh !important;
@@ -3781,7 +3781,7 @@
         padding-left: 15px;
     }
     
-    [dir="rtl"] header .custom-bg .navbar-brand img {
+    [dir="rtl"] .custom-bg .navbar-brand img {
         margin-left: 100px;
     }
     

@@ -26,6 +26,10 @@ $lang = array(
     //Form
     "form" => "FORM",
     "Send" => "SEND",
+    "eMail" => "E-Mail",
+    "nameSurname" => "Name Surname",
+    "phone" => "Phone",
+    "message" => "Message",
 
 
     // PCB Design 
@@ -90,6 +94,11 @@ $lang = array(
     "ebookPdfNetwork"=>"Network Appliances",
     "ebookPdfUcpe"=>"uCPE Solutions",
     "ebookPdfTelecom"=>"Telecom Datacenter Appliances",
-
+  //Contact
+  "contactBannerShortOne"=>"Homepage",
+  "contactBannerShortTwo"=>"Contact",
+  "contactTitle"=>"CONTACT",
+  "contactTitleShort"=>"In addition to being Lanner’s authorized distributor in the Middle East Türkiye and Pakistan, we also offer sourcing
+  services for PCB design & manufacturing.",
 
 );

@@ -18,7 +18,8 @@ $query->execute();
 $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
 ?>
 
-<header>
+<header dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>">
   <button class="navbar-toggler menu-reverse" type="button">
     <div class="menu-icon" onclick="menuTrigger(this)">
       <div class="bar1"></div>

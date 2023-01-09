@@ -15,14 +15,13 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
 
 <?php include 'php/head.php' ?>
 
-<body class="wrapper" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>">
+<body class="wrapper" >
   <?php include 'php/header.php' ?>
 
 
 
   <main>
-    <div class="mainSlider">
+    <div class="mainSlider" >
       <div class="container-fluid">
         <div class="row">
           <div class="slide--content">
@@ -34,9 +33,8 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                     <button type="submit" class="searchBtn"><img src="assets/materials/search-icon.svg"></button>
                   </form>
                 </div>
-                <div dir="ltr" class="main-pusher">
-                  <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>" class="push-it">
+                <div class="main-pusher">
+                  <div  class="push-it">
                     <div class="slide--incontent">
                       <div class="title mb-5">
                         <h1 class="mb-4"><?php echo $lang['sliderOne'] ?></h1>
@@ -46,8 +44,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                         </span></a>
                     </div>
                   </div>
-                  <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>" class="push-it">
+                  <div  class="push-it">
                     <div class="slide--incontent">
                       <div class="title mb-5">
                         <h1 class="mb-4"><?php echo $lang['sliderTwo'] ?></h1>
@@ -57,8 +54,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                         </span></a>
                     </div>
                   </div>
-                  <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>" class="push-it">
+                  <div  class="push-it">
                     <div class="slide--incontent">
                       <div class="title mb-5">
                         <h1 class="mb-4"><?php echo $lang['sliderThree'] ?></h1>
@@ -68,8 +64,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                         </span></a>
                     </div>
                   </div>
-                  <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>" class="push-it">
+                  <div  class="push-it">
                     <div class="slide--incontent">
                       <div class="title mb-5">
                         <h1 class="mb-4"><?php echo $lang['sliderFour'] ?></h1>
@@ -79,8 +74,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                         </span></a>
                     </div>
                   </div>
-                  <div dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>" class="push-it">
+                  <div  class="push-it">
                     <div class="slide--incontent">
                       <div class="title mb-5">
                         <h1 class="mb-4"><?php echo $lang['sliderFive'] ?></h1>
@@ -128,7 +122,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                 </div>
               </div>
             </div>
-            <div class="img-pusher">
+            <div class="img-pusher" >
               <div class="push-it-img">
                 <img src="assets/materials/slider-bg.jpg">
               </div>
