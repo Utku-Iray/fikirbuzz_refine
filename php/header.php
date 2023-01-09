@@ -129,7 +129,7 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
             <a class="nav-link" aria-current="page" target="_blank" style="color:rgba(150,0,20,1) !important;font-weight:bold" href="https://tr.transcend-info.com/">Transcend</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" target="_blank" style="color:rgba(14, 117, 180, 1) !important;font-weight:bold" href="https://global1.shuttle.com/">Shuttle</a>
+            <a class="nav-link" aria-current="page" target="_blank" style="color:rgba(14, 117, 180, 1) !important;font-weight:bold" href="https://global.shuttle.com/products/productsList?categoryId=114">Shuttle</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="single-page.php"><?php echo $lang['pcbDesignNav'] ?></a>
