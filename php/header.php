@@ -50,12 +50,12 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
               </ul>
             </div>
           </li>
-          <li class="nav-item dropdown has-megamenu">
+          <li class="nav-item dropdown has-megamenu" >
             <a class="nav-link dropdown-toggle " href="#" style="color:#187352 !important;font-weight:bold">Lanner</a>
             <div class="dropdown-menu megamenu pt-5" role="menu">
               <div class="container-fluid col-xl-11">
                 <div class="row">
-                  <ul class="col-xl-3 selection prodMegaFilter">
+                  <ul class="col-xl-3 selection prodMegaFilter" >
                     <?php
 
                     for ($i = 0; $i < $mainCatCount; $i++) { ?>
@@ -75,7 +75,7 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
 
                   </ul>
                   <div class="col-xl-9">
-                    <ul class="prodMegaSlider clearfix">
+                    <ul class="prodMegaSlider clearfix" dir="ltr">
 
                       <?php
                       for ($i = 0; $i < $mainCatCount; $i++) {
@@ -84,7 +84,7 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
                             <li class="pid-<?= $i + 1 ?>">
                               <div class="outbox">
                                 <a href="#">
-                                  <div class="prod-tag">
+                                  <div class="prod-tag" >
                                     <?php if ($_SESSION['lang'] == "en") {
                                       echo $mainCategoryList[$i]->name_en;
                                     } else if ($_SESSION['lang'] == "tr") {
@@ -97,7 +97,8 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
                                 </a>
                                 <img src="<?= $subCategoryList[$j]->image ?>" style="width: 200px;">
                               </div>
-                              <div class="description">
+                              <div class="description" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                              else echo "ltr"; ?>">
                                 <h1>
                                   <?php if ($_SESSION['lang'] == "en") {
                                     echo $subCategoryList[$j]->name_en;
@@ -109,8 +110,7 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
                                   ?>
                                 </h1>
                               </div>
-                              <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
+                              <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center"><?php echo $lang['seeMore'] ?>
                                 <hr />
                               </a>
                             </li>

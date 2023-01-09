@@ -3795,3 +3795,11 @@
         right: 7px !important;
         margin-top: 18px;
     }
+    
+    [dir="rtl"] h1 {
+        text-align: right;
+    }
+    
+    [dir="rtl"] p {
+        text-align: right;
+    }

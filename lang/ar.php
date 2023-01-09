@@ -1,5 +1,6 @@
 <?php
 $lang = array(
+  "seeMore"=>"ضحى فضلاسي",
   //Search
   "search" => "يبحث",
   //NavBar

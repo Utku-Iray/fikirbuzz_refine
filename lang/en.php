@@ -1,6 +1,6 @@
 <?php
 $lang = array(
-
+  "seeMore"=>"See More",
     //Search
     "search" => "Type Something...",
 

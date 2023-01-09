@@ -1,6 +1,7 @@
 <?php
 $lang = array(
 
+  "seeMore"=>"Daha Fazlası",
     //Search
     "search" => "Arama...",
 

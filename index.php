@@ -20,31 +20,34 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
 
 
 
-  <main>
-    <div class="mainSlider" >
+  <main >
+    <div class="mainSlider">
       <div class="container-fluid">
         <div class="row">
-          <div class="slide--content">
-            <div class="slider--trigger col-xl-11">
-              <div class="slide--desc col-xl-7 col-11">
-                <div class="searchBox">
+          <div class="slide--content" >
+            <div class="slider--trigger col-xl-11" >
+              <div class="slide--desc col-xl-7 col-11" >
+                <div class="searchBox" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                              else echo "ltr"; ?>">
                   <form action="search.php" method="get">
                     <input class="mb-4" type="text" name="term" placeholder="<?php echo $lang['search'] ?>">
                     <button type="submit" class="searchBtn"><img src="assets/materials/search-icon.svg"></button>
                   </form>
                 </div>
                 <div class="main-pusher">
-                  <div  class="push-it">
+                  <div  class="push-it" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                              else echo "ltr"; ?>">
                     <div class="slide--incontent">
                       <div class="title mb-5">
-                        <h1 class="mb-4"><?php echo $lang['sliderOne'] ?></h1>
+                        <h1  class="mb-4"><?php echo $lang['sliderOne'] ?></h1>
                       </div>
-                      <a href="single-blog.php?url=who-is-refine-what-benefits-does-refine-provide-for-you" class="btn-view"><span><?php echo $lang['seeDetails'] ?>
+                      <a  href="single-blog.php?url=who-is-refine-what-benefits-does-refine-provide-for-you" class="btn-view"><span><?php echo $lang['seeDetails'] ?>
                           <hr>
                         </span></a>
                     </div>
                   </div>
-                  <div  class="push-it">
+                  <div  class="push-it"dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                              else echo "ltr"; ?>">
                     <div class="slide--incontent">
                       <div class="title mb-5">
                         <h1 class="mb-4"><?php echo $lang['sliderTwo'] ?></h1>
@@ -54,7 +57,8 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                         </span></a>
                     </div>
                   </div>
-                  <div  class="push-it">
+                  <div  class="push-it"dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                              else echo "ltr"; ?>">
                     <div class="slide--incontent">
                       <div class="title mb-5">
                         <h1 class="mb-4"><?php echo $lang['sliderThree'] ?></h1>
@@ -64,7 +68,8 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                         </span></a>
                     </div>
                   </div>
-                  <div  class="push-it">
+                  <div  class="push-it"dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                              else echo "ltr"; ?>">
                     <div class="slide--incontent">
                       <div class="title mb-5">
                         <h1 class="mb-4"><?php echo $lang['sliderFour'] ?></h1>
@@ -74,7 +79,8 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                         </span></a>
                     </div>
                   </div>
-                  <div  class="push-it">
+                  <div  class="push-it"dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                              else echo "ltr"; ?>">
                     <div class="slide--incontent">
                       <div class="title mb-5">
                         <h1 class="mb-4"><?php echo $lang['sliderFive'] ?></h1>
@@ -85,7 +91,8 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                     </div>
                   </div>
                 </div>
-                <div class="swiper-btns">
+                <div class="swiper-btns"dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                              else echo "ltr"; ?>">
                   <?php if ($_SESSION['lang'] == "ar") echo '<button type="button" class="btn btn-primary btn-next"><i class="fa-solid fa-chevron-right"></i></button><button type="button" class="btn btn-primary btn-prev"><i class="fa-solid fa-chevron-left me-3"></i></button>
                             ';
                   else echo '<button type="button" class="btn btn-primary btn-prev"><i class="fa-solid fa-chevron-left me-3"></i></button>
@@ -320,7 +327,8 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
 
                       <img src="<?= $subCategoryList[$j]->image ?>">
                     </div>
-                    <div class="description">
+                    <div class="description"dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                              else echo "ltr"; ?>">
                       <h1>
                         <?php if ($_SESSION['lang'] == "en") {
                           echo $subCategoryList[$j]->name_en;
@@ -343,8 +351,7 @@ $blogSort = $query->fetchAll(PDO::FETCH_OBJ);
                         ?>
                       </p>
                     </div>
-                    <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                      MORE
+                    <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center"><?php echo $lang['seeMore'] ?>
                       <hr />
                     </a>
                   </li>
