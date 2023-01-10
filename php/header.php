@@ -18,7 +18,8 @@ $query->execute();
 $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
 ?>
 
-<header>
+<header dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+              else echo "ltr"; ?>">
   <button class="navbar-toggler menu-reverse" type="button">
     <div class="menu-icon" onclick="menuTrigger(this)">
       <div class="bar1"></div>
@@ -74,7 +75,7 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
 
                   </ul>
                   <div class="col-xl-9">
-                    <ul class="prodMegaSlider clearfix">
+                    <ul class="prodMegaSlider clearfix" dir="ltr">
 
                       <?php
                       for ($i = 0; $i < $mainCatCount; $i++) {
@@ -96,7 +97,8 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
                                 </a>
                                 <img src="<?= $subCategoryList[$j]->image ?>" style="width: 200px;">
                               </div>
-                              <div class="description">
+                              <div class="description" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                                            else echo "ltr"; ?>">
                                 <h1>
                                   <?php if ($_SESSION['lang'] == "en") {
                                     echo $subCategoryList[$j]->name_en;
@@ -108,8 +110,7 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
                                   ?>
                                 </h1>
                               </div>
-                              <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                                MORE
+                              <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center"><?php echo $lang['seeMore'] ?>
                                 <hr />
                               </a>
                             </li>
@@ -129,13 +130,13 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
             <a class="nav-link" aria-current="page" target="_blank" style="color:rgba(150,0,20,1) !important;font-weight:bold" href="https://tr.transcend-info.com/">Transcend</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" target="_blank" style="color:rgba(14, 117, 180, 1) !important;font-weight:bold" href="https://global1.shuttle.com/">Shuttle</a>
+            <a class="nav-link" aria-current="page" target="_blank" style="color:rgba(14, 117, 180, 1) !important;font-weight:bold" href="https://global.shuttle.com/products/productsList?categoryId=114">Shuttle</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="single-page.php"><?php echo $lang['pcbDesignNav'] ?></a>
           </li>
-          <li class="nav-item <?php if ($_SESSION['lang'] == "ar"|| $_SESSION['lang'] == "tr") echo "d-none";
-                            else echo "d-block"; ?>">
+          <li class="nav-item <?php if ($_SESSION['lang'] == "ar" || $_SESSION['lang'] == "tr") echo "d-none";
+                              else echo "d-block"; ?>">
             <a class="nav-link" href="blog-page.php">Blog</a>
           </li>
           <li class="nav-item">
@@ -144,20 +145,24 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
         </ul>
 
         <ul class="navbar-nav ms-auto">
-          <!-- <li class="nav-item">
+          <li class="nav-item ">
+            <a style="background-color: white;cursor:pointer;margin-right:10px!important;margin-left:10px!important;color:#07388A !important;border-style:solid;border-width:1px;border-radius:25px;padding:5px" class="text-center mx-auto form "> <img src="assets/materials/handshake.svg" width="26px" class="me-2"><?php echo $lang['beReseller'] ?></a>
+          </li>
+          <li class="nav-item">
             <div class="dropdown mini-searchbox">
-              <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" aria-expanded="false" src="assets/materials/search-icon.svg">
+              <a href="search.php"> <img width="24px"  class="dropdown-toggle langImg " role="button" id="dropdownMenuLink" aria-expanded="false" src="assets/materials/search-icon.svg"></a>
 
-              <ul class="dropdown-menu search-box d-flex" aria-labelledby="dropdownMenuLink">
+              <!-- <ul class="dropdown-menu search-box d-flex" aria-labelledby="dropdownMenuLink">
                 <form class="form mx-auto" action="search.php" method="get">
                   <div class="form-group">
                     <input type="text" name="term" placeholder="Type Something...">
                     <button type="submit"><img src="assets/materials/send-icon.svg" alt=""></button>
                   </div>
                 </form>
-              </ul>
+              </ul> -->
             </div>
-          </li> -->
+          </li>
+
           <li class="nav-item ms-2">
             <div class="dropdown lang-list">
               <img width="24px" class="dropdown-toggle langImg me-2" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" src="assets/materials/lang.svg">
@@ -240,7 +245,7 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
       <a href="blog-page.php">Blog</a>
       <a href="contact.php"><?php echo $lang['contactUsNav'] ?></a>
       <a href="ebook-download.php" aria-haspopup="dialog" title="Download.pdf" class="btn-green lightbox">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
-      <!-- <a href="#" class="btn-white login">Reseller Login</a> -->
+      <a href="search.php" class="btn-white login"><?php echo $lang['search'] ?> <img width="14px"  class="langImg " role="button"  src="assets/materials/search-icon.svg"></a>
       <div class="langArea d-flex">
         <a href="<?php
                   $langQuery['lang'] = "en";

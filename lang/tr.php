@@ -1,6 +1,7 @@
 <?php
 $lang = array(
 
+  "seeMore"=>"Daha Fazlası",
     //Search
     "search" => "Arama...",
 
@@ -25,7 +26,10 @@ $lang = array(
     //Form
     "form"=>"FORM",
     "Send" => "GÖNDER",
-    
+    "eMail" => "E-Mail",
+    "nameSurname" => "Adınız Soyadınız",
+    "phone" => "Telefon",
+    "message" => "Mesaj",
 
     // PCB Design 
     "pcbDesignPageTitle" => "PCB TASARIM & ÜRETİMİ",
@@ -89,4 +93,11 @@ $lang = array(
 "ebookPdfNetwork"=>"Ağ Cihazları",
 "ebookPdfUcpe"=>"uCPE Çözümleri",
 "ebookPdfTelecom"=>"Telekom Veri Merkezi Cihazları",
+
+  //Contact
+  "contactBannerShortOne"=>"Anasayfa",
+  "contactBannerShortTwo"=>"İletişim",
+  "contactTitle"=>"İLETİŞİM",
+  "contactTitleShort"=>"Lanner'ın Orta Doğu Türkiye ve Pakistan'daki yetkili distribütörü olmanın yanı sıra, tedarik hizmeti de sunuyoruz.
+  PCB tasarımı ve üretimi için hizmetler.",
 );

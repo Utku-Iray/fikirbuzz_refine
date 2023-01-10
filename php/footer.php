@@ -1,5 +1,5 @@
- 
- <div class="index-sec-3">
+ <div class="index-sec-3 "dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>">
      <div class="container-fluid col-xl-10">
          <div class="row">
              <div class="col-xl-6 text-xl-start text-center">
@@ -55,18 +55,28 @@
          <div class="col-xl-7 p-0">
              <div class="outflow-half text-center d-flex align-content-center align-items-center justify-content-center">
                  <div class="rightSide">
-                     <h1 class="mb-5 pb-xl-5"><?php echo $lang['form'] ?></h1>
-                     <form class="form mt-5" action="account.html">
-                         <div class="form-group">
-                             <input type="text" placeholder="E-Mail"><img src="assets/materials/env-mail.svg">
+                     <h1 class="mb-3 pb-xl-5"><?php echo $lang['form'] ?></h1>
+                     <form class="form " action="#">
+                     <div class="form-group">
+                             <input type="text" placeholder="<?php echo $lang['nameSurname'] ?>"><img src="assets/materials/env-mail.svg">
                          </div>
                          <div class="form-group mt-3">
-                             <input type="password" placeholder="Phone Number"><img src="assets/materials/env-mail.svg">
+                             <input type="text" placeholder="<?php echo $lang['eMail'] ?>"><img src="assets/materials/env-mail.svg">
+                         </div>
+                         <div class="form-group mt-3">
+                             <input type="password" placeholder="<?php echo $lang['phone'] ?>"><img src="assets/materials/env-mail.svg">
+                         </div>
+                         <div class="form-check mt-3 <?php if ($_SESSION['lang'] == "ar" || $_SESSION['lang'] == "en") echo "d-none";
+                            else echo "d-block"; ?>">
+                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                             <label class="form-check-label" for="flexCheckDefault">
+                            <a href="kvkk.php"> (KVKK) metnini</a> okudum, onaylıyorum.
+                             </label>
                          </div>
                          <div class="form-group mt-3">
 
 
-                             <textarea cols="30" rows="4" placeholder="Text..."></textarea>
+                             <textarea cols="30" rows="4" placeholder="<?php echo $lang['message'] ?>"></textarea>
                          </div>
                          <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
                              <button type="submit" class="text-start ps-3"><?php echo $lang['Send'] ?></button>
@@ -83,7 +93,8 @@
  </div>
  <!-- Login Area -->
 
- <footer>
+ <footer dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                            else echo "ltr"; ?>">
      <div class="col-xl-12 d-flex mainBlur">
          <div class="col-xl-4 half-drop"></div>
          <div class="col-xl-8 full-drop ms-auto"></div>
@@ -152,11 +163,15 @@
                          <p><?php echo $lang['pcbDesignNav'] ?></p>
                      </a>
                      <a class="<?php if ($_SESSION['lang'] == "ar" || $_SESSION['lang'] == "tr") echo "d-none";
-                            else echo "d-block"; ?>" href="blog-page.php">
+                                else echo "d-block"; ?>" href="blog-page.php">
                          <p>Blog</p>
                      </a>
                      <a href="contact.php">
                          <p><?php echo $lang['contactUsNav'] ?></p>
+                     </a>
+                     <a class="<?php if ($_SESSION['lang'] == "ar" || $_SESSION['lang'] == "en") echo "d-none";
+                            else echo "d-block"; ?>" href="kvkk.php">
+                         <p>KVKK</p>
                      </a>
                  </div>
 
@@ -220,7 +235,7 @@
              </div>
              <div class="col-xl-4 ms-auto text-xl-end text-center subFooter">
                  <a style="padding-right:15px" href="single-page.php">© Copyright <span id="year"></span> Refine Inc. </a>
-                 
+
              </div>
          </div>
      </div>

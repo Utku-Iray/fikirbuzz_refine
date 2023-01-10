@@ -21,11 +21,16 @@ if (isset($_GET["term"])) {
 
 
 <body dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>">
+            else echo "ltr"; ?>">
 
     <?php include 'php/header.php' ?>
 
+<style>
 
+    .searchBox ::placeholder{
+        padding-left: 10px;
+    }
+</style>
     <main>
         <div class="banner">
             <div class="image-area">
@@ -40,6 +45,18 @@ if (isset($_GET["term"])) {
                         <div class="title" data-aos="fade-right">
                             <h1>Search Result "<?= $term ?>"</h1>
                             <p></p>
+                        </div>
+                        <div class="searchBox">
+                            <form action="search.php" method="get">
+                                <input class="mb-4" type="text" name="term" placeholder="<?php echo $lang['search'] ?>" style="padding: 5px;
+    border-radius: 24px;
+    width: 60%;
+    border-width: 1px;">
+                                <button type="submit" class="searchBtn" style="    background-color: black;
+    border-radius: 5px;
+    padding: 3px;
+    width: 10%;"><img src="assets/materials/search-icon.svg"></button>
+                            </form>
                         </div>
                     </div>
                     <div class="col-xl-4 ms-xl-auto mx-auto text-center mt-5 mt-xl-auto">
