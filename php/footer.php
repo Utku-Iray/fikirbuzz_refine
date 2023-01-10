@@ -55,9 +55,12 @@
          <div class="col-xl-7 p-0">
              <div class="outflow-half text-center d-flex align-content-center align-items-center justify-content-center">
                  <div class="rightSide">
-                     <h1 class="mb-5 pb-xl-5"><?php echo $lang['form'] ?></h1>
-                     <form class="form mt-5" action="account.html">
-                         <div class="form-group">
+                     <h1 class="mb-3 pb-xl-5"><?php echo $lang['form'] ?></h1>
+                     <form class="form " action="#">
+                     <div class="form-group">
+                             <input type="text" placeholder="<?php echo $lang['nameSurname'] ?>"><img src="assets/materials/env-mail.svg">
+                         </div>
+                         <div class="form-group mt-3">
                              <input type="text" placeholder="<?php echo $lang['eMail'] ?>"><img src="assets/materials/env-mail.svg">
                          </div>
                          <div class="form-group mt-3">

@@ -2298,7 +2298,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -20px;
+        bottom: 20px;
         max-width: 300px;
         width: 90%;
         height: auto;
@@ -3631,9 +3631,16 @@
             font-size: 13px !important;
         }
         .banner .col-xl-4 img {
-            max-width: 450px !important;
+            max-width: 450px;
             width: 100%;
             padding: 1em;
+        }
+        @media screen and (max-width:700px) {
+            .banner .col-xl-4 img {
+                max-width: 150px !important;
+                width: 100%;
+                padding: 1em;
+            }
         }
         .index-sec-0 {
             background: #265eb0 !important;
@@ -3802,4 +3809,9 @@
     
     [dir="rtl"] p {
         text-align: right;
+    }
+    
+    [dir="rtl"] .navbar-toggler {
+        right: auto !important;
+        left: 20px
     }
