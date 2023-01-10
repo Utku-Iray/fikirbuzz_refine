@@ -64,7 +64,7 @@ include "config.php";
 
             <h3><strong>İnternet Sitesi Ziyaret&ccedil;ileri</strong></h3>
 
-            <p><strong>&ldquo;www.arena.com.tr&rdquo; adresinde yer alan internet sitemizi ziyaret eden kişilerden aşağıda yer alan bilgileri toplulaştırmak ve &ccedil;eşitli tedbirleri uygulamak suretiyle anonim bir bi&ccedil;imde toplamaktayız:</strong></p>
+            <p><strong>&ldquo;www.refine.com.tr&rdquo; adresinde yer alan internet sitemizi ziyaret eden kişilerden aşağıda yer alan bilgileri toplulaştırmak ve &ccedil;eşitli tedbirleri uygulamak suretiyle anonim bir bi&ccedil;imde toplamaktayız:</strong></p>
 
             <p>&nbsp;</p>
 
