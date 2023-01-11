@@ -1,6 +1,8 @@
 <?php
 $lang = array(
   "seeMore"=>"ضحى فضلاسي",
+  "mostPopulerProducts" => "المنتجات الأكثر شهرة",
+ 
   //Search
   "search" => "يبحث",
   //NavBar

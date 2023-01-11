@@ -1,6 +1,7 @@
 <?php
 $lang = array(
   "seeMore"=>"See More",
+  "mostPopulerProducts" => "Most Popular Products",
     //Search
     "search" => "Type Something...",
 

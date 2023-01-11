@@ -117,7 +117,7 @@ if (isset($_GET["cid"])) {
             </div>
           <?php  } ?>
 
-          <button class="load-more__btn mt-5 mb-5">SEE MORE<br /><img src="assets/materials/downron.svg"></button>
+          <button class="load-more__btn mt-5 mb-5"><?php echo $lang['seeMore'] ?><br /><img src="assets/materials/downron.svg"></button>
         </div>
       </div>
     </div>
@@ -126,7 +126,7 @@ if (isset($_GET["cid"])) {
       <div class="container-fluid col-xl-10 pt-5">
         <div class="row">
           <div class="col-xl-12 text-center seperator">
-            <h1 class="mb-4">Most Popular Products</h1>
+            <h1 class="mb-4"><?php echo $lang['mostPopulerProducts'] ?></h1>
             <hr>
           </div>
           <ul class="newSlider clearfix mt-5">
@@ -152,7 +152,7 @@ if (isset($_GET["cid"])) {
                           }
                           ?>
                         </p>
-                        <div class="btn-line">See Details
+                        <div class="btn-line"><?php echo $lang['seeDetails'] ?>
                           <hr />
                         </div>
                       </div>

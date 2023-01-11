@@ -2,6 +2,7 @@
 $lang = array(
 
   "seeMore"=>"Daha Fazlası",
+  "mostPopulerProducts" => "En Popüler Ürünler",
     //Search
     "search" => "Arama...",
 

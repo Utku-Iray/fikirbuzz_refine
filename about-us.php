@@ -13,7 +13,7 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
 
 
 <body dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>">
+            else echo "ltr"; ?>">
 
   <?php include 'php/header.php' ?>
 
@@ -54,13 +54,13 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
         </div>
       </div>
 
-      <div class="promote" data-aos="fade-up" >
+      <div class="promote" data-aos="fade-up">
         <div class="col-xl-11 ms-auto">
           <div class="row">
             <div class="col-xl-6 sr-img ms-auto order-xl-1 order-12">
               <img src="assets/materials/about-rubic.png">
             </div>
-            <div class="col-xl-5 p-xl-0 p-5" >
+            <div class="col-xl-5 p-xl-0 p-5">
               <div class="outbox">
                 <div class="title d-flex align-content-center align-items-center">
                   <img src="assets/materials/network-ico.svg">
@@ -76,67 +76,41 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
         </div>
         <div class="container-fluid col-xl-10 pb-5">
           <div class="row clearfix slick-promote">
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/firewall.png">
-                </div>
-                <div class="description">
-                  <h1>FIREWALLS</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
 
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/UTM.png">
+            <?php for ($j = 0; $j < $subCatCount; $j++) {
+              if ($subCategoryList[$j]->category_id == 1) { ?>
+                <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+                  <div class="full-box">
+                    <div class="outbox">
+                      <img src="<?= $subCategoryList[$j]->image ?>">
+                    </div>
+                    <div class="description" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                                  else echo "ltr"; ?>">
+                      <h1>
+                        <?php if ($_SESSION['lang'] == "en") {
+                          echo $subCategoryList[$j]->name_en;
+                        } else if ($_SESSION['lang'] == "tr") {
+                          echo $subCategoryList[$j]->name_tr;
+                        } else if ($_SESSION['lang'] == "ar") {
+                          echo $subCategoryList[$j]->name_ar;
+                        }
+                        ?>
+                      </h1>
+                    </div>
+                    <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center"><?php echo $lang['seeMore'] ?>
+                      <hr />
+                    </a>
+                    </a>
+                  </div>
                 </div>
-                <div class="description">
-                  <h1>UTM</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
+            <?php }
+            }  ?>
 
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/ADC.png">
-                </div>
-                <div class="description">
-                  <h1>ADC</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
 
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/wan.png">
-                </div>
-                <div class="description">
-                  <h1>WAN</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
+
           </div>
         </div>
+
       </div>
 
       <div class="promote reverse">
@@ -163,125 +137,34 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
         </div>
         <div class="container-fluid col-xl-10 pb-5" dir="ltr">
           <div class="row clearfix slick-promote">
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/sd-wan.png">
+          <?php for ($j = 0; $j < $subCatCount; $j++) {
+              if ($subCategoryList[$j]->category_id == 2) { ?>
+                <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+                  <div class="full-box">
+                    <div class="outbox">
+                      <img src="<?= $subCategoryList[$j]->image ?>">
+                    </div>
+                    <div class="description" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                                  else echo "ltr"; ?>">
+                      <h1>
+                        <?php if ($_SESSION['lang'] == "en") {
+                          echo $subCategoryList[$j]->name_en;
+                        } else if ($_SESSION['lang'] == "tr") {
+                          echo $subCategoryList[$j]->name_tr;
+                        } else if ($_SESSION['lang'] == "ar") {
+                          echo $subCategoryList[$j]->name_ar;
+                        }
+                        ?>
+                      </h1>
+                    </div>
+                    <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center"><?php echo $lang['seeMore'] ?>
+                      <hr />
+                    </a>
+                    </a>
+                  </div>
                 </div>
-                <div class="description">
-                  <h1>SD-WAN</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/sd-security.png">
-                </div>
-                <div class="description">
-                  <h1>SD-SECURITY</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/MEC.png">
-                </div>
-                <div class="description">
-                  <h1>MEC</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/cloud-ran.png">
-                </div>
-                <div class="description">
-                  <h1>CLOUD RAN</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/sd-wan.png">
-                </div>
-                <div class="description">
-                  <h1>SD-WAN</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/sd-security.png">
-                </div>
-                <div class="description">
-                  <h1>SD-SECURITY</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/MEC.png">
-                </div>
-                <div class="description">
-                  <h1>MEC</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/cloud-ran.png">
-                </div>
-                <div class="description">
-                  <h1>CLOUD RAN</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
+            <?php }
+            }  ?>
           </div>
         </div>
       </div>
@@ -308,67 +191,34 @@ $aboutResult = $query->fetchAll(PDO::FETCH_OBJ);
         </div>
         <div class="container-fluid col-xl-10 pb-5">
           <div class="row clearfix slick-promote">
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/firewall.png">
+          <?php for ($j = 0; $j < $subCatCount; $j++) {
+              if ($subCategoryList[$j]->category_id == 6) { ?>
+                <div class="col-xl-3 col-lg-4 mt-5 inp-short">
+                  <div class="full-box">
+                    <div class="outbox">
+                      <img src="<?= $subCategoryList[$j]->image ?>">
+                    </div>
+                    <div class="description" dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                                  else echo "ltr"; ?>">
+                      <h1>
+                        <?php if ($_SESSION['lang'] == "en") {
+                          echo $subCategoryList[$j]->name_en;
+                        } else if ($_SESSION['lang'] == "tr") {
+                          echo $subCategoryList[$j]->name_tr;
+                        } else if ($_SESSION['lang'] == "ar") {
+                          echo $subCategoryList[$j]->name_ar;
+                        }
+                        ?>
+                      </h1>
+                    </div>
+                    <a href="prod-list.php?cid=<?= $subCategoryList[$j]->id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center"><?php echo $lang['seeMore'] ?>
+                      <hr />
+                    </a>
+                    </a>
+                  </div>
                 </div>
-                <div class="description">
-                  <h1>MACHINE VISION</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/UTM.png">
-                </div>
-                <div class="description">
-                  <h1>SURVEILLANCE</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/ADC.png">
-                </div>
-                <div class="description">
-                  <h1>INTELLIGENT
-                    TRANSPORTATION</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-4 mt-5 inp-short">
-              <div class="full-box">
-                <div class="outbox">
-                  <img src="assets/materials/wan.png">
-                </div>
-                <div class="description">
-                  <h1>INDUSTRIAL
-                    CYBER SECURITY</h1>
-                </div>
-                <a href="prod-list.php" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
-                  <hr />
-                </a>
-              </div>
-            </div>
+            <?php }
+            }  ?>
           </div>
         </div>
       </div>
