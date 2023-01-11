@@ -1,5 +1,5 @@
- <div class="index-sec-3 "dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>">
+ <div class="index-sec-3 " dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
+                                else echo "ltr"; ?>">
      <div class="container-fluid col-xl-10">
          <div class="row">
              <div class="col-xl-6 text-xl-start text-center">
@@ -57,7 +57,7 @@
                  <div class="rightSide">
                      <h1 class="mb-3 pb-xl-5"><?php echo $lang['form'] ?></h1>
                      <form class="form " action="#">
-                     <div class="form-group">
+                         <div class="form-group">
                              <input type="text" placeholder="<?php echo $lang['nameSurname'] ?>"><img src="assets/materials/env-mail.svg">
                          </div>
                          <div class="form-group mt-3">
@@ -67,10 +67,10 @@
                              <input type="password" placeholder="<?php echo $lang['phone'] ?>"><img src="assets/materials/env-mail.svg">
                          </div>
                          <div class="form-check mt-3 <?php if ($_SESSION['lang'] == "ar" || $_SESSION['lang'] == "en") echo "d-none";
-                            else echo "d-block"; ?>">
+                                                        else echo "d-block"; ?>">
                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                              <label class="form-check-label" for="flexCheckDefault">
-                            <a href="kvkk.php"> (KVKK) metnini</a> okudum, onaylıyorum.
+                                 <a href="kvkk.php"> (KVKK) metnini</a> okudum, onaylıyorum.
                              </label>
                          </div>
                          <div class="form-group mt-3">
@@ -94,7 +94,7 @@
  <!-- Login Area -->
 
  <footer dir="<?php if ($_SESSION['lang'] == "ar") echo "rtl";
-                            else echo "ltr"; ?>">
+                else echo "ltr"; ?>">
      <div class="col-xl-12 d-flex mainBlur">
          <div class="col-xl-4 half-drop"></div>
          <div class="col-xl-8 full-drop ms-auto"></div>
@@ -170,7 +170,7 @@
                          <p><?php echo $lang['contactUsNav'] ?></p>
                      </a>
                      <a class="<?php if ($_SESSION['lang'] == "ar" || $_SESSION['lang'] == "en") echo "d-none";
-                            else echo "d-block"; ?>" href="kvkk.php">
+                                else echo "d-block"; ?>" href="kvkk.php">
                          <p>KVKK</p>
                      </a>
                  </div>
@@ -203,13 +203,16 @@
                      <form class="mt-4" action="ebook-download.php">
                          <div class="form-group">
                              <!-- <input type="text" placeholder="Your E-Mail Address"> -->
-                             <button type="submit"><img width="20px" style="margin-right: 10px;" src="assets/materials/pdf-fikirbuz.png" alt="">E-Book</button>
+                             <button type="submit"><img width="20px" style="margin-right: 10px;" src="assets/materials/pdf-fikirbuz.png" alt=""><?php echo $lang['catalog'] ?></button>
                          </div>
                      </form>
                  </div>
 
                  <div class="col-xl-6 mt-auto ms-xl-auto mx-auto text-xl-end text-center">
+                   
                      <div class="social d-flex justify-content-xl-end justify-content-center mt-4 mt-xl-auto">
+                     <a style="background-color: white;cursor:pointer;margin-right:10px!important;margin-left:10px!important;color:#07388A !important;border-style:solid;border-width:1px;border-radius:25px;padding:12px" class="text-center mx-auto form "> <img src="assets/materials/handshake.svg" width="26px" class="me-2"><?php echo $lang['beReseller'] ?></a>
+
                          <a href="https://www.linkedin.com/company/refineinc/" target="_blank" class="me-3">
                              <div class="sBox"><img src="assets/materials/linked-in.svg"></div>
                          </a>

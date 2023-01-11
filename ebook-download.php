@@ -42,7 +42,7 @@ include "config.php"; ?>
                         </div>
                     </div>
                     <div class="col-xl-4 ms-xl-auto mx-auto text-center mt-5 mt-xl-auto">
-                        <img src="assets/materials/pdf-fikirbuz.png" width="200px" class="img-fluid">
+                        <img style="width:200px !important" src="assets/materials/pdf-fikirbuz.png"  class="img-fluid">
                     </div>
                 </div>
             </div>

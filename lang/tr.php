@@ -1,6 +1,6 @@
 <?php
 $lang = array(
-
+"catalog" => "Catalog",
   "seeMore"=>"Daha Fazlası",
   "mostPopulerProducts" => "En Popüler Ürünler",
     //Search

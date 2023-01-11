@@ -110,7 +110,7 @@ if (isset($_GET["cid"])) {
                     ?>
                   </p>
                 </div>
-                <a href="prod-in.php?pid=<?= $product->id ?>&cid=<?= $cid ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE MORE
+                <a href="prod-in.php?pid=<?= $product->id ?>&cid=<?= $cid ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center"><?php echo $lang['seeMore'] ?>
                   <hr />
                 </a>
               </div>

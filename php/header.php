@@ -145,9 +145,9 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
         </ul>
 
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item ">
+          <!-- <li class="nav-item ">
             <a style="background-color: white;cursor:pointer;margin-right:10px!important;margin-left:10px!important;color:#07388A !important;border-style:solid;border-width:1px;border-radius:25px;padding:5px" class="text-center mx-auto form "> <img src="assets/materials/handshake.svg" width="26px" class="me-2"><?php echo $lang['beReseller'] ?></a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <div class="dropdown mini-searchbox">
               <a href="search.php"> <img width="24px"  class="dropdown-toggle langImg " role="button" id="dropdownMenuLink" aria-expanded="false" src="assets/materials/search-icon.svg"></a>
@@ -190,7 +190,7 @@ $contactResult = $query->fetchAll(PDO::FETCH_OBJ);
             </div>
           </li>
           <li class="nav-item ms-2">
-            <a href="ebook-download.php" class="btn-green lightbox" aria-haspopup="dialog" title="Download.pdf">E-Book <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
+            <a href="ebook-download.php" class="btn-green lightbox" aria-haspopup="dialog" title="Download.pdf"><?php echo $lang['catalog'] ?> <img class="ms-1" width="12px" src="assets/materials/pdf.svg"></span></a>
           </li>
           <!-- <li class="nav-item ms-2">
             <a class="btn-white form">Reseller Login</a>
