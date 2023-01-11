@@ -2298,7 +2298,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 20px;
+        bottom: 10px;
         max-width: 300px;
         width: 90%;
         height: auto;
@@ -2755,7 +2755,7 @@
     
     main .related img {
         max-width: 220px !important;
-        height: 80px !important;
+        /* height: 80px !important; */
         text-align: center;
         margin: auto;
     }
