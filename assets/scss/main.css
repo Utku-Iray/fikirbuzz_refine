@@ -3637,7 +3637,7 @@
         }
         @media screen and (max-width:700px) {
             .banner .col-xl-4 img {
-                max-width: 250px !important;
+                max-width: 325px !important;
                 width: 100%;
                 padding: 1em;
             }
