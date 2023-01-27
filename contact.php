@@ -36,21 +36,21 @@ include "config.php";
 
     <div class="index-sec-1 pb-0 contactArea pb-5" dir="ltr">
       <div class="container-fluid col-xl-9">
-        <form class="col-xl-10 mx-auto row mb-5">
+        <form class="col-xl-10 mx-auto row mb-5" method="POST" action="mail/mail.php">
           <div class="form-group col-xl-4 mb-2 mb-xl-0">
-            <input type="email" class="form-control" placeholder="<?php echo $lang['eMail'] ?>">
+            <input type="email" name="email" class="form-control" placeholder="<?php echo $lang['eMail'] ?>">
             <img src="assets/materials/env-mail.svg">
           </div>
           <div class="form-group col-xl-4 mb-2 mb-xl-0">
-            <input type="text" class="form-control" placeholder="<?php echo $lang['nameSurname'] ?>">
+            <input type="text" name="name" class="form-control" placeholder="<?php echo $lang['nameSurname'] ?>">
             <img src="assets/materials/sign.svg">
           </div>
           <div class="form-group col-xl-4 mb-2 mb-xl-0">
-            <input type="number" class="form-control" placeholder="<?php echo $lang['phone'] ?>">
+            <input type="number" name="phone" class="form-control" placeholder="<?php echo $lang['phone'] ?>">
             <img src="assets/materials/phone-env.svg">
           </div>
           <div class="form-group col-xl-12 mt-3 ta-icon">
-            <textarea rows="8" class="form-control p-3 ps-3" placeholder="<?php echo $lang['message'] ?>"></textarea>
+            <textarea name="message" rows="8" class="form-control p-3 ps-3" placeholder="<?php echo $lang['message'] ?>"></textarea>
             <img src="assets/materials/paragraph.svg">
           </div>
           <div class="form-group mt-3 <?php if ($_SESSION['lang'] == "ar" || $_SESSION['lang'] == "en") echo "d-none";

@@ -12,7 +12,11 @@ if (isset($_GET["term"])) {
     $searchResult = $query->fetchAll(PDO::FETCH_OBJ);
 
     $searchCount = count($searchResult);
+    
 }
+$query = $vt->prepare("SELECT * FROM product WHERE status = 1 ORDER BY click_count DESC LIMIT 4");
+$query->execute();
+$mostPopularProduct = $query->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!doctype html>
 <html lang="en">
@@ -107,98 +111,52 @@ if (isset($_GET["term"])) {
         </div>
 
         <div class="index-sec-2 related">
-            <div class="container-fluid col-xl-10 pt-5">
-                <div class="row">
-                    <div class="col-xl-12 text-center seperator">
-                        <h1 class="mb-4">Most Popular Products</h1>
-                        <hr>
-                    </div>
-                    <ul class="newSlider clearfix mt-5">
-                        <div class="row justify-content-between pid-1 d-flex">
-                            <li class="col-xl-3 mt-5">
-                                <a href="prod-in.html">
-                                    <div class="flatten">
-                                        <div class="outbox text-center mx-auto">
-                                            <img src="assets/materials/prod-1.png">
-                                        </div>
-                                        <div class="description mt-xl-0 pt-5">
-                                            <h1>NCI-200</h1>
-                                            <p>Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit. Fusce
-                                                est sapien, accumsan non efficitur
-                                                faucibus, suscipit ac mi.</p>
-                                            <div class="btn-line">See Details
-                                                <hr />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
+      <div class="container-fluid col-xl-10 pt-5">
+        <div class="row">
+          <div class="col-xl-12 text-center seperator">
+            <h1 class="mb-4"><?php echo $lang['mostPopulerProducts'] ?></h1>
+            <hr>
+          </div>
+          <ul class="newSlider clearfix mt-5">
+            <div class="row justify-content-between pid-1 d-flex">
 
-                            <li class="col-xl-3 mt-5">
-                                <a href="prod-in.html">
-                                    <div class="flatten">
-                                        <div class="outbox text-center mx-auto">
-                                            <img src="assets/materials/prod-2.png">
-                                        </div>
-                                        <div class="description mt-xl-0 pt-5">
-                                            <h1>NCI-200</h1>
-                                            <p>Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit. Fusce
-                                                est sapien, accumsan non efficitur
-                                                faucibus, suscipit ac fsdfsdfsdffffdsfsdfdsfdsfsdfds.</p>
-                                            <div class="btn-line">See Details
-                                                <hr />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="col-xl-3 mt-5">
-                                <a href="prod-in.html">
-                                    <div class="flatten">
-                                        <div class="outbox text-center mx-auto">
-                                            <img src="assets/materials/prod-3.png">
-                                        </div>
-                                        <div class="description mt-xl-0 pt-5">
-                                            <h1>NCI-200</h1>
-                                            <p>Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit. Fusce
-                                                est sapien, accumsan non efficitur
-                                                faucibus, suscipit ac mi.</p>
-                                            <div class="btn-line">See Details
-                                                <hr />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="col-xl-3 mt-5">
-                                <a href="prod-in.html">
-                                    <div class="flatten">
-                                        <div class="outbox text-center mx-auto">
-                                            <img src="assets/materials/prod-4.png">
-                                        </div>
-                                        <div class="description mt-xl-0 pt-5">
-                                            <h1>NCI-200</h1>
-                                            <p>Lorem ipsum dolor sit amet,
-                                                consectetur adipiscing elit. Fusce
-                                                est sapien, accumsan non efficitur
-                                                faucibus, suscipit ac mi.</p>
-                                            <div class="btn-line">See Details
-                                                <hr />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
+              <?php
+              foreach ($mostPopularProduct as $mprod) {    ?>
+                <li class="col-xl-3 mt-5">
+                  <a href="prod-in.php?pid=<?= $mprod->id ?>&cid=<?= $mprod->category_id ?>">
+                    <div class="flatten">
+                      <div class="outbox text-center mx-auto">
+                        <img src="<?= $mprod->image ?>">
+                      </div>
+                      <div class="description mt-xl-0 pt-5">
+                        <h1><?= $mprod->name ?></h1>
+                        <p>
+                          <?php if ($_SESSION['lang'] == "en") {
+                            echo $mprod->short_description_en;
+                          } else if ($_SESSION['lang'] == "tr") {
+                            echo $mprod->short_description_tr;
+                          } else if ($_SESSION['lang'] == "ar") {
+                            echo $mprod->short_description_ar;
+                          }
+                          ?>
+                        </p>
+                        <div class="btn-line"><?php echo $lang['seeDetails'] ?>
+                          <hr />
                         </div>
-                    </ul>
-                </div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              <?php   }
+              ?>
+
+
+
             </div>
+          </ul>
         </div>
+      </div>
+    </div>
 
 
 

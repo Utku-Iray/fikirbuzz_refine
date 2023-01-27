@@ -56,15 +56,15 @@
              <div class="outflow-half text-center d-flex align-content-center align-items-center justify-content-center">
                  <div class="rightSide">
                      <h1 class="mb-3 pb-xl-5"><?php echo $lang['form'] ?></h1>
-                     <form class="form " action="#">
+                     <form class="form " method="POST" action="mail/mail.php">
                          <div class="form-group">
-                             <input type="text" placeholder="<?php echo $lang['nameSurname'] ?>"><img src="assets/materials/env-mail.svg">
+                             <input type="text" name="name" placeholder="<?php echo $lang['nameSurname'] ?>"><img src="assets/materials/env-mail.svg">
                          </div>
                          <div class="form-group mt-3">
-                             <input type="text" placeholder="<?php echo $lang['eMail'] ?>"><img src="assets/materials/env-mail.svg">
+                             <input type="text" name="email" placeholder="<?php echo $lang['eMail'] ?>"><img src="assets/materials/env-mail.svg">
                          </div>
                          <div class="form-group mt-3">
-                             <input type="password" placeholder="<?php echo $lang['phone'] ?>"><img src="assets/materials/env-mail.svg">
+                             <input type="text" name="phone" placeholder="<?php echo $lang['phone'] ?>"><img src="assets/materials/env-mail.svg">
                          </div>
                          <div class="form-check mt-3 <?php if ($_SESSION['lang'] == "ar" || $_SESSION['lang'] == "en") echo "d-none";
                                                         else echo "d-block"; ?>">
@@ -76,7 +76,7 @@
                          <div class="form-group mt-3">
 
 
-                             <textarea cols="30" rows="4" placeholder="<?php echo $lang['message'] ?>"></textarea>
+                             <textarea name="message" cols="30" rows="4" placeholder="<?php echo $lang['message'] ?>"></textarea>
                          </div>
                          <div class="form-group buttonArea mt-3 d-flex justify-content-between align-content-center align-items-center">
                              <button type="submit" class="text-start ps-3"><?php echo $lang['Send'] ?></button>
