@@ -1,5 +1,6 @@
 <?php
 $lang = array(
+  "catalog" => "فهرس",
   "seeMore"=>"ضحى فضلاسي",
   "mostPopulerProducts" => "المنتجات الأكثر شهرة",
  
