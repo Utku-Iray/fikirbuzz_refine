@@ -3,11 +3,11 @@
 // try {
 //     $servername = "essehost0511.com";
 
-//     $databasename = 'fikirbuzzproject_refine';
+//     $databasename = 'refine_fikirbuzz';
 
-//     $username = "fikirbuzzproject_refineadmin";
+//     $username = "refine_admin";
 
-//     $password = "fikirbuzzrefine2021**";
+//     $password = "Fikirbuzzrefine2021!";
 
 //     $vt = new PDO("mysql:host=$servername;dbname=$databasename;charset=utf8", $username, $password);
 //     // set the PDO error mode to exception
@@ -16,6 +16,7 @@
 // } catch (PDOException $e) {
 //     echo "Connection failed: " . $e->getMessage();
 // }
+
 
 try {
     $servername = "ni-jungle.guzelhosting.com";
