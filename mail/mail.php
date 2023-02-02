@@ -17,7 +17,7 @@ if($name and $phone){ //Form'dan bütün değerler geliyorsa mail gönderme işl
     E_posta Adresi: $email <br>
     Telefon : $phone <br>    
     Mesaj: $message <br>
-    Bu mail: https://refine.com.tr/ adresinden gelmiştir.
+    Bu mail: https://refine-tr.com/ adresinden gelmiştir.
     ";
 
     //Php Smtp Mailler Sınıfını Sayfaya Dahil Ediyoruz
@@ -28,8 +28,8 @@ if($name and $phone){ //Form'dan bütün değerler geliyorsa mail gönderme işl
     //Mail Bağlantı Ayarları 
     //Mail Hangi Hesaptan Gönderilecek ise onun bilgilerini yazın.
     $MailSmtpHost = "alondanbilisim.com";
-    $MailUserName = "ideapol@alondanbilisim.com";
-    $MailPassword = "5aS?79Zu";
+    $MailUserName = "utah@alondanbilisim.com";
+    $MailPassword = "[4I#Pn+#IWEC";
     //Mail Bağlantı Ayarları Tamamlandı
 
     //Doldurulan Form Mail Olarak Kime Gidecek?
@@ -64,6 +64,6 @@ if($name and $phone){ //Form'dan bütün değerler geliyorsa mail gönderme işl
 
 <script>
   setTimeout(function(){
-  window.location = "https://refine.com.tr";
+  window.location = "https://refine-tr.com";
 }, 1000);
 </script>
