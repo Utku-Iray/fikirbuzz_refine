@@ -77,7 +77,7 @@ $lang = array(
   "bannerOne" => "Lanner Electronics Inc. is one of the world-leading suppliers in designing, engineering and manufacturing advanced network appliances, embedded computers, virtual platforms and rugged industrial hardware.",
   "bannerTwoTitle" => "Virtualization Computing",
   "bannerTwo" => "Lanner Electronics Inc. is one of the world-leading suppliers in designing, engineering and manufacturing advanced network appliances, embedded computers, virtual platforms and rugged industrial hardware.",
-  "bannerThreeTitle" => "Virtualization Computing",
+  "bannerThreeTitle" => "Industrial Computing",
   "bannerThree" => "Lanner Electronics Inc. is one of the world-leading suppliers in designing, engineering and manufacturing advanced network appliances, embedded computers, virtual platforms and rugged industrial hardware.",
 
   //Media

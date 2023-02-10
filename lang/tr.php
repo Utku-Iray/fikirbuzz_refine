@@ -75,7 +75,7 @@ $lang = array(
 "bannerOne" => "Lanner Electronics Inc., gelişmiş ağ cihazları, gömülü bilgisayarlar, sanal platformlar ve sağlam endüstriyel donanım tasarlama, mühendislik ve üretimde dünyanın önde gelen tedarikçilerinden biridir.",
 "bannerTwoTitle"=>"Sanallaştırma Hesaplama",
 "bannerTwo"=> "Lanner Electronics Inc., gelişmiş ağ cihazları, gömülü bilgisayarlar, sanal platformlar ve sağlam endüstriyel donanım tasarlama, mühendislik ve üretimde dünyanın önde gelen tedarikçilerinden biridir.",
-"bannerThreeTitle"=>"Sanallaştırma Hesaplama",
+"bannerThreeTitle"=>"Endüstriyel Bilgi İşlem",
 "bannerThree"=> "Lanner Electronics Inc., gelişmiş ağ cihazları, gömülü bilgisayarlar, sanal platformlar ve sağlam endüstriyel donanım tasarlama, mühendislik ve üretimde dünyanın önde gelen tedarikçilerinden biridir.",
 
 //Media
