@@ -3,8 +3,15 @@ $lang = array(
 "catalog" => "Catalog",
   "seeMore"=>"Daha Fazlası",
   "mostPopulerProducts" => "En Popüler Ürünler",
+  "products" => "Ürünler",
+  "home" =>"Anasayfa",
+
+
     //Search
     "search" => "Arama...",
+  "searchResult" => "Arama sonuçları",
+  "noResultsWereFoundFor" =>"İçin sonuç bulunamadı ",
+
 
     //NavBar
     "pcbDesignNav" => "PCB Tasarımı ve Üretimi",
@@ -84,6 +91,12 @@ $lang = array(
 "mediaBanner"=>"Medya & galeri",
 "mediaBannerContent"=>"PDF Belgelerini İndirin",
 "mediaBannerPdf"=>"Medya Kiti",
+
+  // Urun Sayfasi
+  "keyFeatures"=>"Ana Özellikler",
+  "overview"=>"Genel Bakış",
+  "relatedProducts"=>"İlgili Ürünler",
+
 
 //E-book
 "ebookBannerShortOne"=>"Veri Sayfası",

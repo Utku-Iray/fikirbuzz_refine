@@ -44,10 +44,10 @@ $mostPopularProduct = $query->fetchAll(PDO::FETCH_OBJ);
                 <div class="row align-content-center align-items-center">
                     <div class="col-xl-7">
                         <div class="breadcrumb" data-aos="fade-in">
-                            <a href="index.php">Home</a><a href="#">Search Result</a>
+                            <a href="index.php"><?php echo $lang["home"] ?></a><a href="#"><?php echo $lang["searchResult"] ?></a>
                         </div>
                         <div class="title" data-aos="fade-right">
-                            <h1>Search Result "<?= $term ?>"</h1>
+                            <h1><?php echo $lang["searchResult"] ?> "<?= $term ?>"</h1>
                             <p></p>
                         </div>
                         <div class="searchBox">
@@ -97,7 +97,7 @@ $mostPopularProduct = $query->fetchAll(PDO::FETCH_OBJ);
                         <?php  }
                     } else { ?>
                         <div class="col-xl-12 col-lg-12 mt-5 inp">
-                            <h5>No results were found for "<?= $term ?>".</h5>
+                            <h5><?php echo $lang['noResultsWereFoundFor'] ?> "<?= $term ?>".</h5>
                         </div>
                     <?php   }
                     if ($searchCount > 3) {

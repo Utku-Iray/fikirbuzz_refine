@@ -45,7 +45,7 @@ if (isset($_GET["pid"])) {
         <div class="row align-content-center align-items-center">
           <div class="col-xl-7">
             <div class="breadcrumb" data-aos="fade-in">
-              <a href="#">Products</a><a href="#"><?= $productVal[0]->name ?></a>
+              <a href="#"><?php echo $lang['products'] ?></a><a href="#"><?= $productVal[0]->name ?></a>
             </div>
             <div class="title">
               <h1 data-aos="fade-right"><?= $productVal[0]->name ?></h1>
@@ -83,7 +83,7 @@ if (isset($_GET["pid"])) {
       <div class="container-fluid col-xl-9">
         <div class="textArea row pb-5">
           <div class="mb-5 col-xl-6 kf">
-            <h1><img src="assets/materials/kf-ico.svg" class="me-4">Key Features</h1>
+            <h1><img src="assets/materials/kf-ico.svg" class="me-4"><?php echo $lang['keyFeatures'] ?></h1>
             <div class="mt-5">
               <?php if ($_SESSION['lang'] == "en") {
                 echo $productVal[0]->key_features_en;
@@ -96,7 +96,7 @@ if (isset($_GET["pid"])) {
             </div>
           </div>
           <div class="mb-5 col-xl-5 ms-auto ov">
-            <h1>Overview</h1>
+            <h1><?php echo $lang ['overview'] ?></h1>
             <div class="bg-white">
               <p id="limiter" class="p-5">
                 <?php if ($_SESSION['lang'] == "en") {
@@ -680,7 +680,7 @@ if (isset($_GET["pid"])) {
       <div class="container-fluid col-xl-9">
         <div class="row clearfix">
           <div class="col-xl-12 ms-auto text-end title">
-            <h1>Related Products <img class="ms-2" src="assets/materials/smb.svg"></h1>
+            <h1><?php echo $lang ['relatedProducts'] ?> <img class="ms-2" src="assets/materials/smb.svg"></h1>
           </div>
 
           <?php
@@ -704,8 +704,7 @@ if (isset($_GET["pid"])) {
                     ?>
                   </p>
                 </div>
-                <a href="prod-in.php?pid=<?= $relatedProd->id ?>&cid=<?= $cid ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE
-                  MORE
+                <a href="prod-in.php?pid=<?= $relatedProd->id ?>&cid=<?= $cid ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center"><?php echo $lang ['seeMore'] ?>
                   <hr />
                 </a>
               </div>

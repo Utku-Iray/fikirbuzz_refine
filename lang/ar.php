@@ -3,9 +3,16 @@ $lang = array(
   "catalog" => "فهرس",
   "seeMore"=>"ضحى فضلاسي",
   "mostPopulerProducts" => "المنتجات الأكثر شهرة",
+  "products" => "منتجات",
+  "home" =>"بيت",
+
+
  
   //Search
   "search" => "يبحث",
+  "searchResult" => "نتيجة البحث",
+  "noResultsWereFoundFor" =>"لم يتم العثور على نتائج ل",
+
   //NavBar
   "pcbDesignNav" => "تصميم وتصنيع ثنائي الفينيل متعدد الكلور",
   "contactUsNav" => "اتصل بنا",
@@ -85,6 +92,12 @@ $lang = array(
   "mediaBannerContent" => "قم بتنزيل مستندات PDF",
   "mediaBannerPdf" => "طقم الوسائط",
 
+    // Urun Sayfasi
+  "keyFeatures"=>"دلائل الميزات",
+  "overview"=>"ملخص",
+  "relatedProducts"=>"منتجات ذات صله",
+
+
   //E-book
   "ebookBannerShortOne" => "ورقة البيانات",
   "ebookBannerShortTwo" => "PDF",
@@ -101,4 +114,6 @@ $lang = array(
   "contactTitle"=>"اتصل",
   "contactTitleShort"=>"بالإضافة إلى كوننا الموزع المعتمد لشركة Lanner في الشرق الأوسط وتركيا وباكستان ، فإننا نقدم أيضًا مصادر
   خدمات لتصميم وتصنيع ثنائي الفينيل متعدد الكلور.",
+
+
 );

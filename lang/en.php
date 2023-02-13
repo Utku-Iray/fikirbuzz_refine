@@ -3,8 +3,12 @@ $lang = array(
   "catalog" => "Catalog",
   "seeMore" => "See More",
   "mostPopulerProducts" => "Most Popular Products",
+  "products" => "Products",
+  "home" =>"Home",
   //Search
   "search" => "Search...",
+  "searchResult" => "Search Result",
+  "noResultsWereFoundFor" =>"No results were found for ",
 
   //NavBar
   "pcbDesignNav" => "PCB Design & Manufacturing",
@@ -86,6 +90,11 @@ $lang = array(
   "mediaBanner" => "MEDIA & GALLERY",
   "mediaBannerContent" => "Download PDF Documents",
   "mediaBannerPdf" => "Media Kit",
+
+  // Urun Sayfasi
+  "keyFeatures"=>"Key Features",
+  "overview"=>"Overview",
+  "relatedProducts"=>"Related Products",
 
   //E-book
   "ebookBannerShortOne" => "Datasheet",
