@@ -24,8 +24,8 @@
 
   <!-- arg0 OpenGraph tags -->
   <meta content='website' property='og:type' />
-  <meta content='Refine Inc. | Refine' property='og:title' />
-  <meta content='Refine Inc. | Refine' property='og:site_name' />
+  <meta content='Refine Inc. |' property='og:title' />
+  <meta content='Refine Inc. |' property='og:site_name' />
   <meta content='Refine Inc. |' property='og:description' />
   <meta content='https://refine-tr.com' property='og:url' />
   <meta content='https://refine-tr.com/assets/materials/og/og_image.jpg' property='og:image' />

@@ -88,7 +88,7 @@ $mostPopularProduct = $query->fetchAll(PDO::FETCH_OBJ);
                                         <h1><?= $product->name ?></h1>
                                         <p><?= $product->short_description ?></p>
                                     </div>
-                                    <a href="prod-in.php?pid=<?= $product->id ?>&cid=<?= $product->category_id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center">SEE MORE
+                                    <a href="prod-in.php?pid=<?= $product->id ?>&cid=<?= $product->category_id ?>" class="btn-open d-flex justify-content-around align-content-center align-items-center"><?php echo $lang['seeMore'] ?>
                                         <hr />
                                     </a>
                                 </div>
@@ -100,8 +100,9 @@ $mostPopularProduct = $query->fetchAll(PDO::FETCH_OBJ);
                             <h5><?php echo $lang['noResultsWereFoundFor'] ?> "<?= $term ?>".</h5>
                         </div>
                     <?php   }
+                   
                     if ($searchCount > 3) {
-                        echo '<button class="load-more__btn mt-5 mb-5">SEE MORE<br /><img src="assets/materials/downron.svg"></button>';
+                        echo '<button class="load-more__btn mt-5 mb-5">'.$lang['seeMore'].'<br/><img src="assets/materials/downron.svg"></button>';
                     }
                     ?>
 
