@@ -24,9 +24,9 @@
 
   <!-- arg0 OpenGraph tags -->
   <meta content='website' property='og:type' />
-  <meta content='Refine Inc. | Your Title Here' property='og:title' />
-  <meta content='Refine Inc. | Your Title Here' property='og:site_name' />
-  <meta content='Refine Inc. | Your Description Here' property='og:description' />
+  <meta content='Refine Inc. | Refine' property='og:title' />
+  <meta content='Refine Inc. | Refine' property='og:site_name' />
+  <meta content='Refine Inc. |' property='og:description' />
   <meta content='https://refine-tr.com' property='og:url' />
   <meta content='https://refine-tr.com/assets/materials/og/og_image.jpg' property='og:image' />
   <link href='./assets/materials/og/app180.png' rel='apple-touch-icon' sizes='180x180' />
