@@ -2402,7 +2402,7 @@
         -webkit-transition: all 0.2s ease;
         transition: all 0.2s ease;
         cursor: pointer;
-        height: 50px;
+        /* height: 50px; */
         display: -webkit-box !important;
         display: -ms-flexbox !important;
         display: flex !important;
