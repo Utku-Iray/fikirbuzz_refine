@@ -11,7 +11,17 @@
 
     gtag('config', 'UA-187296216-1');
   </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-444109762"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-444109762');
+  </script>
   <title>Refine</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
